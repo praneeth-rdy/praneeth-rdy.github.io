@@ -391,7 +391,7 @@ body {
 
 .post-feed {
     display: flex;
-    align-items: ;
+    /* align-items: ; */
     flex-wrap: wrap;
 }
 
