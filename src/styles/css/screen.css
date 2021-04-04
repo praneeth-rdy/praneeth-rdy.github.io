@@ -5,9 +5,9 @@ production stylesheet in assets/built/screen.css using gulp dev
 
 */
 
-
 /* Lib - Local component imports
 /* ---------------------------------------------------------- */
+
 @import "vars.css";
 @import "components/global.css";
 @import "components/ghost.css";
@@ -19,8 +19,6 @@ production stylesheet in assets/built/screen.css using gulp dev
 @import "components/actions.css";
 @import "components/hamburger.css";
 @import "components/animations.css";
-
-
 /* Main - Theme styles
 /* ---------------------------------------------------------- */
 
@@ -46,7 +44,6 @@ body {
     text-indent: -9999px;
 }
 
-
 /* Layout
 /* ---------------------------------------------------------- */
 
@@ -54,6 +51,7 @@ body {
     padding: 3vw;
     min-height: 100vh;
 }
+
 @media (max-width: 850px) {
     .site-wrapper {
         padding: 6vw;
@@ -101,6 +99,7 @@ body {
     font-size: 4.2rem;
     color: var(--color-base);
 }
+
 @media (max-width: 500px) {
     .page-head-title {
         font-size: 2rem;
@@ -113,6 +112,7 @@ body {
     font-size: 2.2rem;
     line-height: 1.35em;
 }
+
 @media (max-width: 500px) {
     .page-head-description {
         font-size: 1.6rem;
@@ -129,7 +129,6 @@ body {
 .site-foot a {
     color: var(--color-base);
 }
-
 
 /* Site Navigation
 /* ---------------------------------------------------------- */
@@ -149,7 +148,7 @@ body {
 
 .site-head-left {
     position: relative;
-        z-index: 100;
+    z-index: 100;
     display: flex;
     align-items: center;
     margin-right: 10px;
@@ -169,8 +168,7 @@ body {
     padding: 0;
 }
 
-.site-head-left a,
-.site-head-right a {
+.site-head-left a, .site-head-right a {
     display: block;
     margin: 0;
     padding: 10px 12px;
@@ -179,8 +177,7 @@ body {
     opacity: 0.4;
 }
 
-.nav-current a,
-.site-head a:hover {
+.nav-current a, .site-head a:hover {
     text-decoration: none;
     opacity: 1;
 }
@@ -217,7 +214,7 @@ body {
 
 .site-head-right {
     position: relative;
-        z-index: 100;
+    z-index: 100;
     flex-shrink: 0;
     display: flex;
     align-items: center;
@@ -259,7 +256,6 @@ body {
     fill: var(--color-base);
 }
 
-
 /* Mobile Nav Menu
 /* ---------------------------------------------------------- */
 
@@ -282,29 +278,26 @@ body {
         flex-direction: column;
         justify-content: flex-start;
         height: 40px;
-        background: rgba(255,255,255,0);
+        background: rgba(255, 255, 255, 0);
         z-index: -1;
         transition: all 0.4s ease-out;
         overflow: hidden;
     }
-    .site-head-left,
-    .site-head-right {
+    .site-head-left, .site-head-right {
         position: relative;
         z-index: -1;
         height: auto;
         transition: height 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
         transition-delay: 1s;
     }
-    .site-head-left a,
-    .site-head-right a {
+    .site-head-left a, .site-head-right a {
         margin: 8px 0;
         padding: 1px 0;
         font-size: 2.6rem;
         line-height: 1.15em;
         font-weight: 200;
         opacity: 0;
-        transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99),
-        opacity 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
         transform: scale(1.1) translateY(-25px);
     }
     .site-head-right a {
@@ -340,32 +333,25 @@ body {
         flex-direction: column;
         align-items: flex-start;
     }
-
     .site-head-open {
-        background: rgba(255,255,255,1);
+        background: rgba(255, 255, 255, 1);
         transition: background 0.5s ease-out;
         transition-delay: 0.25;
         overflow: hidden;
         height: 100vh;
     }
-
     .site-head-open .site-head-container {
         height: 100vh;
         transition: height 0.2s ease-in;
     }
-
-    .site-head-open .site-head-left,
-    .site-head-open .site-head-right {
+    .site-head-open .site-head-left, .site-head-open .site-head-right {
         z-index: 9999;
         height: auto;
         transition: height 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     }
-
-    .site-head-open .site-head-left a,
-    .site-head-open .site-head-right a {
+    .site-head-open .site-head-left a, .site-head-open .site-head-right a {
         opacity: 1;
-        transition: transform 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99),
-        opacity 0.9s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+        transition: transform 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.9s cubic-bezier(0.4, 0.01, 0.165, 0.99);
         transform: scale(1) translateY(0px);
     }
     .site-head-open .nav-current a {
@@ -382,9 +368,7 @@ body {
         transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
         transform: translateY(-4vw);
     }
-
 }
-
 
 /* Post Feed
 /* ---------------------------------------------------------- */
@@ -434,23 +418,24 @@ body {
     bottom: 0;
     left: 0;
     color: #fff;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.1);
     opacity: 1;
-    transition: opacity 0.5s cubic-bezier(.33,0,.2,1);
+    transition: opacity 0.5s cubic-bezier(.33, 0, .2, 1);
 }
 
 .post-card.with-image .post-card-content {
     opacity: 0;
 }
+
 @media (max-width: 700px) {
-  .post-card.with-image .post-card-content {
-      opacity: 1;
-  }
+    .post-card.with-image .post-card-content {
+        opacity: 1;
+    }
 }
 
 .post-card-link:hover .post-card-content {
     opacity: 1;
-    transition: opacity 0.3s cubic-bezier(.33,0,.2,1);
+    transition: opacity 0.3s cubic-bezier(.33, 0, .2, 1);
 }
 
 .post-card-title {
@@ -459,10 +444,11 @@ body {
     font-size: 3.4rem;
     max-width: 70%;
     text-align: center;
-    transition: all 0.3s cubic-bezier(.33,0,.2,1);
+    transition: all 0.3s cubic-bezier(.33, 0, .2, 1);
 }
 
 /* Posts without images */
+
 .post-card.no-image:before {
     display: block;
     content: counter(posts);
@@ -473,7 +459,7 @@ body {
     line-height: 1em;
     font-weight: var(--font-heavy);
     letter-spacing: -0.1em;
-    color: rgba(0,0,0,0.2);
+    color: rgba(0, 0, 0, 0.2);
 }
 
 .post-card.no-image .post-card-content {
@@ -497,6 +483,7 @@ body {
         font-size: 3.4rem;
     }
 }
+
 @media (max-width: 700px) {
     .post-card.no-image:before {
         font-size: 50vw;
@@ -532,6 +519,7 @@ body {
     text-align: center;
     opacity: 0.5;
 }
+
 @media (max-width: 500px) {
     .post-content-excerpt {
         font-size: 1.8rem;
@@ -552,18 +540,14 @@ body {
     font-size: 1.9rem;
     line-height: 1.65em;
 }
+
 @media (max-width: 500px) {
     .post-content-body {
         font-size: 1.7rem;
     }
 }
 
-.post-content-body h1,
-.post-content-body h2,
-.post-content-body h3,
-.post-content-body h4,
-.post-content-body h5,
-.post-content-body h6 {
+.post-content-body h1, .post-content-body h2, .post-content-body h3, .post-content-body h4, .post-content-body h5, .post-content-body h6 {
     color: var(--color-base);
 }
 
@@ -714,8 +698,10 @@ body {
 /* Page Template
 /* ---------------------------------------------------------- */
 
-.page-template .post-content-body h1,
-.page-template .post-content-body h2,
-.page-template .post-content-body h3 {
+.page-template .post-content-body h1, .page-template .post-content-body h2, .page-template .post-content-body h3 {
     text-align: center;
+}
+
+.blog-body {
+    padding: 4rem;
 }
