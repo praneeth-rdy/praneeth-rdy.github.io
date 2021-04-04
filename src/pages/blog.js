@@ -70,6 +70,7 @@ const indexQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            quote
             description
             thumbnail {
               childImageSharp {

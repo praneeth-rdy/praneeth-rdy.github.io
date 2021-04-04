@@ -17,14 +17,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/content/blogs`,
-        name: `assets`,
+        name: `blogs`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         path: `${__dirname}/src/content/images`,
-        name: `assets`,
+        name: `images`,
       },
     },
     {
@@ -93,7 +93,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `src/content/images/gatsby-icon.png`,
       },
     },
     `gatsby-plugin-netlify`,

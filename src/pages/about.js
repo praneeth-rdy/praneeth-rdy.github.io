@@ -17,7 +17,7 @@ const AboutPage = ({ data }, location) => {
 
       <article className="post-content page-template no-image">
         <div className="post-content-body">
-          <h2 id="clean-minimal-and-deeply-customisable-london-is-a-theme-made-for-people-who-appreciate-simple-lines-">
+          <h2>
             Clean, minimal, and deeply customisable. London is a theme made for
             people who appreciate simple lines.
           </h2>
