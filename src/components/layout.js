@@ -2,8 +2,38 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Layout = props => {
-  const { title, children } = props
+  const { title, path, children } = props
   const [toggleNav, setToggleNav] = React.useState(false)
+  var navActive
+  switch (path) {
+    case '/':
+      navActive = {
+        home: 'nav-current',
+        about: '',
+        elements: ''
+      }
+      break
+    case '/about':
+      navActive = {
+        about: 'nav-current',
+        home: '',
+        elements: ''
+      }
+      break
+    case '/elements':
+      navActive = {
+        elements: 'nav-current',
+        about: '',
+        home: ''
+      }
+      break
+    default:
+      navActive = {
+        home: '',
+        about: '',
+        elements: ''
+      }
+  }
   return (
     <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
       <header className="site-head">
@@ -26,13 +56,13 @@ const Layout = props => {
           </a>
           <nav id="swup" class="site-head-left">
             <ul className="nav" role="menu">
-              <li className="nav-home nav-current" role="menuitem">
+              <li className={"nav-home " + navActive.home} role="menuitem">
                 <Link to={`/`}>Home</Link>
               </li>
-              <li className="nav-about" role="menuitem">
+              <li className={"nav-about " + navActive.about} role="menuitem">
                 <Link to={`/about`}>About</Link>
               </li>
-              <li className="nav-elements" role="menuitem">
+              <li className={"nav-elements " + navActive.elements} role="menuitem">
                 <Link to={`/elements`}>Elements</Link>
               </li>
             </ul>

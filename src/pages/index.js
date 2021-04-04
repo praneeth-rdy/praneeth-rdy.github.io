@@ -15,7 +15,7 @@ const BlogIndex = ({ data }, location) => {
   let postCounter = 0
 
   return (
-    <Layout title={siteTitle}>
+    <Layout title={siteTitle} path="/">
       <SEO
         title="All posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
