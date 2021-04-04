@@ -13,7 +13,7 @@ export default ({ node, postClass }) => (
                 style={
                     node.frontmatter.thumbnail && {
                         marginTop: '2rem',
-                        marginBottom: '2rem',
+                        marginBottom: '4rem',
                     }
                 } />
             <blockquote>
@@ -23,6 +23,9 @@ export default ({ node, postClass }) => (
                 {node.frontmatter.description}
             </p>
         </div>
+        <Link to={'/blog' + node.fields.slug} className="button primary fit small">
+            Readmore
+        </Link>
         <hr
             style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',

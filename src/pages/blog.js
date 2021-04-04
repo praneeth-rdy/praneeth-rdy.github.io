@@ -3,12 +3,11 @@ import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import PostCard from "../components/postCard"
 
 // import "../styles/global.scss"
 import "../styles/normalize.css"
 import "../styles/css/screen.css"
-import BlogPost from "../components/blogPost"
+import BlogItem from "../components/blogItem"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ data }, location) => {
   const siteTitle = data.site.siteMetadata.title
@@ -39,7 +38,7 @@ const BlogIndex = ({ data }, location) => {
         {posts.map(({ node }) => {
           postCounter++
           return (
-            <BlogPost
+            <BlogItem
               key={node.fields.slug}
               count={postCounter}
               node={node}
