@@ -9,10 +9,10 @@ import "../styles/normalize.css"
 import "../styles/css/screen.css"
 
 const AboutPage = ({ data }, location) => {
-  const siteTitle = data.site.siteMetadata.title
+  const navHeading = data.site.siteMetadata.navHeading
 
   return (
-    <Layout title={siteTitle} path="/about">
+    <Layout navHeading={navHeading} path="/about">
       <SEO title="About" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
       <article className="post-content page-template no-image">
@@ -59,7 +59,7 @@ const indexQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        navHeading
       }
     }
     benchAccounting: file(

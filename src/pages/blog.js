@@ -10,16 +10,13 @@ import "../styles/css/screen.css"
 import BlogItem from "../components/blogItem"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ data }, location) => {
-  const siteTitle = data.site.siteMetadata.title
+  const navHeading = data.site.siteMetadata.navHeading
   const posts = data.allMarkdownRemark.edges
   let postCounter = 0
 
   return (
-    <Layout title={siteTitle} path="/blog">
-      <SEO
-        title="Blog"
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-      />
+    <Layout navHeading={navHeading} path="/blog">
+      <SEO title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
       {/* <Bio /> */}
       {data.site.siteMetadata.description && (
         <header className="page-head">
@@ -30,8 +27,8 @@ const BlogIndex = ({ data }, location) => {
       )}
       <hr
         style={{
-          backgroundColor: 'rgba(0, 0, 0, 0.5)',
-          height: 2
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+          height: 2,
         }}
       />
       <div className="blog-body">
@@ -55,7 +52,7 @@ const indexQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        navHeading
         description
       }
     }

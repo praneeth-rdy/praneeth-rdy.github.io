@@ -9,10 +9,10 @@ import "../styles/normalize.css"
 import "../styles/css/screen.css"
 
 const ElementsPage = ({ data }, location) => {
-  const siteTitle = data.site.siteMetadata.title
+  const navHeading = data.site.siteMetadata.navHeading
 
   return (
-    <Layout title={siteTitle} path="/elements">
+    <Layout navHeading={navHeading} path="/elements">
       <SEO
         title="Elements"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
@@ -530,7 +530,7 @@ const indexQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        navHeading
       }
     }
     smallPic: file(

@@ -5,6 +5,7 @@ module.exports = {
   pathPrefix: siteConfig.prefix,
   siteMetadata: {
     title: siteConfig.name,
+    navHeading: siteConfig.shortName,
     author: siteConfig.author,
     description: siteConfig.description,
     siteUrl: urljoin(siteConfig.url, siteConfig.prefix),

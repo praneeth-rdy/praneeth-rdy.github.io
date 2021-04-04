@@ -2,26 +2,26 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Layout = props => {
-  const { title, path, children } = props
+  const { navHeading, path, children } = props
   const [toggleNav, setToggleNav] = React.useState(false)
   var navActive = {
-    home: '',
-    about: '',
-    blog: '',
-    elements: ''
+    home: "",
+    about: "",
+    blog: "",
+    elements: "",
   }
   switch (path) {
-    case '/':
-      navActive.home = 'nav-current'
+    case "/":
+      navActive.home = "nav-current"
       break
-    case '/about':
-      navActive.about = 'nav-current'
+    case "/about":
+      navActive.about = "nav-current"
       break
-    case '/blog':
-      navActive.blog = 'nav-current'
+    case "/blog":
+      navActive.blog = "nav-current"
       break
-    case '/elements':
-      navActive.elements = 'nav-current'
+    case "/elements":
+      navActive.elements = "nav-current"
       break
   }
   return (
@@ -55,14 +55,17 @@ const Layout = props => {
               <li className={"nav-elements " + navActive.blog} role="menuitem">
                 <Link to={`/blog`}>Blog</Link>
               </li>
-              <li className={"nav-elements " + navActive.elements} role="menuitem">
+              <li
+                className={"nav-elements " + navActive.elements}
+                role="menuitem"
+              >
                 <Link to={`/elements`}>Elements</Link>
               </li>
             </ul>
           </nav>
           <div className="site-head-center">
             <Link className="site-head-logo" to={`/`}>
-              {title}
+              {navHeading}
             </Link>
           </div>
           <div className="site-head-right">
@@ -101,8 +104,8 @@ const Layout = props => {
         </div>
       </main>
       <footer className="site-foot">
-        &copy; {new Date().getFullYear()} <Link to={`/`}>{title}</Link> &mdash;
-        Built with{" "}
+        &copy; {new Date().getFullYear()} <Link to={`/`}>{navHeading}</Link>{" "}
+        &mdash; Built with{" "}
         <a
           href="https://gatsbyjs.org"
           target="_blank"

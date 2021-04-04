@@ -10,16 +10,13 @@ import "../styles/normalize.css"
 import "../styles/css/screen.css"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ data }, location) => {
-  const siteTitle = data.site.siteMetadata.title
+  const navHeading = data.site.siteMetadata.navHeading
   const posts = data.allMarkdownRemark.edges
   let postCounter = 0
 
   return (
-    <Layout title={siteTitle} path="/">
-      <SEO
-        title="Home"
-        keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-      />
+    <Layout navHeading={navHeading} path="/">
+      <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
       {/* <Bio /> */}
       {data.site.siteMetadata.description && (
         <header className="page-head">
@@ -49,7 +46,7 @@ const indexQuery = graphql`
   query {
     site {
       siteMetadata {
-        title
+        navHeading
         description
       }
     }
