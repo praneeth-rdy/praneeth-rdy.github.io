@@ -7,6 +7,7 @@ module.exports = {
     title: siteConfig.name,
     navHeading: siteConfig.shortName,
     author: siteConfig.author,
+    authorFullName: siteConfig.fullName,
     description: siteConfig.description,
     siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
     social: {

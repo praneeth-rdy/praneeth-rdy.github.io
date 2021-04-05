@@ -6,8 +6,10 @@ import SEO from "../components/seo"
 
 // import "../styles/global.scss"
 import "../styles/normalize.css"
-import "../styles/css/screen.css"
-import BlogItem from "../components/blogItem"
+import "../styles/css/screens/main.css"
+
+import BlogItem from "../components/blog/blogItem"
+import HorizontalLine from "../components/horizontalLine"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
@@ -25,12 +27,7 @@ const BlogIndex = ({ data }, location) => {
           </h2>
         </header>
       )}
-      <hr
-        style={{
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          height: 2,
-        }}
-      />
+      <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
       <div className="blog-body">
         {posts.map(({ node }) => {
           postCounter++

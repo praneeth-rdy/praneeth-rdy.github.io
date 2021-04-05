@@ -23,6 +23,8 @@ const Layout = props => {
     case "/elements":
       navActive.elements = "nav-current"
       break
+    default:
+      break
   }
   return (
     <div className={`site-wrapper ${toggleNav ? `site-head-open` : ``}`}>
@@ -44,7 +46,7 @@ const Layout = props => {
               </div>
             </div>
           </a>
-          <nav id="swup" class="site-head-left">
+          <nav id="swup" className="site-head-left">
             <ul className="nav" role="menu">
               <li className={"nav-home " + navActive.home} role="menuitem">
                 <Link to={`/`}>Home</Link>

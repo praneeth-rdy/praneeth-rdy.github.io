@@ -4,27 +4,30 @@ import { graphql, StaticQuery } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PostCard from "../components/postCard"
+import HorizontalLine from "../components/horizontalLine"
 
 // import "../styles/global.scss"
 import "../styles/normalize.css"
-import "../styles/css/screen.css"
+import "../styles/css/screens/main.css"
+
+import IntroSection from "../components/homeScreen/introSection"
+
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
+  const fullName = data.site.siteMetadata.authorFullName
   const posts = data.allMarkdownRemark.edges
+  const image = data.file.childImageSharp.fluid
   let postCounter = 0
 
   return (
     <Layout navHeading={navHeading} path="/">
       <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
-      {/* <Bio /> */}
-      {data.site.siteMetadata.description && (
-        <header className="page-head">
-          <h2 className="page-head-title">
-            {data.site.siteMetadata.description}
-          </h2>
-        </header>
-      )}
+
+      {/* Introduction Section */}
+      <IntroSection fullName={fullName} image={image} />
+      <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
+
       <div className="post-feed">
         {posts.map(({ node }) => {
           postCounter++
@@ -46,8 +49,16 @@ const indexQuery = graphql`
   query {
     site {
       siteMetadata {
+        authorFullName
         navHeading
         description
+      }
+    }
+    file(relativePath: { eq: "home/intro-light-mode.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {

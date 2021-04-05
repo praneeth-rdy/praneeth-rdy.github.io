@@ -6,7 +6,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import "../styles/normalize.css"
-import "../styles/css/screen.css"
+import "../styles/css/screens/main.css"
 
 const AboutPage = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
