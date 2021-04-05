@@ -1,12 +1,14 @@
 import React from "react"
 import Img from "gatsby-image"
-import { FaCodepen, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
+import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../../styles/css/screens/homescreen/intro-section.css"
-import { Link } from "gatsby"
+import { graphql, StaticQuery } from "gatsby"
 
-function IntroSection({ fullName, image }) {
-  console.log(image)
+function IntroSection({ image, data }) {
+  const social = data.site.siteMetadata.social
+  const fullName = data.site.siteMetadata.authorFullName
+  console.log(social)
   return (
     <section className="page-head intro-section">
       <div className="intro-text">
@@ -22,16 +24,16 @@ function IntroSection({ fullName, image }) {
             Download Resume
           </a>
           <div className="icons-container">
-            <a href="">
-              <FaGithub className="icon" />
+            <a href={social.github} target="_blank">
+              <FaGithub className="icon" target="_blank" />
             </a>
-            <a href="">
-              <FaLinkedin className="icon" />
+            <a href={social.linkedin}>
+              <FaLinkedin className="icon" target="_blank" />
             </a>
-            <a href="">
-              <FaCodepen className="icon" />
+            <a href={social.facebook}>
+              <FaFacebook className="icon" target="_blank" />
             </a>
-            <a href="">
+            <a href={"mailto:" + social.email}>
               <FaEnvelope className="icon" />
             </a>
           </div>
@@ -42,4 +44,25 @@ function IntroSection({ fullName, image }) {
   )
 }
 
-export default IntroSection
+const indexQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        authorFullName
+        social {
+          github
+          linkedin
+          facebook
+          email
+        }
+      }
+    }
+  }
+`
+
+export default props => (
+  <StaticQuery
+    query={indexQuery}
+    render={data => <IntroSection props data={data} {...props} />}
+  />
+)

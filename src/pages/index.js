@@ -15,7 +15,6 @@ import IntroSection from "../components/homeScreen/introSection"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
-  const fullName = data.site.siteMetadata.authorFullName
   const posts = data.allMarkdownRemark.edges
   const image = data.file.childImageSharp.fluid
   let postCounter = 0
@@ -25,7 +24,7 @@ const BlogIndex = ({ data }, location) => {
       <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
       {/* Introduction Section */}
-      <IntroSection fullName={fullName} image={image} />
+      <IntroSection image={image} />
       <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
 
       <div className="post-feed">
@@ -49,7 +48,6 @@ const indexQuery = graphql`
   query {
     site {
       siteMetadata {
-        authorFullName
         navHeading
         description
       }
