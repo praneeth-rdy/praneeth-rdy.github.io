@@ -1,7 +1,9 @@
 import React from "react"
 import Img from "gatsby-image"
+import { FaCodepen, FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../../styles/css/screens/homescreen/intro-section.css"
+import { Link } from "gatsby"
 
 function IntroSection({ fullName, image }) {
   console.log(image)
@@ -19,6 +21,20 @@ function IntroSection({ fullName, image }) {
           >
             Download Resume
           </a>
+          <div className="icons-container">
+            <a href="">
+              <FaGithub className="icon" />
+            </a>
+            <a href="">
+              <FaLinkedin className="icon" />
+            </a>
+            <a href="">
+              <FaCodepen className="icon" />
+            </a>
+            <a href="">
+              <FaEnvelope className="icon" />
+            </a>
+          </div>
         </div>
       </div>
       <Img className="intro-image" fluid={image} style={{ width: "400px" }} />
