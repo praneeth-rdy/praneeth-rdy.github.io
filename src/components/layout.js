@@ -8,6 +8,8 @@ const Layout = props => {
     home: "",
     about: "",
     blog: "",
+    publications: "",
+    contact: "",
     elements: "",
   }
   switch (path) {
@@ -19,6 +21,12 @@ const Layout = props => {
       break
     case "/blog":
       navActive.blog = "nav-current"
+      break
+    case "/publications":
+      navActive.publications = "nav-current"
+      break
+    case "/contact":
+      navActive.contact = "nav-current"
       break
     case "/elements":
       navActive.elements = "nav-current"
@@ -62,6 +70,18 @@ const Layout = props => {
               </li>
               <li className={"nav-elements " + navActive.blog} role="menuitem">
                 <Link to={`/blog`}>Blog</Link>
+              </li>
+              <li
+                className={"nav-elements " + navActive.publications}
+                role="menuitem"
+              >
+                <Link to={`/publications`}>Publications</Link>
+              </li>
+              <li
+                className={"nav-elements " + navActive.contact}
+                role="menuitem"
+              >
+                <Link to={`/contact`}>Contact</Link>
               </li>
               <li
                 className={"nav-elements " + navActive.elements}
