@@ -264,7 +264,7 @@ body {
 .nav-burger {
   display: none;
   position: absolute;
-  left: 0;
+  right: 0;
   z-index: 9999;
   padding: 12px 12px 12px 0;
 }
@@ -295,9 +295,9 @@ body {
   }
   .site-head-left a,
   .site-head-right a {
-    margin: 8px 0;
+    margin: 8px 15px;
     padding: 1px 0;
-    font-size: 2.6rem;
+    font-size: 2rem;
     line-height: 1.15em;
     font-weight: 200;
     opacity: 0;
@@ -305,8 +305,12 @@ body {
       opacity 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(1.1) translateY(-25px);
   }
+  #nav-heading {
+    margin-top: 28px;
+  }
+
   .site-head-right a {
-    padding: 5px 0;
+    padding: 5px 15px;
     margin: 1px 0;
     font-size: 2rem;
   }
