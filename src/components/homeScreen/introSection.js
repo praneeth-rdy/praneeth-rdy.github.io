@@ -24,7 +24,7 @@ function IntroSection({ image, data }) {
             Download Resume
           </a>
           <div className="icons-container">
-            <a href={social.github} target="_blank">
+            <a href={social.github} target="_blank" rel="noreferrer">
               <FaGithub className="icon" target="_blank" />
             </a>
             <a href={social.linkedin}>

@@ -1,12 +1,12 @@
 {
   "homepage": "https://praneeth-rdy.github.io/",
-  "name": "gatsby-london",
+  "name": "praneeth-rdy.github.io",
   "private": true,
-  "description": "A custom, image-centric theme for Gatsby",
+  "description": "Praneeth Kolanu's portfolio project, which is developed using React, Gatsby",
   "version": "1.0.0",
-  "author": "Imed Adel <aadelimed@gmail.com>",
+  "author": "Praneeth Kolanu <praneeth.kolanu.iitkgp@gmail.com>",
   "bugs": {
-    "url": "https://github.com/ImedAdel/gatsby-london/issues"
+    "url": "https://github.com/praneeth-rdy/praneeth-rdy.github.io/issues"
   },
   "dependencies": {
     "gatsby": "^2.4.2",
@@ -60,7 +60,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ImedAdel/gatsby-london.git"
+    "url": "git+https://github.com/praneeth-rdy/praneeth-rdy.github.io.git"
   },
   "scripts": {
     "build": "gatsby build",
