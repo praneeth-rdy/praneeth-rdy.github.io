@@ -71,7 +71,7 @@ const Layout = props => {
               </li>
             </ul>
           </nav>
-          <div className="site-head-right">
+          {/* <div className="site-head-right">
             <div className="social-links">
               <a
                 href="https://www.facebook.com"
@@ -98,7 +98,7 @@ const Layout = props => {
                 RSS
               </Link>
             </div>
-          </div>
+          </div> */}
         </div>
       </header>
       <main id="site-main" className="site-main">
