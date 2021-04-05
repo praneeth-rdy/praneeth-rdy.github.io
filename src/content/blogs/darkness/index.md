@@ -1,9 +1,8 @@
 ---
 title: Darkness
 date: "2019-05-08"
-quote: Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum.
-description: Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.
-thumbnail: ../images/bbbb.jpg
+thumbnail: ./bbbb.jpg
+description: Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.
 ---
 
 ### A wallpaper series using shapes and light by [Jean-Marc Denis](http://jmd.im/black)
@@ -14,18 +13,18 @@ This is the final render.
 
 <div class="kg-card kg-image-card kg-width-full">
 
-![Darkness](../images/BLACK_II_desktop-1.jpg)
+![Darkness](./BLACK_II_desktop-1.jpg)
 
 </div>
 
 <div class="kg-card kg-image-card kg-width-full">
 
-![Darkness](../images/BLACK_IX_desktop-1.jpg)
+![Darkness](./BLACK_IX_desktop-1.jpg)
 
 </div>
 
 <div class="kg-card kg-image-card kg-width-full">
 
-![Darkness](../images/BLACK_I_desktop-1.jpg)
+![Darkness](./BLACK_I_desktop-1.jpg)
 
 </div>
