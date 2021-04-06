@@ -8,6 +8,6 @@ body::-webkit-scrollbar {
 
 body::-webkit-scrollbar-thumb {
   border-radius: 1rem;
-  background-color: #3eb0ef;
+  background-color: var(--color-primary);
   /*background-image: linear-gradient(to bottom, #0f0f0f 0%, #d6d6d6 100%);*/
 }

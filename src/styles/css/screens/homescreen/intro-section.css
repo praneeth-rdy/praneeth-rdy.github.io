@@ -57,7 +57,7 @@ h3 {
 }
 
 .intro-section .icons-container .icon:hover {
-  color: color(#3eb0ef l(-15%));
+  color: color(var(--color-primary) l(-15%));
 }
 
 @media (min-width: 480px) {
