@@ -98,7 +98,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/content/images/gatsby-icon.png`,
+        icon: `src/content/images/website-icon.png`,
       },
     },
     `gatsby-plugin-netlify`,
