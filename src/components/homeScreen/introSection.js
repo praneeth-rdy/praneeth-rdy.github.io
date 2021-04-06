@@ -17,7 +17,7 @@ function IntroSection({ image, data }) {
           <h1>{fullName}</h1>
           <h3 className="designation">Passionate Full Stack Developer</h3>
           <a
-            className="button"
+            className="button grow"
             href="Praneeth-Reddy-Kolanu-CV.pdf"
             download="Praneeth-Reddy-Kolanu-CV.pdf"
           >

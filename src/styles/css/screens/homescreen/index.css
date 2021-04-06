@@ -1,0 +1,30 @@
+.main-heading {
+  text-align: center;
+  margin: 0 0 15px 0;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.home-section {
+  justify-content: center;
+  padding: 6vw 0;
+  max-width: 95%;
+  margin: auto;
+}
+
+.home-section p {
+  font-size: 1.5rem;
+}
+
+@media (min-width: 740px) {
+  .home-section {
+    max-width: 75%;
+  }
+  .main-heading {
+    margin: 0 0 30px 0;
+    font-size: 4rem;
+  }
+  .home-section p {
+    font-size: 2rem;
+  }
+}

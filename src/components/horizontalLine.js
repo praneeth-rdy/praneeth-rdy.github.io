@@ -6,6 +6,7 @@ function HorizontalLine({ color }) {
       style={{
         backgroundColor: color,
         height: 2,
+        margin: "30px 0",
       }}
     />
   )
