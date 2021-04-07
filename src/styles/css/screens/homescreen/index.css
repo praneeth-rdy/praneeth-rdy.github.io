@@ -7,7 +7,7 @@
 
 .home-section {
   justify-content: center;
-  padding: 6vw 0;
+  padding: 5vw 0;
   max-width: 95%;
   margin: auto;
 }
@@ -25,6 +25,6 @@
     font-size: 4rem;
   }
   .home-section p {
-    font-size: 2rem;
+    font-size: 1.9rem;
   }
 }
