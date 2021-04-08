@@ -6,16 +6,6 @@ import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 import "../../styles/css/screens/homescreen/skillset-section.css"
 
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  autoplay: true,
-  slidesToShow: 3,
-  slidesToScroll: 1,
-  cssEase: "linear",
-}
-
 function SkillsetSection(props) {
   //use data as props.data
   const skills = props.data.allMarkdownRemark.edges

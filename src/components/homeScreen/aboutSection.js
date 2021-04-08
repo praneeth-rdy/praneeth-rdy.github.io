@@ -8,11 +8,7 @@ function AboutSection({ image }) {
       <h2 class="main-heading">About</h2>
       <div className="about-content row">
         <figure className="about-image">
-          <Img
-            fluid={image}
-            className="b-shadow"
-            style={{ borderRadius: "8px" }}
-          />
+          <Img fluid={image} className="" style={{ borderRadius: "8px" }} />
         </figure>
         <div className="about-description">
           <p>
