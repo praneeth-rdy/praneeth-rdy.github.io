@@ -1,8 +1,6 @@
 import React from "react"
-import Img from "gatsby-image"
 import { StaticQuery, graphql, Link } from "gatsby"
 import "../../styles/css/screens/homescreen/projects-section.css"
-import image from "../../content/images/profile-pic.jpg"
 
 function ProjectsSection(props) {
   //use data as props.data
@@ -16,7 +14,7 @@ function ProjectsSection(props) {
           projectsCounter++
           return (
             <div className="project-wrapper">
-              <Link>
+              <Link to={"/projects" + node.fields.slug}>
                 <div className="project">
                   <img src={node.frontmatter.thumbnail.publicURL} />
                   <div className="project-info">

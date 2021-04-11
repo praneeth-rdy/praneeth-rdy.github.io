@@ -14,7 +14,7 @@ import "../styles/css/screens/homescreen/index.css"
 import IntroSection from "../components/homeScreen/introSection"
 import AboutSection from "../components/homeScreen/aboutSection"
 import SkillsetSection from "../components/homeScreen/skillsetSection"
-// import ExperienceSection from "../components/homeScreen/experienceSection"
+import ExperienceSection from "../components/homeScreen/experienceSection"
 import ProjectsSection from "../components/homeScreen/projectsSection"
 
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
@@ -38,7 +38,7 @@ const BlogIndex = ({ data }, location) => {
 
       <ProjectsSection />
 
-      {/* <ExperienceSection /> */}
+      <ExperienceSection />
 
       {/* <div className="post-feed">
         {posts.map(({ node }) => {

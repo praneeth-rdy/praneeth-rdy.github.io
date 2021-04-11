@@ -13,21 +13,7 @@ function ExperienceSection(props) {
       <div className="cards-container row">
         {skills.map(({ node }) => {
           skillCounter++
-          return (
-            <div className="card-wrapper">
-              <div className="card b-shadow grow">
-                <h3 className="heading">{node.frontmatter.title}</h3>
-                <div className="card-image">
-                  <Img
-                    fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
-                  />
-                </div>
-                <div className="card-description">
-                  <p>{node.frontmatter.description}</p>
-                </div>
-              </div>
-            </div>
-          )
+          return <div className="card-wrapper"></div>
         })}
       </div>
     </section>
