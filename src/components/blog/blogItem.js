@@ -1,18 +1,29 @@
 import React from "react"
 import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { FaClock, FaUser } from "react-icons/fa"
+// import Img from "gatsby-image"
 import HorizontalLine from "../horizontalLine"
+import "../../styles/css/screens/blog/blog-item.css"
 
 export default ({ node, postClass }) => (
-  <article
-    className="post-content page-template no-image"
-    style={{ padding: 0 }}
-  >
-    <div className="post-content-body">
-      <h3 id="heading-level-3" style={{ margin: 0 }}>
-        {node.frontmatter.title || node.fields.slug}
-      </h3>
-      <Img
+  <article className="blog-item" style={{ padding: 0 }}>
+    <Link to={"/blog" + node.fields.slug} className="blog-item-link">
+      <div className="post-content-body">
+        <h2 className="blog-item-category">General</h2>
+        <h3 className="blog-item-heading" style={{ margin: 0 }}>
+          {node.frontmatter.title || node.fields.slug}
+        </h3>
+        <div className="blog-item-addinfo">
+          <h2>
+            <FaClock className="fa-icon" />
+            MARCH 19, 2021
+          </h2>
+          <h2>
+            <FaUser className="fa-icon" />
+            PRANEETH REDDY
+          </h2>
+        </div>
+        {/* <Img
         fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
         className={`post-card ${postClass} ${
           node.frontmatter.thumbnail ? `with-image` : `no-image`
@@ -23,13 +34,13 @@ export default ({ node, postClass }) => (
             marginBottom: "4rem",
           }
         }
-      />
-      <blockquote>{node.frontmatter.quote}</blockquote>
-      <p>{node.frontmatter.description}</p>
-    </div>
-    <Link to={"/blog" + node.fields.slug} className="button primary fit small">
-      Readmore
+      /> */}
+        <blockquote className="blog-item-quote">
+          {node.frontmatter.quote}
+        </blockquote>
+        <p className="blog-item-description">{node.frontmatter.description}</p>
+      </div>
     </Link>
-    <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
+    <HorizontalLine color="rgba(0, 0, 0, 0.5)" margin="50px" />
   </article>
 )

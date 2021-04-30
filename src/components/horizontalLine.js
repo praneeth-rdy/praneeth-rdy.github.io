@@ -1,12 +1,15 @@
 import React from "react"
 
-function HorizontalLine({ color }) {
+function HorizontalLine({ color, margin }) {
+  if (margin == "") {
+    margin = "30px"
+  }
   return (
     <hr
       style={{
         backgroundColor: color,
         height: 2,
-        margin: "30px 0",
+        margin: margin + " 0",
       }}
     />
   )

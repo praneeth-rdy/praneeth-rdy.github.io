@@ -1,0 +1,72 @@
+@import "../../vars.css";
+.blog-item {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-item .blog-item-category {
+  color: color(var(--color-primary));
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.blog-item .blog-item-heading {
+  color: color(var(--color-base) l(+20%));
+  text-align: left;
+}
+
+.blog-item .blog-item-quote {
+  margin-top: 13px;
+  margin-bottom: 13px;
+  color: color(var(--color-base) l(+30%));
+}
+
+.blog-item-description {
+  margin: 5px;
+  color: color(var(--color-base) l(+10%));
+}
+
+.blog-item-link:hover,
+.blog-item-link {
+  text-decoration: none;
+}
+
+.blog-item .blog-item-addinfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  text-transform: uppercase;
+}
+
+.blog-item .blog-item-addinfo > h2 {
+  color: color(var(--color-base) l(+40%));
+  font-size: 14px;
+  margin-right: 12px;
+  margin-top: 7px;
+}
+
+.blog-item .fa-icon {
+  margin-right: 3px;
+}
+
+@media (min-width: 480px) {
+}
+
+@media (min-width: 740px) {
+}
+
+@media (min-width: 980px) {
+  .blog-item {
+    max-width: 70%;
+    flex-basis: 70%;
+  }
+}
+
+@media (min-width: 1280px) {
+}
+
+@media (min-width: 1680px) {
+}
