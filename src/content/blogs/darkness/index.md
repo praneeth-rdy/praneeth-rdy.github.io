@@ -11,7 +11,7 @@ I used a poly reduction on the mesh as a proxy to be able to create my studio se
 
 This is the final render.
 
-<div class="kg-card kg-image-card kg-width-full">
+<!-- <div class="kg-card kg-image-card kg-width-full">
 
 ![Darkness](./BLACK_II_desktop-1.jpg)
 
@@ -27,4 +27,4 @@ This is the final render.
 
 ![Darkness](./BLACK_I_desktop-1.jpg)
 
-</div>
+</div> -->

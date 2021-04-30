@@ -28,7 +28,7 @@ class BlogPostTemplate extends React.Component {
           )}
 
           {post.frontmatter.thumbnail && (
-            <div className="post-content-image">
+            <div className="kg-image-card kg-width-half">
               <Img
                 className="kg-image"
                 fluid={post.frontmatter.thumbnail.childImageSharp.fluid}
@@ -36,7 +36,6 @@ class BlogPostTemplate extends React.Component {
               />
             </div>
           )}
-
           <div
             className="post-content-body"
             dangerouslySetInnerHTML={{ __html: post.html }}
