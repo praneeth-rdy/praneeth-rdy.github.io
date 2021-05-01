@@ -1,4 +1,4 @@
-.main-heading {
+.section-heading {
   text-align: center;
   margin: 0 0 15px 0;
   font-size: 3rem;
@@ -20,7 +20,7 @@
   .home-section {
     max-width: 75%;
   }
-  .main-heading {
+  .section-heading {
     margin: 0 0 30px 0;
     font-size: 4rem;
   }

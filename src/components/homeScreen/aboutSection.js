@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 function AboutSection({ image }) {
   return (
     <section className="home-section post-content-body">
-      <h2 class="main-heading">About</h2>
+      <h2 class="section-heading">About</h2>
       <div className="about-content row">
         <figure className="about-image">
           <Img fluid={image} className="" style={{ borderRadius: "8px" }} />

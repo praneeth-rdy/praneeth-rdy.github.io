@@ -11,7 +11,7 @@ function SkillsetSection(props) {
   const skills = props.data.allMarkdownRemark.edges
   return (
     <section className="home-section post-content-body">
-      <h2 class="main-heading">Skillset</h2>
+      <h2 class="section-heading">Skillset</h2>
       <div className="cards-container row">
         {skills.map(({ node }) => {
           return (

@@ -7,7 +7,7 @@ function ProjectsSection(props) {
   const projects = props.data.allMarkdownRemark.edges
   return (
     <section className="home-section post-content-body">
-      <h2 class="main-heading">Projects</h2>
+      <h2 class="section-heading">Projects</h2>
       <div className="projects-container row">
         {projects.map(({ node }) => {
           return (
