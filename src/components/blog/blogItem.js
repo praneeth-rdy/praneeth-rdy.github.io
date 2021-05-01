@@ -9,18 +9,18 @@ export default ({ node, postClass }) => (
   <article className="blog-item" style={{ padding: 0 }}>
     <Link to={"/blog" + node.fields.slug} className="blog-item-link">
       <div className="post-content-body">
-        <h2 className="blog-item-category">General</h2>
+        <h2 className="blog-item-category">{node.frontmatter.category}</h2>
         <h3 className="blog-item-heading" style={{ margin: 0 }}>
           {node.frontmatter.title || node.fields.slug}
         </h3>
         <div className="blog-item-addinfo">
           <h2>
             <FaClock className="fa-icon" />
-            MARCH 19, 2021
+            {node.frontmatter.date}
           </h2>
           <h2>
             <FaUser className="fa-icon" />
-            PRANEETH REDDY
+            {node.frontmatter.author}
           </h2>
         </div>
         {/* <Img

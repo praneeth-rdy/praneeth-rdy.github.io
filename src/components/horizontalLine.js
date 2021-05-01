@@ -1,7 +1,7 @@
 import React from "react"
 
 function HorizontalLine({ color, margin }) {
-  if (margin == "") {
+  if (margin === "") {
     margin = "30px"
   }
   return (

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
@@ -7,14 +7,35 @@ import SEO from "../components/seo"
 // import "../styles/global.scss"
 import "../styles/normalize.css"
 import "../styles/css/screens/main.css"
+import "../styles/css/screens/blog/blog-page.css"
 
 import BlogItem from "../components/blog/blogItem"
 import HorizontalLine from "../components/horizontalLine"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogIndex = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
-  const posts = data.allMarkdownRemark.edges
+  const allPosts = data.allMarkdownRemark.edges
+  const allCategories = [
+    "all",
+    ...new Set(
+      data.allMarkdownRemark.edges.map(({ node }) => node.frontmatter.category)
+    ),
+  ]
+  const [posts, setPosts] = useState(allPosts)
+  const [category, setCategory] = useState("all")
   let postCounter = 0
+
+  function filterPosts(categ) {
+    if (categ === "all") {
+      setPosts(allPosts)
+    } else {
+      const newPosts = allPosts.filter(
+        postItem => postItem.node.frontmatter.category === categ
+      )
+      setPosts(newPosts)
+    }
+    setCategory(categ)
+  }
 
   return (
     <Layout navHeading={navHeading} path="/blog">
@@ -28,6 +49,30 @@ const BlogIndex = ({ data }, location) => {
         </header>
       )}
       <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
+      <h2 className="blogs-page-heading">My Recent Blogs</h2>
+      <div className="blog-filters-container">
+        {allCategories.map(categ => {
+          if (categ === category) {
+            return (
+              <button
+                className={"blog-filter button primary small"}
+                onClick={() => filterPosts(categ)}
+              >
+                {categ[0].toUpperCase() + categ.slice(1)}
+              </button>
+            )
+          } else {
+            return (
+              <button
+                className={"blog-filter button small"}
+                onClick={() => filterPosts(categ)}
+              >
+                {categ[0].toUpperCase() + categ.slice(1)}
+              </button>
+            )
+          }
+        })}
+      </div>
       <div className="blog-body">
         {posts.map(({ node }) => {
           postCounter++
@@ -66,8 +111,10 @@ const indexQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
+            author
             quote
             description
+            category
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 1360) {

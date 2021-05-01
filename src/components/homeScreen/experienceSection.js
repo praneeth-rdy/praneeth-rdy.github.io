@@ -1,18 +1,16 @@
 import React from "react"
-import Img from "gatsby-image"
+//import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 import "../../styles/css/screens/homescreen/experience-section.css"
 
 function ExperienceSection(props) {
   //use data as props.data
   const skills = props.data.allMarkdownRemark.edges
-  let skillCounter = 0
   return (
     <section className="home-section post-content-body">
       <h2 class="main-heading">Skillset</h2>
       <div className="cards-container row">
         {skills.map(({ node }) => {
-          skillCounter++
           return <div className="card-wrapper"></div>
         })}
       </div>

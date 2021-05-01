@@ -5,18 +5,19 @@ import "../../styles/css/screens/homescreen/projects-section.css"
 function ProjectsSection(props) {
   //use data as props.data
   const projects = props.data.allMarkdownRemark.edges
-  let projectsCounter = 0
   return (
     <section className="home-section post-content-body">
       <h2 class="main-heading">Projects</h2>
       <div className="projects-container row">
         {projects.map(({ node }) => {
-          projectsCounter++
           return (
             <div className="project-wrapper">
               <Link to={"/projects" + node.fields.slug}>
                 <div className="project">
-                  <img src={node.frontmatter.thumbnail.publicURL} />
+                  <img
+                    src={node.frontmatter.thumbnail.publicURL}
+                    alt="project"
+                  />
                   <div className="project-info">
                     <h4 className="project-heading">
                       {node.frontmatter.title}
