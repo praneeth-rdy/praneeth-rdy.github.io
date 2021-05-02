@@ -1,5 +1,15 @@
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import { StaticQuery, graphql } from "gatsby"
+import {
+  FaFacebook,
+  FaGithub,
+  FaBlo,
+  FaBlog,
+  FaBook,
+  FaFile,
+  FaGoogleDrive,
+  FaGlobe,
+} from "react-icons/fa"
 import "../../styles/css/screens/homescreen/projects-section.css"
 
 function ProjectsSection(props) {
@@ -7,13 +17,41 @@ function ProjectsSection(props) {
   const projects = props.data.allMarkdownRemark.edges
   return (
     <section className="home-section post-content-body">
-      <h2 class="section-heading">Projects</h2>
-      <div className="projects-container row">
+      <h2 className="section-heading">Projects</h2>
+      <div className="projects-container">
         {projects.map(({ node }) => {
           return (
-            <div className="project-wrapper">
-              <Link to={"/projects" + node.fields.slug}>
-                {/* <div className="project">
+            <div className="project-card">
+              <div className="image-box">
+                <img src={node.frontmatter.thumbnail.publicURL} />
+              </div>
+              <div className="content">
+                <div className="content-box">
+                  <h3>
+                    Project Name
+                    <br />
+                    <span>Tech Stack</span>
+                  </h3>
+                </div>
+                <ul className="sci">
+                  <li style={{ "--i": 1 }}>
+                    <a href="#">
+                      <FaGithub className="icon" />
+                    </a>
+                  </li>
+                  <li style={{ "--i": 2 }}>
+                    <a href="#">
+                      <FaGoogleDrive className="icon" />
+                    </a>
+                  </li>
+                  <li style={{ "--i": 3 }}>
+                    <a href="#">
+                      <FaGlobe className="icon" />
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              {/* <div className="project">
                   <img
                     src={node.frontmatter.thumbnail.publicURL}
                     alt="project"
@@ -27,7 +65,6 @@ function ProjectsSection(props) {
                     </p>
                   </div>
                 </div> */}
-              </Link>
             </div>
           )
         })}
