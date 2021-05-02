@@ -26,6 +26,11 @@
   height: 100%;
 }
 
+.projects-container .project-card .image-box .gatsby-image-wrapper {
+  height: 100%;
+  width: 100%;
+}
+
 .projects-container .project-card .image-box img {
   width: 100%;
   height: 100%;
