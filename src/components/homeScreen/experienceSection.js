@@ -8,7 +8,7 @@ function ExperienceSection(props) {
   // const experiences = props.data.allMarkdownRemark.edges
   return (
     <section className="home-section post-content-body">
-      <h2 class="section-heading">Experience</h2>
+      <h2 class="section-heading"><span>Experience</span></h2>
       <div className="experience-container row">
         <div className="experience-nav-container">
           <button className="experience-nav-item">Education</button>

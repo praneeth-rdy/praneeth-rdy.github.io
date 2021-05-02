@@ -1,7 +1,10 @@
 ---
-title: Android Development
-date: "2019-05-08"
-caption: Darkness cannot drive out darkness; only light can do that.
-description: Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.
+title: Project Name
+stack: React | Gatsby
+start: "2019-05-08"
+end: "2019-06-08"
+repo: https://github.com/
+drive: https://github.com/
+website: https://github.com/
 thumbnail: ./img.jpg
 ---

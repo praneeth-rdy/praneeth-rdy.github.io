@@ -15,30 +15,30 @@ function ProjectsSection(props) {
           return (
             <div className="project-card">
               <div className="image-box">
-                <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} />
+                <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} alt="project image" />
                 {/* <img src={node.frontmatter.thumbnail.publicURL} /> */}
               </div>
               <div className="content">
                 <div className="content-box">
                   <h3>
-                    Project Name
+                  {node.frontmatter.title}
                     <br />
-                    <span>Tech Stack</span>
+                    <span>{node.frontmatter.stack}</span>
                   </h3>
                 </div>
                 <ul className="sci">
                   <li style={{ "--i": 1 }}>
-                    <a href="#">
+                    <a href={node.frontmatter.repo} target="_blank" rel="noreferrer">
                       <FaGithub className="icon" />
                     </a>
                   </li>
                   <li style={{ "--i": 2 }}>
-                    <a href="#">
+                    <a href={node.frontmatter.drive} target="_blank" rel="noreferrer">
                       <FaGoogleDrive className="icon" />
                     </a>
                   </li>
                   <li style={{ "--i": 3 }}>
-                    <a href="#">
+                    <a href={node.frontmatter.website} target="_blank" rel="noreferrer">
                       <FaGlobe className="icon" />
                     </a>
                   </li>
@@ -78,8 +78,10 @@ const indexQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            caption
-            description
+            stack
+            repo
+            drive
+            website
             thumbnail {
               childImageSharp {
                 fluid(maxWidth: 1360) {
