@@ -1,4 +1,19 @@
-.projects-container .project-wrapper {
+@media (min-width: 480px) {
+}
+
+@media (min-width: 740px) {
+}
+
+@media (min-width: 980px) {
+}
+
+@media (min-width: 1280px) {
+}
+
+@media (min-width: 1680px) {
+}
+
+/* .projects-container .project-wrapper {
   padding: 5px;
   width: 100%;
 }
@@ -88,4 +103,4 @@
 }
 
 @media (min-width: 1680px) {
-}
+} */

@@ -13,7 +13,7 @@ function ProjectsSection(props) {
           return (
             <div className="project-wrapper">
               <Link to={"/projects" + node.fields.slug}>
-                <div className="project">
+                {/* <div className="project">
                   <img
                     src={node.frontmatter.thumbnail.publicURL}
                     alt="project"
@@ -26,7 +26,7 @@ function ProjectsSection(props) {
                       {node.frontmatter.caption}
                     </p>
                   </div>
-                </div>
+                </div> */}
               </Link>
             </div>
           )
