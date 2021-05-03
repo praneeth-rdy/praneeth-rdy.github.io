@@ -3,7 +3,7 @@ import { graphql, StaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 import "../styles/normalize.css"
 import "../styles/css/screens/main.css"
@@ -13,7 +13,7 @@ const ElementsPage = ({ data }, location) => {
 
   return (
     <Layout navHeading={navHeading} path="/elements">
-      <SEO
+      <Seo
         title="Elements"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
@@ -561,7 +561,7 @@ const indexQuery = graphql`
   }
 `
 
-export default props => (
+const ElementsPageExport = props => (
   <StaticQuery
     query={indexQuery}
     render={data => (
@@ -569,3 +569,5 @@ export default props => (
     )}
   />
 )
+
+export default ElementsPageExport;

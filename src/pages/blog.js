@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 // import "../styles/global.scss"
 import "../styles/normalize.css"
@@ -12,7 +12,7 @@ import "../styles/css/screens/blog/blog-page.css"
 import BlogItem from "../components/blog/blogItem"
 import HorizontalLine from "../components/horizontalLine"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
-const BlogIndex = ({ data }, location) => {
+const BlogPage = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
   const allPosts = data.allMarkdownRemark.edges
   const allCategories = [
@@ -39,7 +39,7 @@ const BlogIndex = ({ data }, location) => {
 
   return (
     <Layout navHeading={navHeading} path="/blog">
-      <SEO title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+      <Seo title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
       {/* <Bio /> */}
       {data.site.siteMetadata.description && (
         <header className="page-head">
@@ -129,11 +129,13 @@ const indexQuery = graphql`
   }
 `
 
-export default props => (
+const BlogPageExport = props => (
   <StaticQuery
     query={indexQuery}
     render={data => (
-      <BlogIndex location={props.location} props data={data} {...props} />
+      <BlogPage location={props.location} props data={data} {...props} />
     )}
   />
 )
+
+export default BlogPageExport;

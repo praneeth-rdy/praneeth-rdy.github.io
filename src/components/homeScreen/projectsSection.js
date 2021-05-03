@@ -96,9 +96,11 @@ const indexQuery = graphql`
   }
 `
 
-export default props => (
+const ProjectsSectionExport = props => (
   <StaticQuery
     query={indexQuery}
     render={data => <ProjectsSection props data={data} {...props} />}
   />
 )
+
+export default ProjectsSectionExport;

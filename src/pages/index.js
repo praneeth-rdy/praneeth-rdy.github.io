@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 // import PostCard from "../components/postCard"
 import HorizontalLine from "../components/horizontalLine"
 
@@ -18,7 +18,7 @@ import ExperienceSection from "../components/homeScreen/experienceSection"
 import ProjectsSection from "../components/homeScreen/projectsSection"
 
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
-const BlogIndex = ({ data }, location) => {
+const Index = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
   // const posts = data.allMarkdownRemark.edges
   const introPic = data.introPic.childImageSharp.fluid
@@ -27,7 +27,7 @@ const BlogIndex = ({ data }, location) => {
 
   return (
     <Layout navHeading={navHeading} path="/">
-      <SEO title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+      <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
       {/* Introduction Section */}
       <IntroSection image={introPic} />
@@ -104,11 +104,13 @@ const indexQuery = graphql`
   }
 `
 
-export default props => (
+const IndexExport = props => (
   <StaticQuery
     query={indexQuery}
     render={data => (
-      <BlogIndex location={props.location} props data={data} {...props} />
+      <Index location={props.location} props data={data} {...props} />
     )}
   />
 )
+
+export default IndexExport;

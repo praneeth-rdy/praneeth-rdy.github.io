@@ -75,9 +75,11 @@ const indexQuery = graphql`
   }
 `
 
-export default props => (
+const ExperienceSectionExport = props => (
   <StaticQuery
     query={indexQuery}
     render={data => <ExperienceSection props data={data} {...props} />}
   />
 )
+
+export default ExperienceSectionExport;

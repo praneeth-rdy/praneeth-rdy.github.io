@@ -60,9 +60,11 @@ const indexQuery = graphql`
   }
 `
 
-export default props => (
+const IntroSectionExport = props => (
   <StaticQuery
     query={indexQuery}
     render={data => <IntroSection props data={data} {...props} />}
   />
 )
+
+export default IntroSectionExport;
