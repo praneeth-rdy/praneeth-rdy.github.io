@@ -13,21 +13,19 @@ function SkillsetSection(props) {
   return (
     <section className="home-section post-content-body">
       <h2 class="section-heading">Skillset</h2>
-      <div className="cards-container row">
+      <div className="skill-cards-container">
         {skills.map(({ node }) => {
           return (
-            <div className="card-wrapper">
               <div className="card b-shadow grow">
-                <h3 className="heading">{node.frontmatter.title}</h3>
                 <div className="card-image">
                   <GatsbyImage
                     image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData}/>
                 </div>
+                <h3 className="heading">{node.frontmatter.title}</h3>
                 <div className="card-description">
                   <p>{node.frontmatter.description}</p>
                 </div>
               </div>
-            </div>
           )
         })}
       </div>

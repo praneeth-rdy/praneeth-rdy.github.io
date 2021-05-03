@@ -1,9 +1,12 @@
-.card-wrapper {
-  padding: 1vw;
-  max-width: 100%;
-  flex-basis: 100%;
-  margin-left: auto;
-  margin-right: auto;
+@import "../../vars.css";
+
+
+
+.skill-cards-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -11,20 +14,25 @@
   padding: 25px;
   text-align: center;
   height: 100%;
+  margin: 1%;
 }
 
-.card .heading {
+.card > h3 {
   font-size: 2rem;
-  color: #454545;
+  color: color(var(--color-base) l(+20%));
+  margin: 0;
 }
-.card .gatsby-image-wrapper {
+.card .gatsby-image-wrapper img{
   margin-bottom: 5px;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
 }
 
 @media (min-width: 480px) {
-  .card-wrapper {
-    max-width: 50%;
-    flex-basis: 50%;
+  .card {
+    max-width: 48%;
+    flex-basis: 48%;
   }
 }
 
@@ -35,16 +43,13 @@
 }
 
 @media (min-width: 980px) {
-  .card-wrapper {
-    max-width: 33%;
-    flex-basis: 33%;
-  }
+  
 }
 
 @media (min-width: 1280px) {
-  .card-wrapper {
-    max-width: 25%;
-    flex-basis: 25%;
+  .card {
+    max-width: 32%;
+    flex-basis: 32%;
   }
 }
 

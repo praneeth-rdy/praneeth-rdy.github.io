@@ -24,6 +24,6 @@ html.is-animating .transition-fade {
   transition: transform 0.3s ease;
 }
 .grow:hover {
-  transform: scale(1.05);
+  transform: scale(1.035);
   transition: transform 0.3s ease;
 }
