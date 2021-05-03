@@ -41,14 +41,12 @@ const Layout = props => {
           <a
             className="nav-burger"
             href="#"
-            onClick={() => setToggleNav(!toggleNav)}
-          >
+            onClick={() => setToggleNav(!toggleNav)}>
             <div
               className="hamburger hamburger--collapse"
               aria-label="Menu"
               role="button"
-              aria-controls="navigation"
-            >
+              aria-controls="navigation">
               <div className="hamburger-box">
                 <div className="hamburger-inner" />
               </div>
@@ -61,32 +59,26 @@ const Layout = props => {
             </Link>
           </div>
           <nav id="swup" className="site-head-left">
-            <ul className="nav" role="menu">
-              <li className={"nav-home " + navActive.home} role="menuitem">
+            <ul className="nav">
+              <li className={"nav-home " + navActive.home}>
                 <Link to={`/`}>Home</Link>
               </li>
-              <li className={"nav-about " + navActive.about} role="menuitem">
+              <li className={"nav-about " + navActive.about}>
                 <Link to={`/about`}>About</Link>
               </li>
-              <li className={"nav-elements " + navActive.blog} role="menuitem">
+              <li className={"nav-elements " + navActive.blog}>
                 <Link to={`/blog`}>Blog</Link>
               </li>
               <li
-                className={"nav-elements " + navActive.publications}
-                role="menuitem"
-              >
+                className={"nav-elements " + navActive.publications}>
                 <Link to={`/publications`}>Publications</Link>
               </li>
               <li
-                className={"nav-elements " + navActive.contact}
-                role="menuitem"
-              >
+                className={"nav-elements " + navActive.contact}>
                 <Link to={`/contact`}>Contact</Link>
               </li>
               <li
-                className={"nav-elements " + navActive.elements}
-                role="menuitem"
-              >
+                className={"nav-elements " + navActive.elements}>
                 <Link to={`/elements`}>Elements</Link>
               </li>
             </ul>
