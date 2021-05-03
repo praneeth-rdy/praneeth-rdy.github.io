@@ -124,6 +124,7 @@ module.exports = {
         icon: `src/content/images/website-icon.png`,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-netlify`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,

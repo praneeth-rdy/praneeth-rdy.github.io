@@ -1,5 +1,6 @@
 import React from "react"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../../styles/css/screens/homescreen/intro-section.css"
@@ -39,7 +40,7 @@ function IntroSection({ image, data }) {
           </div>
         </div>
       </div>
-      <Img className="intro-image" fluid={image} style={{ width: "400px" }} />
+      <GatsbyImage className="intro-image" image={image} style={{ width: "400px" }} />
     </section>
   )
 }

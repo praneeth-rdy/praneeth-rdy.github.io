@@ -1,6 +1,7 @@
 import React from "react"
 //import Slider from "react-slick"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 //import "slick-carousel/slick/slick.css"
 //import "slick-carousel/slick/slick-theme.css"
 import { StaticQuery, graphql } from "gatsby"
@@ -19,9 +20,8 @@ function SkillsetSection(props) {
               <div className="card b-shadow grow">
                 <h3 className="heading">{node.frontmatter.title}</h3>
                 <div className="card-image">
-                  <Img
-                    fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
-                  />
+                  <GatsbyImage
+                    image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData}/>
                 </div>
                 <div className="card-description">
                   <p>{node.frontmatter.description}</p>
@@ -51,9 +51,7 @@ const indexQuery = graphql`
             description
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData
               }
             }
           }

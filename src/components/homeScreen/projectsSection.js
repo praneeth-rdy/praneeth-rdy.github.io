@@ -1,6 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa"
 import "../../styles/css/screens/homescreen/projects-section.css"
 
@@ -15,7 +16,7 @@ function ProjectsSection(props) {
           return (
             <div className="project-card">
               <div className="image-box">
-                <Img fluid={node.frontmatter.thumbnail.childImageSharp.fluid} alt="project image" />
+                <GatsbyImage image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData} alt="project image" />
                 {/* <img src={node.frontmatter.thumbnail.publicURL} /> */}
               </div>
               <div className="content">
@@ -84,9 +85,7 @@ const indexQuery = graphql`
             website
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData
               }
             }
           }

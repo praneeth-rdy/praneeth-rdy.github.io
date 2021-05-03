@@ -21,8 +21,8 @@ import ProjectsSection from "../components/homeScreen/projectsSection"
 const Index = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
   // const posts = data.allMarkdownRemark.edges
-  const introPic = data.introPic.childImageSharp.fluid
-  const aboutPic = data.aboutPic.childImageSharp.fluid
+  const introPic = data.introPic.childImageSharp.gatsbyImageData
+  const aboutPic = data.aboutPic.childImageSharp.gatsbyImageData
   // let postCounter = 0
 
   return (
@@ -67,16 +67,12 @@ const indexQuery = graphql`
     }
     introPic: file(relativePath: { eq: "home/intro-light-mode.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     aboutPic: file(relativePath: { eq: "home/about.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
@@ -92,9 +88,7 @@ const indexQuery = graphql`
             description
             thumbnail {
               childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
+                gatsbyImageData
               }
             }
           }

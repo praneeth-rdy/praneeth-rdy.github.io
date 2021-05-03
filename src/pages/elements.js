@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+// import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
@@ -137,22 +138,22 @@ const ElementsPage = ({ data }, location) => {
           <hr />
           <h2 id="images">Images</h2>
           <figure className="kg-card kg-image-card">
-            <Img
-              fluid={data.smallPic.childImageSharp.fluid}
+            <GatsbyImage
+              image={data.smallPic.childImageSharp.gatsbyImageData}
               className="kg-image"
             />
             <figcaption>Regular image</figcaption>
           </figure>
           <figure className="kg-card kg-image-card kg-width-wide">
-            <Img
-              fluid={data.medPic.childImageSharp.fluid}
+            <GatsbyImage
+              image={data.medPic.childImageSharp.gatsbyImageData}
               className="kg-image"
             />
             <figcaption>Large image</figcaption>
           </figure>
           <figure className="kg-card kg-image-card kg-width-full">
-            <Img
-              fluid={data.largePic.childImageSharp.fluid}
+            <GatsbyImage
+              image={data.largePic.childImageSharp.gatsbyImageData}
               className="kg-image"
             />
             <figcaption>Full bleed image</figcaption>
@@ -537,25 +538,19 @@ const indexQuery = graphql`
       relativePath: { eq: "fabio-comparelli-696506-unsplash.jpg" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     medPic: file(relativePath: { eq: "sophia-valkova-30139-unsplash.jpg" }) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
     largePic: file(
       relativePath: { eq: "vladimir-malyutin-98174-unsplash.jpg" }
     ) {
       childImageSharp {
-        fluid(maxWidth: 1360) {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData
       }
     }
   }
