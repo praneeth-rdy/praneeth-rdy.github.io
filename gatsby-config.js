@@ -32,6 +32,7 @@ module.exports = {
         name: `skills`,
       },
     },
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

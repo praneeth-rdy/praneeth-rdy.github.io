@@ -1,44 +1,47 @@
-import React from "react"
+import React, { useState } from "react"
 //import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 import "../../styles/css/screens/homescreen/experience-section.css"
 
-function ExperienceSection(props) {
+function ExperienceSection({ data }) {
   //use data as props.data
   // const experiences = props.data.allMarkdownRemark.edges
+  const allExperiences = data.othersJson.experience;
+  const [experience, setExperience] = useState(allExperiences.find(
+    exp => exp.org.toLowerCase() === "education"
+  ));
+
+  function changeExperience(org) {
+    const newExperience = allExperiences.find(
+      exp => exp.org === org
+    );
+    setExperience(newExperience);
+  }
+  console.log();
   return (
     <section className="home-section post-content-body">
       <h2 class="section-heading"><span>Experience</span></h2>
       <div className="experience-container row">
         <div className="experience-nav-container">
-          <button className="experience-nav-item">Education</button>
-          <button className="experience-nav-item">Quantifiers</button>
-          <button className="experience-nav-item">IR Cell</button>
-          <button className="experience-nav-item">ChiSquarex</button>
+          {allExperiences.map((exp) => {
+            return (<button className="experience-nav-item" onClick={() => changeExperience(exp.org)}>{exp.org}</button>)
+          })}
         </div>
         <div className="experience-body-container">
-          <h2 className="experience-heading">Software Engineer Intern</h2>
-          <h3 className="experience-timeline">May 2020 - September 2020</h3>
-          <ul className="experience-description-list">
-            <li className="experience-description-list-item">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </li>
-            <li className="experience-description-list-item">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </li>
-            <li className="experience-description-list-item">
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry. Lorem Ipsum has been the industry's standard dummy text
-              ever since the 1500s, when an unknown printer took a galley of
-              type and scrambled it to make a type specimen book.
-            </li>
-          </ul>
+          {experience.posts.map((post) => {
+            return (
+              <div className="experience-item-container" >
+                <h2 className="experience-heading">{post.title}</h2>
+                <h3 className="experience-timeline">{post.start} - {post.end}</h3>
+
+                <ul className="experience-description-list">
+                  {post.description.map((descItem) => (
+                    <li className="experience-description-list-item">{descItem}</li>
+                  ))}
+                </ul>
+              </div>
+            )
+          })}
         </div>
       </div>
     </section>
@@ -47,28 +50,15 @@ function ExperienceSection(props) {
 
 const indexQuery = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(experience)/" } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            quote
-            description
-            thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-          }
+    othersJson {
+      experience {
+        org
+        posts {
+          id
+          title
+          start
+          end
+          description
         }
       }
     }

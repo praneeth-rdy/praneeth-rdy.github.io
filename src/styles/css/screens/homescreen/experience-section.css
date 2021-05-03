@@ -29,13 +29,16 @@
 .experience-body-container {
   max-width: 100%;
   flex-basis: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
 }
 
-.experience-body-container > .experience-heading {
+.experience-body-container > .experience-item-container > .experience-heading {
   font-size: 2.8rem;
   margin: 0;
 }
-.experience-body-container > .experience-timeline {
+.experience-body-container > .experience-item-container > .experience-timeline {
   font-size: 2.1rem;
   color: color(var(--color-base) l(+40%));
   margin: 0;
