@@ -16,7 +16,7 @@ function ProjectsSection(props) {
           return (
             <div className="project-card">
               <div className="image-box">
-                <GatsbyImage image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData} alt="project image" />
+                <GatsbyImage image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData} style={{height: "100%"}} alt="project image" />
                 {/* <img src={node.frontmatter.thumbnail.publicURL} /> */}
               </div>
               <div className="content">
