@@ -45,13 +45,17 @@
   flex-direction: column;
   backdrop-filter: blur(15px);
   box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid color(var(--color-bg) l(-30%));
   transition: bottom 0.5s;
   transition-delay: 0s;
 }
+.light .projects-container .project-card .content {
+  border: 1px solid color(var(--color-light-bg) l(-30%));
+}
+.dark .projects-container .project-card .content {
+  border: 1px solid color(var(--color-dark-bg) l(-30%));
+}
 
 .projects-container .project-card .content .content-box h3 {
-  color: var(--color-bg);
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: 500;
@@ -63,6 +67,12 @@
   opacity: 1;
   transform: translateY(0px);
   transition-delay: 0.6s;
+}
+.light .projects-container .project-card .content .content-box h3 {
+  color: var(--color-light-bg);
+}
+.dark .projects-container .project-card .content .content-box h3 {
+  color: var(--color-dark-bg);
 }
 
 .projects-container .project-card .content .content-box h3 span {
@@ -87,11 +97,20 @@
 }
 
 .projects-container .project-card .content .sci li a {
-  color: var(--color-bg);
   font-size: 24px;
 }
-.projects-container .project-card .content .sci li a:hover {
-  color: color(var(--color-bg) l(-10%));
+.light .projects-container .project-card .content .sci li a {
+  color: var(--color-light-bg);
+}
+.dark .projects-container .project-card .content .sci li a {
+  color: var(--color-dark-bg);
+}
+
+.light .projects-container .project-card .content .sci li a:hover {
+  color: color(var(--color-light-bg) l(-10%));
+}
+.dark .projects-container .project-card .content .sci li a:hover {
+  color: color(var(--color-dark-bg) l(-10%));
 }
 
 @media (min-width: 480px) {

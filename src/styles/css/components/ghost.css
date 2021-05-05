@@ -22,9 +22,14 @@
   font-size: 1.3rem;
   line-height: 1.4em;
   font-weight: 600;
-  color: var(--color-base);
   text-align: center;
   opacity: 0.4;
+}
+.light .kg-card figcaption {
+  color: var(--color-light-base);
+}
+.dark .kg-card figcaption {
+  color: var(--color-dark-base);
 }
 
 .kg-width-half {

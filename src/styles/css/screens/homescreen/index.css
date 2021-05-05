@@ -8,8 +8,13 @@
 }
 
 .section-heading span {
-  background-color: var(--color-bg);
   padding: 0 15px;
+}
+.light .section-heading span {
+  background-color: var(--color-light-bg);
+}
+.dark .section-heading span {
+  background-color: var(--color-dark-bg);
 }
 
 

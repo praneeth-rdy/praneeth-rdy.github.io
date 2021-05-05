@@ -19,8 +19,13 @@
 
 .card > h3 {
   font-size: 2rem;
-  color: color(var(--color-base) l(+20%));
   margin: 0;
+}
+.light .card > h3 {
+  color: color(var(--color-light-base) l(+20%));
+}
+.dark .card > h3 {
+  color: color(var(--color-dark-base) l(+20%));
 }
 /* .card .gatsby-image-wrapper img{
   margin-bottom: 5px;

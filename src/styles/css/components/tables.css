@@ -9,11 +9,16 @@ table {
 }
 
 th {
-    color: var(--color-base);
     font-size: 0.9em;
     font-weight: var(--font-bold);
     padding: 0 0.7em 0.4em 0.7em;
     text-align: left;
+}
+.light th{
+    color: var(--color-light-base);
+}
+.dark th{
+    color: var(--color-dark-base);
 }
 
 td {
@@ -36,8 +41,11 @@ tbody tr:first-child td {
     border-top-width: 1px;
 }
 
-tbody tr:nth-child(2n + 1) {
-    background-color: var(--color-bg);
+.light tbody tr:nth-child(2n + 1) {
+    background-color: var(--color-light-bg);
+}
+.dark tbody tr:nth-child(2n + 1) {
+    background-color: var(--color-dark-bg);
 }
 
 tbody td {

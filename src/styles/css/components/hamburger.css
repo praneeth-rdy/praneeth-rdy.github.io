@@ -68,10 +68,15 @@
     transform 0.15s cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.site-head-open .hamburger-inner,
-.site-head-open .hamburger-inner::before,
-.site-head-open .hamburger-inner::after {
-    background-color: var(--color-base);
+.light .site-head-open .hamburger-inner,
+.light .site-head-open .hamburger-inner::before,
+.light .site-head-open .hamburger-inner::after {
+    background-color: var(--color-light-base);
+}
+.dark .site-head-open .hamburger-inner,
+.dark .site-head-open .hamburger-inner::before,
+.dark .site-head-open .hamburger-inner::after {
+    background-color: var(--color-dark-base);
 }
 
 .site-head-open .hamburger-inner {

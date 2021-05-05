@@ -20,15 +20,21 @@ production stylesheet in assets/built/screen.css using gulp dev
 @import "../components/hamburger.css";
 @import "../components/animations.css";
 @import "../components/scrollbar.css";
-
 /* Main - Theme styles
 /* ---------------------------------------------------------- */
 
 body {
   font-family: "Muli", sans-serif;
-  background: var(--color-bg);
   transition: background 0.3s ease-out;
   transition-delay: 0.25;
+}
+
+.light {
+  background: var(--color-light-bg);
+}
+
+.dark {
+  background: var(--color-dark-bg);
 }
 
 .img {
@@ -87,7 +93,14 @@ body {
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: color(var(--color-base) l(+50%));
+}
+
+.light .error-head p {
+  color: color(var(--color-light-base) l(+50%));
+}
+
+.dark .error-head p {
+  color: color(var(--color-dark-base) l(+50%));
 }
 
 .error-link {
@@ -99,7 +112,14 @@ body {
 .page-head-title {
   margin: 0;
   font-size: 4.2rem;
-  color: var(--color-base);
+}
+
+.light .page-head-title {
+  color: var(--color-light-base);
+}
+
+.dark .page-head-title {
+  color: var(--color-dark-base);
 }
 
 @media (max-width: 500px) {
@@ -128,8 +148,12 @@ body {
   font-size: 1.4rem;
 }
 
-.site-foot a {
-  color: var(--color-base);
+.light .site-foot a {
+  color: var(--color-light-base);
+}
+
+.dark .site-foot a {
+  color: var(--color-dark-base);
 }
 
 /* Site Navigation
@@ -171,18 +195,23 @@ body {
   padding: 0;
 }
 
-.site-head-left a,
-.site-head-right a {
+.site-head-left a, .site-head-right a {
   display: block;
   margin: 0;
   padding: 10px 15px;
-  color: var(--color-base);
   font-weight: 600;
   opacity: 0.4;
 }
 
-.nav-current a,
-.site-head a:hover {
+.light .site-head-left a, .light .site-head-right a {
+  color: var(--color-light-base);
+}
+
+.dark .site-head-left a, .dark .site-head-right a {
+  color: var(--color-dark-base);
+}
+
+.nav-current a, .site-head a:hover {
   text-decoration: none;
   opacity: 1;
 }
@@ -198,12 +227,19 @@ body {
   flex-shrink: 0;
   display: block;
   padding: 10px;
-  color: var(--color-base);
   font-size: 2.1rem;
   line-height: 1em;
   font-weight: 700;
   /* text-transform: uppercase; */
   letter-spacing: 1px;
+}
+
+.light .site-head-logo {
+  color: var(--color-light-base);
+}
+
+.dark .site-head-logo {
+  color: var(--color-dark-base);
 }
 
 .site-head-logo:hover {
@@ -234,12 +270,20 @@ body {
 .subscribe-button {
   display: block;
   padding: 4px 10px;
-  border: var(--color-base) 1px solid;
-  color: var(--color-base);
   font-size: 1.2rem;
   line-height: 1em;
   border-radius: 10px;
   opacity: 0.8;
+}
+
+.light .subscribe-button {
+  border: var(--color-light-base) 1px solid;
+  color: var(--color-light-base);
+}
+
+.dark .subscribe-button {
+  border: var(--color-dark-base) 1px solid;
+  color: var(--color-dark-base);
 }
 
 .subscribe-button:hover {
@@ -258,9 +302,15 @@ body {
 .rss-button svg {
   margin-bottom: 1px;
   height: 2.1rem;
-  fill: var(--color-base);
 }
 
+.light .rss-button svg {
+  fill: var(--color-light-base);
+}
+
+.dark .rss-button svg {
+  fill: var(--color-dark-base);
+}
 /* Mobile Nav Menu
 /* ---------------------------------------------------------- */
 
@@ -289,30 +339,26 @@ body {
     overflow: hidden;
     padding: 0;
   }
-  .site-head-left,
-  .site-head-right {
+  .site-head-left, .site-head-right {
     position: relative;
     z-index: -1;
     height: auto;
     transition: height 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transition-delay: 1s;
   }
-  .site-head-left a,
-  .site-head-right a {
+  .site-head-left a, .site-head-right a {
     margin: 8px 15px;
     padding: 1px 0;
     font-size: 2rem;
     line-height: 1.15em;
     font-weight: 200;
     opacity: 0;
-    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99),
-      opacity 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: transform 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(1.1) translateY(-25px);
   }
   #nav-heading {
     margin-top: 28px;
   }
-
   .site-head-right a {
     padding: 5px 15px;
     margin: 1px 0;
@@ -357,21 +403,21 @@ body {
     height: 100vh;
     transition: height 0.2s ease-in;
   }
-  .site-head-open .site-head-left,
-  .site-head-open .site-head-right {
+  .site-head-open .site-head-left, .site-head-open .site-head-right {
     z-index: 9999;
     height: auto;
     transition: height 0.2s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   }
-  .site-head-open .site-head-left a,
-  .site-head-open .site-head-right a {
+  .site-head-open .site-head-left a, .site-head-open .site-head-right a {
     opacity: 1;
-    transition: transform 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99),
-      opacity 0.9s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    transition: transform 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.9s cubic-bezier(0.4, 0.01, 0.165, 0.99);
     transform: scale(1) translateY(0px);
   }
-  .site-head-open .nav-current a {
-    border-bottom: var(--color-base) 2px solid;
+  .light .site-head-open .nav-current a {
+    border-bottom: var(--color-light-base) 2px solid;
+  }
+  .dark .site-head-open .nav-current a {
+    border-bottom: var(--color-dark-base) 2px solid;
   }
   .site-head-open .site-head-right a {
     opacity: 0.5;
@@ -523,17 +569,27 @@ body {
 
 .post-content-title {
   margin: 0 0 3vw;
-  color: var(--color-base);
   text-align: center;
+}
+.light .post-content-title {
+  color: var(--color-light-base);
+}
+.dark .post-content-title {
+  color: var(--color-dark-base);
 }
 
 .post-content-excerpt {
   margin: -2vw 0 3vw;
   font-size: 2.2rem;
   line-height: 1.6em;
-  color: var(--color-base);
   text-align: center;
   opacity: 0.5;
+}
+.light .post-content-excerpt {
+  color: var(--color-light-base);
+}
+.dark .post-content-excerpt {
+  color: var(--color-dark-base);
 }
 
 @media (max-width: 500px) {
@@ -563,13 +619,12 @@ body {
   }
 }
 
-.post-content-body h1,
-.post-content-body h2,
-.post-content-body h3,
-.post-content-body h4,
-.post-content-body h5,
-.post-content-body h6 {
-  color: var(--color-base);
+.light .post-content-body h1, .light .post-content-body h2, .light .post-content-body h3, .light .post-content-body h4, .light .post-content-body h5, .light .post-content-body h6 {
+  color: var(--color-light-base);
+}
+
+.dark .post-content-body h1, .dark .post-content-body h2, .dark .post-content-body h3, .dark .post-content-body h4, .dark .post-content-body h5, .dark .post-content-body h6 {
+  color: var(--color-dark-base);
 }
 
 .post-content-body li {
@@ -607,8 +662,13 @@ body {
   font-size: 0.8em;
   line-height: 1em;
   font-weight: 400 !important;
-  background: var(--color-bg);
   border-radius: 3px;
+}
+.light .post-content-body code {
+  background: var(--color-light-bg);
+}
+.dark .post-content-body code {
+  background: var(--color-dark-bg);
 }
 
 .post-content-body p code {
@@ -620,12 +680,19 @@ body {
   margin: 1.5em 0 3em;
   padding: 20px;
   max-width: 100%;
-  border: color(var(--color-base) l(-10%)) 1px solid;
-  color: var(--color-bg);
   font-size: 1.4rem;
   line-height: 1.5em;
-  background: color(var(--color-base) l(-3%));
   border-radius: 5px;
+}
+.light .post-content-body pre {
+  border: color(var(--color-light-base) l(-10%)) 1px solid;
+  color: var(--color-light-bg);
+  background: color(var(--color-light-base) l(-3%));
+}
+.dark .post-content-body pre {
+  border: color(var(--color-dark-base) l(-10%)) 1px solid;
+  color: var(--color-dark-bg);
+  background: color(var(--color-dark-base) l(-3%));
 }
 
 .post-content-body pre code {
@@ -702,8 +769,13 @@ body {
   display: block;
   margin: 0;
   padding: 0 12px;
-  color: var(--color-base);
   opacity: 0.4;
+}
+.light .author-links a {
+  color: var(--color-light-base);
+}
+.dark .author-links a {
+  color: var(--color-dark-base);
 }
 
 .author-links a:hover {
@@ -719,9 +791,7 @@ body {
 /* Page Template
 /* ---------------------------------------------------------- */
 
-.page-template .post-content-body h1,
-.page-template .post-content-body h2,
-.page-template .post-content-body h3 {
+.page-template .post-content-body h1, .page-template .post-content-body h2, .page-template .post-content-body h3 {
   text-align: center;
 }
 

@@ -2,7 +2,7 @@
 /* .experience-container {
   border-style: solid;
   border-width: 2px;
-  border-color: color(var(--color-base) l(+70%));
+  border-color: color(var(--color-light-base) l(+70%));
   border-radius: 5px;
 } */
 
@@ -15,15 +15,25 @@
 }
 
 .experience-container > .experience-nav-container > .experience-nav-item {
-  background-color: color(var(--color-base) l(+80%));
-  color: color(var(--color-base) l(+40%)) !important;
-  /* box-shadow: inset 0 0 0 2px color(var(--color-base) l(+80%)); */
   box-shadow: none;
   border-radius: 0;
 }
+.light .experience-container > .experience-nav-container > .experience-nav-item {
+  background-color: color(var(--color-light-base) l(+80%));
+  color: color(var(--color-light-base) l(+40%)) !important;
+  /* box-shadow: inset 0 0 0 2px color(var(--color-light-base) l(+80%)); */
+}
+.dark .experience-container > .experience-nav-container > .experience-nav-item {
+  background-color: color(var(--color-dark-base) l(+80%));
+  color: color(var(--color-dark-base) l(+40%)) !important;
+  /* box-shadow: inset 0 0 0 2px color(var(--color-dark-base) l(+80%)); */
+}
 
-.experience-container > .experience-nav-container > .experience-nav-item:hover {
-  background-color: color(var(--color-base) l(+75%));
+.light .experience-container > .experience-nav-container > .experience-nav-item:hover {
+  background-color: color(var(--color-light-base) l(+75%));
+}
+.dark .experience-container > .experience-nav-container > .experience-nav-item:hover {
+  background-color: color(var(--color-dark-base) l(+75%));
 }
 
 .experience-body-container {
@@ -40,8 +50,13 @@
 }
 .experience-body-container > .experience-item-container > .experience-timeline {
   font-size: 2.1rem;
-  color: color(var(--color-base) l(+40%));
   margin: 0;
+}
+.light .experience-body-container > .experience-item-container > .experience-timeline {
+  color: color(var(--color-light-base) l(+40%));
+}
+.dark .experience-body-container > .experience-item-container > .experience-timeline {
+  color: color(var(--color-dark-base) l(+40%));
 }
 
 .experience-body-container ul > li {

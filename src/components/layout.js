@@ -1,9 +1,20 @@
-import React from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 
-const Layout = props => {
-  const { navHeading, path, children } = props
-  const [toggleNav, setToggleNav] = React.useState(false)
+const Layout = (props) => {
+  const stringifiedStoredDarkMode = localStorage.getItem("darkMode");
+  let booleanStoredDarkMode = false;
+  if(stringifiedStoredDarkMode==="true"){
+    booleanStoredDarkMode = true;
+  }
+  function changeThemeMode(){
+    localStorage.setItem("darkMode", darkMode?"false":"true");
+    darkMode?setDarkMode(false):setDarkMode(true);
+  }
+  const { navHeading, path, children } = props;
+  const [toggleNav, setToggleNav] = useState(false);
+  const [darkMode, setDarkMode] = useState(booleanStoredDarkMode);
+  document.body.className = darkMode?"dark":"light";
   var navActive = {
     home: "",
     about: "",
@@ -11,7 +22,7 @@ const Layout = props => {
     publications: "",
     contact: "",
     elements: "",
-  }
+  };
   switch (path) {
     case "/":
       navActive.home = "nav-current"
@@ -66,15 +77,15 @@ const Layout = props => {
               <li className={"nav-about " + navActive.about}>
                 <Link to={`/about`}>About</Link>
               </li>
-              <li className={"nav-elements " + navActive.blog}>
+              <li className={"nav-blog " + navActive.blog}>
                 <Link to={`/blog`}>Blog</Link>
               </li>
               <li
-                className={"nav-elements " + navActive.publications}>
+                className={"nav-publications " + navActive.publications}>
                 <Link to={`/publications`}>Publications</Link>
               </li>
               <li
-                className={"nav-elements " + navActive.contact}>
+                className={"nav-contact " + navActive.contact}>
                 <Link to={`/contact`}>Contact</Link>
               </li>
               <li
@@ -115,6 +126,7 @@ const Layout = props => {
       </header>
       <main id="site-main" className="site-main">
         <div id="swup" className="transition-fade">
+        <button onClick={()=>changeThemeMode()}>Change</button>
           {children}
         </div>
       </main>
