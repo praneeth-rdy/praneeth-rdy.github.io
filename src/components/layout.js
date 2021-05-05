@@ -5,19 +5,23 @@ import ToggleButton from "./toggleButton";
 import { Link } from "gatsby"
 
 const Layout = (props) => {
-  const stringifiedStoredDarkMode = localStorage.getItem("darkMode");
+  const stringifiedStoredDarkMode = typeof window !== 'undefined' ? localStorage.getItem("darkMode"):null;
   let booleanStoredDarkMode = false;
   if (stringifiedStoredDarkMode === "true") {
     booleanStoredDarkMode = true;
   }
   function changeThemeMode() {
-    localStorage.setItem("darkMode", darkMode ? "false" : "true");
+    if(typeof window !== 'undefined'){
+      localStorage.setItem("darkMode", darkMode ? "false" : "true");
+    }
     darkMode ? setDarkMode(false) : setDarkMode(true);
   }
   const { navHeading, path, children } = props;
   const [toggleNav, setToggleNav] = useState(false);
   const [darkMode, setDarkMode] = useState(booleanStoredDarkMode);
-  document.body.className = darkMode ? "dark" : "light";
+  if(typeof window !== 'undefined'){
+    document.body.className = darkMode ? "dark" : "light"
+  }
   var navActive = {
     home: "",
     about: "",
