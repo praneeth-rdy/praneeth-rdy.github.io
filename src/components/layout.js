@@ -1,6 +1,7 @@
 import React, { useState, cloneElement } from "react"
-import { CgSun } from "react-icons/cg";
-import { HiMoon } from "react-icons/hi";
+// import { CgSun } from "react-icons/cg";
+// import { HiMoon } from "react-icons/hi";
+import ToggleButton from "./toggleButton";
 import { Link } from "gatsby"
 
 const Layout = (props) => {
@@ -94,6 +95,9 @@ const Layout = (props) => {
                 className={"nav-elements " + navActive.elements}>
                 <Link to={`/elements`}>Elements</Link>
               </li>
+              <li>
+                <ToggleButton onClick={() => changeThemeMode()} darkMode={darkMode} />
+              </li>
             </ul>
           </nav>
           {/* <div className="site-head-right">
@@ -126,9 +130,6 @@ const Layout = (props) => {
           </div> */}
         </div>
       </header>
-      <div>
-        {darkMode ? <CgSun onClick={() => changeThemeMode()} size="20" /> : <HiMoon onClick={() => changeThemeMode()} size="20" />}
-      </div>
       <main id="site-main" className="site-main">
         <div id="swup" className="transition-fade">
           {children.map((child) => cloneElement(child, { darkMode: darkMode }))}
