@@ -21,7 +21,8 @@ import ProjectsSection from "../components/homeScreen/projectsSection"
 const Index = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
   // const posts = data.allMarkdownRemark.edges
-  const introPic = data.introPic.childImageSharp.gatsbyImageData
+  const darkModeImage = data.darkModeImage.childImageSharp.gatsbyImageData
+  const lightModeImage = data.lightModeImage.childImageSharp.gatsbyImageData
   const aboutPic = data.aboutPic.childImageSharp.gatsbyImageData
   // let postCounter = 0
 
@@ -30,7 +31,7 @@ const Index = ({ data }, location) => {
       <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
       {/* Introduction Section */}
-      <IntroSection image={introPic} />
+      <IntroSection darkModeImage={darkModeImage} lightModeImage={lightModeImage} />
       <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
       <AboutSection image={aboutPic} />
 
@@ -65,7 +66,12 @@ const indexQuery = graphql`
         description
       }
     }
-    introPic: file(relativePath: { eq: "home/intro-light-mode.png" }) {
+    lightModeImage: file(relativePath: { eq: "home/intro-light-mode.png" }) {
+      childImageSharp {
+        gatsbyImageData
+      }
+    }
+    darkModeImage: file(relativePath: { eq: "home/intro-dark-mode.png" }) {
       childImageSharp {
         gatsbyImageData
       }

@@ -6,7 +6,7 @@ import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 import "../../styles/css/screens/homescreen/intro-section.css"
 import { graphql, StaticQuery } from "gatsby"
 
-function IntroSection({ image, data }) {
+function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
   const social = data.site.siteMetadata.social
   const fullName = data.site.siteMetadata.authorFullName
   console.log(social)
@@ -40,7 +40,7 @@ function IntroSection({ image, data }) {
           </div>
         </div>
       </div>
-      <GatsbyImage className="intro-image" image={image} style={{ width: "400px" }} />
+      <GatsbyImage className="intro-image" image={darkMode?darkModeImage:lightModeImage} style={{ width: "400px" }} />
     </section>
   )
 }

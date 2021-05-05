@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, cloneElement } from "react"
 import { Link } from "gatsby"
 
 const Layout = (props) => {
@@ -127,7 +127,7 @@ const Layout = (props) => {
       <main id="site-main" className="site-main">
         <div id="swup" className="transition-fade">
         <button onClick={()=>changeThemeMode()}>Change</button>
-          {children}
+          {children.map((child)=>cloneElement(child, {darkMode: darkMode}))}
         </div>
       </main>
       <footer className="site-foot">
