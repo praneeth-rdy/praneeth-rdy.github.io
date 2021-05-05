@@ -1,20 +1,22 @@
 import React, { useState, cloneElement } from "react"
+import { CgSun } from "react-icons/cg";
+import { HiMoon } from "react-icons/hi";
 import { Link } from "gatsby"
 
 const Layout = (props) => {
   const stringifiedStoredDarkMode = localStorage.getItem("darkMode");
   let booleanStoredDarkMode = false;
-  if(stringifiedStoredDarkMode==="true"){
+  if (stringifiedStoredDarkMode === "true") {
     booleanStoredDarkMode = true;
   }
-  function changeThemeMode(){
-    localStorage.setItem("darkMode", darkMode?"false":"true");
-    darkMode?setDarkMode(false):setDarkMode(true);
+  function changeThemeMode() {
+    localStorage.setItem("darkMode", darkMode ? "false" : "true");
+    darkMode ? setDarkMode(false) : setDarkMode(true);
   }
   const { navHeading, path, children } = props;
   const [toggleNav, setToggleNav] = useState(false);
   const [darkMode, setDarkMode] = useState(booleanStoredDarkMode);
-  document.body.className = darkMode?"dark":"light";
+  document.body.className = darkMode ? "dark" : "light";
   var navActive = {
     home: "",
     about: "",
@@ -124,10 +126,12 @@ const Layout = (props) => {
           </div> */}
         </div>
       </header>
+      <div>
+        {darkMode ? <CgSun onClick={() => changeThemeMode()} size="20" /> : <HiMoon onClick={() => changeThemeMode()} size="20" />}
+      </div>
       <main id="site-main" className="site-main">
         <div id="swup" className="transition-fade">
-        <button onClick={()=>changeThemeMode()}>Change</button>
-          {children.map((child)=>cloneElement(child, {darkMode: darkMode}))}
+          {children.map((child) => cloneElement(child, { darkMode: darkMode }))}
         </div>
       </main>
       <footer className="site-foot">

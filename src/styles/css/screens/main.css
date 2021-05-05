@@ -393,11 +393,16 @@ body {
     align-items: flex-start;
   }
   .site-head-open {
-    background: rgba(255, 255, 255, 1);
     transition: background 0.5s ease-out;
     transition-delay: 0.25;
     overflow: hidden;
     height: 100vh;
+  }
+  .light .site-head-open {
+    background: var(--color-light-bg);
+  }
+  .dark .site-head-open {
+    background: var(--color-dark-bg);
   }
   .site-head-open .site-head-container {
     height: 100vh;
