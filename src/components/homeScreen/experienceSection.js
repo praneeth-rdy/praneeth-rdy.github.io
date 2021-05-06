@@ -17,7 +17,6 @@ function ExperienceSection({ data }) {
     );
     setExperience(newExperience);
   }
-  console.log();
   return (
     <section className="home-section post-content-body">
       <h2 class="section-heading"><span>Experience</span></h2>

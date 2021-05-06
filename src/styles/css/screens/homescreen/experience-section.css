@@ -25,7 +25,7 @@
 }
 .dark .experience-container > .experience-nav-container > .experience-nav-item {
   background-color: color(var(--color-dark-base) l(+80%));
-  color: color(var(--color-dark-base) l(+40%)) !important;
+  color: color(var(--color-dark-base) l(-60%)) !important;
   /* box-shadow: inset 0 0 0 2px color(var(--color-dark-base) l(+80%)); */
 }
 
@@ -33,7 +33,7 @@
   background-color: color(var(--color-light-base) l(+75%));
 }
 .dark .experience-container > .experience-nav-container > .experience-nav-item:hover {
-  background-color: color(var(--color-dark-base) l(+75%));
+  background-color: color(var(--color-dark-base) l(-10%));
 }
 
 .experience-body-container {
@@ -56,7 +56,7 @@
   color: color(var(--color-light-base) l(+40%));
 }
 .dark .experience-body-container > .experience-item-container > .experience-timeline {
-  color: color(var(--color-dark-base) l(+40%));
+  color: color(var(--color-dark-base) l(-20%));
 }
 
 .experience-body-container ul > li {

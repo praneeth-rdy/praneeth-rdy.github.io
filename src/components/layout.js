@@ -1,8 +1,6 @@
-import React, { useState, cloneElement } from "react"
-// import { CgSun } from "react-icons/cg";
-// import { HiMoon } from "react-icons/hi";
+import React, { useState, cloneElement } from "react";
 import ToggleButton from "./toggleButton";
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
 const Layout = (props) => {
   const stringifiedStoredDarkMode = typeof window !== 'undefined' ? localStorage.getItem("darkMode"):null;
