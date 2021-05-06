@@ -3,7 +3,7 @@ import ToggleButton from "./toggleButton";
 import { Link } from "gatsby";
 
 const Layout = (props) => {
-  const stringifiedStoredDarkMode = typeof window !== 'undefined' ? localStorage.getItem("darkMode"):null;
+  const stringifiedStoredDarkMode = typeof(window) !== 'undefined' ? localStorage.getItem("darkMode"):null;
   let booleanStoredDarkMode = false;
   if (stringifiedStoredDarkMode === "true") {
     booleanStoredDarkMode = true;
