@@ -23,7 +23,12 @@ function ExperienceSection({ data }) {
       <div className="experience-container row">
         <div className="experience-nav-container">
           {allExperiences.map((exp) => {
-            return (<button className="experience-nav-item" onClick={() => changeExperience(exp.org)}>{exp.org}</button>)
+            if (exp.org === experience.org) {
+              return (<button className="experience-nav-item active" onClick={() => changeExperience(exp.org)}>{exp.org}</button>)
+            }
+            else {
+              return (<button className="experience-nav-item" onClick={() => changeExperience(exp.org)}>{exp.org}</button>)
+            }
           })}
         </div>
         <div className="experience-body-container">

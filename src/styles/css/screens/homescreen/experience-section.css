@@ -19,7 +19,7 @@
   border-radius: 0;
 }
 .light .experience-container > .experience-nav-container > .experience-nav-item {
-  background-color: color(var(--color-light-base) l(+80%));
+  background-color: color(var(--color-light-base) l(+85%));
   color: color(var(--color-light-base) l(+40%)) !important;
   /* box-shadow: inset 0 0 0 2px color(var(--color-light-base) l(+80%)); */
 }
@@ -29,11 +29,20 @@
   /* box-shadow: inset 0 0 0 2px color(var(--color-dark-base) l(+80%)); */
 }
 
-.light .experience-container > .experience-nav-container > .experience-nav-item:hover {
-  background-color: color(var(--color-light-base) l(+75%));
+.light .experience-container > .experience-nav-container > .experience-nav-item:hover{
+  color: color(var(--color-light-base) l(-10%)) !important;
 }
-.dark .experience-container > .experience-nav-container > .experience-nav-item:hover {
-  background-color: color(var(--color-dark-base) l(-10%));
+.dark .experience-container > .experience-nav-container > .experience-nav-item:hover{
+  color: color(var(--color-dark-base) l(-100%)) !important;
+}
+
+.light .experience-container > .experience-nav-container > .experience-nav-item.active {
+  background-color: color(var(--color-light-base) l(+80%));
+  color: color(var(--color-light-base) l(-10%)) !important;
+}
+.dark .experience-container > .experience-nav-container > .experience-nav-item.active {
+  background-color: color(var(--color-dark-base) l(-5%));
+  color: color(var(--color-dark-base) l(-100%)) !important;
 }
 
 .experience-body-container {
