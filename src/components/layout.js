@@ -11,7 +11,7 @@ const Layout = (props) => {
     booleanStoredDarkMode = true;
   }
   function changeThemeMode() {
-    if(typeof window !== 'undefined'){
+    if(typeof(window) !== 'undefined'){
       localStorage.setItem("darkMode", darkMode ? "false" : "true");
     }
     darkMode ? setDarkMode(false) : setDarkMode(true);
@@ -19,7 +19,7 @@ const Layout = (props) => {
   const { navHeading, path, children } = props;
   const [toggleNav, setToggleNav] = useState(false);
   const [darkMode, setDarkMode] = useState(booleanStoredDarkMode);
-  if(typeof window !== 'undefined'){
+  if(typeof(window) !== 'undefined'){
     document.body.className = darkMode ? "dark" : "light"
   }
   var navActive = {
