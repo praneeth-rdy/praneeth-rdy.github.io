@@ -4,9 +4,9 @@ import { Link } from "gatsby";
 
 const Layout = (props) => {
   const stringifiedStoredDarkMode = typeof(window) !== 'undefined' ? localStorage.getItem("darkMode"):null;
-  let booleanStoredDarkMode = false;
-  if (stringifiedStoredDarkMode === "true") {
-    booleanStoredDarkMode = true;
+  let booleanStoredDarkMode = true;
+  if (stringifiedStoredDarkMode !== "true") {
+    booleanStoredDarkMode = false;
   }
   function changeThemeMode() {
     if(typeof(window) !== 'undefined'){
@@ -69,9 +69,9 @@ const Layout = (props) => {
             </div>
           </a>
           {/*to place name in center change class name to site-head-center, remove style attribute from link and place this div below nav element*/}
-          <div className="site-head-left" id="nav-heading">
+          <div className="site-head-left cursor" id="nav-heading">
             <Link className="site-head-logo" to={`/`} style={{ opacity: 1 }}>
-              {navHeading}
+              {"> " + navHeading}
             </Link>
           </div>
           <nav id="swup" className="site-head-left">
