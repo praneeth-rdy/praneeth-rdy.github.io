@@ -818,6 +818,7 @@ body {
   width: 13px;
   /* Set height to the line height of .text */
   height: 2px;
+  transform: translate(-10px, 0);
   /* 
   Animation paramaters:
   blink = animation-name, 
@@ -845,5 +846,12 @@ body {
   .cursor::after{
     margin-bottom: auto;
     margin-top: 0;
+    transform: translate(-3px, 0);
+    transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+  }
+  .site-head-open .cursor::after{
+    z-index: 9999;
+    transform: translate(-10px, 27px);
+    transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
   }
 }
