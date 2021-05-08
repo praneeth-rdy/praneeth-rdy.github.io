@@ -16,30 +16,48 @@ function ProjectsSection(props) {
           return (
             <div className="project-card">
               <div className="image-box">
-                <GatsbyImage image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData} style={{height: "100%"}} alt="project image" />
+                <GatsbyImage
+                  image={
+                    node.frontmatter.thumbnail.childImageSharp.gatsbyImageData
+                  }
+                  style={{ height: "100%" }}
+                  alt="project image"
+                />
                 {/* <img src={node.frontmatter.thumbnail.publicURL} /> */}
               </div>
               <div className="content">
                 <div className="content-box">
                   <h3>
-                  {node.frontmatter.title}
+                    {node.frontmatter.title}
                     <br />
                     <span>{node.frontmatter.stack}</span>
                   </h3>
                 </div>
                 <ul className="sci">
                   <li style={{ "--i": 1 }}>
-                    <a href={node.frontmatter.repo} target="_blank" rel="noreferrer">
+                    <a
+                      href={node.frontmatter.repo}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <FaGithub className="icon" />
                     </a>
                   </li>
                   <li style={{ "--i": 2 }}>
-                    <a href={node.frontmatter.drive} target="_blank" rel="noreferrer">
+                    <a
+                      href={node.frontmatter.drive}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <FaGoogleDrive className="icon" />
                     </a>
                   </li>
                   <li style={{ "--i": 3 }}>
-                    <a href={node.frontmatter.website} target="_blank" rel="noreferrer">
+                    <a
+                      href={node.frontmatter.website}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
                       <FaGlobe className="icon" />
                     </a>
                   </li>
@@ -102,4 +120,4 @@ const ProjectsSectionExport = props => (
   />
 )
 
-export default ProjectsSectionExport;
+export default ProjectsSectionExport

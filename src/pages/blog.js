@@ -139,4 +139,4 @@ const BlogPageExport = props => (
   />
 )
 
-export default BlogPageExport;
+export default BlogPageExport

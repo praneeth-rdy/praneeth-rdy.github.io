@@ -31,7 +31,10 @@ const Index = ({ data }, location) => {
       <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
       {/* Introduction Section */}
-      <IntroSection darkModeImage={darkModeImage} lightModeImage={lightModeImage} />
+      <IntroSection
+        darkModeImage={darkModeImage}
+        lightModeImage={lightModeImage}
+      />
       <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
       <AboutSection image={aboutPic} />
 
@@ -113,4 +116,4 @@ const IndexExport = props => (
   />
 )
 
-export default IndexExport;
+export default IndexExport

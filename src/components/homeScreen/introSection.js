@@ -40,7 +40,11 @@ function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
           </div>
         </div>
       </div>
-      <GatsbyImage className="intro-image" image={darkMode?darkModeImage:lightModeImage} style={{ width: "400px" }} />
+      <GatsbyImage
+        className="intro-image"
+        image={darkMode ? darkModeImage : lightModeImage}
+        style={{ width: "400px" }}
+      />
     </section>
   )
 }
@@ -68,4 +72,4 @@ const IntroSectionExport = props => (
   />
 )
 
-export default IntroSectionExport;
+export default IntroSectionExport

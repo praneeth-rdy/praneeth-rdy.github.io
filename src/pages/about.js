@@ -82,4 +82,4 @@ const AboutPageExport = props => (
   />
 )
 
-export default AboutPageExport;
+export default AboutPageExport

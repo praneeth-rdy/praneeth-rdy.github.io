@@ -39,7 +39,9 @@ function BlogItem({ node, postClass }) {
           <blockquote className="blog-item-quote">
             {node.frontmatter.quote}
           </blockquote>
-          <p className="blog-item-description">{node.frontmatter.description}</p>
+          <p className="blog-item-description">
+            {node.frontmatter.description}
+          </p>
         </div>
       </Link>
       <HorizontalLine color="rgba(0, 0, 0, 0.5)" margin="50px" />
@@ -47,4 +49,4 @@ function BlogItem({ node, postClass }) {
   )
 }
 
-export default BlogItem;
+export default BlogItem

@@ -1,23 +1,24 @@
-import React, { useState, cloneElement } from "react";
-import ToggleButton from "./toggleButton";
-import { Link } from "gatsby";
+import React, { useState, cloneElement } from "react"
+import ToggleButton from "./toggleButton"
+import { Link } from "gatsby"
 
-const Layout = (props) => {
-  const stringifiedStoredDarkMode = typeof (window) !== 'undefined' ? localStorage.getItem("darkMode") : null;
-  let booleanStoredDarkMode = true;
+const Layout = props => {
+  const stringifiedStoredDarkMode =
+    typeof window !== "undefined" ? localStorage.getItem("darkMode") : null
+  let booleanStoredDarkMode = true
   if (stringifiedStoredDarkMode !== "true") {
-    booleanStoredDarkMode = false;
+    booleanStoredDarkMode = false
   }
   function changeThemeMode() {
-    if (typeof (window) !== 'undefined') {
-      localStorage.setItem("darkMode", darkMode ? "false" : "true");
+    if (typeof window !== "undefined") {
+      localStorage.setItem("darkMode", darkMode ? "false" : "true")
     }
-    darkMode ? setDarkMode(false) : setDarkMode(true);
+    darkMode ? setDarkMode(false) : setDarkMode(true)
   }
-  const { navHeading, path, children } = props;
-  const [toggleNav, setToggleNav] = useState(false);
-  const [darkMode, setDarkMode] = useState(booleanStoredDarkMode);
-  if (typeof (window) !== 'undefined') {
+  const { navHeading, path, children } = props
+  const [toggleNav, setToggleNav] = useState(false)
+  const [darkMode, setDarkMode] = useState(booleanStoredDarkMode)
+  if (typeof window !== "undefined") {
     document.body.className = darkMode ? "dark" : "light"
   }
   var navActive = {
@@ -27,7 +28,7 @@ const Layout = (props) => {
     publications: "",
     contact: "",
     elements: "",
-  };
+  }
   switch (path) {
     case "/":
       navActive.home = "nav-current"
@@ -57,12 +58,14 @@ const Layout = (props) => {
           <a
             className="nav-burger"
             href="#"
-            onClick={() => setToggleNav(!toggleNav)}>
+            onClick={() => setToggleNav(!toggleNav)}
+          >
             <div
               className="hamburger hamburger--collapse"
               aria-label="Menu"
               role="button"
-              aria-controls="navigation">
+              aria-controls="navigation"
+            >
               <div className="hamburger-box">
                 <div className="hamburger-inner" />
               </div>
@@ -85,20 +88,20 @@ const Layout = (props) => {
               <li className={"nav-blog " + navActive.blog}>
                 <Link to={`/blog`}>Blog</Link>
               </li>
-              <li
-                className={"nav-publications " + navActive.publications}>
+              <li className={"nav-publications " + navActive.publications}>
                 <Link to={`/publications`}>Publications</Link>
               </li>
-              <li
-                className={"nav-contact " + navActive.contact}>
+              <li className={"nav-contact " + navActive.contact}>
                 <Link to={`/contact`}>Contact</Link>
               </li>
-              <li
-                className={"nav-elements " + navActive.elements}>
+              <li className={"nav-elements " + navActive.elements}>
                 <Link to={`/elements`}>Elements</Link>
               </li>
               <li className="toggle-btn-item">
-                <ToggleButton onClick={() => changeThemeMode()} darkMode={darkMode} />
+                <ToggleButton
+                  onClick={() => changeThemeMode()}
+                  darkMode={darkMode}
+                />
               </li>
             </ul>
           </nav>
@@ -134,7 +137,7 @@ const Layout = (props) => {
       </header>
       <main id="site-main" className="site-main">
         <div id="swup" className="transition-fade">
-          {children.map((child) => cloneElement(child, { darkMode: darkMode }))}
+          {children.map(child => cloneElement(child, { darkMode: darkMode }))}
         </div>
       </main>
       <footer className="site-foot">

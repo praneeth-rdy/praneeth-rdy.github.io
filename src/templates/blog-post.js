@@ -31,7 +31,9 @@ class BlogPostTemplate extends React.Component {
             <div className="kg-image-card kg-width-half">
               <GatsbyImage
                 className="kg-image"
-                image={post.frontmatter.thumbnail.childImageSharp.gatsbyImageData}
+                image={
+                  post.frontmatter.thumbnail.childImageSharp.gatsbyImageData
+                }
                 alt={post.frontmatter.title}
               />
             </div>

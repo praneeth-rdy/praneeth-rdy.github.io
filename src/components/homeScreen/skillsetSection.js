@@ -16,16 +16,20 @@ function SkillsetSection(props) {
       <div className="skill-cards-container">
         {skills.map(({ node }) => {
           return (
-              <div className="card b-shadow grow">
-                <div className="card-image">
-                  <GatsbyImage
-                    image={node.frontmatter.thumbnail.childImageSharp.gatsbyImageData} style={{height: "100%"}}/>
-                </div>
-                <h3 className="heading">{node.frontmatter.title}</h3>
-                <div className="card-description">
-                  <p>{node.frontmatter.description}</p>
-                </div>
+            <div className="card b-shadow grow">
+              <div className="card-image">
+                <GatsbyImage
+                  image={
+                    node.frontmatter.thumbnail.childImageSharp.gatsbyImageData
+                  }
+                  style={{ height: "100%" }}
+                />
               </div>
+              <h3 className="heading">{node.frontmatter.title}</h3>
+              <div className="card-description">
+                <p>{node.frontmatter.description}</p>
+              </div>
+            </div>
           )
         })}
       </div>
@@ -66,4 +70,4 @@ const SkillsetSectionExport = props => (
   />
 )
 
-export default SkillsetSectionExport;
+export default SkillsetSectionExport

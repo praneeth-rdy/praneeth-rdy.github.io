@@ -565,4 +565,4 @@ const ElementsPageExport = props => (
   />
 )
 
-export default ElementsPageExport;
+export default ElementsPageExport
