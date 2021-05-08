@@ -3,13 +3,13 @@ import ToggleButton from "./toggleButton";
 import { Link } from "gatsby";
 
 const Layout = (props) => {
-  const stringifiedStoredDarkMode = typeof(window) !== 'undefined' ? localStorage.getItem("darkMode"):null;
+  const stringifiedStoredDarkMode = typeof (window) !== 'undefined' ? localStorage.getItem("darkMode") : null;
   let booleanStoredDarkMode = true;
   if (stringifiedStoredDarkMode !== "true") {
     booleanStoredDarkMode = false;
   }
   function changeThemeMode() {
-    if(typeof(window) !== 'undefined'){
+    if (typeof (window) !== 'undefined') {
       localStorage.setItem("darkMode", darkMode ? "false" : "true");
     }
     darkMode ? setDarkMode(false) : setDarkMode(true);
@@ -17,7 +17,7 @@ const Layout = (props) => {
   const { navHeading, path, children } = props;
   const [toggleNav, setToggleNav] = useState(false);
   const [darkMode, setDarkMode] = useState(booleanStoredDarkMode);
-  if(typeof(window) !== 'undefined'){
+  if (typeof (window) !== 'undefined') {
     document.body.className = darkMode ? "dark" : "light"
   }
   var navActive = {
@@ -97,7 +97,7 @@ const Layout = (props) => {
                 className={"nav-elements " + navActive.elements}>
                 <Link to={`/elements`}>Elements</Link>
               </li>
-              <li>
+              <li className="toggle-btn-item">
                 <ToggleButton onClick={() => changeThemeMode()} darkMode={darkMode} />
               </li>
             </ul>

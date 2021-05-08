@@ -1,5 +1,4 @@
 @import "../vars.css";
-
 .toggle {
     height: 26px;
     width: 45px;
@@ -60,11 +59,12 @@
     transform: rotate(45deg);
 } */
 
-.night > .notch {
+.night>.notch {
     background: whitesmoke;
     box-shadow: 0 0 1.25px whitesmoke;
     transform: translate(-19px, 0);
 }
+
 /* 
 .shape {
     position: absolute;
@@ -121,3 +121,13 @@
     width: 3.75px;
     transform: translate(-2.5px, 0);
 } */
+
+@media (max-width: 850px) {
+    .toggle-btn-item {
+        transition: margin 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+    .site-head-open .toggle-btn-item {
+        margin: 0 19px;
+        transition: margin 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    }
+}
