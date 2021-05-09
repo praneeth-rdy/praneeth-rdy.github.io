@@ -1,13 +1,13 @@
 @import "../vars.css";
 .toggle {
-    height: 26px;
-    width: 45px;
+    height: 20px;
+    width: 40px;
     border-width: 2px;
     border-style: solid;
-    border-radius: 12.5px;
+    border-radius: 12px;
     border-color: var(--color-light-base);
     margin: auto;
-    margin-top: 8px;
+    margin-top: 11px;
     /* background-image: linear-gradient(aqua, skyblue); */
     background-color: color(var(--color-light-bg));
     position: relative;
@@ -20,13 +20,13 @@
 }
 
 .notch {
-    height: 20px;
+    height: 14px;
     width: 20px;
-    border-radius: 50%;
+    border-radius: 12px;
     background: black;
     position: absolute;
     top: 1px;
-    left: 20px;
+    left: 15px;
     /* box-shadow: 0 0 1.25px yellow; */
     z-index: 1;
     transition: all 0.3s ease;
@@ -62,7 +62,7 @@
 .night>.notch {
     background: whitesmoke;
     box-shadow: 0 0 1.25px whitesmoke;
-    transform: translate(-19px, 0);
+    transform: translate(-14px, 0);
 }
 
 /* 

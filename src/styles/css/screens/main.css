@@ -812,7 +812,6 @@ body {
   content: "";
   /* Remove display: inline-block if not required to be on the same line as text etc */
   display: inline-block;
-  background-color: var(--color-light-base);
   margin-top: auto;
   margin-bottom: 10px;
   width: 13px;
@@ -828,6 +827,13 @@ body {
   */
   -webkit-animation: blink 1s step-end infinite;
   animation: blink 1s step-end infinite;
+}
+
+.light .cursor::after{
+  background-color: var(--color-light-base);
+}
+.dark .cursor::after{
+  background-color: var(--color-border);
 }
 
 @-webkit-keyframes blink {
