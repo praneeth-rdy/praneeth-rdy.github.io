@@ -7,7 +7,7 @@ import "../../styles/css/screens/blog/blog-item.css"
 
 function BlogItem({ node, postClass }) {
   return (
-    <article className="blog-item" style={{ padding: 0 }}>
+    <article className="blog-item transition-fade" style={{ padding: 0 }}>
       <Link to={"/blog" + node.fields.slug} className="blog-item-link">
         <div className="post-content-body">
           <h2 className="blog-item-category">{node.frontmatter.category}</h2>

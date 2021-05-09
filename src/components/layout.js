@@ -88,15 +88,15 @@ const Layout = props => {
               <li className={"nav-blog " + navActive.blog}>
                 <Link to={`/blog`}>Blog</Link>
               </li>
-              <li className={"nav-publications " + navActive.publications}>
+              {/* <li className={"nav-publications " + navActive.publications}>
                 <Link to={`/publications`}>Publications</Link>
-              </li>
+              </li> */}
               <li className={"nav-contact " + navActive.contact}>
                 <Link to={`/contact`}>Contact</Link>
               </li>
-              <li className={"nav-elements " + navActive.elements}>
+              {/* <li className={"nav-elements " + navActive.elements}>
                 <Link to={`/elements`}>Elements</Link>
-              </li>
+              </li> */}
               <li className="toggle-btn-item">
                 <ToggleButton
                   onClick={() => changeThemeMode()}
