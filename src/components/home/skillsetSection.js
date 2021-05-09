@@ -5,7 +5,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 //import "slick-carousel/slick/slick.css"
 //import "slick-carousel/slick/slick-theme.css"
 import { StaticQuery, graphql } from "gatsby"
-import "../../styles/css/screens/homescreen/skillset-section.css"
+import "../../styles/css/screens/home/skillset-section.css"
 
 function SkillsetSection(props) {
   //use data as props.data

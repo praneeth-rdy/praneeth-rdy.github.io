@@ -1,5 +1,5 @@
 import React from "react"
-import "../../styles/css/screens/homescreen/about-section.css"
+import "../../styles/css/screens/home/about-section.css"
 // import Img from "gatsby-image"
 import { GatsbyImage } from "gatsby-plugin-image"
 

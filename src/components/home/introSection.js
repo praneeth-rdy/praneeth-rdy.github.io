@@ -3,7 +3,7 @@ import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
-import "../../styles/css/screens/homescreen/intro-section.css"
+import "../../styles/css/screens/home/intro-section.css"
 import { graphql, StaticQuery } from "gatsby"
 
 function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {

@@ -9,13 +9,13 @@ import HorizontalLine from "../components/horizontalLine"
 // import "../styles/global.scss"
 import "../styles/normalize.css"
 import "../styles/css/screens/main.css"
-import "../styles/css/screens/homescreen/index.css"
+import "../styles/css/screens/home/index.css"
 
-import IntroSection from "../components/homeScreen/introSection"
-import AboutSection from "../components/homeScreen/aboutSection"
-import SkillsetSection from "../components/homeScreen/skillsetSection"
-import ExperienceSection from "../components/homeScreen/experienceSection"
-import ProjectsSection from "../components/homeScreen/projectsSection"
+import IntroSection from "../components/home/introSection"
+import AboutSection from "../components/home/aboutSection"
+import SkillsetSection from "../components/home/skillsetSection"
+import ExperienceSection from "../components/home/experienceSection"
+import ProjectsSection from "../components/home/projectsSection"
 
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const Index = ({ data }, location) => {

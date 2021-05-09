@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 //import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
-import "../../styles/css/screens/homescreen/experience-section.css"
+import "../../styles/css/screens/home/experience-section.css"
 
 function ExperienceSection({ data }) {
   //use data as props.data

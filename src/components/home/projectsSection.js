@@ -3,7 +3,7 @@ import { StaticQuery, graphql } from "gatsby"
 // import Img from "gatsby-image"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa"
-import "../../styles/css/screens/homescreen/projects-section.css"
+import "../../styles/css/screens/home/projects-section.css"
 
 function ProjectsSection(props) {
   //use data as props.data
