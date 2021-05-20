@@ -44,7 +44,7 @@ const ElementsPage = ({ data }, location) => {
             <code>
               for (;;) {"{"} ... {"}"}
             </code>
-            . Finally, this is a <a href="/">link</a>.
+            . Finally, this is a <a href="/" className="link">link</a>.
           </p>
           <h2 id="heading-level-2">Heading Level 2</h2>
           <h3 id="heading-level-3">Heading Level 3</h3>

@@ -306,6 +306,7 @@ body {
   background: #fff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "liga" on;
   -moz-font-feature-settings: "liga" on;
 }
 .light{
@@ -384,7 +385,6 @@ blockquote cite a {
 }
 
 a {
-  color: color(var(--color-primary) l(-5%));
   text-decoration: none;
   transition: 0.4s ease;
 }
@@ -392,6 +392,10 @@ a {
 a:hover {
   text-decoration: underline;
   transition: 0.2s ease;
+}
+
+a.link{
+  color: color(var(--color-primary) l(-5%));
 }
 
 h1,

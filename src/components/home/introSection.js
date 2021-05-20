@@ -18,23 +18,23 @@ function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
           <h1>{fullName}</h1>
           <h3 className="designation">Passionate Full Stack Developer</h3>
           <a
-            className="button grow"
+            className="link button grow"
             href="Praneeth-Reddy-Kolanu-CV.pdf"
             download="Praneeth-Reddy-Kolanu-CV.pdf"
           >
             Download Resume
           </a>
           <div className="icons-container">
-            <a href={social.github} target="_blank" rel="noreferrer">
+            <a href={social.github} target="_blank" className="link" rel="noreferrer">
               <FaGithub className="icon" target="_blank" />
             </a>
-            <a href={social.linkedin}>
+            <a href={social.linkedin} target="_blank" className="link" rel="noreferrer">
               <FaLinkedin className="icon" target="_blank" />
             </a>
-            <a href={social.facebook}>
+            <a href={social.facebook} target="_blank" className="link" rel="noreferrer">
               <FaFacebook className="icon" target="_blank" />
             </a>
-            <a href={"mailto:" + social.email}>
+            <a href={"mailto:" + social.email} target="_blank" className="link" rel="noreferrer">
               <FaEnvelope className="icon" />
             </a>
           </div>
