@@ -1,0 +1,13 @@
+
+@media (min-width: 980px){
+    .contact-section{
+        padding: 20px 100px;
+    }
+}
+
+@media (min-width: 1280px){
+    .contact-section{
+        max-width: 1200px;
+        margin: auto;
+    }
+}
