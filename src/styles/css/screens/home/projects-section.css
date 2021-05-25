@@ -12,7 +12,7 @@
 .projects-container .project-card {
   position: relative;
   width: 300px;
-  height: 500px;
+  height: 400px;
   margin: 20px;
   overflow: hidden;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -37,7 +37,7 @@
   position: absolute;
   bottom: 0px;
   width: 100%;
-  height: 160px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;

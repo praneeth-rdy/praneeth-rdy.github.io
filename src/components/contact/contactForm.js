@@ -10,9 +10,11 @@ import { graphql, StaticQuery } from "gatsby"
 function ContactForm({ data, darkMode }) {
   // const social = data.site.siteMetadata.social
   const [formStatus, setFormStatus] = useState("");
+  const [submitStatus, setSubmitStatus] = useState("");
 
   function formSubmit(e) {
     e.preventDefault();
+    setSubmitStatus("loading");
     setFormStatus("");
     const formData = {
       name: e.target.name.value,
@@ -31,10 +33,12 @@ function ContactForm({ data, darkMode }) {
     };
     fetch('https://innovate.pythonanywhere.com/portfolio/contact-form/', requestOptions)
       .then(response => response.json()).then(jsonData => {
-        setFormStatus(jsonData.message)
+        setFormStatus(jsonData.message);
+        setSubmitStatus("");
       })
       .catch((error) => {
-        setFormStatus("An error has occured")
+        setFormStatus("An error has occured");
+        setSubmitStatus("");
       });
   }
   return (
@@ -50,6 +54,7 @@ function ContactForm({ data, darkMode }) {
                 id="name"
                 defaultValue=""
                 placeholder="Name"
+                required
               />
             </div>
             <div className="col-6 col-12-xsmall">
@@ -59,6 +64,7 @@ function ContactForm({ data, darkMode }) {
                 id="email"
                 defaultValue=""
                 placeholder="Email"
+                required
               />
             </div>
             <div className="col-6 col-12-xsmall">
@@ -68,6 +74,7 @@ function ContactForm({ data, darkMode }) {
                 id="mobile"
                 defaultValue=""
                 placeholder="Mobile"
+                required
               />
             </div>
             <div className="col-6 col-12-xsmall">
@@ -77,6 +84,7 @@ function ContactForm({ data, darkMode }) {
                 id="subject"
                 defaultValue=""
                 placeholder="Subject"
+                required
               />
             </div>
             {/* Break */}
@@ -137,6 +145,7 @@ function ContactForm({ data, darkMode }) {
                 placeholder="Enter your message"
                 rows={6}
                 defaultValue={""}
+                required
               />
             </div>
             <div className="col-12 transition-fade">{formStatus}</div>
@@ -144,11 +153,7 @@ function ContactForm({ data, darkMode }) {
             <div className="col-12">
               <ul className="actions">
                 <li>
-                  <input
-                    type="submit"
-                    defaultValue="Send Message"
-                    className="primary"
-                  />
+                  <button type="submit" className={"primary " + submitStatus}><span>Submit</span></button>
                 </li>
                 <li>
                   <input type="reset" defaultValue="Reset" />

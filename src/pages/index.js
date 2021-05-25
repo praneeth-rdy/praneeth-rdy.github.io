@@ -79,7 +79,7 @@ const indexQuery = graphql`
         gatsbyImageData
       }
     }
-    aboutPic: file(relativePath: { eq: "home/about.jpg" }) {
+    aboutPic: file(relativePath: { eq: "home/about.png" }) {
       childImageSharp {
         gatsbyImageData
       }
