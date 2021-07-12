@@ -11,11 +11,11 @@ import "../styles/normalize.css"
 import "../styles/css/screens/main.css"
 import "../styles/css/screens/home/index.css"
 
-import IntroSection from "../components/home/introSection"
-import AboutSection from "../components/home/aboutSection"
-import SkillsetSection from "../components/home/skillsetSection"
-import ExperienceSection from "../components/home/experienceSection"
-import ProjectsSection from "../components/home/projectsSection"
+import IntroSection from "../components/home/IntroSection"
+import AboutSection from "../components/home/AboutSection"
+import SkillsetSection from "../components/home/SkillsetSection"
+import ExperienceSection from "../components/home/ExperienceSection"
+import ProjectsSection from "../components/home/ProjectsSection"
 
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const Index = ({ data }, location) => {

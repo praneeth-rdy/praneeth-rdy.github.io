@@ -146,8 +146,7 @@ const Layout = props => {
         <a
           href="https://gatsbyjs.org"
           target="_blank"
-          rel="noopener noreferrer"
-        >
+          rel="noopener noreferrer">
           Gatsby
         </a>
       </footer>

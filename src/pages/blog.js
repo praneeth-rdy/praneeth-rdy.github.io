@@ -9,7 +9,7 @@ import "../styles/normalize.css"
 import "../styles/css/screens/main.css"
 import "../styles/css/screens/blog/blog-page.css"
 
-import BlogItem from "../components/blog/blogItem"
+import BlogItem from "../components/blog/BlogItem"
 import HorizontalLine from "../components/horizontalLine"
 
 // TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template

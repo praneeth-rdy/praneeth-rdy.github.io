@@ -1,7 +1,7 @@
 import React from "react"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-import ContactForm from "../components/contact/contactForm"
+import ContactForm from "../components/contact/ContactForm"
 
 function Contact() {
   return (
