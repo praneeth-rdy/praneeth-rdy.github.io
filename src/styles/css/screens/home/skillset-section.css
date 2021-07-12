@@ -1,68 +1,44 @@
 @import "../../vars.css";
 
-
-
-.skill-cards-container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.skill-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.card {
-  border-radius: 5px;
-  padding: 25px;
-  text-align: center;
-  height: 100%;
-  margin: 1%;
+.skill-cards-container .skill-card {
+    position: relative;
+    margin: 0 5px;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    bottom: 0;
+    transition: bottom 0.3s;
 }
 
-.card > h3 {
-  font-size: 2rem;
-  margin: 0;
+.light .skill-cards-container .skill-card {
+    box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 }
-.light .card > h3 {
-  color: color(var(--color-light-base) l(+20%));
+
+.dark .skill-cards-container .skill-card {
+    box-shadow: 0 7px 30px -10px rgba(255, 255, 255, 0.6);
 }
-.dark .card > h3 {
-  color: color(var(--color-dark-base) l(+20%));
-}
-/* .card .gatsby-image-wrapper img{
-  margin-bottom: 5px;
-  height: 150px;
-  width: 150px;
-  object-fit: cover;
-} */
-.card .card-image {
-  margin-bottom: 5px;
-  height: 150px;
-  width: 150px;
-  margin-left: auto;
-  margin-right: auto;
+
+.skill-cards-container .skill-card:hover {
+    bottom: 7px;
+    transition: bottom 0.3s;
 }
 
 @media (min-width: 480px) {
-  .card {
-    max-width: 48%;
-    flex-basis: 48%;
-  }
 }
 
 @media (min-width: 740px) {
-  .card .heading {
-    font-size: 2.5rem;
-  }
 }
 
 @media (min-width: 980px) {
-  
 }
 
 @media (min-width: 1280px) {
-  .card {
-    max-width: 32%;
-    flex-basis: 32%;
-  }
 }
 
 @media (min-width: 1680px) {

@@ -1,152 +1,67 @@
 @import "../../vars.css";
 
-.projects-container {
-  position: relative;
+.project-cards-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  margin: 40px 0;
 }
 
-.projects-container .project-card {
-  position: relative;
-  width: 300px;
-  height: 400px;
-  margin: 20px;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  border-radius: 15px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.projects-container .project-card .image-box, .projects-container .project-card .image-box .gatsby-image-wrapper {
-  width: 100%;
-  height: 100%;
-}
-
-.projects-container .project-card .image-box img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.projects-container .project-card .content {
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  height: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  flex-direction: column;
-  backdrop-filter: blur(15px);
-  box-shadow: 0 -10px 10px rgba(0, 0, 0, 0.1);
-  transition: bottom 0.5s;
-  transition-delay: 0s;
-}
-.light .projects-container .project-card .content {
-  border: 1px solid color(var(--color-light-bg) l(-30%));
-}
-.dark .projects-container .project-card .content {
-  border: 1px solid color(var(--color-dark-bg) l(-30%));
-}
-
-.projects-container .project-card .content .content-box h3 {
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 500;
-  font-size: 18px;
+.card {
+  border-radius: 5px;
+  padding: 25px;
   text-align: center;
-  margin: 20px 0 15px;
-  line-height: 1.1em;
-  transition: 0.5s;
-  opacity: 1;
-  transform: translateY(0px);
-  transition-delay: 0.6s;
-}
-.light .projects-container .project-card .content .content-box h3 {
-  color: var(--color-light-bg);
-}
-.dark .projects-container .project-card .content .content-box h3 {
-  color: var(--color-dark-bg);
+  height: 100%;
+  margin: 1%;
+  max-width: 300px;
+  flex-basis: 100%;
 }
 
-.projects-container .project-card .content .content-box h3 span {
-  font-size: 12px;
-  font-weight: 300;
-  text-transform: initial;
+.card > h3 {
+  font-size: 2rem;
+  margin: 0;
 }
-
-.projects-container .project-card .content .sci {
-  position: relative;
-  bottom: 10px;
-  display: flex;
+.light .card > h3 {
+  color: color(var(--color-light-base) l(+20%));
 }
-
-.projects-container .project-card .content .sci li {
-  list-style: none;
-  margin: 0 10px;
-  transform: translateY(0px);
-  transition: 0.5s;
-  opacity: 1;
-  transition-delay: calc(0.2s * var(--i));
+.dark .card > h3 {
+  color: color(var(--color-dark-base) l(+20%));
 }
-
-.projects-container .project-card .content .sci li a {
-  font-size: 24px;
-}
-.light .projects-container .project-card .content .sci li a {
-  color: var(--color-light-bg);
-}
-.dark .projects-container .project-card .content .sci li a {
-  color: var(--color-dark-bg);
-}
-
-.light .projects-container .project-card .content .sci li a:hover {
-  color: color(var(--color-light-bg) l(-10%));
-}
-.dark .projects-container .project-card .content .sci li a:hover {
-  color: color(var(--color-dark-bg) l(-10%));
+/* .card .gatsby-image-wrapper img{
+  margin-bottom: 5px;
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+} */
+.card .card-image {
+  margin-bottom: 5px;
+  height: 150px;
+  width: 150px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @media (min-width: 480px) {
-  .projects-container .project-card .content {
-    bottom: -160px;
-    transition-delay: 0.8s;
-  }
-  .projects-container .project-card:hover .content {
-    bottom: 0px;
-    transition-delay: 0s;
-  }
-  .projects-container .project-card .content .content-box h3 {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  .projects-container .project-card:hover .content .content-box h3 {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-  .projects-container .project-card .content .sci li {
-    transform: translateY(40px);
-    opacity: 0;
-  }
-  .projects-container .project-card:hover .content .sci li {
-    transform: translateY(0px);
-    opacity: 1;
-  }
 }
 
 @media (min-width: 740px) {
+  .card .heading {
+    font-size: 2.5rem;
+  }
 }
 
 @media (min-width: 980px) {
+  .card {
+    max-width: 48%;
+    flex-basis: 48%;
+  }
 }
 
 @media (min-width: 1280px) {
+  .card {
+    max-width: 31%;
+    flex-basis: 31%;
+  }
 }
 
 @media (min-width: 1680px) {

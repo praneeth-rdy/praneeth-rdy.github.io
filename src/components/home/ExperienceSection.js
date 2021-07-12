@@ -8,7 +8,7 @@ function ExperienceSection({ data }) {
   // const experiences = props.data.allMarkdownRemark.edges
   const allExperiences = data.othersJson.experience
   const [experience, setExperience] = useState(
-    allExperiences.find(exp => exp.org.toLowerCase() === "education")
+    allExperiences[0]
   )
 
   function changeExperience(org) {

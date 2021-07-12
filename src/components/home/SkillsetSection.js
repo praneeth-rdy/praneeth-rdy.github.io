@@ -1,10 +1,10 @@
+
+
 import React from "react"
-//import Slider from "react-slick"
+import { StaticQuery, graphql } from "gatsby"
 // import Img from "gatsby-image"
 import { GatsbyImage } from "gatsby-plugin-image"
-//import "slick-carousel/slick/slick.css"
-//import "slick-carousel/slick/slick-theme.css"
-import { StaticQuery, graphql } from "gatsby"
+import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa"
 import "../../styles/css/screens/home/skillset-section.css"
 
 function SkillsetSection(props) {
@@ -12,23 +12,12 @@ function SkillsetSection(props) {
   const skills = props.data.allMarkdownRemark.edges
   return (
     <section className="home-section post-content-body">
-      <h2 class="section-heading">Skillset</h2>
+      <h2 className="section-heading">Skillset</h2>
       <div className="skill-cards-container">
         {skills.map(({ node }) => {
           return (
-            <div className="card b-shadow grow">
-              <div className="card-image">
-                <GatsbyImage
-                  image={
-                    node.frontmatter.thumbnail.childImageSharp.gatsbyImageData
-                  }
-                  style={{ height: "100%" }}
-                />
-              </div>
-              <h3 className="heading">{node.frontmatter.title}</h3>
-              <div className="card-description">
-                <p>{node.frontmatter.description}</p>
-              </div>
+            <div className="skill-card" style={{ backgroundColor: node.frontmatter.color }}>
+              {node.frontmatter.title}
             </div>
           )
         })}
@@ -38,29 +27,30 @@ function SkillsetSection(props) {
 }
 
 const indexQuery = graphql`
-  query {
-    allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(skills)/" } }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            quote
-            description
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData
-              }
+query {
+  allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(skills)/" } }) {
+    edges {
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          quote
+          color
+          description
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
             }
           }
         }
       }
     }
   }
+}
 `
 
 const SkillsetSectionExport = props => (

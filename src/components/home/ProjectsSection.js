@@ -1,8 +1,10 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+//import Slider from "react-slick"
 // import Img from "gatsby-image"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa"
+//import "slick-carousel/slick/slick.css"
+//import "slick-carousel/slick/slick-theme.css"
+import { StaticQuery, graphql } from "gatsby"
 import "../../styles/css/screens/home/projects-section.css"
 
 function ProjectsSection(props) {
@@ -10,73 +12,23 @@ function ProjectsSection(props) {
   const projects = props.data.allMarkdownRemark.edges
   return (
     <section className="home-section post-content-body">
-      <h2 className="section-heading">Projects</h2>
-      <div className="projects-container">
+      <h2 class="section-heading">Projects</h2>
+      <div className="project-cards-container">
         {projects.map(({ node }) => {
           return (
-            <div className="project-card">
-              <div className="image-box">
+            <div className="card b-shadow grow">
+              <div className="card-image">
                 <GatsbyImage
                   image={
                     node.frontmatter.thumbnail.childImageSharp.gatsbyImageData
                   }
                   style={{ height: "100%" }}
-                  alt="project image"
                 />
-                {/* <img src={node.frontmatter.thumbnail.publicURL} /> */}
               </div>
-              <div className="content">
-                <div className="content-box">
-                  <h3>
-                    {node.frontmatter.title}
-                    <br />
-                    <span>{node.frontmatter.stack}</span>
-                  </h3>
-                </div>
-                <ul className="sci">
-                  <li style={{ "--i": 1 }}>
-                    <a
-                      href={node.frontmatter.repo}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaGithub className="icon" />
-                    </a>
-                  </li>
-                  <li style={{ "--i": 2 }}>
-                    <a
-                      href={node.frontmatter.drive}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaGoogleDrive className="icon" />
-                    </a>
-                  </li>
-                  <li style={{ "--i": 3 }}>
-                    <a
-                      href={node.frontmatter.website}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <FaGlobe className="icon" />
-                    </a>
-                  </li>
-                </ul>
+              <h3 className="heading">{node.frontmatter.title}</h3>
+              <div className="card-description">
+                <p>{node.frontmatter.stack}</p>
               </div>
-              {/* <div className="project">
-                  <img
-                    src={node.frontmatter.thumbnail.publicURL}
-                    alt="project"
-                  />
-                  <div className="project-info">
-                    <h4 className="project-heading">
-                      {node.frontmatter.title}
-                    </h4>
-                    <p className="project-caption">
-                      {node.frontmatter.caption}
-                    </p>
-                  </div>
-                </div> */}
             </div>
           )
         })}
@@ -120,4 +72,4 @@ const ProjectsSectionExport = props => (
   />
 )
 
-export default ProjectsSectionExport
+export default ProjectsSectionExport;
