@@ -82,9 +82,9 @@ const Layout = props => {
               <li className={"nav-home " + navActive.home}>
                 <Link to={`/`}>Home</Link>
               </li>
-              <li className={"nav-about " + navActive.about}>
+              {/* <li className={"nav-about " + navActive.about}>
                 <Link to={`/about`}>About</Link>
-              </li>
+              </li> */}
               <li className={"nav-blog " + navActive.blog}>
                 <Link to={`/blog`}>Blog</Link>
               </li>
