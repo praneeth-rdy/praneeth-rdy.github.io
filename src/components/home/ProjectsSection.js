@@ -1,11 +1,12 @@
-import React from "react"
+import React from "react";
 //import Slider from "react-slick"
 // import Img from "gatsby-image"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image";
 //import "slick-carousel/slick/slick.css"
 //import "slick-carousel/slick/slick-theme.css"
-import { StaticQuery, graphql } from "gatsby"
-import "../../styles/css/screens/home/projects-section.css"
+import { StaticQuery, graphql } from "gatsby";
+// import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa";
+import "../../styles/css/screens/home/projects-section.css";
 
 function ProjectsSection(props) {
   //use data as props.data

@@ -1,11 +1,7 @@
-
-
-import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import React from "react";
+import { StaticQuery, graphql } from "gatsby";
 // import Img from "gatsby-image"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa"
-import "../../styles/css/screens/home/skillset-section.css"
+import "../../styles/css/screens/home/skillset-section.css";
 
 function SkillsetSection(props) {
   //use data as props.data

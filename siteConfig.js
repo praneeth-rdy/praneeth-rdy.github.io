@@ -4,7 +4,7 @@ module.exports = {
   fullName: "Praneeth Reddy Kolanu",
   author: "Praneeth Kolanu",
   description:
-    "A bold, minimal theme for Gatsby, focused on clean typography & beautiful imagery",
+    "We never solve problems until we face them",
   url: "https://praneeth-rdy.github.io", // Domain of your site without prefix!
   prefix: "/",
   github: "https://github.com/praneeth-rdy",

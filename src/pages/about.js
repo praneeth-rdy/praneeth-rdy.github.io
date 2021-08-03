@@ -1,13 +1,13 @@
-import React from "react"
-import { graphql, StaticQuery } from "gatsby"
+import React from "react";
+import { graphql, StaticQuery } from "gatsby";
 // import Img from "gatsby-image"
-import { GatsbyImage } from "gatsby-plugin-image"
+// import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/layout";
+import Seo from "../components/seo";
 
-import "../styles/normalize.css"
-import "../styles/css/screens/main.css"
+import "../styles/normalize.css";
+import "../styles/css/screens/main.css";
 
 const AboutPage = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
