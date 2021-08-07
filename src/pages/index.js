@@ -14,7 +14,7 @@ import "../styles/css/screens/home/index.css"
 import IntroSection from "../components/home/IntroSection"
 import AboutSection from "../components/home/AboutSection"
 import SkillsetSection from "../components/home/SkillsetSection"
-import ExperienceSection from "../components/home/ExperienceSection"
+import EducationSection from "../components/home/EducationSection"
 import ProjectsSection from "../components/home/ProjectsSection"
 
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
@@ -42,7 +42,7 @@ const Index = ({ data }, location) => {
 
       <ProjectsSection />
 
-      <ExperienceSection />
+      <EducationSection />
 
       {/* <div className="post-feed">
         {posts.map(({ node }) => {

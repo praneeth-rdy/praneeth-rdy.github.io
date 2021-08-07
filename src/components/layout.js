@@ -1,6 +1,6 @@
-import React, { useState, cloneElement } from "react"
-import ToggleButton from "./toggleButton"
-import { Link } from "gatsby"
+import React, { useState, cloneElement } from "react";
+import ToggleButton from "./toggleButton";
+import { Link } from "gatsby";
 
 const Layout = props => {
   const stringifiedStoredDarkMode =
