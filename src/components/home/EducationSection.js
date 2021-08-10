@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from "gatsby"
 import "../../styles/css/screens/home/experience-section.css"
 
 function ExperienceSection({ data }) {
-  //use data as props.data
+  // use data as props.data
   // const experiences = props.data.allMarkdownRemark.edges
   const allExperiences = data.othersJson.experience
   const [experience, setExperience] = useState(
@@ -18,9 +18,9 @@ function ExperienceSection({ data }) {
   return (
     <section className="home-section post-content-body">
       <h2 class="section-heading">
-        <span>Experience</span>
+        <span>Education</span>
       </h2>
-      <div className="experience-container row">
+      {/* <div className="experience-container row">
         <div className="experience-nav-container">
           {allExperiences.map(exp => {
             if (exp.org === experience.org) {
@@ -64,7 +64,7 @@ function ExperienceSection({ data }) {
             )
           })}
         </div>
-      </div>
+      </div>*/}
     </section>
   )
 }

@@ -94,7 +94,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Install the latest node package manager.
 
 - npm
   ```sh
@@ -103,19 +103,19 @@ This is an example of how to list things you need to use the software and how to
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Praneeth-rdy/praneeth-rdy.github.io.git
    ```
-3. Install NPM packages
+2. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```JS
-   const API_KEY = 'ENTER YOUR API';
+3. Run the gatsby development server
+   ```sh
+   npm run develop
    ```
+4. Visit the link printed on the terminal to view the website which is http://localhost:8000/ by default
 
 <!-- USAGE EXAMPLES -->
 
