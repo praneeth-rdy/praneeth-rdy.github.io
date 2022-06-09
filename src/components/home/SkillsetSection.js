@@ -6,8 +6,8 @@ import * as Styles from "../../styles/css/screens/home/skillset-section.module.c
 
 function SkillsetSection({ data }) {
   //use data as props.data
-  const skills = data.allFile.edges;
-  // console.log(data.allFile.edges);
+  const skills = data.allMarkdownRemark.edges;
+  console.log(data.allMarkdownRemark.edges);
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">Skillset</h2>
@@ -16,7 +16,7 @@ function SkillsetSection({ data }) {
           return (
             <div key={index} className={Styles.skillCard}>
               <GatsbyImage
-                image={node.childImageSharp.gatsbyImageData}
+                image={node.frontmatter.lightModeLogo.childImageSharp.gatsbyImageData}
                 style={{ borderRadius: "8px" }}
                 alt='Skill Logo'
               />
@@ -30,15 +30,28 @@ function SkillsetSection({ data }) {
 
 const indexQuery = graphql`
 query {
-  allFile(filter: {absolutePath: {regex: "/(skills)/"}, extension: {regex: "/(jpg)|(jpeg)|(png)/"}}){
+  allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/(/content/skills/)/"}}){
     edges {
-        node {
-          id
-          childImageSharp {
-            gatsbyImageData(height: 50)
+      node {
+        excerpt
+        fields {
+          slug
+        }
+        frontmatter {
+          lightModeLogo {
+            childImageSharp {
+              gatsbyImageData
+            }
           }
+          darkModeLogo {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
+          website
         }
       }
+    }
   }
 }
 `

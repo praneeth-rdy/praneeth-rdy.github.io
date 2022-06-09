@@ -17,6 +17,10 @@
     transition: bottom 0.3s;
 }
 
+.skillCardsContainer .skillCard img {
+    height: 50px;
+}
+
 .light .skillCardsContainer .skillCard {
     box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 }
