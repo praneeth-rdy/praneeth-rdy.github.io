@@ -6,30 +6,47 @@ import { GatsbyImage } from "gatsby-plugin-image";
 //import "slick-carousel/slick/slick-theme.css"
 import { StaticQuery, graphql } from "gatsby";
 // import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa";
-import "../../styles/css/screens/home/projects-section.css";
+import * as Styles from "../../styles/css/screens/home/projects-section.module.css";
 
 function ProjectsSection(props) {
   //use data as props.data
   const projects = props.data.allMarkdownRemark.edges
+  console.log(projects);
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">Projects</h2>
-      <div className="project-cards-container">
+      <div className={Styles.projectCardsContainer}>
         {projects.map(({ node }, index) => {
           return (
-            <div key={index} className="card b-shadow grow">
-              <div className="card-image">
+            <div key={index} className={`${Styles.card} 'b-shadow' 'grow'`}>
+              <div className={Styles.cardImage}>
                 <GatsbyImage
                   image={
                     node.frontmatter.thumbnail.childImageSharp.gatsbyImageData
                   }
-                  style={{ height: "100%" }}
                   alt={`${node.frontmatter.title} Image`}
                 />
               </div>
-              <h3 className="heading">{node.frontmatter.title}</h3>
-              <div className="card-description">
-                <p>{node.frontmatter.stack}</p>
+              <div className={Styles.body}>
+                <h3 className={`${Styles.heading}`}>
+                  {node.frontmatter.title}
+                </h3>
+                <div>
+                  <p className={Styles.cardDescription}>
+                    {node.frontmatter.description}
+                  </p>
+                </div>
+                <div className={Styles.stacksContainer}>
+                  {node.frontmatter.stacks.map(({childImageSharp}, index) => (
+                    <GatsbyImage
+                      key={index}
+                      className={Styles.stack}
+                      image={childImageSharp.gatsbyImageData}
+                      alt={`Stack Image`}
+                      objectFit='contain'
+                    />
+                  ))}
+                </div>
               </div>
             </div>
           )
@@ -51,7 +68,12 @@ const indexQuery = graphql`
           frontmatter {
             date(formatString: "MMMM DD, YYYY")
             title
-            stack
+            description
+            stacks {
+              childImageSharp {
+                gatsbyImageData
+              }
+            }
             repo
             drive
             website
