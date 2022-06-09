@@ -1,4 +1,4 @@
-import React, { useState, cloneElement } from "react";
+import React, { useState, cloneElement, Fragment } from "react";
 import ToggleButton from "./toggleButton";
 import { Link } from "gatsby";
 
@@ -137,7 +137,11 @@ const Layout = props => {
       </header>
       <main id="site-main" className="site-main">
         <div id="swup" className="transition-fade">
-          {children.map(child => cloneElement(child, { darkMode: darkMode }))}
+          {children.map((child, index) => (
+            <Fragment key={index}>
+              {cloneElement(child, { darkMode: darkMode })}
+            </Fragment>
+          ))}
         </div>
       </main>
       <footer className="site-foot">

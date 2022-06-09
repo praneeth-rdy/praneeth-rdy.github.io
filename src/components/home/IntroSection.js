@@ -9,7 +9,7 @@ import { graphql, StaticQuery } from "gatsby"
 function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
   const social = data.site.siteMetadata.social
   const fullName = data.site.siteMetadata.authorFullName
-  console.log(social)
+  // console.log(social)
   return (
     <section className="page-head intro-section">
       <div className="intro-text">
@@ -19,8 +19,8 @@ function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
           <h3 className="designation">Passionate Full Stack Developer</h3>
           <a
             className="link button grow"
-            href="Praneeth-Reddy-Kolanu-CV.pdf"
-            download="Praneeth-Reddy-Kolanu-CV.pdf"
+            href="Praneeth-Reddy-Kolanu-Resume.pdf"
+            download="Praneeth-Reddy-Kolanu-Resume.pdf"
           >
             Download Resume
           </a>
@@ -44,6 +44,7 @@ function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
         className="intro-image"
         image={darkMode ? darkModeImage : lightModeImage}
         style={{ width: "400px" }}
+        alt='Intro Image'
       />
     </section>
   )

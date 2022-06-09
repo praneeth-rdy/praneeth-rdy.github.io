@@ -1,19 +1,25 @@
 import React from "react";
 import { StaticQuery, graphql } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image"
 // import Img from "gatsby-image"
-import "../../styles/css/screens/home/skillset-section.css";
+import * as Styles from "../../styles/css/screens/home/skillset-section.module.css";
 
-function SkillsetSection(props) {
+function SkillsetSection({ data }) {
   //use data as props.data
-  const skills = props.data.allMarkdownRemark.edges
+  const skills = data.allFile.edges;
+  console.log(data.allFile.edges);
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">Skillset</h2>
-      <div className="skill-cards-container">
-        {skills.map(({ node }) => {
+      <div className={Styles.skillCardsContainer}>
+        {skills && skills.map(({ node }, index) => {
           return (
-            <div className="skill-card" style={{ backgroundColor: node.frontmatter.color }}>
-              {node.frontmatter.title}
+            <div key={index} className={Styles.skillCard}>
+              <GatsbyImage
+                image={node.childImageSharp.gatsbyImageData}
+                style={{ borderRadius: "8px" }}
+                alt='Skill Logo'
+              />
             </div>
           )
         })}
@@ -24,27 +30,15 @@ function SkillsetSection(props) {
 
 const indexQuery = graphql`
 query {
-  allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/(skills)/" } }) {
+  allFile(filter: {absolutePath: {regex: "/(skills)/"}, extension: {regex: "/(jpg)|(jpeg)|(png)/"}}){
     edges {
-      node {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          quote
-          color
-          description
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData
-            }
+        node {
+          id
+          childImageSharp {
+            gatsbyImageData(height: 50)
           }
         }
       }
-    }
   }
 }
 `

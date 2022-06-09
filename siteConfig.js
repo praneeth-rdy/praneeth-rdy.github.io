@@ -4,11 +4,11 @@ module.exports = {
   fullName: "Praneeth Reddy Kolanu",
   author: "Praneeth Kolanu",
   description:
-    "We never solve problems until we face them",
+    "Success is not how much money we make, it's how much difference we bring in people's lives",
   url: "https://praneeth-rdy.github.io", // Domain of your site without prefix!
   prefix: "/",
   github: "https://github.com/praneeth-rdy",
-  linkedin: "https://www.linkedin.com/in/praneeth-/",
-  facebook: "https://www.facebook.com/praneeth.reddy.3557440/",
+  linkedin: "https://www.linkedin.com/in/praneethrdy/",
+  facebook: "https://www.facebook.com/praneeth.kolanu/",
   email: "praneeth.kolanu.iitkgp@gmail.com",
 }

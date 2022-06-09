@@ -1,6 +1,8 @@
 ---
-title: Todo App
-stack: React | Gatsby
+title: Mitti
+stack:
+- React
+- Gatsby
 start: "2019-05-08"
 end: "2019-06-08"
 repo: https://github.com/

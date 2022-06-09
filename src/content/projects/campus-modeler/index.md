@@ -1,6 +1,8 @@
 ---
-title: Project Name
-stack: React | Gatsby
+title: Campus Modeler
+stack:
+- React
+- Gatsby
 start: "2019-05-08"
 end: "2019-06-08"
 repo: https://github.com/

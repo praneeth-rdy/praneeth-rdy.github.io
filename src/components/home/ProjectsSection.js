@@ -13,17 +13,18 @@ function ProjectsSection(props) {
   const projects = props.data.allMarkdownRemark.edges
   return (
     <section className="home-section post-content-body">
-      <h2 class="section-heading">Projects</h2>
+      <h2 className="section-heading">Projects</h2>
       <div className="project-cards-container">
-        {projects.map(({ node }) => {
+        {projects.map(({ node }, index) => {
           return (
-            <div className="card b-shadow grow">
+            <div key={index} className="card b-shadow grow">
               <div className="card-image">
                 <GatsbyImage
                   image={
                     node.frontmatter.thumbnail.childImageSharp.gatsbyImageData
                   }
                   style={{ height: "100%" }}
+                  alt={`${node.frontmatter.title} Image`}
                 />
               </div>
               <h3 className="heading">{node.frontmatter.title}</h3>

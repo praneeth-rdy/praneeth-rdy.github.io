@@ -17,7 +17,7 @@ function ExperienceSection({ data }) {
   }
   return (
     <section className="home-section post-content-body">
-      <h2 class="section-heading">
+      <h2 className="section-heading">
         <span>Education</span>
       </h2>
       {/* <div className="experience-container row">

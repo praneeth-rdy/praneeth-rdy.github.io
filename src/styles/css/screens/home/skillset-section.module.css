@@ -1,12 +1,12 @@
 @import "../../vars.css";
 
-.skill-cards-container {
+.skillCardsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
 }
 
-.skill-cards-container .skill-card {
+.skillCardsContainer .skillCard {
     position: relative;
     margin: 0 5px;
     padding: 5px 15px;
@@ -16,15 +16,15 @@
     transition: bottom 0.3s;
 }
 
-.light .skill-cards-container .skill-card {
+.light .skillCardsContainer .skillCard {
     box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
 }
 
-.dark .skill-cards-container .skill-card {
+.dark .skillCardsContainer .skillCard {
     box-shadow: 0 7px 30px -10px rgba(255, 255, 255, 0.6);
 }
 
-.skill-cards-container .skill-card:hover {
+.skillCardsContainer .skillCard:hover {
     bottom: 7px;
     transition: bottom 0.3s;
 }
