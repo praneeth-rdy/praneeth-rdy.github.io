@@ -16,13 +16,13 @@ function BlogItem({ node, postClass }) {
           </h3>
           <div className="blog-item-addinfo">
             <h2>
-              <FaClock className="fa-icon" />
-              {node.frontmatter.date}
+              {/* <FaClock className="fa-icon" /> */}
+              Published on {node.frontmatter.date}
             </h2>
-            <h2>
+            {/* <h2>
               <FaUser className="fa-icon" />
               {node.frontmatter.author}
-            </h2>
+            </h2> */}
           </div>
           {/* <Img
         fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
@@ -36,15 +36,15 @@ function BlogItem({ node, postClass }) {
           }
         }
       /> */}
-          <blockquote className="blog-item-quote">
+          {/* <blockquote className="blog-item-quote">
             {node.frontmatter.quote}
-          </blockquote>
+          </blockquote> */}
           <p className="blog-item-description">
             {node.frontmatter.description}
           </p>
         </div>
       </Link>
-      <HorizontalLine color="rgba(0, 0, 0, 0.5)" margin="50px" />
+      {/* <HorizontalLine color="rgba(0, 0, 0, 0.5)" margin="50px" /> */}
     </article>
   )
 }

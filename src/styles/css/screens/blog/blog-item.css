@@ -1,7 +1,7 @@
 @import "../../vars.css";
+
 .blog-item {
-  margin-left: auto;
-  margin-right: auto;
+  margin: 6rem auto;
 }
 
 .blog-item h2.blog-item-category {
@@ -16,32 +16,47 @@
 .blog-item .blog-item-heading {
   text-align: left;
 }
-.light .blog-item .blog-item-heading{
+
+.light .blog-item .blog-item-heading {
   color: color(var(--color-light-base) l(+20%));
+  transition: all 0.3s ease-in-out;
 }
-.dark .blog-item .blog-item-heading{
+
+.dark .blog-item .blog-item-heading {
   color: color(var(--color-dark-base) l(+20%));
+  transition: all 0.3s ease-in-out;
+}
+
+.blog-item:hover .blog-item-heading {
+  color: color(var(--color-primary));
+  transition: all 0.3s ease-in-out;
 }
 
 .blog-item .blog-item-quote {
-  margin-top: 13px;
-  margin-bottom: 13px;
+  margin: 13px 0;
 }
+
 .light .blog-item .blog-item-quote {
   color: color(var(--color-light-base) l(+30%));
 }
+
 .dark .blog-item .blog-item-quote {
   color: color(var(--color-dark-base) l(+30%));
 }
 
 .blog-item-description {
-  margin: 5px;
+  margin: 5px 0;
+  padding: 0.6rem 0;
+  font-size: 1.6rem;
+  line-height: 2.8rem;
 }
+
 .light .blog-item-description {
-  color: color(var(--color-light-base) l(+10%));
+  color: color(var(--color-light-base) l(+25%));
 }
+
 .dark .blog-item-description {
-  color: color(var(--color-dark-base) l(+10%));
+  color: color(var(--color-dark-base) l(+25%));
 }
 
 .blog-item-link:hover,
@@ -53,30 +68,32 @@
   display: flex;
   flex-direction: row;
   justify-content: start;
-  text-transform: uppercase;
 }
 
-.blog-item .blog-item-addinfo > h2 {
-  font-size: 14px;
-  margin-right: 12px;
-  margin-top: 7px;
+.blog-item .blog-item-addinfo>h2 {
+  font-size: 1.3rem;
+  margin: 0;
+  /* font-weight: normal; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
-.light .blog-item .blog-item-addinfo > h2 {
+
+.light .blog-item .blog-item-addinfo>h2 {
   color: color(var(--color-light-base) l(+40%));
 }
-.dark .blog-item .blog-item-addinfo > h2 {
+
+.dark .blog-item .blog-item-addinfo>h2 {
   color: color(var(--color-dark-base) l(+40%));
 }
 
 .blog-item .fa-icon {
-  margin-right: 3px;
+  margin-right: 5px;
 }
 
-@media (min-width: 480px) {
-}
+@media (min-width: 480px) {}
 
-@media (min-width: 740px) {
-}
+@media (min-width: 740px) {}
 
 @media (min-width: 980px) {
   .blog-item {
@@ -85,8 +102,6 @@
   }
 }
 
-@media (min-width: 1280px) {
-}
+@media (min-width: 1280px) {}
 
-@media (min-width: 1680px) {
-}
+@media (min-width: 1680px) {}
