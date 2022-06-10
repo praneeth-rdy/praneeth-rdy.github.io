@@ -8,19 +8,22 @@ import Seo from "../components/seo";
 
 import "../styles/normalize.css";
 import "../styles/css/screens/main.css";
+import ThemeContextProvider from "../context/ThemeContextProvider";
 
 const AboutPage = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
 
   return (
-    <Layout navHeading={navHeading} path="/about">
-      <Seo title="About" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
-      <div></div>
-    </Layout>
+    <ThemeContextProvider>
+      <Layout navHeading={navHeading} path="/about">
+        <Seo title="About" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <div></div>
+      </Layout>
+    </ThemeContextProvider>
   )
 }
 
-const indexQuery = graphql`
+const aboutQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -39,11 +42,11 @@ const indexQuery = graphql`
 
 const AboutPageExport = props => (
   <StaticQuery
-    query={indexQuery}
+    query={aboutQuery}
     render={data => (
       <AboutPage location={props.location} data={data} {...props} />
     )}
   />
 )
 
-export default AboutPageExport
+export default AboutPageExport;

@@ -16,6 +16,7 @@ import AboutSection from "../components/home/AboutSection"
 import SkillsetSection from "../components/home/SkillsetSection"
 import ExperienceSection from "../components/home/ExperienceSection"
 import ProjectsSection from "../components/home/ProjectsSection"
+import ThemeContextProvider from "../context/ThemeContextProvider"
 
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const Index = ({ data }, location) => {
@@ -27,21 +28,22 @@ const Index = ({ data }, location) => {
   // let postCounter = 0
 
   return (
-    <Layout navHeading={navHeading} path="/">
-      <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+    <ThemeContextProvider>
+      <Layout navHeading={navHeading} path="/">
+        <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
 
-      {/* Introduction Section */}
-      <IntroSection
-        darkModeImage={darkModeImage}
-        lightModeImage={lightModeImage}
-      />
-      <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
-      <AboutSection image={aboutPic} />
-      <ProjectsSection />
-      <SkillsetSection />
-      {/* <ExperienceSection /> */}
+        {/* Introduction Section */}
+        <IntroSection
+          darkModeImage={darkModeImage}
+          lightModeImage={lightModeImage}
+        />
+        <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
+        <AboutSection image={aboutPic} />
+        <ProjectsSection />
+        <SkillsetSection />
+        {/* <ExperienceSection /> */}
 
-      {/* <div className="post-feed">
+        {/* <div className="post-feed">
         {posts.map(({ node }) => {
           postCounter++
           return (
@@ -54,7 +56,8 @@ const Index = ({ data }, location) => {
           )
         })}
       </div> */}
-    </Layout>
+      </Layout>
+    </ThemeContextProvider>
   )
 }
 

@@ -1,25 +1,15 @@
-import React, { useState, cloneElement, Fragment } from "react";
+import React, { useState, cloneElement, Fragment, useContext } from "react";
 import ToggleButton from "./toggleButton";
 import { Link } from "gatsby";
+import { ThemeContext } from "../context/ThemeContextProvider";
 
-const Layout = props => {
-  const stringifiedStoredDarkMode =
-    typeof window !== "undefined" ? localStorage.getItem("darkMode") : null
-  let booleanStoredDarkMode = true
-  if (stringifiedStoredDarkMode !== "true") {
-    booleanStoredDarkMode = false
-  }
-  function changeThemeMode() {
-    if (typeof window !== "undefined") {
-      localStorage.setItem("darkMode", darkMode ? "false" : "true")
-    }
-    darkMode ? setDarkMode(false) : setDarkMode(true)
-  }
+const Layout = (props) => {
+  const [isDarkMode, toggleThemeMode] = useContext(ThemeContext);
+  // console.log(isDarkMode);
   const { navHeading, path, children } = props
   const [toggleNav, setToggleNav] = useState(false)
-  const [darkMode, setDarkMode] = useState(booleanStoredDarkMode)
   if (typeof window !== "undefined") {
-    document.body.className = darkMode ? "dark" : "light"
+    document.body.className = isDarkMode ? "dark" : "light"
   }
   var navActive = {
     home: "",
@@ -99,8 +89,8 @@ const Layout = props => {
               </li> */}
               <li className="toggle-btn-item">
                 <ToggleButton
-                  onClick={() => changeThemeMode()}
-                  darkMode={darkMode}
+                  onClick={() => toggleThemeMode()}
+                  darkMode={isDarkMode}
                 />
               </li>
             </ul>
@@ -139,20 +129,20 @@ const Layout = props => {
         <div id="swup" className="transition-fade">
           {children.map((child, index) => (
             <Fragment key={index}>
-              {cloneElement(child, { darkMode: darkMode })}
+              {cloneElement(child, { isDarkMode: isDarkMode })}
             </Fragment>
           ))}
         </div>
       </main>
       <footer className="site-foot">
         &copy; {new Date().getFullYear()} <Link to={`/`}>{navHeading}</Link>{" "}
-        &mdash; Built with{" "}
+        {/* &mdash; Built with{" "}
         <a
           href="https://gatsbyjs.org"
           target="_blank"
           rel="noopener noreferrer">
           Gatsby
-        </a>
+        </a> */}
       </footer>
     </div>
   )
