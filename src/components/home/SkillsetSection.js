@@ -7,7 +7,7 @@ import * as Styles from "../../styles/css/screens/home/skillset-section.module.c
 function SkillsetSection({ data }) {
   //use data as props.data
   const skills = data.allMarkdownRemark.edges;
-  console.log(data.allMarkdownRemark.edges);
+  // console.log(data.allMarkdownRemark.edges);
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">Skillset</h2>

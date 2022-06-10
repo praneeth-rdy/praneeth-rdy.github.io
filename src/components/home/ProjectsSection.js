@@ -8,10 +8,10 @@ import { StaticQuery, graphql } from "gatsby";
 // import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa";
 import * as Styles from "../../styles/css/screens/home/projects-section.module.css";
 
-function ProjectsSection(props) {
+function ProjectsSection({ data }) {
   //use data as props.data
-  const projects = props.data.allMarkdownRemark.edges
-  console.log(projects);
+  const projects = data.allMarkdownRemark.edges
+  // console.log(projects);
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">Projects</h2>
@@ -37,7 +37,7 @@ function ProjectsSection(props) {
                   </p>
                 </div>
                 <div className={Styles.stacksContainer}>
-                  {node.frontmatter.stacks.map(({childImageSharp}, index) => (
+                  {node.frontmatter.stacks.map(({ childImageSharp }, index) => (
                     <GatsbyImage
                       key={index}
                       className={Styles.stack}

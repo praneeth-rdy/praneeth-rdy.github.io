@@ -11,6 +11,7 @@ import "../styles/css/screens/blog/blog-page.css"
 
 import BlogItem from "../components/blog/BlogItem"
 import HorizontalLine from "../components/horizontalLine"
+import ThemeContextProvider from "../context/ThemeContextProvider"
 
 // TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const BlogPage = ({ data }, location) => {
@@ -39,59 +40,61 @@ const BlogPage = ({ data }, location) => {
   }
 
   return (
-    <Layout navHeading={navHeading} path="/blog">
-      <Seo title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
-      {/* <Bio /> */}
-      {data.site.siteMetadata.description && (
-        <header className="page-head">
-          <h2 className="page-head-title">
-            {data.site.siteMetadata.description}
-          </h2>
-        </header>
-      )}
-      <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
-      <h2 className="blogs-page-heading">My Recent Blogs</h2>
-      <div className="blog-filters-container">
-        {allCategories.map(categ => {
-          if (categ === category) {
+    <ThemeContextProvider>
+      <Layout navHeading={navHeading} path="/blog">
+        <Seo title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        {/* <Bio /> */}
+        {data.site.siteMetadata.description && (
+          <header className="page-head">
+            <h2 className="page-head-title">
+              {data.site.siteMetadata.description}
+            </h2>
+          </header>
+        )}
+        <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
+        <h2 className="blogs-page-heading">My Recent Blogs</h2>
+        <div className="blog-filters-container">
+          {allCategories.map(categ => {
+            if (categ === category) {
+              return (
+                <button
+                  className={"blog-filter button primary small"}
+                  onClick={() => filterPosts(categ)}
+                >
+                  {categ[0].toUpperCase() + categ.slice(1)}
+                </button>
+              )
+            } else {
+              return (
+                <button
+                  className={"blog-filter button small"}
+                  onClick={() => filterPosts(categ)}
+                >
+                  {categ[0].toUpperCase() + categ.slice(1)}
+                </button>
+              )
+            }
+          })}
+        </div>
+        <div className="blog-body">
+          {posts.map(({ node }) => {
+            postCounter++
             return (
-              <button
-                className={"blog-filter button primary small"}
-                onClick={() => filterPosts(categ)}
-              >
-                {categ[0].toUpperCase() + categ.slice(1)}
-              </button>
+              <BlogItem
+                key={node.fields.slug}
+                count={postCounter}
+                node={node}
+                postClass={`post`}
+              />
             )
-          } else {
-            return (
-              <button
-                className={"blog-filter button small"}
-                onClick={() => filterPosts(categ)}
-              >
-                {categ[0].toUpperCase() + categ.slice(1)}
-              </button>
-            )
-          }
-        })}
-      </div>
-      <div className="blog-body">
-        {posts.map(({ node }) => {
-          postCounter++
-          return (
-            <BlogItem
-              key={node.fields.slug}
-              count={postCounter}
-              node={node}
-              postClass={`post`}
-            />
-          )
-        })}
-      </div>
-    </Layout>
+          })}
+        </div>
+      </Layout>
+    </ThemeContextProvider>
   )
 }
 
-const indexQuery = graphql`
+const blogQuery = graphql`
   query {
     site {
       siteMetadata {
@@ -132,7 +135,7 @@ const indexQuery = graphql`
 
 const BlogPageExport = props => (
   <StaticQuery
-    query={indexQuery}
+    query={blogQuery}
     render={data => (
       <BlogPage location={props.location} props data={data} {...props} />
     )}

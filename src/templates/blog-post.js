@@ -4,15 +4,16 @@ import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import ThemeContextProvider from "../context/ThemeContextProvider"
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.markdownRemark
-    const siteTitle = this.props.data.site.siteMetadata.title
-    const navHeading = this.props.data.site.siteMetadata.navHeading
+const BlogPostTemplate = ({ data, location }) => {
+  const post = data.markdownRemark
+  const siteTitle = data.site.siteMetadata.title
+  const navHeading = data.site.siteMetadata.navHeading
 
-    return (
-      <Layout navHeading={navHeading} location={this.props.location} title={siteTitle}>
+  return (
+    <ThemeContextProvider>
+      <Layout navHeading={navHeading} location={location} title={siteTitle}>
         <Seo
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
@@ -52,11 +53,11 @@ class BlogPostTemplate extends React.Component {
           </footer>
         </article>
       </Layout>
-    )
-  }
+    </ThemeContextProvider>
+  )
 }
 
-export default BlogPostTemplate
+export default BlogPostTemplate;
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

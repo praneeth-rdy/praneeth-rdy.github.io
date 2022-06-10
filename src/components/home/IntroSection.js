@@ -6,7 +6,7 @@ import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 import "../../styles/css/screens/home/intro-section.css"
 import { graphql, StaticQuery } from "gatsby"
 
-function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
+function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
   const social = data.site.siteMetadata.social
   const fullName = data.site.siteMetadata.authorFullName
   // console.log(social)
@@ -42,7 +42,7 @@ function IntroSection({ darkModeImage, lightModeImage, data, darkMode }) {
       </div>
       <GatsbyImage
         className="intro-image"
-        image={darkMode ? darkModeImage : lightModeImage}
+        image={isDarkMode ? darkModeImage : lightModeImage}
         style={{ width: "400px" }}
         alt='Intro Image'
       />
@@ -66,7 +66,7 @@ const indexQuery = graphql`
   }
 `
 
-const IntroSectionExport = props => (
+const IntroSectionExport = (props) => (
   <StaticQuery
     query={indexQuery}
     render={data => <IntroSection props data={data} {...props} />}
