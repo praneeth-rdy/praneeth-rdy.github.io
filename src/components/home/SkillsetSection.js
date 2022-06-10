@@ -4,7 +4,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 // import Img from "gatsby-image"
 import * as Styles from "../../styles/css/screens/home/skillset-section.module.css";
 
-function SkillsetSection({ data }) {
+function SkillsetSection({ data, isDarkMode }) {
   //use data as props.data
   const skills = data.allMarkdownRemark.edges;
   // console.log(data.allMarkdownRemark.edges);
@@ -13,10 +13,11 @@ function SkillsetSection({ data }) {
       <h2 className="section-heading">Skillset</h2>
       <div className={Styles.skillCardsContainer}>
         {skills && skills.map(({ node }, index) => {
+          const skillLogo = isDarkMode ? node.frontmatter.darkModeLogo : node.frontmatter.lightModeLogo;
           return (
             <div key={index} className={Styles.skillCard}>
               <GatsbyImage
-                image={node.frontmatter.lightModeLogo.childImageSharp.gatsbyImageData}
+                image={skillLogo.childImageSharp.gatsbyImageData}
                 style={{ borderRadius: "8px" }}
                 alt='Skill Logo'
               />
