@@ -18,4 +18,4 @@ jobs:
           PROJECT_DIR: .
           BUILD_DIR: public
           BUILD_BRANCH: build
-          TOKEN: ${{ secrets.ACTIONS_TOKEN }}
+          TOKEN: ${{ secrets.TOKEN }}
