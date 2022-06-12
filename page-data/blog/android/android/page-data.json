@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/blog/android/android/",
+    "result": {"data":{"site":{"siteMetadata":{"navHeading":"praneeth-rdy","description":"Success is not how much money we make, it's how much difference we bring in people's lives"}},"markdownRemark":{"id":"197eb018-c6bb-56fe-82d5-f83e0740764b","excerpt":"","html":"","frontmatter":{"title":"Android","date":null,"description":"This project is to develop a technical stack to test and observe the agriultural lands and their nutrients","thumbnail":null}}},"pageContext":{"slug":"/android/android/","previous":{"fields":{"slug":"/aws-ec2/aws-ec2/"},"frontmatter":{"title":"AWS Elastic Compute Cloud"}},"next":null}},
+    "staticQueryHashes": ["63159454"]}

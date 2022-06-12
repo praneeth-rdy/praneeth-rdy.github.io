@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/blog/aws-ec2/aws-ec2/",
+    "result": {"data":{"site":{"siteMetadata":{"navHeading":"praneeth-rdy","description":"Success is not how much money we make, it's how much difference we bring in people's lives"}},"markdownRemark":{"id":"bfaac80b-fdcb-59fd-91d9-615692a54ca3","excerpt":"","html":"","frontmatter":{"title":"AWS Elastic Compute Cloud","date":null,"description":"This project is to develop a technical stack to test and observe the agriultural lands and their nutrients","thumbnail":null}}},"pageContext":{"slug":"/aws-ec2/aws-ec2/","previous":{"fields":{"slug":"/java/java/"},"frontmatter":{"title":"Java Programming Language"}},"next":{"fields":{"slug":"/android/android/"},"frontmatter":{"title":"Android"}}}},
+    "staticQueryHashes": ["63159454"]}
