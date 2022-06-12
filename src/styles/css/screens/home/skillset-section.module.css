@@ -10,15 +10,11 @@
 .skillCardsContainer .skillCard {
     position: relative;
     margin: 0 5px;
-    padding: 5px 15px;
+    padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
     bottom: 0;
     transition: bottom 0.3s;
-}
-
-.skillCardsContainer .skillCard img {
-    height: 50px;
 }
 
 .light .skillCardsContainer .skillCard {
