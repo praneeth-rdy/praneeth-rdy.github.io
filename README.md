@@ -14,7 +14,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/praneeth-rdy/praneeth-rdy.github.io">
-    <img src="readme-images/logo.png" alt="Logo" width="80" height="80">
+    <img src="./src/content/images/home/about.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">Praneeth Reddy Portfolio</h3>
