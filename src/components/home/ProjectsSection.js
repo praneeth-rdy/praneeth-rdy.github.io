@@ -1,12 +1,12 @@
-import React from "react";
+import React from "react"
 //import Slider from "react-slick"
 // import Img from "gatsby-image"
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage } from "gatsby-plugin-image"
 //import "slick-carousel/slick/slick.css"
 //import "slick-carousel/slick/slick-theme.css"
-import { StaticQuery, graphql } from "gatsby";
+import { StaticQuery, graphql } from "gatsby"
 // import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa";
-import * as Styles from "../../styles/css/screens/home/projects-section.module.css";
+import * as Styles from "../../styles/css/screens/home/projects-section.module.css"
 
 function ProjectsSection({ data }) {
   //use data as props.data
@@ -43,7 +43,7 @@ function ProjectsSection({ data }) {
                       className={Styles.stack}
                       image={childImageSharp.gatsbyImageData}
                       alt={`Stack Image`}
-                      objectFit='contain'
+                      objectFit="contain"
                     />
                   ))}
                 </div>
@@ -96,4 +96,4 @@ const ProjectsSectionExport = props => (
   />
 )
 
-export default ProjectsSectionExport;
+export default ProjectsSectionExport

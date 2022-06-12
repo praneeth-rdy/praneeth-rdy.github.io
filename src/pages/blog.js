@@ -42,7 +42,10 @@ const BlogPage = ({ data }, location) => {
   return (
     <ThemeContextProvider>
       <Layout navHeading={navHeading} path="/blog">
-        <Seo title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <Seo
+          title="Blog"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
         {/* <Bio /> */}
         {data.site.siteMetadata.description && (
           <header className="page-head">

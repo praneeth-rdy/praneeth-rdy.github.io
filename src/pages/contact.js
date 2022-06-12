@@ -8,11 +8,14 @@ function Contact() {
   return (
     <ThemeContextProvider>
       <Layout navHeading="praneeth-rdy" path="/contact">
-        <Seo title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <Seo
+          title="Blog"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
         <ContactForm />
       </Layout>
     </ThemeContextProvider>
   )
 }
 
-export default Contact;
+export default Contact

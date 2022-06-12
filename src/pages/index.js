@@ -30,7 +30,10 @@ const Index = ({ data }, location) => {
   return (
     <ThemeContextProvider>
       <Layout navHeading={navHeading} path="/">
-        <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <Seo
+          title="Home"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
 
         {/* Introduction Section */}
         <IntroSection

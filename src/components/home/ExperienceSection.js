@@ -7,9 +7,7 @@ function ExperienceSection({ data }) {
   // use data as props.data
   // const experiences = props.data.allMarkdownRemark.edges
   const allExperiences = data.othersJson.experience
-  const [experience, setExperience] = useState(
-    allExperiences[0]
-  )
+  const [experience, setExperience] = useState(allExperiences[0])
 
   function changeExperience(org) {
     const newExperience = allExperiences.find(exp => exp.org === org)

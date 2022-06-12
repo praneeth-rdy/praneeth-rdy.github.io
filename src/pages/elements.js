@@ -46,7 +46,11 @@ const ElementsPage = ({ data }, location) => {
               <code>
                 for (;;) {"{"} ... {"}"}
               </code>
-              . Finally, this is a <a href="/" className="link">link</a>.
+              . Finally, this is a{" "}
+              <a href="/" className="link">
+                link
+              </a>
+              .
             </p>
             <h2 id="heading-level-2">Heading Level 2</h2>
             <h3 id="heading-level-3">Heading Level 3</h3>
@@ -56,22 +60,23 @@ const ElementsPage = ({ data }, location) => {
             <hr />
             <h2 id="this-is-a-section">This is a section</h2>
             <p>
-              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio
-              porttitor sem non mi integer non faucibus ornare mi ut ante amet
-              placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan
-              varius montes viverra nibh in adipiscing blandit tempus accumsan.
+              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida
+              odio porttitor sem non mi integer non faucibus ornare mi ut ante
+              amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem
+              accumsan varius montes viverra nibh in adipiscing blandit tempus
+              accumsan.
             </p>
             <h3 id="this-is-a-sub-section">This is a sub-section</h3>
             <p>
-              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio
-              porttitor sem non mi integer non faucibus ornare mi ut ante amet
-              placerat aliquet.
+              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida
+              odio porttitor sem non mi integer non faucibus ornare mi ut ante
+              amet placerat aliquet.
             </p>
             <h3 id="this-is-a-sub-section-1">This is a sub-section</h3>
             <p>
-              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio
-              porttitor sem non mi integer non faucibus ornare mi ut ante amet
-              placerat aliquet.
+              Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida
+              odio porttitor sem non mi integer non faucibus ornare mi ut ante
+              amet placerat aliquet.
             </p>
             <hr />
             <h2 id="lists">Lists</h2>
@@ -133,8 +138,8 @@ const ElementsPage = ({ data }, location) => {
             <blockquote>
               Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
               sagittis eget tempus euismod. Vestibulum ante ipsum primis in
-              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-              adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
+              faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat
+              ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
               faucibus vestibulum. Blandit adipiscing eu felis.
             </blockquote>
             <hr />
