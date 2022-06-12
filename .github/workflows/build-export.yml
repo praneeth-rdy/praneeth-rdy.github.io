@@ -1,0 +1,21 @@
+# Trigger the workflow on push to main
+name: Build and Deploy the Gatsby Application
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build-and-export:
+    name: Build, Export and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+      - name: Build and export to the `build` branch
+        uses: praneeth-rdy/react-build-export-action@main
+        env:
+          CI: false
+          PROJECT_DIR: .
+          BUILD_DIR: public
+          BUILD_BRANCH: build
+          TOKEN: ${{ secrets.ACTIONS_TOKEN }}
