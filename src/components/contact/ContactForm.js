@@ -9,37 +9,41 @@ import { graphql, StaticQuery } from "gatsby"
 
 function ContactForm({ data, darkMode }) {
   // const social = data.site.siteMetadata.social
-  const [formStatus, setFormStatus] = useState("");
-  const [submitStatus, setSubmitStatus] = useState("");
+  const [formStatus, setFormStatus] = useState("")
+  const [submitStatus, setSubmitStatus] = useState("")
 
   function formSubmit(e) {
-    e.preventDefault();
-    setSubmitStatus("loading");
-    setFormStatus("");
+    e.preventDefault()
+    setSubmitStatus("loading")
+    setFormStatus("")
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
       mobile: e.target.mobile.value,
       subject: e.target.subject.value,
-      message: e.target.message.value
-    };
+      message: e.target.message.value,
+    }
     const requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
+        "Content-Type": "application/json",
+        Accept: "application/json",
       },
-      body: JSON.stringify(formData)
-    };
-    fetch('https://innovate.pythonanywhere.com/portfolio/contact-form/', requestOptions)
-      .then(response => response.json()).then(jsonData => {
-        setFormStatus(jsonData.message);
-        setSubmitStatus("");
+      body: JSON.stringify(formData),
+    }
+    fetch(
+      "https://innovate.pythonanywhere.com/portfolio/contact-form/",
+      requestOptions
+    )
+      .then(response => response.json())
+      .then(jsonData => {
+        setFormStatus(jsonData.message)
+        setSubmitStatus("")
       })
-      .catch((error) => {
-        setFormStatus("An error has occured");
-        setSubmitStatus("");
-      });
+      .catch(error => {
+        setFormStatus("An error has occured")
+        setSubmitStatus("")
+      })
   }
   return (
     <section className="contact-section">
@@ -153,7 +157,9 @@ function ContactForm({ data, darkMode }) {
             <div className="col-12">
               <ul className="actions">
                 <li>
-                  <button type="submit" className={"primary " + submitStatus}><span>Submit</span></button>
+                  <button type="submit" className={"primary " + submitStatus}>
+                    <span>Submit</span>
+                  </button>
                 </li>
                 <li>
                   <input type="reset" defaultValue="Reset" />

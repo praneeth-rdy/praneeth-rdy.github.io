@@ -1,14 +1,14 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from "react"
+import { graphql, StaticQuery } from "gatsby"
 // import Img from "gatsby-image"
 // import { GatsbyImage } from "gatsby-plugin-image"
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
+import Layout from "../components/layout"
+import Seo from "../components/seo"
 
-import "../styles/normalize.css";
-import "../styles/css/screens/main.css";
-import ThemeContextProvider from "../context/ThemeContextProvider";
+import "../styles/normalize.css"
+import "../styles/css/screens/main.css"
+import ThemeContextProvider from "../context/ThemeContextProvider"
 
 const AboutPage = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
@@ -16,7 +16,10 @@ const AboutPage = ({ data }, location) => {
   return (
     <ThemeContextProvider>
       <Layout navHeading={navHeading} path="/about">
-        <Seo title="About" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <Seo
+          title="About"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
         <div></div>
       </Layout>
     </ThemeContextProvider>
@@ -49,4 +52,4 @@ const AboutPageExport = props => (
   />
 )
 
-export default AboutPageExport;
+export default AboutPageExport

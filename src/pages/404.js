@@ -1,12 +1,12 @@
-import React from "react";
-import { graphql, StaticQuery } from "gatsby";
+import React from "react"
+import { graphql, StaticQuery } from "gatsby"
 
-import Layout from "../components/layout";
-import Seo from "../components/seo";
-import ThemeContextProvider from "../context/ThemeContextProvider";
+import Layout from "../components/layout"
+import Seo from "../components/seo"
+import ThemeContextProvider from "../context/ThemeContextProvider"
 
 const NotFoundPage = ({ data, location }) => {
-  const navHeading = data.site.siteMetadata.navHeading;
+  const navHeading = data.site.siteMetadata.navHeading
 
   return (
     <ThemeContextProvider>
@@ -19,7 +19,6 @@ const NotFoundPage = ({ data, location }) => {
   )
 }
 
-
 export const pageQuery = graphql`
   query {
     site {
@@ -30,13 +29,13 @@ export const pageQuery = graphql`
   }
 `
 
-const NotFoundPageExport = (props) => (
+const NotFoundPageExport = props => (
   <StaticQuery
     query={pageQuery}
     render={data => (
       <NotFoundPage location={props.location} data={data} {...props} />
     )}
   />
-);
+)
 
-export default NotFoundPageExport;
+export default NotFoundPageExport

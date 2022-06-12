@@ -25,16 +25,36 @@ function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
             Download Resume
           </a>
           <div className="icons-container">
-            <a href={social.github} target="_blank" className="link" rel="noreferrer">
+            <a
+              href={social.github}
+              target="_blank"
+              className="link"
+              rel="noreferrer"
+            >
               <FaGithub className="icon" target="_blank" />
             </a>
-            <a href={social.linkedin} target="_blank" className="link" rel="noreferrer">
+            <a
+              href={social.linkedin}
+              target="_blank"
+              className="link"
+              rel="noreferrer"
+            >
               <FaLinkedin className="icon" target="_blank" />
             </a>
-            <a href={social.facebook} target="_blank" className="link" rel="noreferrer">
+            <a
+              href={social.facebook}
+              target="_blank"
+              className="link"
+              rel="noreferrer"
+            >
               <FaFacebook className="icon" target="_blank" />
             </a>
-            <a href={"mailto:" + social.email} target="_blank" className="link" rel="noreferrer">
+            <a
+              href={"mailto:" + social.email}
+              target="_blank"
+              className="link"
+              rel="noreferrer"
+            >
               <FaEnvelope className="icon" />
             </a>
           </div>
@@ -44,7 +64,7 @@ function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
         className="intro-image"
         image={isDarkMode ? darkModeImage : lightModeImage}
         style={{ width: "400px" }}
-        alt='Intro Image'
+        alt="Intro Image"
       />
     </section>
   )
@@ -66,7 +86,7 @@ const indexQuery = graphql`
   }
 `
 
-const IntroSectionExport = (props) => (
+const IntroSectionExport = props => (
   <StaticQuery
     query={indexQuery}
     render={data => <IntroSection props data={data} {...props} />}

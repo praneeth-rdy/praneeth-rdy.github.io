@@ -7,7 +7,10 @@ function Publications() {
   return (
     <ThemeContextProvider>
       <Layout navHeading="praneeth-rdy" path="/publications">
-        <Seo title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+        <Seo
+          title="Blog"
+          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+        />
         <h3>Publications Page</h3>
       </Layout>
     </ThemeContextProvider>

@@ -1,10 +1,10 @@
-import React, { useState, cloneElement, Fragment, useContext } from "react";
-import ToggleButton from "./toggleButton";
-import { Link } from "gatsby";
-import { ThemeContext } from "../context/ThemeContextProvider";
+import React, { useState, cloneElement, Fragment, useContext } from "react"
+import ToggleButton from "./toggleButton"
+import { Link } from "gatsby"
+import { ThemeContext } from "../context/ThemeContextProvider"
 
-const Layout = (props) => {
-  const [isDarkMode, toggleThemeMode] = useContext(ThemeContext);
+const Layout = props => {
+  const [isDarkMode, toggleThemeMode] = useContext(ThemeContext)
   // console.log(isDarkMode);
   const { navHeading, path, children } = props
   const [toggleNav, setToggleNav] = useState(false)
