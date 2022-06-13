@@ -1,5 +1,6 @@
-const urljoin = require("url-join")
+const url = require("url").URL;
 const siteConfig = require("./siteConfig")
+
 
 module.exports = {
   pathPrefix: siteConfig.prefix,
@@ -9,7 +10,7 @@ module.exports = {
     author: siteConfig.author,
     authorFullName: siteConfig.fullName,
     description: siteConfig.description,
-    siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    siteUrl: new url(siteConfig.prefix, siteConfig.url).href,
     social: {
       github: siteConfig.github,
       linkedin: siteConfig.linkedin,
@@ -19,99 +20,26 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-google-analytics',
       options: {
-        path: `${__dirname}/src/content/blogs`,
-        name: `blogs`,
-      },
+        "trackingId": "G-TGQBB868SP"
+      }
     },
+    "gatsby-plugin-image",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-feed',
       options: {
-        path: `${__dirname}/src/content/skills`,
-        name: `skills`,
-      },
+        feeds: [],
+      }
     },
-    `gatsby-transformer-json`,
+    "gatsby-plugin-offline",
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
+    "gatsby-transformer-json",
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/content/others`,
-        name: `others`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/content/projects`,
-        name: `projects`,
-      },
-    },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/content/images`,
-        name: `images`,
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1360,
-              withWebp: true,
-              showCaptions: true,
-              quality: 75,
-              wrapperStyle: `margin: 7vw 0;`,
-            },
-          },
-          {
-            resolve: `gatsby-remark-responsive-iframe`,
-            options: {
-              wrapperStyle: `margin-bottom: 1.0725rem`,
-            },
-          },
-          `gatsby-remark-prismjs`,
-          `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
-        ],
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-postcss`,
-      options: {
-        postCssPlugins: [
-          require("postcss-easy-import")(),
-          require("postcss-custom-properties")({ preserve: false }),
-          require("postcss-color-function")(),
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true, // Print removed selectors and processed file names
-        // develop: true, // Enable while using `gatsby develop`
-        // tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
-      },
-    },
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     //trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
-    `gatsby-plugin-feed`,
-    {
-      resolve: `gatsby-plugin-manifest`,
+      resolve: 'gatsby-plugin-manifest',
       options: {
         name: siteConfig.name,
         short_name: siteConfig.shortName,
@@ -122,9 +50,95 @@ module.exports = {
         icon: `src/content/images/website-icon.png`,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
-  ],
-}
+    {
+      resolve: 'gatsby-plugin-postcss',
+      options: {
+        postCssPlugins: [
+          require("postcss-easy-import")(),
+          require("postcss-custom-properties")({ preserve: false }),
+          require("postcss-color-function")(),
+          require("autoprefixer")(),
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-purgecss',
+      options: {
+        printRejected: false, // Print removed selectors and processed file names
+        // develop: true, // Enable while using `gatsby develop`
+        // tailwind: true, // Enable tailwindcss support
+        whitelist: ['img', '.light', '.dark'], // Don't remove this selector
+        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
+        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1360,
+              withWebp: true,
+              showCaptions: true,
+              quality: 75,
+              wrapperStyle: `margin: 7vw 0;`,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem`,
+            },
+          },
+          `gatsby-remark-copy-linked-files`,
+          `gatsby-remark-smartypants`,
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: "pages",
+        path: "./src/pages/"
+      },
+      __key: "pages"
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/blogs`,
+        name: `blogs`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/skills`,
+        name: `skills`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/others`,
+        name: `others`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/projects`,
+        name: `projects`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content/images`,
+        name: `images`,
+      },
+    },
+  ]
+};
