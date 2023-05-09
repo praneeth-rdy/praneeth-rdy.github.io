@@ -18,14 +18,13 @@ function AboutSection({ image }) {
         </figure>
         <div className="about-description">
           <p>
-            Hi, I'm Praneeth Reddy Kolanu, a hybrid version of Software,
-            Business and Management. I love solving societal problems through
-            technology and building software applications which have the
-            potential to impact people's lives. I am an active open-source
-            contributor. I participate in all the open source programs which
-            come on my way. Gradually, becoming obsessed with Data Structures,
-            Algorithms and Problem-Solving. Ready to face new challenges of
-            life.
+            My name is Praneeth Reddy Kolanu, and I am a passionate problem solver who enjoys tackling complex challenges through a unique blend of technical expertise, business acumen, and project management skills.
+          </p>
+          <p>
+            With a strong background in software engineering and business management, I am driven by a desire to leverage technology for the greater good. Whether it's building innovative software applications or contributing to open-source projects, I am always seeking new ways to make a positive impact on society.
+          </p>
+          <p>
+            In my free time, I enjoy exploring new technologies, mastering data structures and algorithms, and honing my problem-solving skills. I am always up for a challenge and thrive in dynamic, fast-paced environments.
           </p>
         </div>
       </div>
