@@ -71,7 +71,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pre-commit": "pretty-quick --staged"
   },
   "husky": {
     "hooks": {
