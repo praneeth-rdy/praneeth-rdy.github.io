@@ -19,15 +19,13 @@ function SkillsetSection({ data, isDarkMode }) {
               : node.frontmatter.lightModeLogo
             return (
               <div key={index} className={Styles.skillCard}>
-                {
-                  skillLogo.childImageSharp.gatsbyImageData && (
-                    <GatsbyImage
-                      image={skillLogo.childImageSharp.gatsbyImageData}
-                      style={{ borderRadius: "8px" }}
-                      alt="Skill Logo"
-                    />
-                  )
-                }
+                {skillLogo.childImageSharp.gatsbyImageData && (
+                  <GatsbyImage
+                    image={skillLogo.childImageSharp.gatsbyImageData}
+                    style={{ borderRadius: "8px" }}
+                    alt="Skill Logo"
+                  />
+                )}
               </div>
             )
           })}
