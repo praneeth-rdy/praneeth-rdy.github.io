@@ -19,8 +19,8 @@ function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
           <h3 className="designation">Passionate Full Stack Developer</h3>
           <a
             className="link button grow"
-            href="Praneeth-Reddy-Kolanu-Resume.pdf"
-            download="Praneeth-Reddy-Kolanu-Resume.pdf"
+            href="19AE30030_Praneeth-Reddy-Kolanu_Resume.pdf"
+            download="19AE30030_Praneeth-Reddy-Kolanu_Resume.pdf"
           >
             Download Resume
           </a>
