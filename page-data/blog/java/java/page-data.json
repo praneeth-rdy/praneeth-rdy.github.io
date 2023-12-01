@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/blog/java/java/",
+    "result": {"data":{"site":{"siteMetadata":{"navHeading":"praneeth-rdy","description":"Success is not how much money we make, it's the difference we bring in peoples' lives"}},"markdownRemark":{"id":"4da39a3e-fe38-5dca-b15f-b8b2cf7fec2e","excerpt":"","html":"","frontmatter":{"title":"Java Programming Language","date":null,"description":"This project is to develop a technical stack to test and observe the agriultural lands and their nutrients","thumbnail":null}}},"pageContext":{"slug":"/java/java/","previous":{"fields":{"slug":"/nodejs/nodejs/"},"frontmatter":{"title":"Node.js"}},"next":{"fields":{"slug":"/aws-ec2/aws-ec2/"},"frontmatter":{"title":"AWS Elastic Compute Cloud"}}}},
+    "staticQueryHashes": ["63159454"]}

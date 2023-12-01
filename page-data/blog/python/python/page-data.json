@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/blog/python/python/",
+    "result": {"data":{"site":{"siteMetadata":{"navHeading":"praneeth-rdy","description":"Success is not how much money we make, it's the difference we bring in peoples' lives"}},"markdownRemark":{"id":"b7dddedb-37ff-59a2-b925-d9ad2ae729c4","excerpt":"","html":"","frontmatter":{"title":"Python Programming Language","date":null,"description":"This project is to develop a technical stack to test and observe the agriultural lands and their nutrients","thumbnail":null}}},"pageContext":{"slug":"/python/python/","previous":{"fields":{"slug":"/reactjs/reactjs/"},"frontmatter":{"title":"React.js"}},"next":{"fields":{"slug":"/nodejs/nodejs/"},"frontmatter":{"title":"Node.js"}}}},
+    "staticQueryHashes": ["63159454"]}
