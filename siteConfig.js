@@ -8,7 +8,7 @@ module.exports = {
   url: "https://praneeth-rdy.github.io", // Domain of your site without prefix!
   prefix: "/",
   github: "https://github.com/praneeth-rdy",
-  linkedin: "https://www.linkedin.com/in/praneethrdy/",
+  linkedin: "https://www.linkedin.com/in/praneeth-rdy/",
   facebook: "https://www.facebook.com/praneeth.kolanu/",
   email: "praneeth.kolanu.iitkgp@gmail.com",
 }
