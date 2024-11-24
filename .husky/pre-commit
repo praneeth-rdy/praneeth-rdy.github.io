@@ -2,5 +2,5 @@ echo "Running tests"
 yarn test
 echo "Running typechecks"
 tsc --noEmit
-echo "Running prettier"
-pretty-quick --staged
+echo "Linting"
+npx lint-staged
