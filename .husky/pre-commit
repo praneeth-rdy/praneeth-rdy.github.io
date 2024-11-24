@@ -1,3 +1,6 @@
+echo "Running tests"
 yarn test
-pretty-quick --staged
+echo "Running typechecks"
 tsc --noEmit
+echo "Running prettier"
+pretty-quick --staged
