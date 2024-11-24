@@ -12,7 +12,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: Build and export to the `build` branch
-        uses: praneeth-rdy/static-build-export-action@main
+        uses: praneeth-rdy/static-build-export-action@node-v20
         env:
           CI: false
           PROJECT_DIR: .
