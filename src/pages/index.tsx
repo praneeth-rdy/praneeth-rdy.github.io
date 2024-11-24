@@ -5,6 +5,8 @@ const IndexPage: React.FC<PageProps> = () => {
   return <div>Hello World</div>;
 };
 
+
+
 export default IndexPage;
 
 export const Head: HeadFC = () => <title>Home Page</title>;
