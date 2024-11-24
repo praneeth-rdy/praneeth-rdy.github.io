@@ -1,80 +1,42 @@
 {
-  "homepage": "https://praneeth-rdy.github.io/",
-  "name": "praneeth-rdy.github.io",
-  "private": true,
-  "description": "Praneeth Kolanu's portfolio project, which is developed using React, Gatsby",
+  "name": "portfolio-new",
   "version": "1.0.0",
-  "author": "Praneeth Kolanu <praneeth.kolanu.iitkgp@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/praneeth-rdy/praneeth-rdy.github.io/issues"
+  "private": true,
+  "description": "portfolio-new",
+  "author": "praneeth-rdy",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "gatsby": "3.14.6",
-    "gatsby-plugin-feed": "3.14.0",
-    "gatsby-plugin-google-analytics": "3.14.0",
-    "gatsby-plugin-image": "1.14.2",
-    "gatsby-plugin-manifest": "3.14.0",
-    "gatsby-plugin-netlify": "3.14.0",
-    "gatsby-plugin-offline": "4.14.0",
-    "gatsby-plugin-postcss": "4.14.0",
-    "gatsby-plugin-purgecss": "3.1.1",
-    "gatsby-plugin-react-helmet": "4.14.0",
-    "gatsby-plugin-sharp": "3.14.3",
-    "gatsby-remark-copy-linked-files": "4.11.0",
-    "gatsby-remark-images": "5.11.0",
-    "gatsby-remark-prismjs": "5.11.0",
-    "gatsby-remark-responsive-iframe": "4.11.0",
-    "gatsby-remark-smartypants": "4.11.0",
-    "gatsby-source-filesystem": "3.14.0",
-    "gatsby-transformer-json": "3.14.0",
-    "gatsby-transformer-remark": "4.11.0",
-    "gatsby-transformer-sharp": "3.14.0",
-    "prismjs": "1.27.0",
-    "react": "16.14.0",
-    "react-dom": "16.14.0",
-    "react-helmet": "5.2.1",
-    "react-icons": "4.3.1",
-    "typeface-alegreya": "0.0.69",
-    "typeface-merriweather": "0.0.72",
-    "typeface-montserrat": "0.0.54",
-    "typeface-nunito": "0.0.72",
-    "url-join": "4.0.1"
+    "@mdx-js/react": "^3.1.0",
+    "autoprefixer": "^10.4.20",
+    "gatsby": "^5.14.0",
+    "gatsby-plugin-google-gtag": "^5.14.0",
+    "gatsby-plugin-image": "^3.14.0",
+    "gatsby-plugin-manifest": "^5.14.0",
+    "gatsby-plugin-mdx": "^5.14.0",
+    "gatsby-plugin-postcss": "^6.14.0",
+    "gatsby-plugin-sharp": "^5.14.0",
+    "gatsby-plugin-sitemap": "^6.14.0",
+    "gatsby-source-filesystem": "^5.14.0",
+    "gatsby-transformer-sharp": "^5.14.0",
+    "postcss": "^8.4.49",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwindcss": "^3.4.15"
   },
   "devDependencies": {
-    "autoprefixer": "9.8.8",
-    "husky": "7.0.4",
-    "postcss-color-function": "4.1.0",
-    "postcss-custom-properties": "8.0.11",
-    "postcss-easy-import": "3.0.0",
-    "prettier": "1.19.1",
-    "pretty-quick": "1.11.1"
-  },
-  "keywords": [
-    "gatsby",
-    "ghost",
-    "gallery",
-    "blog",
-    "starter"
-  ],
-  "license": "MIT",
-  "main": "n/a",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/praneeth-rdy/praneeth-rdy.github.io.git"
-  },
-  "scripts": {
-    "build": "gatsby build --prefix-paths",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "prepare": "husky install",
-    "pre-commit": "pretty-quick --staged"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
+    "@types/node": "^20.11.19",
+    "@types/react": "^18.2.55",
+    "@types/react-dom": "^18.2.19",
+    "typescript": "^5.3.3"
   }
 }

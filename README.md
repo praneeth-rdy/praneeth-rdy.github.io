@@ -1,191 +1,49 @@
-
-<div style="text-align:center;">
-
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-</div>
-
-<!-- PROJECT LOGO -->
-<br />
 <p align="center">
-  <a href="https://github.com/praneeth-rdy/praneeth-rdy.github.io">
-    <img src="readme-images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
   </a>
-
-  <h3 align="center">Praneeth Reddy Portfolio</h3>
-
-  <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/praneeth-rdy/praneeth-rdy.github.io"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/praneeth-rdy/praneeth-rdy.github.io">View Demo</a>
-    ·
-    <a href="https://github.com/praneeth-rdy/praneeth-rdy.github.io/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/praneeth-rdy/praneeth-rdy.github.io/issues">Request Feature</a>
-  </p>
 </p>
+<h1 align="center">
+  Gatsby Minimal TypeScript Starter
+</h1>
 
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
+## 🚀 Quick start
 
-<!-- ABOUT THE PROJECT -->
+1.  **Create a Gatsby site.**
 
-## About The Project
+    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
+    ```shell
+    # create a new Gatsby site using the minimal TypeScript starter
+    npm init gatsby -- -ts
+    ```
 
-This is my portfolio project built using gatsby which is a reactjs static generator. This portfolio showcases all my previous work experience, skillset, open source contributions, etc. 
+2.  **Start developing.**
 
-Here's why:
+    Navigate into your new site’s directory and start it up.
 
-- Your time should be focused on creating something amazing. A project that solves a problem and helps others
-- You shouldn't be doing the same tasks over and over like creating a README from scratch
-- You should element DRY principles to the rest of your life :smile:
+    ```shell
+    cd my-gatsby-site/
+    npm run develop
+    ```
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have have contributed to expanding this template!
+3.  **Open the code and start customizing!**
 
-A list of commonly used resources that I find helpful are listed in the acknowledgements.
+    Your site is now running at http://localhost:8000!
 
-### Built With
+    Edit `src/pages/index.tsx` to see your site update in real-time!
 
-This section should list any major frameworks that you built your project using. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
+4.  **Learn more**
 
-- [Bootstrap](https://getbootstrap.com)
-- [JQuery](https://jquery.com)
-- [Laravel](https://laravel.com)
+    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Tutorials](https://www.gatsbyjs.com/docs/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Guides](https://www.gatsbyjs.com/docs/how-to/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
 
-<!-- GETTING STARTED -->
+## 🚀 Quick start (Netlify)
 
-## Getting Started
+Deploy this starter with one click on [Netlify](https://app.netlify.com/signup):
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
-
-Install the latest node package manager.
-
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
-### Installation
-
-1. Clone the repo
-   ```sh
-   git clone https://github.com/Praneeth-rdy/praneeth-rdy.github.io.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Run the gatsby development server
-   ```sh
-   npm run develop
-   ```
-4. Visit the link printed on the terminal to view the website which is http://localhost:8000/ by default
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<!-- ROADMAP -->
-
-## Roadmap
-
-See the [open issues](https://github.com/praneeth-rdy/praneeth-rdy.github.io/issues) for a list of proposed features (and known issues).
-
-<!-- CONTRIBUTING -->
-
-## Contributing
-
-Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<!-- LICENSE -->
-
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
-<!-- CONTACT -->
-
-## Contact
-
-Praneeth Reddy Kolanu - [@your_twitter](https://twitter.com/your_username) - praneeth.kolanu.iitkgp@gmail.com
-
-Project Link: [https://github.com/praneeth-rdy/praneeth-rdy.github.io](https://github.com/praneeth-rdy/praneeth-rdy.github.io)
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## Acknowledgements
-
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-- [Img Shields](https://shields.io)
-- [Choose an Open Source License](https://choosealicense.com)
-- [GitHub Pages](https://pages.github.com)
-- [Animate.css](https://daneden.github.io/animate.css)
-- [Loaders.css](https://connoratherton.com/loaders)
-- [Slick Carousel](https://kenwheeler.github.io/slick)
-- [Smooth Scroll](https://github.com/cferdinandi/smooth-scroll)
-- [Sticky Kit](http://leafo.net/sticky-kit)
-- [JVectorMap](http://jvectormap.com)
-- [Font Awesome](https://fontawesome.com)
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-[contributors-shield]: https://img.shields.io/github/contributors/praneeth-rdy/praneeth-rdy.github.io
-[contributors-url]: https://github.com/praneeth-rdy/praneeth-rdy.github.io/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/praneeth-rdy/praneeth-rdy.github.io
-[forks-url]: https://github.com/praneeth-rdy/praneeth-rdy.github.io/network/members
-[stars-shield]: https://img.shields.io/github/stars/praneeth-rdy/praneeth-rdy.github.io
-[stars-url]: https://github.com/praneeth-rdy/praneeth-rdy.github.io/stargazers
-[issues-shield]: https://img.shields.io/github/issues/praneeth-rdy/praneeth-rdy.github.io
-[issues-url]: https://github.com/praneeth-rdy/praneeth-rdy.github.io/issues
-[license-shield]: https://img.shields.io/github/license/praneeth-rdy/praneeth-rdy.github.io
-[license-url]: https://github.com/praneeth-rdy/praneeth-rdy.github.io/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black?logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/praneeth-
-[product-screenshot]: readme-images/screenshot.png
+[<img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify" />](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
