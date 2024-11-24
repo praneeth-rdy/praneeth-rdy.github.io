@@ -1,11 +1,18 @@
 {
-  "name": "portfolio-new",
+  "homepage": "https://praneeth-rdy.github.io/",
+  "name": "praneeth-rdy.github.io",
   "version": "1.0.0",
   "private": true,
-  "description": "portfolio-new",
-  "author": "praneeth-rdy",
+  "description": "Praneeth Kolanu's portfolio project, which is developed using React, Gatsby",
+  "author": "Praneeth Kolanu <kolanu.praneeth.reddy@gmail.com>",
+  "bugs": {
+    "url": "https://github.com/praneeth-rdy/praneeth-rdy.github.io/issues"
+  },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "gallery",
+    "blog",
+    "portfolio"
   ],
   "scripts": {
     "develop": "gatsby develop",
