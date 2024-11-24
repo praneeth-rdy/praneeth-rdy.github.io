@@ -1,5 +1,6 @@
-#!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
-
-npm test
-npm run pre-commit
+echo "Running tests"
+yarn test
+echo "Running typechecks"
+tsc --noEmit
+echo "Running prettier"
+pretty-quick --staged
