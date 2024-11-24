@@ -1,7 +1,11 @@
 import type { GatsbyConfig } from "gatsby";
 import urlJoin from "url-join";
-
 import siteConfig from "./site-config";
+import dotenv from "dotenv";
+
+dotenv.config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 const config: GatsbyConfig = {
   siteMetadata: {

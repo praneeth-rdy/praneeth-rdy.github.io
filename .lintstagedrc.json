@@ -1,4 +1,0 @@
-{
-    "*.{js,jsx,ts,tsx}": ["yarn format", "git add"],
-    "{*.{json,md}}": ["yarn format", "git add"]
-  }
