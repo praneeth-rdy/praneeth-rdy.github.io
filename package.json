@@ -15,6 +15,7 @@
     "portfolio"
   ],
   "scripts": {
+    "prepare": "husky",
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
