@@ -1,1 +1,3 @@
 yarn test
+pretty-quick --staged
+tsc --noEmit
