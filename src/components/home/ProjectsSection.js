@@ -7,6 +7,15 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { StaticQuery, graphql } from "gatsby"
 // import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa";
 import * as Styles from "../../styles/css/screens/home/projects-section.module.css"
+import {
+  FaBook,
+  FaBookOpen,
+  FaExternalLinkAlt,
+  FaGithub,
+  FaGlobe,
+  FaLink,
+  FaRegFileAlt,
+} from "react-icons/fa"
 
 function ProjectsSection({ data }) {
   //use data as props.data
@@ -31,21 +40,54 @@ function ProjectsSection({ data }) {
                 <h3 className={`${Styles.heading}`}>
                   {node.frontmatter.title}
                 </h3>
-                <div>
+                <div className={Styles.descriptionContainer}>
                   <p className={Styles.cardDescription}>
                     {node.frontmatter.description}
                   </p>
                 </div>
-                <div className={Styles.stacksContainer}>
-                  {node.frontmatter.stacks.map(({ childImageSharp }, index) => (
-                    <GatsbyImage
-                      key={index}
-                      className={Styles.stack}
-                      image={childImageSharp.gatsbyImageData}
-                      alt={`Stack Image`}
-                      objectFit="contain"
-                    />
-                  ))}
+                <div className={Styles.additionalInfo}>
+                  <div className={Styles.stacksContainer}>
+                    {node.frontmatter.stacks.map(
+                      ({ childImageSharp }, index) => (
+                        <GatsbyImage
+                          key={index}
+                          className={Styles.stack}
+                          image={childImageSharp.gatsbyImageData}
+                          alt={`Stack Image`}
+                          objectFit="contain"
+                        />
+                      )
+                    )}
+                  </div>
+                  <div className={Styles.projectLinks}>
+                    {node.frontmatter.repo && (
+                      <a
+                        href={node.frontmatter.repo}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaGithub />
+                      </a>
+                    )}
+                    {node.frontmatter.docs && (
+                      <a
+                        href={node.frontmatter.docs}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaBookOpen />
+                      </a>
+                    )}
+                    {node.frontmatter.site && (
+                      <a
+                        href={node.frontmatter.site}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaLink />
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -75,8 +117,8 @@ const indexQuery = graphql`
               }
             }
             repo
-            drive
-            website
+            docs
+            site
             thumbnail {
               childImageSharp {
                 gatsbyImageData

@@ -12,7 +12,6 @@
   max-width: 330px;
   display: flex;
   flex-direction: column;
-  cursor: pointer;
 }
 
 .card .heading {
@@ -22,6 +21,13 @@
 
 .card > .body {
   padding: 1.5rem 0;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card .body .descriptionContainer {
+  flex-grow: 1;
 }
 
 .card .body .cardDescription {
@@ -30,12 +36,27 @@
   margin: 0;
 }
 
+.card .body .additionalInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
 .card .body .stacksContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  padding: 8px 0;
+  flex-grow: 1;
+}
+
+.card .body .projectLinks {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  font-size: 20px;
+  align-items: center;
 }
 
 .card .body .stacksContainer .stack {
@@ -47,12 +68,22 @@
   object-fit: contain;
 }
 
-.light .card > h3 {
+.light .card > h3,
+.light .projectLinks a,
+.light .projectLinks a:visited {
   color: color(var(--color-light-base) l(+20%));
 }
-.dark .card > h3 {
+.dark .card > h3,
+.dark .projectLinks a,
+.dark .projectLinks a:visited {
   color: color(var(--color-dark-base) l(+20%));
 }
+
+.card .body .projectLinks a:hover {
+  color: color(var(--color-primary));
+  transition: all 0.3s ease-in-out;
+}
+
 /* .card .gatsby-image-wrapper img{
   margin-bottom: 5px;
   height: 150px;
