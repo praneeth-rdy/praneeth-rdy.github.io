@@ -2,7 +2,7 @@
 name: Build and Deploy the Gatsby Application
 on:
   push:
-    branches: [ "main" ]
+    branches: ["v1"]
 
 jobs:
   build-and-export:
