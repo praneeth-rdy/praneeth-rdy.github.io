@@ -119,8 +119,8 @@ const blogQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             author
-            quote
             description
+            maxread
             category
             thumbnail {
               childImageSharp {

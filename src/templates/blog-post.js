@@ -25,8 +25,8 @@ const BlogPostTemplate = ({ data, location }) => {
             <h1 className="post-content-title">{post.frontmatter.title}</h1>
           </header>
 
-          {post.frontmatter.description && (
-            <p class="post-content-excerpt">{post.frontmatter.description}</p>
+          {post.frontmatter.subtext && (
+            <p class="post-content-excerpt">{post.frontmatter.subtext}</p>
           )}
 
           {post.frontmatter.thumbnail && (
@@ -74,7 +74,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+        subtext
         thumbnail {
           childImageSharp {
             gatsbyImageData

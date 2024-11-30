@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import { FaClock, FaUser } from "react-icons/fa"
+import { BsDot } from "react-icons/bs"
 // import Img from "gatsby-image"
 import HorizontalLine from "../horizontalLine"
 import "../../styles/css/screens/blog/blog-item.css"
@@ -19,6 +20,10 @@ function BlogItem({ node, postClass }) {
               {/* <FaClock className="fa-icon" /> */}
               Published on {node.frontmatter.date}
             </h2>
+            <div className="addinfo-separator">
+              <BsDot className="fa-icon" />
+            </div>
+            <h2>{node.frontmatter.maxread} read</h2>
             {/* <h2>
               <FaUser className="fa-icon" />
               {node.frontmatter.author}
