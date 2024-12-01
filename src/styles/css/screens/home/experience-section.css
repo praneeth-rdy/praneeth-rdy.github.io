@@ -1,117 +1,127 @@
 @import "../../vars.css";
-/* .experience-container {
-  border-style: solid;
-  border-width: 2px;
-  border-color: color(var(--color-light-base) l(+70%));
-  border-radius: 5px;
-} */
 
-.experience-nav-container {
-  max-width: 100%;
-  flex-basis: 100%;
-  display: flexbox;
-  text-align: center;
-  padding-bottom: 20px;
+.experience-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  column-gap: 38px;
+  row-gap: 30px;
 }
 
-.experience-container > .experience-nav-container > .experience-nav-item {
-  box-shadow: none;
-  border-radius: 0;
-}
-.light .experience-container > .experience-nav-container > .experience-nav-item {
-  background-color: color(var(--color-light-base) l(+85%));
-  color: color(var(--color-light-base) l(+40%)) !important;
-  /* box-shadow: inset 0 0 0 2px color(var(--color-light-base) l(+80%)); */
-}
-.dark .experience-container > .experience-nav-container > .experience-nav-item {
-  background-color: color(var(--color-dark-base) l(+80%));
-  color: color(var(--color-dark-base) l(-60%)) !important;
-  /* box-shadow: inset 0 0 0 2px color(var(--color-dark-base) l(+80%)); */
-}
-
-.light .experience-container > .experience-nav-container > .experience-nav-item:hover{
-  color: color(var(--color-light-base) l(-10%)) !important;
-}
-.dark .experience-container > .experience-nav-container > .experience-nav-item:hover{
-  color: color(var(--color-dark-base) l(-100%)) !important;
-}
-
-.light .experience-container > .experience-nav-container > .experience-nav-item.active {
-  background-color: color(var(--color-light-base) l(+80%));
-  color: color(var(--color-light-base) l(-10%)) !important;
-}
-.dark .experience-container > .experience-nav-container > .experience-nav-item.active {
-  background-color: color(var(--color-dark-base) l(-5%));
-  color: color(var(--color-dark-base) l(-100%)) !important;
-}
-
-.experience-body-container {
-  max-width: 100%;
-  flex-basis: 100%;
+.experience-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 22px 28px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  row-gap: 16px;
 }
 
-.experience-body-container > .experience-item-container > .experience-heading {
-  font-size: 2.8rem;
+.experience-frontmatter-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.experience-status-tag,
+.experience-type-tag {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+  padding: 1px 9px;
+  border-radius: 24px;
+}
+
+.experience-status-tag-completed {
+  color: var(--color-green);
+  background-color: var(--color-green-light);
+}
+
+.experience-status-tag-present {
+  color: var(--color-yellow);
+  background-color: var(--color-yellow-light);
+}
+
+.light .experience-type-tag-por {
+  color: var(--color-purple);
+  background-color: var(--color-purple-light);
+}
+
+.dark .experience-type-tag-por {
+  color: var(--color-teal);
+  background-color: var(--color-teal-light);
+}
+
+.experience-title {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 8px;
+  row-gap: 8px;
+  font-size: 24px;
+  line-height: 36px;
+  /* margin-top: 0; */
+}
+
+.experience-trophy {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-yellow);
+  background-color: var(--color-orange-light);
+}
+
+.experience-tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 8px;
+  row-gap: 8px;
+}
+
+.experience-tag {
+  color: var(--color-dark-base);
+  background-color: var(--color-primary);
+  padding: 1px 9px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.experience-card .experience-description {
+  font-size: 16px;
   margin: 0;
 }
-.experience-body-container > .experience-item-container > .experience-timeline {
-  font-size: 2.1rem;
+
+.experience-roles-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  column-gap: 16px;
+  row-gap: 6px;
+}
+
+.experience-role {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 10px;
+  justify-content: space-between;
+  min-width: 150px;
+}
+
+.experience-role-title {
+  font-size: 16px;
+  font-weight: 600;
   margin: 0;
 }
-.light .experience-body-container > .experience-item-container > .experience-timeline {
-  color: color(var(--color-light-base) l(+40%));
-}
-.dark .experience-body-container > .experience-item-container > .experience-timeline {
-  color: color(var(--color-dark-base) l(-20%));
-}
 
-.experience-body-container ul > li {
-  font-size: 15px;
-}
-
-@media (min-width: 480px) {
-}
-
-@media (min-width: 740px) {
-}
-
-@media (min-width: 980px) {
-  .experience-nav-container {
-    max-width: 22%;
-    flex-basis: 22%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-bottom: 0;
-  }
-
-  .experience-body-container {
-    padding-left: 35px;
-    max-width: 78%;
-    flex-basis: 78%;
-  }
-  .experience-body-container ul > li {
-    font-size: 16px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .experience-nav-container {
-    max-width: 25%;
-    flex-basis: 25%;
-  }
-
-  .experience-body-container {
-    max-width: 75%;
-    flex-basis: 75%;
-  }
-  .experience-body-container ul > li {
-    font-size: 18px;
-  }
-}
-
-@media (min-width: 1680px) {
+.experience-card .experience-role-duration {
+  font-size: 12px;
+  margin: 0;
 }

@@ -57,27 +57,17 @@ const BlogPage = ({ data }, location) => {
         <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
         <h2 className="blogs-page-heading">My Recent Blogs</h2>
         <div className="blog-filters-container">
-          {allCategories.map(categ => {
-            if (categ === category) {
-              return (
-                <button
-                  className={"blog-filter button primary small"}
-                  onClick={() => filterPosts(categ)}
-                >
-                  {categ[0].toUpperCase() + categ.slice(1)}
-                </button>
-              )
-            } else {
-              return (
-                <button
-                  className={"blog-filter button small"}
-                  onClick={() => filterPosts(categ)}
-                >
-                  {categ[0].toUpperCase() + categ.slice(1)}
-                </button>
-              )
-            }
-          })}
+          {allCategories.map((categ, index) => (
+            <button
+              key={index}
+              className={`blog-filter button ${
+                categ === category ? "primary" : ""
+              } small`}
+              onClick={() => filterPosts(categ)}
+            >
+              {categ[0].toUpperCase() + categ.slice(1)}
+            </button>
+          ))}
         </div>
         <div className="blog-body">
           {posts.map(({ node }) => {

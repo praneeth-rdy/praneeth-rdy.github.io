@@ -309,10 +309,10 @@ body {
   font-feature-settings: "liga" on;
   -moz-font-feature-settings: "liga" on;
 }
-.light{
+.light {
   color: color(var(--color-light-base) l(+20%));
 }
-.dark{
+.dark {
   color: color(var(--color-dark-base) l(+20%));
 }
 
@@ -394,7 +394,7 @@ a:hover {
   transition: 0.2s ease;
 }
 
-a.link{
+a.link {
   color: color(var(--color-primary) l(-5%));
 }
 
@@ -471,4 +471,25 @@ h6 {
 
 .light .b-shadow {
   box-shadow: 0 7px 30px -10px rgba(150, 170, 180, 0.5);
+}
+
+.dark .b-shadow-card {
+  box-shadow: 0px -2px 4px 0px rgba(255, 255, 255, 0.2),
+    0px 2px 4px 0px rgba(255, 255, 255, 0.1);
+}
+
+.light .b-shadow-card {
+  box-shadow: 0px -2px 4px 0px rgba(150, 170, 180, 0.2),
+    0px 2px 4px 0px rgba(150, 170, 180, 0.2);
+}
+
+.expandable-text {
+  margin-left: 4px;
+  color: var(--color-primary);
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.expandable-text:hover {
+  text-decoration: underline;
 }

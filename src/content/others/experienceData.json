@@ -1,89 +1,71 @@
 {
-    "experience": [
+  "experience": [
+    {
+      "org": "Gopali Youth Welfare Society",
+      "status": "Completed",
+      "type": "Position of Responsibility",
+      "returnOffer": true,
+      "tags": ["Business Development", "Education"],
+      "description": "Gopali Youth Welfare Society is a non-profit organization that provides education and support to underprivileged children in rural areas of India.",
+      "roles": [
         {
-            "org": "GYWS",
-            "posts": [
-                {
-                    "id": 1,
-                    "title": "Business Development Intern",
-                    "start": "May 2020",
-                    "end": "September 2020",
-                    "description": [
-                        "Developed an efficient, generalized and executable business plan for the PRAYAS Business Model of GYWS which also includes MoU Drafting, proposing financial metrics and working on financial statements.",
-                        "I was promoted as a super intern for my best performance in the internship."
-                    ]
-                },
-                {
-                    "id": 2,
-                    "title": "Senior Executive Member",
-                    "start": "September 2020",
-                    "end": "May 2021",
-                    "description": [
-                        "Founding Member of UG PRAYAS Team.",
-                        "Explored and documented various aspects of School Application Project, which is an inhouse innovation of PRAYAS Team to manage schools efficiently.",
-                        "Involved in the Research and Development of Sponsorship Project, and worked on several channels of fundraising.",
-                        "Led a team of about 25 people consisting of the freshmen and the Office Staff of PRAYAS.",
-                        "Event-incharge of SOCH (Intra-PRAYAS Case Study Competition)."
-                    ]
-                },
-                {
-                    "id": 2,
-                    "title": "PRAYAS Coordinator",
-                    "start": "May 2021",
-                    "end": "Present",
-                    "description": [
-                        "Re-built the structure of PRAYAS with an addition of 3 new teams namely Tech, Design, Marketing.",
-                        "Co-founded and led a startup named Komcluez Marketing and Consultancy Private Limited.",
-                        "Trained a team of 7 sophomores for the first-ever Tech Team in PRAYAS and devised a revenue generation model for Komcluez through this Tech Team"
-                    ]
-                }
-            ]
+          "title": "Business Development Intern",
+          "start": "May '20",
+          "end": "Sep '20"
         },
         {
-            "org": "IR Cell",
-            "posts": [
-                {
-                    "id": 1,
-                    "title": "Web Team Member",
-                    "start": "September 2020",
-                    "end": "May 2021",
-                    "description": [
-                        "Responsible for the development and management of Foreign Training Portal 2020-2021 and the international website of IIT Kharagpur.",
-                        "Working hand-in-hand with the Office of International Relations to organize the events and programs of the International Relations Cell."
-                    ]
-                }
-            ]
+          "title": "Senior Executive Member",
+          "start": "Sep '20",
+          "end": "May '21"
         },
         {
-            "org": "Quantifiers",
-            "posts": [
-                {
-                    "id": 1,
-                    "title": "Full Stack Developer Intern",
-                    "start": "February 2021",
-                    "end": "June 2021",
-                    "description": [
-                        "Developed the backend and frontend of the website https://www.quantifiers.in/ from scratch.",
-                        "The whole content of the website is dynamic and the technologies used in developing this are Django, Bootstrap."
-                    ]
-                }
-            ]
-        },
-        {
-            "org": "ChiSquareX",
-            "posts": [
-                {
-                    "id": 1,
-                    "title": "Full Stack Developer",
-                    "start": "January 2021",
-                    "end": "Present",
-                    "description": [
-                        "This is a small-scale research group started by a few students of IIT Kharagpur.",
-                        "I work on the web/android projects received by this organization from their clients.",
-                        "Kushitranslation Website: Developed a client company’s website, being a part of this organization. This is a paid project."
-                    ]
-                }
-            ]
+          "title": "PRAYAS Coordinator",
+          "start": "May '21",
+          "end": "Apr '22"
         }
-    ]
+      ]
+    },
+    {
+      "org": "International Relations Cell",
+      "status": "Completed",
+      "type": "Position of Responsibility",
+      "tags": ["Web Development"],
+      "description": "International Relations Cell of IIT Kharagpur",
+      "roles": [
+        {
+          "title": "Web Team Member",
+          "start": "Sep '20",
+          "end": "May '21"
+        }
+      ]
+    },
+    {
+      "org": "Quantifiers",
+      "status": "Completed",
+      "returnOffer": true,
+      "tags": ["Web Development"],
+      "description": "A web development company specializing in custom solutions",
+      "roles": [
+        {
+          "title": "Full Stack Developer Intern",
+          "start": "Feb '21",
+          "end": "Jun '21"
+        }
+      ]
+    },
+    {
+      "org": "ChiSquareX",
+      "status": "Completed",
+      "returnOffer": true,
+      "tags": ["Web Development"],
+      "description": "A student-led research and development group at IIT Kharagpur",
+      "roles": [
+        {
+          "title": "Full Stack Developer",
+          "start": "Jan '21",
+          "end": "May '21"
+        }
+      ]
+    }
+  ]
 }

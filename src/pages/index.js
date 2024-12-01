@@ -42,9 +42,9 @@ const Index = ({ data }, location) => {
         />
         <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
         <AboutSection image={aboutPic} />
+        <ExperienceSection />
         <ProjectsSection />
         <SkillsetSection />
-        {/* <ExperienceSection /> */}
 
         {/* <div className="post-feed">
         {posts.map(({ node }) => {

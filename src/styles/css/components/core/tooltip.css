@@ -1,0 +1,152 @@
+@import "../../vars.css";
+
+.tooltip-container {
+  position: relative;
+  display: inline-flex; /* Changed to inline-flex to prevent extra height */
+}
+
+.tooltip {
+  position: absolute;
+  padding: 0px 10px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-family: var(--font-sans-serif);
+  white-space: nowrap;
+  z-index: 100;
+  transition: all 0.2s ease;
+  opacity: 0;
+  transform-origin: center;
+  animation: tooltipFadeIn 0.2s ease forwards;
+}
+
+.tooltip-container {
+  cursor: default;
+}
+
+/* Light mode (default) */
+.light .tooltip {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
+}
+
+/* Dark mode */
+.dark .tooltip {
+  background-color: var(--color-light-bg);
+  color: var(--color-light-base);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--color-border);
+}
+
+/* Position variants */
+.tooltip-top {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  margin-bottom: 8px;
+}
+
+.tooltip-bottom {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  margin-top: 8px;
+}
+
+.tooltip-left {
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(10px);
+  margin-right: 8px;
+}
+
+.tooltip-right {
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-10px);
+  margin-left: 8px;
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+/* Arrow styles - Light mode */
+.light .tooltip::after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.light .tooltip-top::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: var(--color-dark-bg) transparent transparent transparent;
+}
+
+.light .tooltip-bottom::after {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: transparent transparent var(--color-dark-bg) transparent;
+}
+
+.light .tooltip-left::after {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-color: transparent transparent transparent var(--color-dark-bg);
+}
+
+.light .tooltip-right::after {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-color: transparent var(--color-dark-bg) transparent transparent;
+}
+
+/* Arrow styles - Dark mode */
+.dark .tooltip::after {
+  content: "";
+  position: absolute;
+  border-width: 5px;
+  border-style: solid;
+}
+
+.dark .tooltip-top::after {
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: var(--color-light-bg) transparent transparent transparent;
+}
+
+.dark .tooltip-bottom::after {
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-color: transparent transparent var(--color-light-bg) transparent;
+}
+
+.dark .tooltip-left::after {
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border-color: transparent transparent transparent var(--color-light-bg);
+}
+
+.dark .tooltip-right::after {
+  top: 50%;
+  right: 100%;
+  transform: translateY(-50%);
+  border-color: transparent var(--color-light-bg) transparent transparent;
+}

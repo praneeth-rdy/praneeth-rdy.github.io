@@ -59,9 +59,10 @@ function ProjectsSection({ data }) {
                       )
                     )}
                   </div>
-                  <div className={Styles.projectLinks}>
+                  <div className={`icons-container ${Styles.projectLinks}`}>
                     {node.frontmatter.repo && (
                       <a
+                        className="link"
                         href={node.frontmatter.repo}
                         target="_blank"
                         rel="noreferrer"
@@ -71,6 +72,7 @@ function ProjectsSection({ data }) {
                     )}
                     {node.frontmatter.docs && (
                       <a
+                        className="link"
                         href={node.frontmatter.docs}
                         target="_blank"
                         rel="noreferrer"
@@ -80,6 +82,7 @@ function ProjectsSection({ data }) {
                     )}
                     {node.frontmatter.site && (
                       <a
+                        className="link"
                         href={node.frontmatter.site}
                         target="_blank"
                         rel="noreferrer"
