@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-//import Img from "gatsby-image"
 import { StaticQuery, graphql } from "gatsby"
 import "../../styles/css/screens/home/experience-section.css"
 import { FaStar } from "react-icons/fa"
+import { GatsbyImage } from "gatsby-plugin-image"
 import Tooltip from "../core/Tooltip"
 import ExpandableText from "../core/ExpandableText"
 
@@ -62,30 +62,47 @@ function ExperienceSection({ data }) {
                 {experience.status}
               </span>
             </div>
-            <h3 className="experience-title">
-              {experience.org}
-              {experience.returnOffer && (
-                <Tooltip text="Received a return offer" position="top">
-                  <span className="experience-trophy">
-                    <FaStar size={16} />
-                  </span>
-                </Tooltip>
-              )}
-              {experience.type && (
-                <Tooltip
-                  text={getTooltipTextByType(experience.type)}
-                  position="top"
-                >
-                  <span
-                    className={`experience-type-tag ${getTagClassnameByType(
-                      experience.type
-                    )}`}
+            <div className="experience-header">
+              <div className="experience-org-container">
+                <h3 className="experience-title">{experience.org}</h3>
+                {experience.orgLogo && (
+                  <GatsbyImage
+                    image={experience.orgLogo.childImageSharp.gatsbyImageData}
+                    alt={experience.org}
+                  />
+                )}
+                {!experience.type && experience.returnOffer && (
+                  <Tooltip text="Received a return offer" position="top">
+                    <span className="experience-trophy">
+                      <FaStar size={16} />
+                    </span>
+                  </Tooltip>
+                )}
+              </div>
+              <div className="experience-header-tags">
+                {experience.type && (
+                  <Tooltip
+                    text={getTooltipTextByType(experience.type)}
+                    position="top"
                   >
-                    {experience.type}
-                  </span>
-                </Tooltip>
-              )}
-            </h3>
+                    <span
+                      className={`experience-type-tag ${getTagClassnameByType(
+                        experience.type
+                      )}`}
+                    >
+                      {experience.type}
+                    </span>
+                  </Tooltip>
+                )}
+                {experience.type && experience.returnOffer && (
+                  <Tooltip text="Received a return offer" position="top">
+                    <span className="experience-trophy">
+                      <FaStar size={16} />
+                    </span>
+                  </Tooltip>
+                )}
+              </div>
+            </div>
             <ExpandableText className="experience-description" charLimit={120}>
               {experience.description}
             </ExpandableText>
@@ -118,6 +135,11 @@ const indexQuery = graphql`
     othersJson {
       experience {
         org
+        orgLogo {
+          childImageSharp {
+            gatsbyImageData(width: 40, height: 40, layout: FIXED)
+          }
+        }
         returnOffer
         status
         type

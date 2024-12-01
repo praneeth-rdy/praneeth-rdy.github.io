@@ -2,6 +2,7 @@
   "experience": [
     {
       "org": "Gopali Youth Welfare Society",
+      "orgLogo": "./images/org-logos/gyws-logo.png",
       "status": "Completed",
       "type": "Position of Responsibility",
       "returnOffer": true,
