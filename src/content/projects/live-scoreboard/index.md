@@ -9,5 +9,5 @@ end: "2021-08-01"
 repo: https://github.com/
 docs: https://github.com/
 site: https://github.com/
-thumbnail: ./temp.jpeg
+thumbnail: ../../images/project-placeholder.webp
 ---

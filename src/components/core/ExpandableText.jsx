@@ -11,12 +11,23 @@ export default function ExpandableText(props) {
       ? text.slice(0, charLimit).trim() + "..."
       : text
 
+  const toggleExpand = () => {
+    setIsExpanded(current => !current)
+  }
+
   return (
     <p className={`expandable-text-container ${className}`}>
       {displayText}
       {shouldTruncate && (
         <span
-          onClick={() => setIsExpanded(!isExpanded)}
+          onClick={toggleExpand}
+          onKeyPress={e => {
+            if (e.key === "Enter" || e.key === " ") {
+              toggleExpand()
+            }
+          }}
+          role="button"
+          tabIndex={0}
           className="expandable-text"
         >
           {isExpanded ? "read less" : "read more"}

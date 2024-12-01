@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import "../../styles/css/components/core/tooltip.css"
 
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 const Tooltip = ({ children, text, position = "top" }) => {
   const [isVisible, setIsVisible] = useState(false)
 
@@ -9,6 +10,7 @@ const Tooltip = ({ children, text, position = "top" }) => {
       className="tooltip-container"
       onMouseEnter={() => setIsVisible(true)}
       onMouseLeave={() => setIsVisible(false)}
+      role="tooltip"
     >
       {children}
       {isVisible && <div className={`tooltip tooltip-${position}`}>{text}</div>}

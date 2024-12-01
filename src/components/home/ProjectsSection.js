@@ -2,15 +2,8 @@ import React, { useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { StaticQuery, graphql } from "gatsby"
 import * as Styles from "../../styles/css/screens/home/projects-section.module.css"
-import {
-  FaBook,
-  FaBookOpen,
-  FaExternalLinkAlt,
-  FaGithub,
-  FaGlobe,
-  FaLink,
-  FaRegFileAlt,
-} from "react-icons/fa"
+import { FaBookOpen, FaGithub, FaLink } from "react-icons/fa"
+import ExpandableText from "../core/ExpandableText"
 
 function ProjectsSection({ data }) {
   const [showAll, setShowAll] = useState(false)
@@ -45,9 +38,12 @@ function ProjectsSection({ data }) {
                   {node.frontmatter.title}
                 </h3>
                 <div className={Styles.descriptionContainer}>
-                  <p className={Styles.cardDescription}>
+                  <ExpandableText
+                    className={Styles.cardDescription}
+                    charLimit={300}
+                  >
                     {node.frontmatter.description}
-                  </p>
+                  </ExpandableText>
                 </div>
                 <div className={Styles.additionalInfo}>
                   <div className={Styles.stacksContainer}>
@@ -138,7 +134,7 @@ const indexQuery = graphql`
             site
             thumbnail {
               childImageSharp {
-                gatsbyImageData
+                gatsbyImageData(height: 220, width: 330)
               }
             }
           }

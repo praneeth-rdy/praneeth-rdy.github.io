@@ -1,9 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-import { FaClock, FaUser } from "react-icons/fa"
 import { BsDot } from "react-icons/bs"
 // import Img from "gatsby-image"
-import HorizontalLine from "../horizontalLine"
 import "../../styles/css/screens/blog/blog-item.css"
 
 function BlogItem({ node, postClass }) {
