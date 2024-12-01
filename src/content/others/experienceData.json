@@ -1,18 +1,123 @@
 {
   "experience": [
     {
+      "org": "Trumio Inc.",
+      "orgLogo": "../images/org-logos/trumio-logo.jpeg",
+      "status": "Present",
+      "returnOffer": true,
+      "tags": [
+        "TypeScript",
+        "React.js",
+        "FastAPI",
+        "Python",
+        "Software Development"
+      ],
+      "description": "Engineered a chat interface to enable collaboration on the platform with push notifications, profanity filter and data masking. Built a Python module to abstract out API calls from the backend, reviewed over 10 pull requests and reported 18 issues on GitHub. Formulated a comprehensive report outlining productivity-enhancing AI tools across stages of Software Development Lifecycle (SDLC). Collaborated with design team to enhance the chat UX and designed backend architecture to support the functionality of CometChat SDK.",
+      "roles": [
+        {
+          "title": "Software Engineer",
+          "start": "May '24",
+          "end": "Present"
+        },
+        {
+          "title": "Software Engineer Intern",
+          "start": "Jan '24",
+          "end": "Apr '24"
+        },
+        {
+          "title": "Software Engineer Intern",
+          "start": "Jun '23",
+          "end": "Aug '23"
+        }
+      ]
+    },
+    {
+      "org": "Xpertzy Private Limited",
+      "orgLogo": "../images/org-logos/xpertzy-logo.jpeg",
+      "status": "Completed",
+      "tags": [
+        "Node.js",
+        "React.js",
+        "Web Development",
+        "JavaScript",
+        "MongoDB",
+        "Express.js"
+      ],
+      "description": "Worked as a Full Stack Development Intern developing web applications using MERN stack.",
+      "roles": [
+        {
+          "title": "Full Stack Development Intern",
+          "start": "Nov '22",
+          "end": "Dec '22"
+        }
+      ]
+    },
+    {
+      "org": "Sprout Creativity",
+      "orgLogo": "../images/org-logos/sprout-creativity-logo.jpeg",
+      "status": "Completed",
+      "returnOffer": true,
+      "tags": [
+        "Node.js",
+        "React.js",
+        "Web Development",
+        "JavaScript",
+        "MongoDB",
+        "Express.js"
+      ],
+      "description": "Worked as a Full Stack Development Intern developing web applications using MERN stack.",
+      "roles": [
+        {
+          "title": "Full Stack Development Intern",
+          "start": "Jun '22",
+          "end": "Aug '22"
+        }
+      ]
+    },
+    {
+      "org": "Knorex India",
+      "orgLogo": "../images/org-logos/knorex-logo.jpeg",
+      "status": "Completed",
+      "tags": [
+        "Node.js",
+        "JavaScript",
+        "Spring Boot",
+        "Docker",
+        "Express.js",
+        "MongoDB",
+        "AngularJS"
+      ],
+      "description": "Drafted a report on Apigee API Management to assist developers in packaging, publishing and monetising the company's Application Programming Interfaces (APIs) with an additional layer of security, rate-limiting, quotas, spike arrest and analytics through an API proxy. Fixed the stale pull requests and worked on the enhancements of the quotation management project built using Express and MongoDB. Reported bugs, configured logging, developed a product service and implemented a global exception handler in a Spring Boot Project. Dockerized, extended the services and improved the user interface of a gallery project running on AngularJS, Express and MongoDB.",
+      "roles": [
+        {
+          "title": "Software Engineer Intern",
+          "start": "May '22",
+          "end": "Aug '22"
+        }
+      ]
+    },
+    {
       "org": "Gopali Youth Welfare Society",
-      "orgLogo": "./images/org-logos/gyws-logo.png",
+      "orgLogo": "../images/org-logos/gyws-logo.png",
       "status": "Completed",
       "type": "Position of Responsibility",
       "returnOffer": true,
-      "tags": ["Business Development", "Education"],
-      "description": "Gopali Youth Welfare Society is a non-profit organization that provides education and support to underprivileged children in rural areas of India.",
+      "tags": [
+        "Node.js",
+        "MySQL",
+        "Python",
+        "JavaScript",
+        "Git",
+        "Business Development",
+        "Team Leadership",
+        "Project Management"
+      ],
+      "description": "Led and managed a team of around 40 people consisting of the Senior Executive Members, Office Staff, Interns and Project Members of PRAYAS. Successfully conducted a Tree Plantation Drive under the Global Warming Awareness Program of PRAYAS. Coordinated in setting up and initiating around 10+ projects under Komcluez Consultancy and Marketing Private Limited (KCMPL). Founded RegEx Solutions which is an Information Technology Consultancy as one of the projects of KCMPL. Co-founded the Sponsorship Project under the PRAYAS Team with a vision to aid social initiatives in their fundraising.",
       "roles": [
         {
-          "title": "Business Development Intern",
-          "start": "May '20",
-          "end": "Sep '20"
+          "title": "PRAYAS Coordinator",
+          "start": "May '21",
+          "end": "May '22"
         },
         {
           "title": "Senior Executive Member",
@@ -20,35 +125,113 @@
           "end": "May '21"
         },
         {
-          "title": "PRAYAS Coordinator",
-          "start": "May '21",
-          "end": "Apr '22"
+          "title": "Business Development Intern",
+          "start": "Aug '20",
+          "end": "Sep '20"
         }
       ]
     },
     {
-      "org": "International Relations Cell",
+      "org": "Technology Students' Gymkhana",
+      "orgLogo": "../images/org-logos/tsg-iitkgp-logo.jpg",
       "status": "Completed",
+      "returnOffer": true,
       "type": "Position of Responsibility",
-      "tags": ["Web Development"],
-      "description": "International Relations Cell of IIT Kharagpur",
+      "tags": [
+        "Node.js",
+        "React.js",
+        "MySQL",
+        "Python",
+        "JavaScript",
+        "CSS",
+        "AWS",
+        "Git",
+        "Django",
+        "React Native",
+        "HTML"
+      ],
+      "description": "Nominated from among 15000+ students and responsible for all the technological advancements on the campus of IIT Kharagpur. Built a Digital Inventory System to manage and record the transactions of all the sports inventory of Technology Students' Gymkhana. Developed a Django dashboard to keep track of students on campus and those being called back during the reopening of the IIT Kharagpur. Devised a live scoreboard employing Nextjs and Google Sheets API, for 8 sports as a part of Inter Hall Gymkhana Championship 2022. Responsible for the maintenance of the Gymkhana Website and Blog Site running on Nextjs and Ghost CMS respectively. Deployed the applications on Amazon Web Services EC2 instance and maintained a physical server of Technology Students' Gymkhana.",
       "roles": [
         {
-          "title": "Web Team Member",
-          "start": "Sep '20",
-          "end": "May '21"
+          "title": "Technology Coordinator",
+          "start": "Aug '21",
+          "end": "Apr '22"
+        },
+        {
+          "title": "Technical Developer",
+          "start": "Mar '21",
+          "end": "Aug '21"
+        }
+      ]
+    },
+    {
+      "org": "Centre of Excellence in Artificial Intelligence, IIT Kharagpur",
+      "orgLogo": "../images/org-logos/iitkgp-logo.jpeg",
+      "status": "Completed",
+      "tags": ["Node.js", "Python", "JavaScript", "AWS", "Git", "MongoDB"],
+      "description": "Built a Nodejs API Layer as an interface between the Reactjs frontend and the python simulator, simultaneously interacting with MongoDB. Integrated the API with the application and performed integration tests in coordination with the frontend and model-development teams. Deployed and managed the full stack of the project on an Amazon Web Services (AWS) EC2 instance using the Apache Web Server. This project was sponsored by the Department of Science and Technology - Government of India to study the spread of Covid-19 on university campuses.",
+      "roles": [
+        {
+          "title": "Backend Development Intern",
+          "start": "Aug '21",
+          "end": "Oct '21"
+        }
+      ]
+    },
+    {
+      "org": "Qen Labs Inc.",
+      "orgLogo": "../images/org-logos/qen-labs-logo.jpeg",
+      "status": "Completed",
+      "tags": [
+        "Node.js",
+        "React.js",
+        "Python",
+        "JavaScript",
+        "Git",
+        "Django",
+        "React Native"
+      ],
+      "description": "Developed the technical stack for \"Soil Testing and Nutrient Management\" as part of the project MITTI, driven by Professor Chintan Vaishnav, which includes the development of a Fertilizer Recommendation System and a Mobile Application for data collection and mapping of farms. MITTI is a project started at MIT's Tata Center (an Energy Initiative) and is now being translated into a product by Qen Labs Incorporation. Coordinated with the design team and translated the design prototype from Figma into a clean and commented React-Native code.",
+      "roles": [
+        {
+          "title": "Full Stack Development Intern",
+          "start": "Aug '21",
+          "end": "Oct '21"
+        }
+      ]
+    },
+    {
+      "org": "GirlScript Summer of Code",
+      "orgLogo": "../images/org-logos/girlscriptsoc-logo.jpeg",
+      "status": "Completed",
+      "tags": [
+        "Python",
+        "JavaScript",
+        "CSS",
+        "Git",
+        "Django",
+        "HTML",
+        "Flutter"
+      ],
+      "description": "The following are my contributions to GirlScript Summer of Code 2021 conducted by GirlScript Foundation: • Developed the home screen of Libro (https://github.com/infiniteoverflow/Libro), which is a book donation application built using Flutter • Contributed to the improvements of a model in the task management Django application • Helped the admins of multiple projects in creating standard templates for Pull Requests and Issues",
+      "roles": [
+        {
+          "title": "Student Developer",
+          "start": "Mar '21",
+          "end": "Jun '21"
         }
       ]
     },
     {
       "org": "Quantifiers",
+      "orgLogo": "../images/org-logos/quantifiers-logo.jpg",
       "status": "Completed",
       "returnOffer": true,
-      "tags": ["Web Development"],
-      "description": "A web development company specializing in custom solutions",
+      "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
+      "description": "Built a dynamic website with a revamp of user interface and incorporation of value-added features yielding a 60% increase in user traffic. Designed and developed a quiz platform of multiple-choice questions with the features like navigation, instant result and solutions. Facilitated the blog posting of the company by the end-to-end development of a blog platform on its website to keep users engaged.",
       "roles": [
         {
-          "title": "Full Stack Developer Intern",
+          "title": "Web Development Intern",
           "start": "Feb '21",
           "end": "Jun '21"
         }
@@ -56,15 +239,36 @@
     },
     {
       "org": "ChiSquareX",
+      "orgLogo": "../images/org-logos/chisquarex-logo.png",
       "status": "Completed",
       "returnOffer": true,
-      "tags": ["Web Development"],
-      "description": "A student-led research and development group at IIT Kharagpur",
+      "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
+      "description": "Responsible to develop, manage and deliver software projects for the organisation and its clients alongside managing the human resources. Developed a website for this organisation using Django and Bootstrap. Built a website for Kushitranslations which is one of the Bangalore-based clients of the organisation. Developed a static flutter application to readably present the Constitution of India in Kannada.",
       "roles": [
         {
-          "title": "Full Stack Developer",
+          "title": "Full Stack Development Intern",
           "start": "Jan '21",
           "end": "May '21"
+        }
+      ]
+    },
+    {
+      "org": "International Relations Cell",
+      "orgLogo": "../images/org-logos/ircell-iitkgp-logo.png",
+      "status": "Completed",
+      "type": "Position of Responsibility",
+      "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
+      "description": "Responsible for the development and management of Foreign Training Portal 2020-2021 and the international website of IIT Kharagpur. Led a team of 7 Junior Associates who were a part of the web team and mentored them to learn web development which included Bootstrap Layouts, JavaScript, Python and Django. Contributed to the smooth conduction of the OnCampus Round of Hult Prize 2020 at IIT Kharagpur, being an organising team member. Worked hand-in-hand with the Office of International Relations to organize the events and programs of the International Relations Cell.",
+      "roles": [
+        {
+          "title": "Web Team Member",
+          "start": "Sep '20",
+          "end": "May '21"
+        },
+        {
+          "title": "Junior Associate",
+          "start": "Feb '20",
+          "end": "Sep '20"
         }
       ]
     }

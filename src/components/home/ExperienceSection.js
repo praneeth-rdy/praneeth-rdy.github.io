@@ -12,9 +12,13 @@ const ExperienceStatus = {
 }
 
 function ExperienceSection({ data }) {
-  // use data as props.data
-  // const experiences = props.data.allMarkdownRemark.edges
+  const [showAll, setShowAll] = useState(false)
   const allExperiences = data.othersJson.experience
+
+  const initialMaxCount = 4
+  const visibleExperiences = showAll
+    ? allExperiences
+    : allExperiences.slice(0, initialMaxCount)
 
   const getTagClassnameByStatus = status => {
     switch (status) {
@@ -45,13 +49,17 @@ function ExperienceSection({ data }) {
     }
   }
 
+  const toggleExpand = () => {
+    setShowAll(current => !current)
+  }
+
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">
         <span>Experience</span>
       </h2>
       <div className="experience-container">
-        {allExperiences.map((experience, index) => (
+        {visibleExperiences.map((experience, index) => (
           <div className="experience-card b-shadow-card" key={index}>
             <div className="experience-frontmatter-container">
               <span
@@ -69,6 +77,7 @@ function ExperienceSection({ data }) {
                   <GatsbyImage
                     image={experience.orgLogo.childImageSharp.gatsbyImageData}
                     alt={experience.org}
+                    className="experience-org-logo"
                   />
                 )}
                 {!experience.type && experience.returnOffer && (
@@ -126,10 +135,19 @@ function ExperienceSection({ data }) {
           </div>
         ))}
       </div>
+      {allExperiences.length > initialMaxCount && (
+        <div className="text-center experience-expand-container">
+          <button
+            className="primary experience-expand-button"
+            onClick={toggleExpand}
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      )}
     </section>
   )
 }
-
 const indexQuery = graphql`
   query {
     othersJson {
@@ -137,7 +155,12 @@ const indexQuery = graphql`
         org
         orgLogo {
           childImageSharp {
-            gatsbyImageData(width: 40, height: 40, layout: FIXED)
+            gatsbyImageData(
+              width: 30
+              height: 30
+              layout: FIXED
+              transformOptions: { fit: COVER }
+            )
           }
         }
         returnOffer
