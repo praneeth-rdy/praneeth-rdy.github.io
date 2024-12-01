@@ -53,6 +53,11 @@
   background-color: var(--color-teal-light);
 }
 
+.experience-type-tag-opensource {
+  color: var(--color-cyan);
+  background-color: var(--color-cyan-light);
+}
+
 .experience-header {
   display: flex;
   flex-direction: column;

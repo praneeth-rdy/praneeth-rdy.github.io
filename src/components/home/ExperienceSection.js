@@ -32,18 +32,22 @@ function ExperienceSection({ data }) {
   }
 
   const getTagClassnameByType = type => {
-    switch (type) {
-      case "Position of Responsibility":
+    switch (type.toLowerCase()) {
+      case "position of responsibility":
         return "experience-type-tag-por"
+      case "opensource":
+        return "experience-type-tag-opensource"
       default:
         return ""
     }
   }
 
   const getTooltipTextByType = type => {
-    switch (type) {
-      case "Position of Responsibility":
+    switch (type.toLowerCase()) {
+      case "position of responsibility":
         return "This experience is a Position of Responsibility at IIT Kharagpur"
+      case "opensource":
+        return "This experience is an Open Source Contribution"
       default:
         return ""
     }
@@ -127,7 +131,8 @@ function ExperienceSection({ data }) {
                 <div className="experience-role" key={roleIndex}>
                   <h4 className="experience-role-title">{role.title}</h4>
                   <p className="experience-role-duration">
-                    {role.start} - {role.end}
+                    {role.start}
+                    {role.end && ` - ${role.end}`}
                   </p>
                 </div>
               ))}

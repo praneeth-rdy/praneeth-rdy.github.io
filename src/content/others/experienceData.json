@@ -204,6 +204,7 @@
       "org": "GirlScript Summer of Code",
       "orgLogo": "../images/org-logos/girlscriptsoc-logo.jpeg",
       "status": "Completed",
+      "type": "Opensource",
       "tags": [
         "Python",
         "JavaScript",
@@ -249,6 +250,21 @@
           "title": "Full Stack Development Intern",
           "start": "Jan '21",
           "end": "May '21"
+        }
+      ]
+    },
+    {
+      "org": "Kharagpur Winter of Code",
+      "orgLogo": "../images/org-logos/kwoc-iitkgp-logo.png",
+      "status": "Completed",
+      "type": "Opensource",
+      "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
+      "description": "Participated in a 5-week long online program aimed at introducing students to open source software development and preparing them for programs like Google Summer of Code. Developed multiple Django applications including a hotel booking site, book store and newspaper backend. Created a user dashboard and events tracking system for a helping hand NGO. The program helped gain hands-on experience with open source development practices and collaboration.",
+      "roles": [
+        {
+          "title": "Student Developer",
+          "start": "Mar '21",
+          "end": "Jun '21"
         }
       ]
     },

@@ -1,11 +1,6 @@
-import React from "react"
-//import Slider from "react-slick"
-// import Img from "gatsby-image"
+import React, { useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-//import "slick-carousel/slick/slick.css"
-//import "slick-carousel/slick/slick-theme.css"
 import { StaticQuery, graphql } from "gatsby"
-// import { FaGithub, FaGoogleDrive, FaGlobe } from "react-icons/fa";
 import * as Styles from "../../styles/css/screens/home/projects-section.module.css"
 import {
   FaBook,
@@ -18,14 +13,23 @@ import {
 } from "react-icons/fa"
 
 function ProjectsSection({ data }) {
-  //use data as props.data
-  const projects = data.allMarkdownRemark.edges
-  // console.log(projects);
+  const [showAll, setShowAll] = useState(false)
+  const allProjects = data.allMarkdownRemark.edges
+
+  const initialMaxCount = 3
+  const visibleProjects = showAll
+    ? allProjects
+    : allProjects.slice(0, initialMaxCount)
+
+  const toggleExpand = () => {
+    setShowAll(current => !current)
+  }
+
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">Projects</h2>
       <div className={Styles.projectCardsContainer}>
-        {projects.map(({ node }, index) => {
+        {visibleProjects.map(({ node }, index) => {
           return (
             <div key={index} className={`${Styles.card} 'b-shadow' 'grow'`}>
               <div className={Styles.cardImage}>
@@ -97,6 +101,16 @@ function ProjectsSection({ data }) {
           )
         })}
       </div>
+      {allProjects.length > initialMaxCount && (
+        <div className="text-center projects-expand-container">
+          <button
+            className="primary projects-expand-button"
+            onClick={toggleExpand}
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      )}
     </section>
   )
 }
