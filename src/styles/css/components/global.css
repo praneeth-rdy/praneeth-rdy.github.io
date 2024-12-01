@@ -493,3 +493,21 @@ h6 {
 .expandable-text:hover {
   text-decoration: underline;
 }
+
+.scroll-to-top-btn {
+  position: fixed;
+  color: var(--color-dark-base);
+  background-color: var(--color-primary);
+  padding: 5px 10px;
+  border-radius: 6px;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 1000;
+  transition: background-color 0.2s ease;
+}
+
+.scroll-to-top-btn:hover {
+  background-color: color(var(--color-primary) l(-10%));
+  transition: background-color 0.2s ease;
+}

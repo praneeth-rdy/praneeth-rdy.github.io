@@ -2,15 +2,35 @@ import React, { useState, cloneElement, Fragment, useContext } from "react"
 import ToggleButton from "./toggleButton"
 import { Link } from "gatsby"
 import { ThemeContext } from "../context/ThemeContextProvider"
+import { FaArrowUp } from "react-icons/fa"
 
 const Layout = props => {
   const [isDarkMode, toggleThemeMode] = useContext(ThemeContext)
   // console.log(isDarkMode);
   const { navHeading, path, children } = props
   const [toggleNav, setToggleNav] = useState(false)
+  const [showBackToTop, setShowBackToTop] = useState(false)
+
   if (typeof window !== "undefined") {
     document.body.className = isDarkMode ? "dark" : "light"
+
+    // Add scroll listener
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        setShowBackToTop(true)
+      } else {
+        setShowBackToTop(false)
+      }
+    })
   }
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    })
+  }
+
   var navActive = {
     home: "",
     about: "",
@@ -134,6 +154,11 @@ const Layout = props => {
           ))}
         </div>
       </main>
+      {showBackToTop && (
+        <span className="scroll-to-top-btn" onClick={scrollToTop}>
+          <FaArrowUp size={14} />
+        </span>
+      )}
       <footer className="site-foot">
         &copy; {new Date().getFullYear()} <Link to={`/`}>{navHeading}</Link>{" "}
         {/* &mdash; Built with{" "}
