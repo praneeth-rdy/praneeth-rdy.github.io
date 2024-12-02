@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/blog/aws-ec2/aws-ec2/",
+    "result": {"data":{"site":{"siteMetadata":{"navHeading":"praneeth-rdy","description":"Success is not how much money we make, it's the difference we bring in peoples' lives"}},"markdownRemark":{"id":"bfaac80b-fdcb-59fd-91d9-615692a54ca3","excerpt":"","html":"","frontmatter":{"title":"AWS Elastic Compute Cloud","date":null,"subtext":null,"thumbnail":null}}},"pageContext":{"slug":"/aws-ec2/aws-ec2/","previous":{"fields":{"slug":"/java/java/"},"frontmatter":{"title":"Java Programming Language"}},"next":{"fields":{"slug":"/android/android/"},"frontmatter":{"title":"Android"}}}},
+    "staticQueryHashes": ["63159454"]}

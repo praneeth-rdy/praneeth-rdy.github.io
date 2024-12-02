@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/blog/nodejs/nodejs/",
+    "result": {"data":{"site":{"siteMetadata":{"navHeading":"praneeth-rdy","description":"Success is not how much money we make, it's the difference we bring in peoples' lives"}},"markdownRemark":{"id":"56dc8c94-d961-5bd8-b10b-d6021b3e9871","excerpt":"","html":"","frontmatter":{"title":"Node.js","date":null,"subtext":null,"thumbnail":null}}},"pageContext":{"slug":"/nodejs/nodejs/","previous":{"fields":{"slug":"/python/python/"},"frontmatter":{"title":"Python Programming Language"}},"next":{"fields":{"slug":"/java/java/"},"frontmatter":{"title":"Java Programming Language"}}}},
+    "staticQueryHashes": ["63159454"]}
