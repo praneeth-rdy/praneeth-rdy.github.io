@@ -7,16 +7,32 @@
 
 .tooltip {
   position: absolute;
-  padding: 0px 10px;
-  border-radius: var(--radius);
+  padding: 10px;
+  border-radius: 6px;
   font-size: 12px;
-  font-family: var(--font-sans-serif);
-  white-space: nowrap;
+  width: 200px; /* Prevent tooltip from going off screen */
+  text-align: center;
   z-index: 100;
   transition: all 0.2s ease;
   opacity: 0;
   transform-origin: center;
+  line-height: 20px;
   animation: tooltipFadeIn 0.2s ease forwards;
+}
+
+/* Tablet breakpoint */
+@media (min-width: 768px) {
+  .tooltip {
+    width: 300px; /* Reasonable max-width for tablets */
+  }
+}
+
+/* Desktop breakpoint */
+@media (min-width: 1024px) {
+  .tooltip {
+    white-space: nowrap;
+    width: fit-content;
+  }
 }
 
 .tooltip-container {
