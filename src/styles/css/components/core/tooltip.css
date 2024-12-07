@@ -56,28 +56,28 @@
 }
 
 /* Position variants */
-.tooltip-top {
+[class*="tooltip-"].tooltip-top {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(10px);
   margin-bottom: 8px;
 }
 
-.tooltip-bottom {
+[class*="tooltip-"].tooltip-bottom {
   top: 100%;
   left: 50%;
   transform: translateX(-50%) translateY(-10px);
   margin-top: 8px;
 }
 
-.tooltip-left {
+[class*="tooltip-"].tooltip-left {
   right: 100%;
   top: 50%;
   transform: translateY(-50%) translateX(10px);
   margin-right: 8px;
 }
 
-.tooltip-right {
+[class*="tooltip-"].tooltip-right {
   left: 100%;
   top: 50%;
   transform: translateY(-50%) translateX(-10px);
@@ -103,7 +103,7 @@
   border-style: solid;
 }
 
-.light .tooltip-top::after {
+.light [class*="tooltip-"].tooltip-top::after {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
@@ -139,7 +139,7 @@
   border-style: solid;
 }
 
-.dark .tooltip-top::after {
+.dark [class*="tooltip-"].tooltip-top::after {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
