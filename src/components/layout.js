@@ -4,6 +4,9 @@ import { Link } from "gatsby"
 import { ThemeContext } from "../context/ThemeContextProvider"
 import { FaArrowUp } from "react-icons/fa"
 
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 const Layout = props => {
   const [isDarkMode, toggleThemeMode] = useContext(ThemeContext)
   // console.log(isDarkMode);

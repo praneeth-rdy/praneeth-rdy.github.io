@@ -9,42 +9,54 @@ import { graphql, StaticQuery } from "gatsby"
 
 function ContactForm({ data, darkMode }) {
   // const social = data.site.siteMetadata.social
-  const [formStatus, setFormStatus] = useState("")
-  const [submitStatus, setSubmitStatus] = useState("")
+  const [formStatusMessage, setFormStatusMessage] = useState("")
+  const [isLoading, setIsLoading] = useState(false)
 
-  function formSubmit(e) {
+  const formSubmit = e => {
     e.preventDefault()
-    setSubmitStatus("loading")
-    setFormStatus("")
+    setFormStatusMessage("")
+    setIsLoading(true)
     const formData = {
       name: e.target.name.value,
       email: e.target.email.value,
       mobile: e.target.mobile.value,
       subject: e.target.subject.value,
       message: e.target.message.value,
+      timestamp: new Date().toLocaleString("en-US", {
+        day: "numeric",
+        month: "short",
+        year: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      }),
     }
     const requestOptions = {
       method: "POST",
+      mode: "no-cors",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/x-www-form-urlencoded",
         Accept: "application/json",
       },
-      body: JSON.stringify(formData),
+      body: new URLSearchParams(formData).toString(),
     }
+
     fetch(
-      "https://innovate.pythonanywhere.com/portfolio/contact-form/",
+      "https://script.google.com/macros/s/AKfycbzeRvT-r_rDE339RLL6KiZju06EZSrocF1rV8YepXb3X_RPg27KoJ1nwwFsPAXRhEjlEQ/exec",
       requestOptions
     )
-      .then(response => response.json())
-      .then(jsonData => {
-        setFormStatus(jsonData.message)
-        setSubmitStatus("")
+      .then(response => {
+        setFormStatusMessage("Form submitted successfully")
       })
       .catch(error => {
-        setFormStatus("An error has occured")
-        setSubmitStatus("")
+        console.log(error)
+        setFormStatusMessage("An error has occurred")
+      })
+      .finally(() => {
+        setIsLoading(false)
       })
   }
+
   return (
     <section className="contact-section">
       <div>
@@ -148,16 +160,19 @@ function ContactForm({ data, darkMode }) {
                 id="message"
                 placeholder="Enter your message"
                 rows={6}
-                defaultValue={""}
+                defaultValue=""
                 required
               />
             </div>
-            <div className="col-12 transition-fade">{formStatus}</div>
+            <div className="col-12 transition-fade">{formStatusMessage}</div>
             {/* Break */}
             <div className="col-12">
               <ul className="actions">
                 <li>
-                  <button type="submit" className={"primary " + submitStatus}>
+                  <button
+                    type="submit"
+                    className={`primary ${isLoading ? "loading" : ""}`}
+                  >
                     <span>Submit</span>
                   </button>
                 </li>
