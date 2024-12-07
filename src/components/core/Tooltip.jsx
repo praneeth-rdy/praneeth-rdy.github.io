@@ -5,11 +5,19 @@ import "../../styles/css/components/core/tooltip.css"
 const Tooltip = ({ children, text, position = "top" }) => {
   const [isVisible, setIsVisible] = useState(false)
 
+  const handleMouseEnter = () => {
+    setIsVisible(true)
+  }
+
+  const handleMouseLeave = () => {
+    setIsVisible(false)
+  }
+
   return (
     <div
       className="tooltip-container"
-      onMouseEnter={() => setIsVisible(true)}
-      onMouseLeave={() => setIsVisible(false)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
       role="tooltip"
     >
       {children}

@@ -16,8 +16,45 @@
 
 .card .heading {
   font-size: 2rem;
-  margin: 0.3rem 0;
+  margin: 0rem 0;
 }
+
+.card .headingContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin-bottom: 8px;
+}
+
+.card .orgLogo {
+  border-radius: 6px;
+}
+
+.card .confidentialIcon {
+  height: 25px;
+  width: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  color: var(--color-red);
+  background-color: var(--color-red-light);
+}
+/* 
+.card .datesContainer {
+  display: flex;
+  align-items: center;
+  column-gap: 4px;
+}
+
+.card .date {
+  font-size: 12px;
+  margin: 0;
+}
+
+.card .dateSeparator {
+  margin-right: 4px;
+} */
 
 .card > .body {
   padding: 1.5rem 0;
