@@ -2,7 +2,7 @@ import React, { useState } from "react"
 // import Img from "gatsby-image"
 // import { GatsbyImage } from "gatsby-plugin-image"
 // import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
-// import axios from "axios";
+import axios from "axios"
 
 import "../../styles/css/screens/contact.css"
 import { graphql, StaticQuery } from "gatsby"
@@ -31,20 +31,17 @@ function ContactForm({ data, darkMode }) {
         hour12: true,
       }),
     }
-    const requestOptions = {
-      method: "POST",
-      mode: "no-cors",
+
+    axios({
+      method: "post",
+      url:
+        "https://script.google.com/macros/s/AKfycbzeRvT-r_rDE339RLL6KiZju06EZSrocF1rV8YepXb3X_RPg27KoJ1nwwFsPAXRhEjlEQ/exec",
+      data: new URLSearchParams(formData).toString(),
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
         Accept: "application/json",
       },
-      body: new URLSearchParams(formData).toString(),
-    }
-
-    fetch(
-      "https://script.google.com/macros/s/AKfycbzeRvT-r_rDE339RLL6KiZju06EZSrocF1rV8YepXb3X_RPg27KoJ1nwwFsPAXRhEjlEQ/exec",
-      requestOptions
-    )
+    })
       .then(response => {
         setFormStatusMessage("Form submitted successfully")
       })
