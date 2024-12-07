@@ -1,0 +1,5 @@
+{
+    "componentChunkName": "component---src-templates-blog-post-js",
+    "path": "/blog/reactjs/reactjs/",
+    "result": {"data":{"site":{"siteMetadata":{"navHeading":"praneeth-rdy","description":"Success is not how much money we make, it's the difference we bring in peoples' lives"}},"markdownRemark":{"id":"f424d4f8-babb-570f-b27e-0c68fc475ec2","excerpt":"","html":"","frontmatter":{"title":"React.js","date":null,"subtext":null,"thumbnail":null}}},"pageContext":{"slug":"/reactjs/reactjs/","previous":{"fields":{"slug":"/campus-modeler/"},"frontmatter":{"title":"Campus Modeler"}},"next":{"fields":{"slug":"/python/python/"},"frontmatter":{"title":"Python Programming Language"}}}},
+    "staticQueryHashes": ["63159454"]}
