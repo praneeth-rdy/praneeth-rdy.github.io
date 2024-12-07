@@ -1,7 +1,7 @@
 ---
 title: Voice Chess Application
 description: This project is a mobile chess application that uses voice commands for gameplay, making it accessible for people with visual impairments. Built on react-native, the app utilizes react-native-voice for natural language processing and chessboard.js for the chess engine.
-confidential: true
+confidential: false
 associatedWith:
   org: IIT Kharagpur
   logo: ../../images/org-logos/iitkgp-logo.jpeg

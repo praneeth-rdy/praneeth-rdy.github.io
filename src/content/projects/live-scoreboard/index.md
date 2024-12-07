@@ -1,7 +1,7 @@
 ---
 title: Live Scoreboard
 description: The project involved building an API layer to integrate a Reactjs frontend with a Python simulator and MongoDB for Covid-19 spread analysis on university campuses, deploying it on AWS EC2 with Apache Web Server and coordinating tests with the frontend and model-development teams.
-confidential: true
+confidential: false
 associatedWith:
   org: Gymkhana, IIT Kharagpur
   logo: ../../images/org-logos/tsg-iitkgp-logo.jpg
