@@ -9,11 +9,12 @@ dates:
   start: "2023-07-01"
   end: "2023-11-29"
 stacks:
-  - ./stack-imgs/react.png
-  - ./stack-imgs/android.png
+  - ../../images/stacks/react.png
+  - ../../images/stacks/android.png
+  - ../../images/stacks/fastapi.png
 attachments:
-  - repository: https://github.com/
-  - documentation: https://github.com/
-  - site: https://github.com/
+  #  - repository: https://github.com/
+  - documentation: https://docs.google.com/presentation/d/e/2PACX-1vRzmwplbEptjcWpFLrCynOGNvOqV__JeyZ-sARnAiT9LtKxwYtcrATmIwC6rgO7dUEd1Bh56A62X39j/pub?start=false&loop=false&delayms=3000
+#  - site: https://github.com/
 thumbnail: ../../images/project-placeholder.webp
 ---

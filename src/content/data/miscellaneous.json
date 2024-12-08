@@ -288,5 +288,49 @@
         }
       ]
     }
+  ],
+  "skills": [
+    {
+      "name": "FastAPI",
+      "darkModeLogo": "../images/skills/fastapi.png",
+      "lightModeLogo": "../images/skills/fastapi.png",
+      "website": "https://fastapi.tiangolo.com/"
+    },
+    {
+      "name": "AWS EC2",
+      "darkModeLogo": "../images/skills/aws-ec2-dark.png",
+      "lightModeLogo": "../images/skills/aws-ec2-light.png",
+      "website": "https://aws.amazon.com/ec2/"
+    },
+    {
+      "name": "Java",
+      "darkModeLogo": "../images/skills/java.png",
+      "lightModeLogo": "../images/skills/java.png",
+      "website": "https://www.java.com/"
+    },
+    {
+      "name": "Android",
+      "darkModeLogo": "../images/skills/android.png",
+      "lightModeLogo": "../images/skills/android.png",
+      "website": "https://developer.android.com/"
+    },
+    {
+      "name": "Node.js",
+      "darkModeLogo": "../images/skills/nodejs-dark-mode.png",
+      "lightModeLogo": "../images/skills/nodejs-light-mode.png",
+      "website": "https://nodejs.org/"
+    },
+    {
+      "name": "Python",
+      "darkModeLogo": "../images/skills/python-logo-dark.png",
+      "lightModeLogo": "../images/skills/python-logo-light.png",
+      "website": "https://www.python.org/"
+    },
+    {
+      "name": "React",
+      "darkModeLogo": "../images/skills/react-js.png",
+      "lightModeLogo": "../images/skills/react-js.png",
+      "website": "https://reactjs.org/"
+    }
   ]
 }

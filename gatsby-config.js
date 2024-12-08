@@ -25,19 +25,12 @@ module.exports = {
         name: `blogs`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `${__dirname}/src/content/skills`,
-        name: `skills`,
-      },
-    },
     `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/content/others`,
-        name: `others`,
+        path: `${__dirname}/src/content/data`,
+        name: `data`,
       },
     },
     {

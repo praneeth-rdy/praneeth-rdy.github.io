@@ -6,17 +6,16 @@ import * as Styles from "../../styles/css/screens/home/skillset-section.module.c
 
 function SkillsetSection({ data, isDarkMode }) {
   //use data as props.data
-  const skills = data.allMarkdownRemark.edges
-  // console.log(data.allMarkdownRemark.edges);
+  const skills = data.dataJson.skills
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">Skillset</h2>
       <div className={Styles.skillCardsContainer}>
         {skills &&
-          skills.map(({ node }, index) => {
+          skills.map((skill, index) => {
             const skillLogo = isDarkMode
-              ? node.frontmatter.darkModeLogo
-              : node.frontmatter.lightModeLogo
+              ? skill.darkModeLogo
+              : skill.lightModeLogo
             return (
               <div key={index} className={Styles.skillCard}>
                 {skillLogo.childImageSharp.gatsbyImageData && (
@@ -36,29 +35,24 @@ function SkillsetSection({ data, isDarkMode }) {
 
 const indexQuery = graphql`
   query {
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/(/content/skills/)/" } }
-    ) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            lightModeLogo {
-              childImageSharp {
-                gatsbyImageData(height: 50)
-              }
-            }
-            darkModeLogo {
-              childImageSharp {
-                gatsbyImageData(height: 50)
-              }
-            }
-            website
+    dataJson {
+      skills {
+        name
+        darkModeLogo {
+          childImageSharp {
+            gatsbyImageData(
+              height: 50
+              layout: FIXED
+              transformOptions: { fit: COVER }
+            )
           }
         }
+        lightModeLogo {
+          childImageSharp {
+            gatsbyImageData(height: 50)
+          }
+        }
+        website
       }
     }
   }

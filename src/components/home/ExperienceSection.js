@@ -13,7 +13,9 @@ const ExperienceStatus = {
 
 function ExperienceSection({ data }) {
   const [showAll, setShowAll] = useState(false)
-  const allExperiences = data.othersJson.experience
+  const allExperiences = data.dataJson.experience
+
+  if (!allExperiences) return null
 
   const initialMaxCount = 4
   const visibleExperiences = showAll
@@ -155,7 +157,7 @@ function ExperienceSection({ data }) {
 }
 const indexQuery = graphql`
   query {
-    othersJson {
+    dataJson {
       experience {
         org
         orgLogo {
