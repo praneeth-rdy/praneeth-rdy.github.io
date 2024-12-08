@@ -332,5 +332,89 @@
       "lightModeLogo": "../images/skills/react-js.png",
       "website": "https://reactjs.org/"
     }
+  ],
+  "projects": [
+    {
+      "title": "CapAe",
+      "description": "CapAe is a cutting-edge project that utilizes React-Native and Django to record and visualize the real-time movement of aerospace objects in 3D space, providing accurate and efficient tracking and analysis capabilities.",
+      "confidential": true,
+      "associatedWith": {
+        "org": "IIT Kharagpur",
+        "logo": "../images/org-logos/iitkgp-logo.jpeg"
+      },
+      "dates": {
+        "start": "2023-07-01",
+        "end": "2023-11-29"
+      },
+      "stacks": [
+        "../images/stacks/react.png",
+        "../images/stacks/android.png",
+        "../images/stacks/fastapi.png"
+      ],
+      "attachments": {
+        "documentation": "https://docs.google.com/presentation/d/e/2PACX-1vRzmwplbEptjcWpFLrCynOGNvOqV__JeyZ-sARnAiT9LtKxwYtcrATmIwC6rgO7dUEd1Bh56A62X39j/pub?start=false&loop=false&delayms=3000"
+      },
+      "thumbnail": "../images/project-placeholder.webp"
+    },
+    {
+      "title": "Campus Modeler",
+      "description": "The project involved building an API layer to integrate a Reactjs frontend with a Python simulator and MongoDB for Covid-19 spread analysis on university campuses, deploying it on AWS EC2 with Apache Web Server and coordinating tests with the frontend and model-development teams.",
+      "confidential": true,
+      "associatedWith": {
+        "org": "IIT Kharagpur",
+        "logo": "../images/org-logos/iitkgp-logo.jpeg"
+      },
+      "dates": {
+        "start": "2021-08-01",
+        "end": "2021-08-01"
+      },
+      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
+      "attachments": {
+        "repository": "https://github.com/",
+        "documentation": "https://github.com/",
+        "site": "https://github.com/"
+      },
+      "thumbnail": "../images/project-placeholder.webp"
+    },
+    {
+      "title": "Voice Chess Application",
+      "description": "This project is a mobile chess application that uses voice commands for gameplay, making it accessible for people with visual impairments. Built on react-native, the app utilizes react-native-voice for natural language processing and chessboard.js for the chess engine.",
+      "confidential": false,
+      "associatedWith": {
+        "org": "IIT Kharagpur",
+        "logo": "../images/org-logos/iitkgp-logo.jpeg"
+      },
+      "dates": {
+        "start": "2023-01-03",
+        "end": "2023-05-06"
+      },
+      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
+      "attachments": {
+        "repository": "https://github.com/",
+        "documentation": "https://github.com/",
+        "site": "https://github.com/"
+      },
+      "thumbnail": "../images/project-placeholder.webp"
+    },
+    {
+      "title": "Live Scoreboard",
+      "description": "The project involved building an API layer to integrate a Reactjs frontend with a Python simulator and MongoDB for Covid-19 spread analysis on university campuses, deploying it on AWS EC2 with Apache Web Server and coordinating tests with the frontend and model-development teams.",
+      "confidential": false,
+      "associatedWith": {
+        "org": "Gymkhana, IIT Kharagpur",
+        "logo": "../images/org-logos/tsg-iitkgp-logo.jpg"
+      },
+      "dates": {
+        "start": "2021-08-01",
+        "end": "2021-08-01"
+      },
+      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
+      "attachments": {
+        "repository": "https://github.com/",
+        "documentation": "https://github.com/",
+        "site": "https://github.com/"
+      },
+      "thumbnail": "../images/project-placeholder.webp"
+    }
   ]
 }
