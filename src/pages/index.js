@@ -3,7 +3,6 @@ import { graphql, StaticQuery } from "gatsby"
 
 import Layout from "../components/layout"
 import Seo from "../components/seo"
-// import PostCard from "../components/postCard"
 import HorizontalLine from "../components/horizontalLine"
 
 // import "../styles/global.scss"
@@ -21,11 +20,9 @@ import ThemeContextProvider from "../context/ThemeContextProvider"
 //TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
 const Index = ({ data }, location) => {
   const navHeading = data.site.siteMetadata.navHeading
-  // const posts = data.allMarkdownRemark.edges
   const darkModeImage = data.darkModeImage.childImageSharp.gatsbyImageData
   const lightModeImage = data.lightModeImage.childImageSharp.gatsbyImageData
   const aboutPic = data.aboutPic.childImageSharp.gatsbyImageData
-  // let postCounter = 0
 
   return (
     <ThemeContextProvider>
@@ -34,7 +31,6 @@ const Index = ({ data }, location) => {
           title="Home"
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-
         {/* Introduction Section */}
         <IntroSection
           darkModeImage={darkModeImage}
@@ -45,20 +41,6 @@ const Index = ({ data }, location) => {
         <ExperienceSection />
         <ProjectsSection />
         <SkillsetSection />
-
-        {/* <div className="post-feed">
-        {posts.map(({ node }) => {
-          postCounter++
-          return (
-            <PostCard
-              key={node.fields.slug}
-              count={postCounter}
-              node={node}
-              postClass={`post`}
-            />
-          )
-        })}
-      </div> */}
       </Layout>
     </ThemeContextProvider>
   )
@@ -85,26 +67,6 @@ const indexQuery = graphql`
     aboutPic: file(relativePath: { eq: "home/about.jpg" }) {
       childImageSharp {
         gatsbyImageData
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      edges {
-        node {
-          excerpt
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            description
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData
-              }
-            }
-          }
-        }
       }
     }
   }

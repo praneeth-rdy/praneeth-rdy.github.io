@@ -94,7 +94,6 @@ function ProjectsSection({ data }) {
                   <div className={`icons-container ${Styles.projectLinks}`}>
                     {project.attachments.repository && (
                       <a
-                        key={index}
                         className="link"
                         href={project.attachments.repository}
                         target="_blank"
@@ -105,7 +104,6 @@ function ProjectsSection({ data }) {
                     )}
                     {project.attachments.documentation && (
                       <a
-                        key={index}
                         className="link"
                         href={project.attachments.documentation}
                         target="_blank"
@@ -116,7 +114,6 @@ function ProjectsSection({ data }) {
                     )}
                     {project.attachments.site && (
                       <a
-                        key={index}
                         className="link"
                         href={project.attachments.site}
                         target="_blank"

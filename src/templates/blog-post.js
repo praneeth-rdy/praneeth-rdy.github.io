@@ -1,7 +1,5 @@
 import React from "react"
 import { graphql } from "gatsby"
-// import Img from "gatsby-image"
-import { GatsbyImage } from "gatsby-plugin-image"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import ThemeContextProvider from "../context/ThemeContextProvider"
@@ -18,27 +16,13 @@ const BlogPostTemplate = ({ data, location }) => {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <article
-          className={`post-content ${post.frontmatter.thumbnail || `no-image`}`}
-        >
+        <article className={`post-content no-image`}>
           <header className="post-content-header">
             <h1 className="post-content-title">{post.frontmatter.title}</h1>
           </header>
 
           {post.frontmatter.subtext && (
             <p class="post-content-excerpt">{post.frontmatter.subtext}</p>
-          )}
-
-          {post.frontmatter.thumbnail && (
-            <div className="kg-image-card kg-width-half">
-              <GatsbyImage
-                className="kg-image"
-                image={
-                  post.frontmatter.thumbnail.childImageSharp.gatsbyImageData
-                }
-                alt={post.frontmatter.title}
-              />
-            </div>
           )}
           <div
             className="post-content-body"
@@ -75,11 +59,6 @@ export const pageQuery = graphql`
         title
         date(formatString: "MMMM DD, YYYY")
         subtext
-        thumbnail {
-          childImageSharp {
-            gatsbyImageData
-          }
-        }
       }
     }
   }

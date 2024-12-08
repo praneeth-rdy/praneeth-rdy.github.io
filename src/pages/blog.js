@@ -112,13 +112,6 @@ const blogQuery = graphql`
             description
             maxread
             category
-            thumbnail {
-              childImageSharp {
-                fluid(maxWidth: 1360) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
           }
         }
       }
