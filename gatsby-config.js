@@ -93,6 +93,11 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `G-TGQBB868SP`,
+        head: true, // Puts tracking script in the head instead of the body
+        anonymize: true, // Anonymizes IP addresses
+        respectDNT: true, // Respects Do Not Track setting
+        defer: false, // Defers script load
+        cookieDomain: "auto",
       },
     },
     `gatsby-plugin-feed`,
