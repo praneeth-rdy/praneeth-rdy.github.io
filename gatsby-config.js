@@ -93,10 +93,6 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: `G-TGQBB868SP`,
-        head: false, // Moving script to body to avoid CORS issues on refresh
-        defer: true, // Enabling defer to help with loading
-        cookieDomain: "auto",
-        allowLinker: true, // Enable cross-domain tracking
       },
     },
     `gatsby-plugin-feed`,
