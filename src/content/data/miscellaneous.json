@@ -15,9 +15,24 @@
       "description": "Engineered a chat interface to enable collaboration on the platform with push notifications, profanity filter and data masking. Built a Python module to abstract out API calls from the backend, reviewed over 10 pull requests and reported 18 issues on GitHub. Formulated a comprehensive report outlining productivity-enhancing AI tools across stages of Software Development Lifecycle (SDLC). Collaborated with design team to enhance the chat UX and designed backend architecture to support the functionality of CometChat SDK.",
       "roles": [
         {
+          "title": "Software Engineering Lead",
+          "start": "December '25",
+          "end": "Present"
+        },
+        {
+          "title": "Forward Deployment Lead",
+          "start": "October '25",
+          "end": "November '25"
+        },
+        {
+          "title": "Technical Lead - Frontend",
+          "start": "December '24",
+          "end": "September '25"
+        },
+        {
           "title": "Software Engineer",
           "start": "May '24",
-          "end": "Present"
+          "end": "November '24"
         },
         {
           "title": "Software Engineer Intern",
@@ -133,7 +148,7 @@
     },
     {
       "org": "Technology Students' Gymkhana",
-      "orgLogo": "../images/org-logos/tsg-iitkgp-logo.jpg",
+      "orgLogo": "../images/org-logos/tsg-iitkgp-logo.jpeg",
       "status": "Completed",
       "returnOffer": true,
       "type": "Position of Responsibility",
@@ -354,7 +369,7 @@
       "attachments": {
         "documentation": "https://docs.google.com/presentation/d/e/2PACX-1vRzmwplbEptjcWpFLrCynOGNvOqV__JeyZ-sARnAiT9LtKxwYtcrATmIwC6rgO7dUEd1Bh56A62X39j/pub?start=false&loop=false&delayms=3000"
       },
-      "thumbnail": "../images/project-placeholder.webp"
+      "thumbnail": "../images/projects/capae-cover.png"
     },
     {
       "title": "Campus Modeler",
@@ -374,7 +389,7 @@
         "documentation": "https://github.com/",
         "site": "https://github.com/"
       },
-      "thumbnail": "../images/project-placeholder.webp"
+      "thumbnail": "../images/projects/inpass-campus-modeller.png"
     },
     {
       "title": "Voice Chess Application",
@@ -394,7 +409,7 @@
         "documentation": "https://github.com/",
         "site": "https://github.com/"
       },
-      "thumbnail": "../images/project-placeholder.webp"
+      "thumbnail": "../images/projects/voice-chess-cover.png"
     },
     {
       "title": "Live Scoreboard",
@@ -402,7 +417,7 @@
       "confidential": false,
       "associatedWith": {
         "org": "Gymkhana, IIT Kharagpur",
-        "logo": "../images/org-logos/tsg-iitkgp-logo.jpg"
+        "logo": "../images/org-logos/tsg-iitkgp-logo.jpeg"
       },
       "dates": {
         "start": "2021-08-01",
@@ -414,7 +429,7 @@
         "documentation": "https://github.com/",
         "site": "https://github.com/"
       },
-      "thumbnail": "../images/project-placeholder.webp"
+      "thumbnail": "../images/project-placeholder.jpg"
     }
   ]
 }
