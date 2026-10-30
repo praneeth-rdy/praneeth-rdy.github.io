@@ -40,6 +40,17 @@
   cursor: default;
 }
 
+/* Mouse users see no focus ring; keyboard users get one. */
+.tooltip-container:focus {
+  outline: none;
+}
+
+.tooltip-container:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 /* Light mode (default) */
 .light .tooltip {
   background-color: var(--color-dark-bg);

@@ -2,7 +2,7 @@
 
 Live site: https://praneeth-rdy.github.io
 
-My personal portfolio and blog. It is a static site built with Gatsby 5 and React 18, styled with plain CSS, and deployed to GitHub Pages.
+My personal portfolio and blog. It is a static site built with Gatsby 5, React 18 and TypeScript, styled with plain CSS, and deployed to GitHub Pages.
 
 What the site has:
 
@@ -21,24 +21,33 @@ yarn develop    # dev server at http://localhost:8000 (GraphiQL at /___graphql)
 yarn build      # production build into public/
 yarn serve      # serve the production build at http://localhost:9000
 yarn clean      # delete .cache and public
-yarn format     # run Prettier over src/
+yarn typecheck  # type-check the project with tsc (strict)
+yarn format     # run Prettier over src/ and the root TypeScript files
 ```
 
 Do not run `yarn build` while `yarn develop` is running. Both use the same `.cache` directory and the build fails in confusing ways. Stop the dev server, run `yarn clean`, then build.
 
 A Husky pre-commit hook formats staged files with Prettier.
 
+### TypeScript and GraphQL types
+
+All source is TypeScript. Every GraphQL query is named, and Gatsby generates a `Queries.<Name>Query` type for each one into `src/types/gatsby-types.d.ts`. That file is generated (do not edit it) and committed so `yarn typecheck` works on a fresh clone. After changing a query or the data schema, run `yarn build` or `yarn develop` once to regenerate it.
+
 ## Project layout
 
 ```
-siteConfig.js                 name, URLs, social links, email
-gatsby-config.js              plugins and site metadata
-gatsby-node.js                data schema and blog page generation
-src/pages/                    one file per route (index, blog, contact, 404, ...)
-src/templates/blog-post.js    blog post page
-src/components/               Layout, Seo, home sections, blog item, contact form
+siteConfig.ts                 name, URLs, social links, email
+gatsby-config.ts              plugins and site metadata
+gatsby-node.ts                data schema and blog page generation
+gatsby-browser.tsx            wraps the app in the theme provider
+gatsby-ssr.tsx                same, plus the pre-hydration theme script
+tsconfig.json                 TypeScript settings (strict)
+src/pages/                    one .tsx file per route (index, blog, contact, 404, ...)
+src/templates/blog-post.tsx   blog post page
+src/components/               Layout, Seo, home sections, blog item, contact form (.tsx)
 src/components/core/          Tooltip, ExpandableText, Accordion
 src/context/                  theme (dark mode) provider
+src/types/                    shared types and enums; gatsby-types.d.ts is generated
 src/content/data/             miscellaneous.json (experience, skills, projects)
 src/content/blogs/            one folder per post
 src/content/images/           home, org-logos, projects, skills, stacks
@@ -99,10 +108,12 @@ Categories are collected automatically for the filter buttons.
 
 ### Other bits
 
-- Name, social links and email: `siteConfig.js`.
-- Resume: replace the PDF in `static/` and update the filename in `src/components/home/IntroSection.jsx`.
-- Contact form endpoint: the URL in `src/components/contact/ContactForm.jsx`.
-- Analytics: the GA4 measurement ID in `gatsby-config.js`.
+- Name, social links and email: `siteConfig.ts`.
+- Share image for social previews: `src/content/images/home/dp.jpg` (referenced in `src/components/Seo.tsx`).
+- Sitemap: generated at `/sitemap-index.xml`; placeholder pages are excluded in `gatsby-config.ts`.
+- Resume: replace the PDF in `static/` and update the filename in `src/components/home/IntroSection.tsx`.
+- Contact form endpoint: the URL in `src/components/contact/ContactForm.tsx`.
+- Analytics: the GA4 measurement ID in `gatsby-config.ts`.
 
 ## Deployment
 

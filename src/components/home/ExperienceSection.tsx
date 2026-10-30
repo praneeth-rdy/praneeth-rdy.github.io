@@ -1,0 +1,200 @@
+import React, { useState } from "react"
+import { useStaticQuery, graphql } from "gatsby"
+import "../../styles/css/screens/home/experience-section.css"
+import { FaStar } from "react-icons/fa"
+import { GatsbyImage } from "gatsby-plugin-image"
+import Tooltip from "../core/Tooltip"
+import ExpandableText from "../core/ExpandableText"
+import {
+  ExperienceStatus,
+  ExperienceType,
+  type Experience,
+} from "../../types/content"
+import { TooltipPosition } from "../../types/ui"
+
+function ExperienceSection() {
+  const data = useStaticQuery<Queries.ExperienceSectionQuery>(query)
+  const [showAll, setShowAll] = useState(false)
+  // miscellaneous.json is always sourced, so dataJson exists. Below, every
+  // entry has `tags` and `roles`, and org logos are raster images with
+  // childImageSharp; the `!`s keep the pre-TypeScript assumptions.
+  const allExperiences = data.dataJson!.experience
+
+  if (!allExperiences) return null
+
+  const initialMaxCount = 4
+  const visibleExperiences = showAll
+    ? allExperiences
+    : allExperiences.slice(0, initialMaxCount)
+
+  const getTagClassnameByStatus = (status: Experience["status"]) => {
+    switch (status) {
+      case ExperienceStatus.Completed:
+        return "experience-status-tag-completed"
+      case ExperienceStatus.Present:
+        return "experience-status-tag-present"
+      default:
+        return ""
+    }
+  }
+
+  const getTagClassnameByType = (type: string) => {
+    switch (type.toLowerCase()) {
+      case ExperienceType.PositionOfResponsibility.toLowerCase():
+        return "experience-type-tag-por"
+      case ExperienceType.Opensource.toLowerCase():
+        return "experience-type-tag-opensource"
+      default:
+        return ""
+    }
+  }
+
+  const getTooltipTextByType = (type: string) => {
+    switch (type.toLowerCase()) {
+      case ExperienceType.PositionOfResponsibility.toLowerCase():
+        return "This experience is a Position of Responsibility at IIT Kharagpur"
+      case ExperienceType.Opensource.toLowerCase():
+        return "This experience is an Open Source Contribution"
+      default:
+        return ""
+    }
+  }
+
+  const toggleExpand = () => {
+    setShowAll(current => !current)
+  }
+
+  return (
+    <section className="home-section post-content-body">
+      <h2 className="section-heading">
+        <span>Experience</span>
+      </h2>
+      <div className="experience-container">
+        {visibleExperiences.map((experience, index) => (
+          <div className="experience-card b-shadow-card" key={index}>
+            <div className="experience-frontmatter-container">
+              <span
+                className={`experience-status-tag ${getTagClassnameByStatus(
+                  experience.status
+                )}`}
+              >
+                {experience.status}
+              </span>
+            </div>
+            <div className="experience-header">
+              <div className="experience-org-container">
+                <h3 className="experience-title">{experience.org}</h3>
+                {experience.orgLogo && (
+                  <GatsbyImage
+                    image={experience.orgLogo.childImageSharp!.gatsbyImageData}
+                    alt={experience.org}
+                    className="experience-org-logo"
+                  />
+                )}
+                {!experience.type && experience.returnOffer && (
+                  <Tooltip
+                    text="Received a return offer"
+                    position={TooltipPosition.Top}
+                  >
+                    <span className="experience-trophy">
+                      <FaStar size={16} />
+                    </span>
+                  </Tooltip>
+                )}
+              </div>
+              <div className="experience-header-tags">
+                {experience.type && (
+                  <Tooltip
+                    text={getTooltipTextByType(experience.type)}
+                    position={TooltipPosition.Top}
+                  >
+                    <span
+                      className={`experience-type-tag ${getTagClassnameByType(
+                        experience.type
+                      )}`}
+                    >
+                      {experience.type}
+                    </span>
+                  </Tooltip>
+                )}
+                {experience.type && experience.returnOffer && (
+                  <Tooltip
+                    text="Received a return offer"
+                    position={TooltipPosition.Top}
+                  >
+                    <span className="experience-trophy">
+                      <FaStar size={16} />
+                    </span>
+                  </Tooltip>
+                )}
+              </div>
+            </div>
+            <ExpandableText className="experience-description" charLimit={120}>
+              {experience.description}
+            </ExpandableText>
+            <div className="experience-tags-container">
+              {experience.tags!.map((tag, tagIndex) => (
+                <span className="experience-tag" key={tagIndex}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+            <div className="experience-roles-container">
+              {experience.roles!.map((role, roleIndex) => (
+                <div className="experience-role" key={roleIndex}>
+                  <h4 className="experience-role-title">{role.title}</h4>
+                  <p className="experience-role-duration">
+                    {role.start}
+                    {role.end && ` - ${role.end}`}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      {allExperiences.length > initialMaxCount && (
+        <div className="text-center experience-expand-container">
+          <button
+            className="primary experience-expand-button"
+            onClick={toggleExpand}
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      )}
+    </section>
+  )
+}
+
+const query = graphql`
+  query ExperienceSection {
+    dataJson {
+      experience {
+        org
+        orgLogo {
+          childImageSharp {
+            gatsbyImageData(
+              width: 30
+              height: 30
+              layout: FIXED
+              transformOptions: { fit: COVER }
+            )
+          }
+        }
+        returnOffer
+        status
+        type
+        tags
+        description
+        roles {
+          title
+          start
+          end
+        }
+      }
+    }
+  }
+`
+
+export default ExperienceSection

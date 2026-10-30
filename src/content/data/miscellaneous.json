@@ -357,10 +357,6 @@
         "org": "IIT Kharagpur",
         "logo": "../images/org-logos/iitkgp-logo.jpeg"
       },
-      "dates": {
-        "start": "2023-07-01",
-        "end": "2023-11-29"
-      },
       "stacks": [
         "../images/stacks/react.png",
         "../images/stacks/android.png",
@@ -379,10 +375,6 @@
         "org": "IIT Kharagpur",
         "logo": "../images/org-logos/iitkgp-logo.jpeg"
       },
-      "dates": {
-        "start": "2021-08-01",
-        "end": "2021-08-01"
-      },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
       "attachments": {},
       "thumbnail": "../images/projects/inpass-campus-modeller.png"
@@ -395,10 +387,6 @@
         "org": "IIT Kharagpur",
         "logo": "../images/org-logos/iitkgp-logo.jpeg"
       },
-      "dates": {
-        "start": "2023-01-03",
-        "end": "2023-05-06"
-      },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
       "attachments": {},
       "thumbnail": "../images/projects/voice-chess-cover.png"
@@ -407,10 +395,6 @@
       "title": "CV Buddy",
       "description": "This project is a cover letter generator that uses AI to generate a cover letter for a given job description and resume.",
       "confidential": false,
-      "dates": {
-        "start": "2023-01-03",
-        "end": "2023-05-06"
-      },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
       "attachments": {},
       "thumbnail": "../images/projects/cv-buddy-cover.png"
@@ -422,10 +406,6 @@
       "associatedWith": {
         "org": "Gymkhana, IIT Kharagpur",
         "logo": "../images/org-logos/tsg-iitkgp-logo.jpeg"
-      },
-      "dates": {
-        "start": "2021-08-01",
-        "end": "2021-08-01"
       },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
       "attachments": {}

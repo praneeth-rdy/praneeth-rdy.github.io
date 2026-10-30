@@ -317,6 +317,13 @@ body {
   color: var(--color-dark-base-l20);
 }
 
+/* Render both theme variants of an asset and hide the inactive one with CSS,
+   so the correct one shows on first paint (body class is set pre-hydration). */
+.light .theme-dark-only,
+.dark .theme-light-only {
+  display: none !important;
+}
+
 ::selection {
   text-shadow: none;
   background: #cbeafb;
@@ -512,5 +519,35 @@ h6 {
 
 .scroll-to-top-btn:hover {
   background-color: var(--color-primary-d10);
+  transition: background-color 0.2s ease;
+}
+
+/* Undo the global button styles (global.css, normalize.css, buttons.css) so
+   the <button> renders exactly like the <span> it replaced. */
+button.scroll-to-top-btn {
+  display: block;
+  height: auto;
+  margin: 0;
+  padding: 5px 10px;
+  border: 0;
+  border-radius: 6px;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  white-space: inherit;
+  color: var(--color-dark-base) !important;
+  background-color: var(--color-primary);
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: background-color 0.2s ease;
+}
+
+button.scroll-to-top-btn:hover {
+  color: var(--color-dark-base) !important;
+  background-color: var(--color-primary-d10);
+  box-shadow: none;
   transition: background-color 0.2s ease;
 }
