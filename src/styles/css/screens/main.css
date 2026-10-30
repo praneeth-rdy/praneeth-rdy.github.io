@@ -326,6 +326,34 @@ body {
   padding: 12px 12px 12px 0;
 }
 
+/* Undo the global button styles (global.css, normalize.css, buttons.css) so
+   the <button> renders exactly like the <a> it replaced. transition is left
+   alone: buttons.css gives 0.4s / 0.2s on hover, identical to global `a`. */
+button.nav-burger {
+  height: auto;
+  margin: 0;
+  padding: 12px 12px 12px 0;
+  border: 0;
+  border-radius: 0;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-align: inherit;
+  text-transform: inherit;
+  white-space: inherit;
+  color: inherit !important;
+  background: transparent;
+  box-shadow: none;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+button.nav-burger:hover {
+  color: inherit !important;
+  background: transparent;
+  box-shadow: none;
+}
+
 @media (max-width: 850px) {
   .site-head {
     padding: 0;

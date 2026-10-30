@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["dom", "esnext"],
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "noUncheckedSideEffectImports": false
+  },
+  "include": [
+    "./src/**/*",
+    "./gatsby-*.ts",
+    "./gatsby-*.tsx",
+    "./siteConfig.ts",
+    "./src/types/gatsby-types.d.ts"
+  ]
+}

@@ -1,0 +1,194 @@
+import React, { useState } from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { useStaticQuery, graphql } from "gatsby"
+import * as Styles from "../../styles/css/screens/home/projects-section.module.css"
+import { FaBookOpen, FaGithub, FaLink } from "react-icons/fa"
+import { MdOutlineSecurity } from "react-icons/md"
+import ExpandableText from "../core/ExpandableText"
+import Tooltip from "../core/Tooltip"
+import type { Project } from "../../types/content"
+import { TooltipPosition } from "../../types/ui"
+
+function ProjectsSection() {
+  const data = useStaticQuery<Queries.ProjectsSectionQuery>(query)
+  const [showAll, setShowAll] = useState(false)
+  // dataJson.projects and project-placeholder.png always exist; a missing
+  // one would throw here exactly as it did before typing. Below, every project
+  // has `stacks` and `attachments`, an `associatedWith.logo` always comes with
+  // its `org`, and all images are raster files with childImageSharp.
+  const allProjects = data.dataJson!.projects!
+  const placeholderImage = data.placeholder!.childImageSharp!.gatsbyImageData
+
+  const initialMaxCount = 2
+  const visibleProjects = showAll
+    ? allProjects
+    : allProjects.slice(0, initialMaxCount)
+
+  const toggleExpand = () => {
+    setShowAll(current => !current)
+  }
+
+  return (
+    <section className="home-section post-content-body">
+      <h2 className="section-heading">Projects</h2>
+      <div className={Styles.projectCardsContainer}>
+        {visibleProjects.map((project: Project, index) => {
+          return (
+            <div key={index} className={Styles.card}>
+              <div className={Styles.cardImage}>
+                <GatsbyImage
+                  image={
+                    project.thumbnail
+                      ? project.thumbnail.childImageSharp!.gatsbyImageData
+                      : placeholderImage
+                  }
+                  alt={`${project.title} Image`}
+                />
+              </div>
+              <div className={Styles.body}>
+                <div className={Styles.headingContainer}>
+                  <h3 className={`${Styles.heading}`}>{project.title}</h3>
+                  {project.associatedWith && project.associatedWith.logo && (
+                    <Tooltip
+                      text={`This project is associated with ${project.associatedWith.org}`}
+                      position={TooltipPosition.Top}
+                    >
+                      <img
+                        src={
+                          project.associatedWith.logo.childImageSharp!
+                            .gatsbyImageData.images.fallback!.src
+                        }
+                        alt={project.associatedWith.org ?? undefined}
+                        className={Styles.orgLogo}
+                      />
+                    </Tooltip>
+                  )}
+                  {project.confidential && (
+                    <Tooltip
+                      text="Confidential information is hidden"
+                      position={TooltipPosition.Top}
+                    >
+                      <span className={Styles.confidentialIcon}>
+                        <MdOutlineSecurity size={16} />
+                      </span>
+                    </Tooltip>
+                  )}
+                </div>
+                <div className={Styles.descriptionContainer}>
+                  <ExpandableText
+                    className={Styles.cardDescription}
+                    charLimit={300}
+                  >
+                    {project.description}
+                  </ExpandableText>
+                </div>
+                <div className={Styles.additionalInfo}>
+                  <div className={Styles.stacksContainer}>
+                    {project.stacks!.map((stack, index) => (
+                      <GatsbyImage
+                        key={index}
+                        className={Styles.stack}
+                        image={stack!.childImageSharp!.gatsbyImageData}
+                        alt={`Stack Image`}
+                        objectFit="contain"
+                      />
+                    ))}
+                  </div>
+                  <div className={`icons-container ${Styles.projectLinks}`}>
+                    {project.attachments!.repository && (
+                      <a
+                        className="link"
+                        href={project.attachments!.repository}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaGithub />
+                      </a>
+                    )}
+                    {project.attachments!.documentation && (
+                      <a
+                        className="link"
+                        href={project.attachments!.documentation}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaBookOpen />
+                      </a>
+                    )}
+                    {project.attachments!.site && (
+                      <a
+                        className="link"
+                        href={project.attachments!.site}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaLink />
+                      </a>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
+      </div>
+      {allProjects.length > initialMaxCount && (
+        <div className="text-center projects-expand-container">
+          <button
+            className="primary projects-expand-button"
+            onClick={toggleExpand}
+          >
+            {showAll ? "Show Less" : "Show More"}
+          </button>
+        </div>
+      )}
+    </section>
+  )
+}
+
+const query = graphql`
+  query ProjectsSection {
+    placeholder: file(relativePath: { eq: "project-placeholder.png" }) {
+      childImageSharp {
+        gatsbyImageData(height: 220, width: 330)
+      }
+    }
+    dataJson {
+      projects {
+        title
+        description
+        confidential
+        associatedWith {
+          org
+          logo {
+            childImageSharp {
+              gatsbyImageData(
+                width: 20
+                height: 20
+                layout: FIXED
+                transformOptions: { fit: COVER }
+              )
+            }
+          }
+        }
+        stacks {
+          childImageSharp {
+            gatsbyImageData
+          }
+        }
+        attachments {
+          repository
+          documentation
+          site
+        }
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(height: 220, width: 330)
+          }
+        }
+      }
+    }
+  }
+`
+
+export default ProjectsSection
