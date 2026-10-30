@@ -1,11 +1,12 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-// import Img from "gatsby-image"
 import * as Styles from "../../styles/css/screens/home/skillset-section.module.css"
+import { useTheme } from "../../context/ThemeContextProvider"
 
-function SkillsetSection({ data, isDarkMode }) {
-  //use data as props.data
+function SkillsetSection() {
+  const data = useStaticQuery(query)
+  const [isDarkMode] = useTheme()
   const skills = data.dataJson.skills
   return (
     <section className="home-section post-content-body">
@@ -33,7 +34,7 @@ function SkillsetSection({ data, isDarkMode }) {
   )
 }
 
-const indexQuery = graphql`
+const query = graphql`
   query {
     dataJson {
       skills {
@@ -58,11 +59,4 @@ const indexQuery = graphql`
   }
 `
 
-const SkillsetSectionExport = props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => <SkillsetSection props data={data} {...props} />}
-  />
-)
-
-export default SkillsetSectionExport
+export default SkillsetSection

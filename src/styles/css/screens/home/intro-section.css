@@ -61,7 +61,7 @@ h3 {
 }
 
 .intro-section .icons-container .icon:hover {
-  color: color(var(--color-primary) l(-15%));
+  color: var(--color-primary-d15);
   transition: all 0.3s ease;
 }
 
@@ -93,7 +93,8 @@ h3 {
   }
 }
 
-@media (min-width: 980px) {}
+@media (min-width: 980px) {
+}
 
 @media (min-width: 1280px) {
   .intro-section .intro-image {
@@ -101,4 +102,5 @@ h3 {
   }
 }
 
-@media (min-width: 1680px) {}
+@media (min-width: 1680px) {
+}

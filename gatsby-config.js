@@ -1,15 +1,15 @@
-const urljoin = require("url-join")
 const siteConfig = require("./siteConfig")
 
 module.exports = {
   pathPrefix: siteConfig.prefix,
+  trailingSlash: "always",
   siteMetadata: {
     title: siteConfig.name,
     navHeading: siteConfig.shortName,
     author: siteConfig.author,
     authorFullName: siteConfig.fullName,
     description: siteConfig.description,
-    siteUrl: urljoin(siteConfig.url, siteConfig.prefix),
+    siteUrl: new URL(siteConfig.prefix, siteConfig.url).href,
     social: {
       github: siteConfig.github,
       linkedin: siteConfig.linkedin,
@@ -25,7 +25,6 @@ module.exports = {
         name: `blogs`,
       },
     },
-    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -40,6 +39,7 @@ module.exports = {
         name: `images`,
       },
     },
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -66,36 +66,30 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [
-          require("postcss-easy-import")(),
-          require("postcss-custom-properties")({ preserve: false }),
-          require("postcss-color-function")(),
-        ],
+        postCssPlugins: [require("postcss-easy-import")()],
       },
     },
     {
       resolve: `gatsby-plugin-purgecss`,
       options: {
-        printRejected: true, // Print removed selectors and processed file names
-        // develop: true, // Enable while using `gatsby develop`
-        // tailwind: true, // Enable tailwindcss support
-        // whitelist: ['whitelist'], // Don't remove this selector
-        // ignore: ['/ignored.css', 'prismjs/', 'docsearch.js/'], // Ignore files/folders
-        // purgeOnly : ['components/', '/main.css', 'bootstrap/'], // Purge only these files/folders
+        printRejected: false,
       },
     },
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: `G-TGQBB868SP`,
+        trackingIds: [`G-TGQBB868SP`],
+        pluginConfig: {
+          head: true,
+        },
       },
     },
-    `gatsby-plugin-feed`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -108,9 +102,8 @@ module.exports = {
         icon: `src/content/images/website-icon.jpeg`,
       },
     },
-    `gatsby-plugin-image`,
-    `gatsby-plugin-netlify`,
-    `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`,
+    // The site previously shipped gatsby-plugin-offline; this unregisters the
+    // stale service worker for returning visitors.
+    `gatsby-plugin-remove-serviceworker`,
   ],
 }

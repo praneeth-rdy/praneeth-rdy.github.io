@@ -1,15 +1,16 @@
 import React from "react"
-// import Img from "gatsby-image"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../../styles/css/screens/home/intro-section.css"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
+import { useTheme } from "../../context/ThemeContextProvider"
 
-function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
+function IntroSection({ darkModeImage, lightModeImage }) {
+  const data = useStaticQuery(query)
+  const [isDarkMode] = useTheme()
   const social = data.site.siteMetadata.social
   const fullName = data.site.siteMetadata.authorFullName
-  // console.log(social)
   return (
     <section className="page-head intro-section">
       <div className="intro-text">
@@ -31,7 +32,7 @@ function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
               className="link"
               rel="noreferrer"
             >
-              <FaGithub className="icon" target="_blank" />
+              <FaGithub className="icon" />
             </a>
             <a
               href={social.linkedin}
@@ -39,7 +40,7 @@ function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
               className="link"
               rel="noreferrer"
             >
-              <FaLinkedin className="icon" target="_blank" />
+              <FaLinkedin className="icon" />
             </a>
             <a
               href={social.facebook}
@@ -47,7 +48,7 @@ function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
               className="link"
               rel="noreferrer"
             >
-              <FaFacebook className="icon" target="_blank" />
+              <FaFacebook className="icon" />
             </a>
             <a
               href={"mailto:" + social.email}
@@ -70,7 +71,7 @@ function IntroSection({ darkModeImage, lightModeImage, data, isDarkMode }) {
   )
 }
 
-const indexQuery = graphql`
+const query = graphql`
   query {
     site {
       siteMetadata {
@@ -86,11 +87,4 @@ const indexQuery = graphql`
   }
 `
 
-const IntroSectionExport = props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => <IntroSection props data={data} {...props} />}
-  />
-)
-
-export default IntroSectionExport
+export default IntroSection

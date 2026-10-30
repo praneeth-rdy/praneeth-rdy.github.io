@@ -106,14 +106,14 @@
 }
 
 .light .card > h3 {
-  color: color(var(--color-light-base) l(+20%));
+  color: var(--color-light-base-l20);
 }
 .dark .card > h3 {
-  color: color(var(--color-dark-base) l(+20%));
+  color: var(--color-dark-base-l20);
 }
 
 .card .body .projectLinks a:hover {
-  color: color(var(--color-primary) l(-20%));
+  color: var(--color-primary-d20);
   transition: all 0.3s ease-in-out;
 }
 

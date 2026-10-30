@@ -28,6 +28,27 @@
   /* Dark Theme Colors */
   --color-dark-base: #f8f8f8;
   --color-dark-bg: #131313;
+  /* Derived shades, pre-computed from the base colours above (formerly postcss-color-function lightness adjustments) */
+  --color-light-base-l20: rgb(69, 69, 69);
+  --color-light-base-l25: rgb(82, 82, 82);
+  --color-light-base-l30: rgb(94, 94, 94);
+  --color-light-base-l40: rgb(120, 120, 120);
+  --color-light-base-l50: rgb(145, 145, 145);
+  --color-light-base-d3: rgb(10, 10, 10);
+  --color-light-base-d10: rgb(0, 0, 0);
+  --color-dark-base-l20: rgb(255, 255, 255);
+  --color-dark-base-l25: rgb(255, 255, 255);
+  --color-dark-base-l30: rgb(255, 255, 255);
+  --color-dark-base-l40: rgb(255, 255, 255);
+  --color-dark-base-l50: rgb(255, 255, 255);
+  --color-dark-base-d3: rgb(240, 240, 240);
+  --color-dark-base-d10: rgb(222, 222, 222);
+  --color-border-l10: rgb(247, 247, 247);
+  --color-border-d20: rgb(171, 171, 171);
+  --color-primary-d5: rgb(38, 168, 237);
+  --color-primary-d10: rgb(19, 157, 231);
+  --color-primary-d15: rgb(17, 141, 208);
+  --color-primary-d20: rgb(15, 125, 184);
 
   /* Fonts */
   --font-sans-serif: "Muli", sans-serif;

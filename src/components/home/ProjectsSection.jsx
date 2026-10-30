@@ -1,13 +1,14 @@
 import React, { useState } from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import * as Styles from "../../styles/css/screens/home/projects-section.module.css"
 import { FaBookOpen, FaGithub, FaLink } from "react-icons/fa"
 import { MdOutlineSecurity } from "react-icons/md"
 import ExpandableText from "../core/ExpandableText"
 import Tooltip from "../core/Tooltip"
 
-function ProjectsSection({ data }) {
+function ProjectsSection() {
+  const data = useStaticQuery(query)
   const [showAll, setShowAll] = useState(false)
   const allProjects = data.dataJson.projects
 
@@ -26,7 +27,7 @@ function ProjectsSection({ data }) {
       <div className={Styles.projectCardsContainer}>
         {visibleProjects.map((project, index) => {
           return (
-            <div key={index} className={`${Styles.card} 'b-shadow' 'grow'`}>
+            <div key={index} className={Styles.card}>
               <div className={Styles.cardImage}>
                 <GatsbyImage
                   image={project.thumbnail.childImageSharp.gatsbyImageData}
@@ -36,7 +37,7 @@ function ProjectsSection({ data }) {
               <div className={Styles.body}>
                 <div className={Styles.headingContainer}>
                   <h3 className={`${Styles.heading}`}>{project.title}</h3>
-                  {project.associatedWith.logo && (
+                  {project.associatedWith && project.associatedWith.logo && (
                     <Tooltip
                       text={`This project is associated with ${project.associatedWith.org}`}
                       position="top"
@@ -62,15 +63,6 @@ function ProjectsSection({ data }) {
                     </Tooltip>
                   )}
                 </div>
-                {/* <div className={Styles.datesContainer}>
-                  <span className={Styles.date}>
-                    {project.dates.start}
-                  </span>
-                  <span className={Styles.dateSeparator}>-</span>
-                  <span className={Styles.date}>
-                    {project.dates.end}
-                  </span>
-                </div> */}
                 <div className={Styles.descriptionContainer}>
                   <ExpandableText
                     className={Styles.cardDescription}
@@ -142,7 +134,8 @@ function ProjectsSection({ data }) {
     </section>
   )
 }
-const indexQuery = graphql`
+
+const query = graphql`
   query {
     dataJson {
       projects {
@@ -161,10 +154,6 @@ const indexQuery = graphql`
               )
             }
           }
-        }
-        dates {
-          start(formatString: "MMM 'YY")
-          end(formatString: "MMM 'YY")
         }
         stacks {
           childImageSharp {
@@ -186,11 +175,4 @@ const indexQuery = graphql`
   }
 `
 
-const ProjectsSectionExport = props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => <ProjectsSection props data={data} {...props} />}
-  />
-)
-
-export default ProjectsSectionExport
+export default ProjectsSection

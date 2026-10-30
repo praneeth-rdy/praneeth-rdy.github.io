@@ -1,21 +1,37 @@
-# Trigger the workflow on push to main
-name: Build and Deploy the Gatsby Application
+# Builds the Gatsby site and publishes public/ to the `build` branch, which GitHub Pages serves.
+name: Build and Deploy
+
 on:
   push:
-    branches: ["v1"]
+    branches:
+      - v1
+
+permissions:
+  contents: write
 
 jobs:
-  build-and-export:
-    name: Build, Export and Deploy
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: Build and export to the `build` branch
-        uses: praneeth-rdy/static-build-export-action@main
-        env:
-          CI: false
-          PROJECT_DIR: .
-          BUILD_DIR: public
-          BUILD_BRANCH: build
-          TOKEN: ${{ secrets.TOKEN }}
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Build
+        run: yarn build
+
+      - name: Deploy to build branch
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          publish_branch: build
+          force_orphan: true

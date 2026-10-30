@@ -1,55 +1,68 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
 
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions;
-
-  const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  return graphql(
-    `
-      {
-        allMarkdownRemark(
-          sort: { fields: [frontmatter___date], order: DESC }
-          limit: 1000
-        ) {
-          edges {
-            node {
-              fields {
-                slug
-              }
-              frontmatter {
-                title
-              }
-            }
-          }
-        }
-      }
-    `
-  ).then(result => {
-    if (result.errors) {
-      throw result.errors
+// Explicit schema for src/content/data/*.json so optional fields (project
+// links, org associations, experience type, ...) stay queryable even when no
+// entry currently sets them, and so relative image paths resolve to File nodes.
+exports.createSchemaCustomization = ({ actions }) => {
+  actions.createTypes(`
+    type DataJson implements Node {
+      experience: [DataJsonExperience!]
+      skills: [DataJsonSkills!]
+      projects: [DataJsonProjects!]
     }
 
-    // Create blog posts pages.
-    const posts = result.data.allMarkdownRemark.edges
+    type DataJsonExperience {
+      org: String!
+      orgLogo: File @fileByRelativePath
+      status: String!
+      type: String
+      returnOffer: Boolean
+      tags: [String!]
+      description: String
+      roles: [DataJsonExperienceRoles!]
+    }
 
-    posts.forEach((post, index) => {
-      const previous = index === posts.length - 1 ? null : posts[index + 1].node
-      const next = index === 0 ? null : posts[index - 1].node
+    type DataJsonExperienceRoles {
+      title: String!
+      start: String
+      end: String
+    }
 
-      createPage({
-        path: '/blog' + post.node.fields.slug,
-        component: blogPost,
-        context: {
-          slug: post.node.fields.slug,
-          previous,
-          next,
-        },
-      })
-    })
+    type DataJsonSkills {
+      name: String!
+      darkModeLogo: File @fileByRelativePath
+      lightModeLogo: File @fileByRelativePath
+      website: String
+    }
 
-    return null
-  })
+    type DataJsonProjects {
+      title: String!
+      description: String
+      confidential: Boolean
+      associatedWith: DataJsonProjectsAssociatedWith
+      dates: DataJsonProjectsDates
+      stacks: [File] @fileByRelativePath
+      attachments: DataJsonProjectsAttachments
+      thumbnail: File @fileByRelativePath
+    }
+
+    type DataJsonProjectsAssociatedWith {
+      org: String
+      logo: File @fileByRelativePath
+    }
+
+    type DataJsonProjectsDates {
+      start: Date @dateformat
+      end: Date @dateformat
+    }
+
+    type DataJsonProjectsAttachments {
+      repository: String
+      documentation: String
+      site: String
+    }
+  `)
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -63,4 +76,47 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value,
     })
   }
+}
+
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
+
+  const result = await graphql(`
+    {
+      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+        edges {
+          node {
+            fields {
+              slug
+            }
+            frontmatter {
+              title
+            }
+          }
+        }
+      }
+    }
+  `)
+
+  if (result.errors) {
+    throw result.errors
+  }
+
+  const posts = result.data.allMarkdownRemark.edges
+
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? null : posts[index + 1].node
+    const next = index === 0 ? null : posts[index - 1].node
+
+    createPage({
+      path: `/blog${post.node.fields.slug}`,
+      component: blogPost,
+      context: {
+        slug: post.node.fields.slug,
+        previous,
+        next,
+      },
+    })
+  })
 }
