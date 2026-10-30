@@ -1,6 +1,5 @@
 import React from "react"
 import "../../styles/css/screens/home/about-section.css"
-// import Img from "gatsby-image"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 function AboutSection({ image }) {
@@ -9,7 +8,6 @@ function AboutSection({ image }) {
       <h2 className="section-heading">About</h2>
       <div className="about-content row">
         <figure className="about-image">
-          {/* <Img fluid={image} className="" style={{ borderRadius: "8px" }} /> */}
           <GatsbyImage
             image={image}
             style={{ borderRadius: "8px" }}

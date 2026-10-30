@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import "../../styles/css/screens/home/experience-section.css"
 import { FaStar } from "react-icons/fa"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -11,7 +11,8 @@ const ExperienceStatus = {
   PRESENT: "Present",
 }
 
-function ExperienceSection({ data }) {
+function ExperienceSection() {
+  const data = useStaticQuery(query)
   const [showAll, setShowAll] = useState(false)
   const allExperiences = data.dataJson.experience
 
@@ -155,7 +156,8 @@ function ExperienceSection({ data }) {
     </section>
   )
 }
-const indexQuery = graphql`
+
+const query = graphql`
   query {
     dataJson {
       experience {
@@ -185,11 +187,4 @@ const indexQuery = graphql`
   }
 `
 
-const ExperienceSectionExport = props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => <ExperienceSection props data={data} {...props} />}
-  />
-)
-
-export default ExperienceSectionExport
+export default ExperienceSection

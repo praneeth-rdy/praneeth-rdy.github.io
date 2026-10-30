@@ -1,7 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
 import { BsDot } from "react-icons/bs"
-// import Img from "gatsby-image"
 import "../../styles/css/screens/blog/blog-item.css"
 
 function BlogItem({ node, postClass }) {
@@ -27,18 +26,6 @@ function BlogItem({ node, postClass }) {
               {node.frontmatter.author}
             </h2> */}
           </div>
-          {/* <Img
-        fluid={node.frontmatter.thumbnail.childImageSharp.fluid}
-        className={`post-card ${postClass} ${
-          node.frontmatter.thumbnail ? `with-image` : `no-image`
-        }`}
-        style={
-          node.frontmatter.thumbnail && {
-            marginTop: "2rem",
-            marginBottom: "4rem",
-          }
-        }
-      /> */}
           {/* <blockquote className="blog-item-quote">
             {node.frontmatter.quote}
           </blockquote> */}

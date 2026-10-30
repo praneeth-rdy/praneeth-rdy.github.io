@@ -1,21 +1,17 @@
 import React, { useState } from "react"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
-// import "../styles/global.scss"
 import "../styles/normalize.css"
 import "../styles/css/screens/main.css"
 import "../styles/css/screens/blog/blog-page.css"
 
 import BlogItem from "../components/blog/BlogItem"
-import HorizontalLine from "../components/horizontalLine"
-import ThemeContextProvider from "../context/ThemeContextProvider"
+import HorizontalLine from "../components/HorizontalLine"
 
-// TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
-const BlogPage = ({ data }, location) => {
-  const navHeading = data.site.siteMetadata.navHeading
+const BlogPage = ({ data, location }) => {
   const allPosts = data.allMarkdownRemark.edges
   const allCategories = [
     "all",
@@ -40,65 +36,60 @@ const BlogPage = ({ data }, location) => {
   }
 
   return (
-    <ThemeContextProvider>
-      <Layout navHeading={navHeading} path="/blog">
-        <Seo
-          title="Blog"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        {/* <Bio /> */}
-        {data.site.siteMetadata.description && (
-          <header className="page-head">
-            <h2 className="page-head-title">
-              {data.site.siteMetadata.description}
-            </h2>
-          </header>
-        )}
-        <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
-        <h2 className="blogs-page-heading">My Recent Blogs</h2>
-        <div className="blog-filters-container">
-          {allCategories.map((categ, index) => (
-            <button
-              key={index}
-              className={`blog-filter button ${
-                categ === category ? "primary" : ""
-              } small`}
-              onClick={() => filterPosts(categ)}
-            >
-              {categ[0].toUpperCase() + categ.slice(1)}
-            </button>
-          ))}
-        </div>
-        <div className="blog-body">
-          {posts.map(({ node }) => {
-            postCounter++
-            return (
-              <BlogItem
-                key={node.fields.slug}
-                count={postCounter}
-                node={node}
-                postClass={`post`}
-              />
-            )
-          })}
-        </div>
-      </Layout>
-    </ThemeContextProvider>
+    <Layout location={location}>
+      {data.site.siteMetadata.description && (
+        <header className="page-head">
+          <h2 className="page-head-title">
+            {data.site.siteMetadata.description}
+          </h2>
+        </header>
+      )}
+      <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
+      <h2 className="blogs-page-heading">My Recent Blogs</h2>
+      <div className="blog-filters-container">
+        {allCategories.map((categ, index) => (
+          <button
+            key={index}
+            className={`blog-filter button ${
+              categ === category ? "primary" : ""
+            } small`}
+            onClick={() => filterPosts(categ)}
+          >
+            {categ[0].toUpperCase() + categ.slice(1)}
+          </button>
+        ))}
+      </div>
+      <div className="blog-body">
+        {posts.map(({ node }) => {
+          postCounter++
+          return (
+            <BlogItem
+              key={node.fields.slug}
+              count={postCounter}
+              node={node}
+              postClass={`post`}
+            />
+          )
+        })}
+      </div>
+    </Layout>
   )
 }
 
-const blogQuery = graphql`
+export default BlogPage
+
+export const Head = () => (
+  <Seo title="Blog" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+)
+
+export const query = graphql`
   query {
     site {
       siteMetadata {
-        navHeading
         description
       }
     }
-    allMarkdownRemark(
-      sort: { fields: [frontmatter___date], order: DESC }
-      filter: { fileAbsolutePath: { regex: "/(blogs)/" } }
-    ) {
+    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
       edges {
         node {
           excerpt
@@ -118,14 +109,3 @@ const blogQuery = graphql`
     }
   }
 `
-
-const BlogPageExport = props => (
-  <StaticQuery
-    query={blogQuery}
-    render={data => (
-      <BlogPage location={props.location} props data={data} {...props} />
-    )}
-  />
-)
-
-export default BlogPageExport

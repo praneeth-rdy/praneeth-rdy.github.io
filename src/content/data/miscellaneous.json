@@ -384,11 +384,7 @@
         "end": "2021-08-01"
       },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
-      "attachments": {
-        "repository": "https://github.com/",
-        "documentation": "https://github.com/",
-        "site": "https://github.com/"
-      },
+      "attachments": {},
       "thumbnail": "../images/projects/inpass-campus-modeller.png"
     },
     {
@@ -404,12 +400,20 @@
         "end": "2023-05-06"
       },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
-      "attachments": {
-        "repository": "https://github.com/",
-        "documentation": "https://github.com/",
-        "site": "https://github.com/"
-      },
+      "attachments": {},
       "thumbnail": "../images/projects/voice-chess-cover.png"
+    },
+    {
+      "title": "CV Buddy",
+      "description": "This project is a cover letter generator that uses AI to generate a cover letter for a given job description and resume.",
+      "confidential": false,
+      "dates": {
+        "start": "2023-01-03",
+        "end": "2023-05-06"
+      },
+      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
+      "attachments": {},
+      "thumbnail": "../images/projects/cv-buddy-cover.png"
     },
     {
       "title": "Live Scoreboard",
@@ -424,11 +428,7 @@
         "end": "2021-08-01"
       },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
-      "attachments": {
-        "repository": "https://github.com/",
-        "documentation": "https://github.com/",
-        "site": "https://github.com/"
-      },
+      "attachments": {},
       "thumbnail": "../images/project-placeholder.jpg"
     }
   ]

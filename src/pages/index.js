@@ -1,11 +1,10 @@
 import React from "react"
-import { graphql, StaticQuery } from "gatsby"
+import { graphql } from "gatsby"
 
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import HorizontalLine from "../components/horizontalLine"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
+import HorizontalLine from "../components/HorizontalLine"
 
-// import "../styles/global.scss"
 import "../styles/normalize.css"
 import "../styles/css/screens/main.css"
 import "../styles/css/screens/home/index.css"
@@ -15,45 +14,36 @@ import AboutSection from "../components/home/AboutSection"
 import SkillsetSection from "../components/home/SkillsetSection"
 import ExperienceSection from "../components/home/ExperienceSection"
 import ProjectsSection from "../components/home/ProjectsSection"
-import ThemeContextProvider from "../context/ThemeContextProvider"
 
-//TODO: switch to staticQuery, get rid of comments, remove unnecessary components, export as draft template
-const Index = ({ data }, location) => {
-  const navHeading = data.site.siteMetadata.navHeading
+const Index = ({ data, location }) => {
   const darkModeImage = data.darkModeImage.childImageSharp.gatsbyImageData
   const lightModeImage = data.lightModeImage.childImageSharp.gatsbyImageData
   const aboutPic = data.aboutPic.childImageSharp.gatsbyImageData
 
   return (
-    <ThemeContextProvider>
-      <Layout navHeading={navHeading} path="/">
-        <Seo
-          title="Home"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        {/* Introduction Section */}
-        <IntroSection
-          darkModeImage={darkModeImage}
-          lightModeImage={lightModeImage}
-        />
-        <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
-        <AboutSection image={aboutPic} />
-        <ExperienceSection />
-        <ProjectsSection />
-        <SkillsetSection />
-      </Layout>
-    </ThemeContextProvider>
+    <Layout location={location}>
+      {/* Introduction Section */}
+      <IntroSection
+        darkModeImage={darkModeImage}
+        lightModeImage={lightModeImage}
+      />
+      <HorizontalLine color="rgba(0, 0, 0, 0.5)" />
+      <AboutSection image={aboutPic} />
+      <ExperienceSection />
+      <ProjectsSection />
+      <SkillsetSection />
+    </Layout>
   )
 }
 
-const indexQuery = graphql`
+export default Index
+
+export const Head = () => (
+  <Seo title="Home" keywords={[`blog`, `gatsby`, `javascript`, `react`]} />
+)
+
+export const query = graphql`
   query {
-    site {
-      siteMetadata {
-        navHeading
-        description
-      }
-    }
     lightModeImage: file(relativePath: { eq: "home/intro-light-mode.png" }) {
       childImageSharp {
         gatsbyImageData
@@ -71,14 +61,3 @@ const indexQuery = graphql`
     }
   }
 `
-
-const IndexExport = props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => (
-      <Index location={props.location} props data={data} {...props} />
-    )}
-  />
-)
-
-export default IndexExport

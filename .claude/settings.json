@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(yarn install)",
+      "Bash(yarn build)",
+      "Bash(yarn develop)",
+      "Bash(yarn serve)",
+      "Bash(yarn format)",
+      "Bash(npm run build)",
+      "Bash(npm run develop)",
+      "Bash(npm run format)",
+      "Bash(npx prettier:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(wc:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)"
+    ],
+    "deny": ["Bash(git push --force:*)", "Bash(rm -rf:*)"]
+  }
+}

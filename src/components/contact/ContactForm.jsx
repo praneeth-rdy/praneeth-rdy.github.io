@@ -1,14 +1,9 @@
 import React, { useState } from "react"
-// import Img from "gatsby-image"
-// import { GatsbyImage } from "gatsby-plugin-image"
-// import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 import axios from "axios"
 
 import "../../styles/css/screens/contact.css"
-import { graphql, StaticQuery } from "gatsby"
 
-function ContactForm({ data, darkMode }) {
-  // const social = data.site.siteMetadata.social
+function ContactForm() {
   const [formStatusMessage, setFormStatusMessage] = useState("")
   const [isLoading, setIsLoading] = useState(false)
 
@@ -34,8 +29,7 @@ function ContactForm({ data, darkMode }) {
 
     axios({
       method: "post",
-      url:
-        "https://script.google.com/macros/s/AKfycbzeRvT-r_rDE339RLL6KiZju06EZSrocF1rV8YepXb3X_RPg27KoJ1nwwFsPAXRhEjlEQ/exec",
+      url: "https://script.google.com/macros/s/AKfycbzeRvT-r_rDE339RLL6KiZju06EZSrocF1rV8YepXb3X_RPg27KoJ1nwwFsPAXRhEjlEQ/exec",
       data: new URLSearchParams(formData).toString(),
       headers: {
         "Content-Type": "application/x-www-form-urlencoded",
@@ -101,56 +95,6 @@ function ContactForm({ data, darkMode }) {
               />
             </div>
             {/* Break */}
-            {/* <div className="col-12">
-              <select name="demo-category" id="demo-category">
-                <option value>- Category -</option>
-                <option value={1}>Manufacturing</option>
-                <option value={1}>Shipping</option>
-                <option value={1}>Administration</option>
-                <option value={1}>Human Resources</option>
-              </select>
-            </div> */}
-            {/* Break */}
-            {/* <div className="col-4 col-12-small">
-              <input
-                type="radio"
-                id="demo-priority-low"
-                name="demo-priority"
-                defaultChecked
-              />
-              <label htmlFor="demo-priority-low">Low</label>
-            </div>
-            <div className="col-4 col-12-small">
-              <input
-                type="radio"
-                id="demo-priority-normal"
-                name="demo-priority"
-              />
-              <label htmlFor="demo-priority-normal">Normal</label>
-            </div>
-            <div className="col-4 col-12-small">
-              <input
-                type="radio"
-                id="demo-priority-high"
-                name="demo-priority"
-              />
-              <label htmlFor="demo-priority-high">High</label>
-            </div> */}
-            {/* Break */}
-            {/* <div className="col-6 col-12-small">
-              <input type="checkbox" id="demo-copy" name="demo-copy" />
-              <label htmlFor="demo-copy">Email me a copy</label>
-            </div>
-            <div className="col-6 col-12-small">
-              <input
-                type="checkbox"
-                id="demo-human"
-                name="demo-human"
-                defaultChecked
-              />
-              <label htmlFor="demo-human">I am a human</label>
-            </div> */}
-            {/* Break */}
             <div className="col-12">
               <textarea
                 name="message"
@@ -180,47 +124,9 @@ function ContactForm({ data, darkMode }) {
             </div>
           </div>
         </form>
-        {/* <form name="contact-form">
-          <div className="form-row" >
-            <input></input>
-            <input></input>
-          </div>
-          <div className="form-row" >
-            <input></input>
-            <input></input>
-          </div>
-          <div className="form-row" >
-            <textarea></textarea>
-          </div>
-          <div className="submission-status"></div>
-          <button>Submit</button>
-        </form> */}
       </div>
     </section>
   )
 }
 
-const indexQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        authorFullName
-        social {
-          github
-          linkedin
-          facebook
-          email
-        }
-      }
-    }
-  }
-`
-
-const ContactFormExport = props => (
-  <StaticQuery
-    query={indexQuery}
-    render={data => <ContactForm props data={data} {...props} />}
-  />
-)
-
-export default ContactFormExport
+export default ContactForm

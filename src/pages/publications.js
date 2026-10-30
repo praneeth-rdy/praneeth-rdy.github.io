@@ -1,20 +1,20 @@
 import React from "react"
-import Layout from "../components/layout"
-import Seo from "../components/seo"
-import ThemeContextProvider from "../context/ThemeContextProvider"
+import Layout from "../components/Layout"
+import Seo from "../components/Seo"
 
-function Publications() {
+function Publications({ location }) {
   return (
-    <ThemeContextProvider>
-      <Layout navHeading="praneeth-rdy" path="/publications">
-        <Seo
-          title="Blog"
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
-        />
-        <h3>Publications Page</h3>
-      </Layout>
-    </ThemeContextProvider>
+    <Layout location={location}>
+      <h3>Publications Page</h3>
+    </Layout>
   )
 }
 
 export default Publications
+
+export const Head = () => (
+  <Seo
+    title="Publications"
+    keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+  />
+)
