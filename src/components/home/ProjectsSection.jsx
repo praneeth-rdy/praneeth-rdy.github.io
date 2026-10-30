@@ -11,6 +11,7 @@ function ProjectsSection() {
   const data = useStaticQuery(query)
   const [showAll, setShowAll] = useState(false)
   const allProjects = data.dataJson.projects
+  const placeholderImage = data.placeholder.childImageSharp.gatsbyImageData
 
   const initialMaxCount = 2
   const visibleProjects = showAll
@@ -30,7 +31,11 @@ function ProjectsSection() {
             <div key={index} className={Styles.card}>
               <div className={Styles.cardImage}>
                 <GatsbyImage
-                  image={project.thumbnail.childImageSharp.gatsbyImageData}
+                  image={
+                    project.thumbnail
+                      ? project.thumbnail.childImageSharp.gatsbyImageData
+                      : placeholderImage
+                  }
                   alt={`${project.title} Image`}
                 />
               </div>
@@ -137,6 +142,11 @@ function ProjectsSection() {
 
 const query = graphql`
   query {
+    placeholder: file(relativePath: { eq: "project-placeholder.png" }) {
+      childImageSharp {
+        gatsbyImageData(height: 220, width: 330)
+      }
+    }
     dataJson {
       projects {
         title

@@ -22,7 +22,7 @@ yarn format           # prettier --write "src/**/*.{js,jsx}"
 ```
 
 - Never run `gatsby build` while `gatsby develop` is running (or two of either). They share `.cache`, and the result is random failures such as "Couldn't find temp query result" or "Can't resolve .cache/static-entry". Stop the dev server, `yarn clean`, then build.
-- On Node 22 Gatsby prints `ERROR UNKNOWN` followed by a `punycode` deprecation warning at startup. It comes from a transitive dependency (`tr46`/`whatwg-url`) and is harmless.
+- The `develop` and `build` scripts set `NODE_OPTIONS=--disable-warning=DEP0040`. Without it, Node 22 prints a harmless `punycode` deprecation warning from a transitive dependency (`tr46`/`whatwg-url`) that Gatsby's logger shows as `ERROR UNKNOWN`. Running `npx gatsby develop` directly still shows it.
 - Prettier 3 config in `.prettierrc`: no semicolons, double quotes, 2-space, trailing commas es5, `arrowParens: avoid`.
 - Husky 9 pre-commit runs `pretty-quick --staged`.
 - No test suite exists.
@@ -53,7 +53,7 @@ Conventions: React components are PascalCase `.jsx`; pages under `src/pages/` st
 - `src/content/data/miscellaneous.json` — single JSON node (`dataJson`) with three arrays; schema is declared in `gatsby-node.js`:
   - `experience[]`: `org`, `orgLogo` (relative image path), `status` (`Present`|`Completed`), optional `type` (`Position of Responsibility`|`Opensource`), optional `returnOffer`, `tags[]`, `description`, `roles[]{title,start,end}`.
   - `skills[]`: `name`, `darkModeLogo`, `lightModeLogo`, `website`.
-  - `projects[]`: `title`, `description`, `confidential`, optional `associatedWith{org,logo}`, `dates{start,end}` (ISO dates), `stacks[]` (image paths), `attachments{repository?,documentation?,site?}` (omit keys you don't have; icons render only for present links), `thumbnail`.
+  - `projects[]`: `title`, `description`, `confidential`, optional `associatedWith{org,logo}`, `dates{start,end}` (ISO dates), `stacks[]` (image paths), `attachments{repository?,documentation?,site?}` (omit keys you don't have; icons render only for present links), optional `thumbnail` (falls back to `src/content/images/project-placeholder.png`, queried in `ProjectsSection.jsx`).
   - Image paths are relative to the JSON file (`../images/...`); every referenced file must exist or the build fails.
 - `src/content/blogs/<slug>/index.md` — frontmatter: `title`, `date`, `author`, `maxread`, `description`, `subtext`, `category`. Images live beside the markdown.
 - `src/content/images/` — `home/`, `org-logos/`, `projects/`, `skills/`, `stacks/`.

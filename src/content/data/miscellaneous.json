@@ -428,8 +428,7 @@
         "end": "2021-08-01"
       },
       "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
-      "attachments": {},
-      "thumbnail": "../images/project-placeholder.jpg"
+      "attachments": {}
     }
   ]
 }
