@@ -1,0 +1,568 @@
+/* Home page sections from the approved "Collection" concept
+   (docs/handoffs/concepts/collection/home.html + assets/concepts.css).
+   Every rule is scoped under .scope (the concept's .concept wrapper) so the
+   frozen Intro, About and Skillset styles are untouched; selectors keep the
+   concept's specificity and order so the cascade resolves the same way.
+   Colours come from the tokens in vars.css. Every rule here is used on the
+   home page; the ignore block keeps PurgeCSS from dropping the element,
+   attribute ([open]) and pseudo-element selectors it cannot see in markup. */
+
+/* ! purgecss start ignore */
+
+.scope {
+  font:
+    400 16px/1.7 "Muli",
+    sans-serif;
+  color: var(--color-ink);
+}
+.scope * {
+  box-sizing: border-box;
+}
+.scope h2,
+.scope h3,
+.scope h4,
+.scope p,
+.scope ul,
+.scope figure {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+.scope h2 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+.scope h3 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.3px;
+}
+.scope p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+.scope a {
+  color: var(--color-link);
+  text-decoration: none;
+}
+.scope a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.scope a:focus-visible,
+.scope summary:focus-visible {
+  outline: 3px solid var(--color-link);
+  outline-offset: 5px;
+  border-radius: 3px;
+}
+.scope img {
+  display: block;
+  max-width: 100%;
+}
+.scope svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.scope .muted {
+  color: var(--color-quiet);
+}
+.scope .eyebrow {
+  color: var(--color-quiet);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.scope .meta {
+  font-size: 12px;
+  color: var(--color-quiet);
+  line-height: 1.6;
+}
+.scope .wrap {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+}
+.scope .sectionTitle {
+  text-align: center;
+  margin-bottom: 38px;
+}
+.scope .card {
+  border-radius: 8px;
+  padding: 30px;
+  background: var(--color-surface);
+}
+.scope .orgHead {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.scope .orgHead > div {
+  flex: 1;
+  min-width: 0;
+}
+.scope .orgLogo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  padding: 5px;
+  border-radius: 8px;
+  background: var(--color-dark-base);
+  flex: 0 0 auto;
+}
+.scope .orgHead h3 {
+  font-size: 21px;
+  margin: 6px 0;
+}
+.scope .badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+.scope .pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1.6;
+  border-radius: 10px;
+  padding: 3px 9px;
+}
+.scope .pill.present {
+  color: var(--color-present-ink);
+  background: var(--color-yellow-light);
+}
+.scope .offer {
+  display: inline-flex;
+  gap: 5px;
+  align-items: center;
+  font-size: 11px;
+  color: var(--color-quiet);
+}
+.scope .offer svg {
+  fill: var(--color-yellow);
+  stroke: var(--color-quiet);
+  width: 14px;
+  height: 14px;
+}
+.scope .current {
+  border-top: 3px solid var(--color-primary);
+}
+.scope .roles {
+  list-style: none;
+  border-top: 1px solid var(--color-rule);
+  margin: 25px 0;
+}
+.scope .roles li {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--color-rule);
+  margin: 0;
+}
+.scope .roles strong {
+  font-size: 14px;
+  line-height: 1.6;
+}
+.scope .roles time {
+  font-size: 12px;
+  color: var(--color-quiet);
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+/* Tag chips, copied from collection-page.module.css (.page .tags/.tag). */
+.scope .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 22px;
+}
+.scope .tag {
+  color: var(--color-dark-base);
+  background: var(--color-primary);
+  padding: 1px 9px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 18px;
+}
+.scope .description {
+  color: var(--color-quiet);
+}
+.scope .description summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 14px;
+  line-height: 1.8;
+}
+.scope .description summary::-webkit-details-marker {
+  display: none;
+}
+.scope .description summary .fold {
+  display: block;
+  color: var(--color-link);
+  font-weight: 700;
+  padding: 9px 0;
+}
+.scope .description[open] summary .fold {
+  font-size: 0;
+}
+.scope .description[open] summary .fold::after {
+  content: "Close description \2212";
+  font-size: 14px;
+}
+.scope .textLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  font-size: 14px;
+  font-weight: 700;
+}
+.scope .stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 28px 0 40px;
+  padding: 27px 0;
+  border-block: 1px solid var(--color-rule);
+}
+.scope .stats > div {
+  padding: 0 24px;
+  border-right: 1px solid var(--color-rule);
+}
+.scope .stats > div:first-child {
+  padding-left: 0;
+}
+.scope .stats > div:last-child {
+  border: 0;
+}
+.scope .stats strong {
+  display: block;
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+}
+.scope .stats span {
+  display: block;
+  font-size: 12px;
+  color: var(--color-quiet);
+  margin-top: 8px;
+}
+.scope .metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  color: var(--color-quiet);
+  font-size: 12px;
+}
+/* Screen-reader text for the star/fork counts (not in the concept). */
+.scope .srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.scope .homeBlock {
+  padding: 60px 0;
+}
+.scope .homeCurrent {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 48px;
+  align-items: center;
+}
+.scope .homeCurrent h3 {
+  font-size: 27px;
+  margin: 12px 0;
+}
+.scope .homeCurrent .orgHead h3 {
+  font-size: 23px;
+}
+.scope .homeCurrent .roles {
+  margin-bottom: 0;
+}
+.scope .projects {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 26px;
+}
+.scope .project {
+  min-width: 0;
+}
+.scope .project figure {
+  aspect-ratio: 4/3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--color-inset);
+  margin-bottom: 24px;
+  position: relative;
+}
+/* GatsbyImage wrapper filling the figure (concept: img with object-fit). */
+.scope .project figure .cover {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.scope .project h3 {
+  font-size: 21px;
+  margin: 8px 0 14px;
+}
+.scope .project p {
+  font-size: 14px;
+  color: var(--color-quiet);
+}
+/* The concept shows one link per card; several present links sit in a row. */
+.scope .projectLinks {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 20px;
+}
+.scope .writingList {
+  max-width: 780px;
+  margin: auto;
+}
+.scope .writing {
+  display: block;
+  padding: 27px 0;
+  border-bottom: 1px solid var(--color-rule);
+}
+.scope .writing h3 {
+  margin: 5px 0 12px;
+  color: var(--color-ink);
+  font-size: 27px;
+}
+.scope .writing .category {
+  color: var(--color-link);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.scope .writing p {
+  color: var(--color-quiet);
+  margin-top: 15px;
+}
+.scope .writing:hover {
+  text-decoration: none;
+}
+.scope .writing:hover h3 {
+  color: var(--color-link);
+}
+.scope .repoStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+.scope .repoStrip h3 {
+  font-size: 17px;
+  margin: 15px 0;
+  overflow-wrap: anywhere;
+}
+.scope .cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 36px 0;
+  border-block: 1px solid var(--color-rule);
+  margin-bottom: 50px;
+}
+.scope .cta h2 {
+  font-size: 27px;
+}
+/* Site buttons (.button from components/buttons.css) inside the home
+   sections. .scope a:hover would otherwise underline them, which the global
+   .button:hover rule prevents everywhere else. */
+.scope a:global(.button):hover {
+  text-decoration: none;
+}
+/* Lays a .button's label and trailing arrow out in a row, centred within
+   the button's fixed height; padding, height and colours stay the button's. */
+.scope .iconButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Collection direction overrides (concept: .collection ...). */
+.scope .homeCurrent {
+  grid-template-columns: 1.3fr 1fr;
+  padding: 36px;
+  border-radius: 8px;
+  border-top: 3px solid var(--color-primary);
+}
+.scope .homeCurrent > .card {
+  padding: 0;
+  border-top: none;
+}
+.scope .homeCurrent > .homeOverview {
+  order: 1;
+  border-left: 1px solid var(--color-rule);
+  padding-left: 35px;
+}
+.scope .projects {
+  grid-template-columns: 1.1fr 1fr;
+  gap: 30px 35px;
+}
+.scope .project:first-child {
+  grid-row: span 2;
+}
+.scope .project:not(:first-child) {
+  display: grid;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 22px;
+  align-items: start;
+}
+.scope .project:not(:first-child) figure {
+  aspect-ratio: 1;
+  margin: 0;
+}
+.scope .project:not(:first-child) h3 {
+  margin-top: 4px;
+}
+.scope .project:first-child h3 {
+  font-size: 27px;
+}
+.scope .repoStrip {
+  gap: 0;
+  border: 1px solid var(--color-rule);
+  border-radius: 8px;
+}
+.scope .repoStrip .card {
+  border-right: 1px solid var(--color-rule);
+  border-radius: 0;
+}
+.scope .repoStrip .card:last-child {
+  border: 0;
+}
+
+/* The intro/about additions carry .scope themselves, so they only take the
+   scope's own typography; the paragraph rule is raised so About's 18px
+   paragraph size cannot win on source order. */
+.scope.homeAddition p {
+  font-size: 15px;
+  line-height: 1.8;
+  margin: 0;
+  color: inherit;
+}
+
+@media (max-width: 850px) {
+  .scope .wrap {
+    width: 100%;
+  }
+  .scope .homeCurrent {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .scope .homeCurrent > .homeOverview {
+    order: 0;
+    border: 0;
+    padding: 0;
+  }
+  .scope .projects {
+    grid-template-columns: 1fr;
+  }
+  .scope .project:first-child {
+    grid-row: auto;
+  }
+  .scope .project {
+    max-width: 580px;
+  }
+  .scope .repoStrip {
+    grid-template-columns: 1fr;
+  }
+  .scope .repoStrip .card {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-rule);
+  }
+}
+
+@media (max-width: 600px) {
+  .scope h2 {
+    font-size: 30px;
+  }
+  .scope h3 {
+    font-size: 21px;
+  }
+  .scope .card {
+    padding: 23px;
+  }
+  .scope .orgHead {
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .scope .orgHead h3 {
+    font-size: 19px;
+  }
+  .scope .orgLogo {
+    width: 40px;
+    height: 40px;
+  }
+  .scope .roles li {
+    display: block;
+  }
+  .scope .roles time {
+    display: block;
+  }
+  .scope .stats {
+    gap: 12px;
+  }
+  .scope .stats > div {
+    padding: 0 10px 0 0;
+  }
+  .scope .stats strong {
+    font-size: 25px;
+  }
+  .scope .stats span {
+    font-size: 11px;
+  }
+  .scope .homeBlock {
+    padding: 40px 0;
+  }
+  .scope .homeCurrent h3 {
+    font-size: 24px;
+  }
+  .scope .cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .scope .cta h2 {
+    font-size: 25px;
+  }
+  .scope .project figure {
+    margin-bottom: 20px;
+  }
+  .scope .project:not(:first-child) {
+    grid-template-columns: 95px minmax(0, 1fr);
+    gap: 18px;
+  }
+  .scope .project:not(:first-child) p {
+    font-size: 13px;
+  }
+}
+
+/* "All projects" fold (concept: .all-projects). */
+.scope .allProjects {
+  margin-top: 24px;
+}
+.scope .allProjects[open] summary .fold::after {
+  content: "Close projects \2212";
+}
+.scope .allProjects .projects {
+  margin-top: 24px;
+}
+
+/* ! purgecss end ignore */

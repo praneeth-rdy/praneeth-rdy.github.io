@@ -18,3 +18,26 @@ export enum SeoType {
 export type WithChildren = { children: React.ReactNode }
 
 export type ImageData = IGatsbyImageData
+
+/** Glyphs drawn by the LineIcon component (1.5px stroke, 24px grid). */
+export enum LineIconName {
+  Arrow = "arrow",
+  Star = "star",
+  Code = "code",
+  Fork = "fork",
+  Camera = "camera",
+}
+
+/** Contact form fields; values equal the inputs' `name`/`id` attributes. */
+export enum ContactField {
+  Name = "name",
+  Email = "email",
+  Mobile = "mobile",
+  Subject = "subject",
+  Message = "message",
+}
+
+export type ContactFormValues = Record<ContactField, string>
+
+/** One message per field that currently fails validation. */
+export type ContactFormErrors = Partial<Record<ContactField, string>>

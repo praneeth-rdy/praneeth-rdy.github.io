@@ -4,6 +4,7 @@
       "org": "Trumio Inc.",
       "orgLogo": "../images/org-logos/trumio-logo.jpeg",
       "status": "Present",
+      "kind": "full-time",
       "returnOffer": true,
       "tags": [
         "TypeScript",
@@ -15,24 +16,19 @@
       "description": "Engineered a chat interface to enable collaboration on the platform with push notifications, profanity filter and data masking. Built a Python module to abstract out API calls from the backend, reviewed over 10 pull requests and reported 18 issues on GitHub. Formulated a comprehensive report outlining productivity-enhancing AI tools across stages of Software Development Lifecycle (SDLC). Collaborated with design team to enhance the chat UX and designed backend architecture to support the functionality of CometChat SDK.",
       "roles": [
         {
-          "title": "Software Engineering Lead",
-          "start": "December '25",
+          "title": "AI Systems Engineering Lead",
+          "start": "May '26",
           "end": "Present"
         },
         {
-          "title": "Forward Deployment Lead",
-          "start": "October '25",
-          "end": "November '25"
-        },
-        {
-          "title": "Technical Lead - Frontend",
-          "start": "December '24",
-          "end": "September '25"
+          "title": "Software Engineering Lead",
+          "start": "Nov '25",
+          "end": "May '26"
         },
         {
           "title": "Software Engineer",
           "start": "May '24",
-          "end": "November '24"
+          "end": "Nov '25"
         },
         {
           "title": "Software Engineer Intern",
@@ -50,6 +46,7 @@
       "org": "Xpertzy Private Limited",
       "orgLogo": "../images/org-logos/xpertzy-logo.jpeg",
       "status": "Completed",
+      "kind": "internship",
       "tags": [
         "Node.js",
         "React.js",
@@ -71,6 +68,7 @@
       "org": "Sprout Creativity",
       "orgLogo": "../images/org-logos/sprout-creativity-logo.jpeg",
       "status": "Completed",
+      "kind": "internship",
       "returnOffer": true,
       "tags": [
         "Node.js",
@@ -93,6 +91,7 @@
       "org": "Knorex India",
       "orgLogo": "../images/org-logos/knorex-logo.jpeg",
       "status": "Completed",
+      "kind": "internship",
       "tags": [
         "Node.js",
         "JavaScript",
@@ -115,6 +114,7 @@
       "org": "Gopali Youth Welfare Society",
       "orgLogo": "../images/org-logos/gyws-logo.png",
       "status": "Completed",
+      "kind": "position-of-responsibility",
       "type": "Position of Responsibility",
       "returnOffer": true,
       "tags": [
@@ -150,6 +150,7 @@
       "org": "Technology Students' Gymkhana",
       "orgLogo": "../images/org-logos/tsg-iitkgp-logo.jpeg",
       "status": "Completed",
+      "kind": "position-of-responsibility",
       "returnOffer": true,
       "type": "Position of Responsibility",
       "tags": [
@@ -183,6 +184,7 @@
       "org": "Centre of Excellence in Artificial Intelligence, IIT Kharagpur",
       "orgLogo": "../images/org-logos/iitkgp-logo.jpeg",
       "status": "Completed",
+      "kind": "internship",
       "tags": ["Node.js", "Python", "JavaScript", "AWS", "Git", "MongoDB"],
       "description": "Built a Nodejs API Layer as an interface between the Reactjs frontend and the python simulator, simultaneously interacting with MongoDB. Integrated the API with the application and performed integration tests in coordination with the frontend and model-development teams. Deployed and managed the full stack of the project on an Amazon Web Services (AWS) EC2 instance using the Apache Web Server. This project was sponsored by the Department of Science and Technology - Government of India to study the spread of Covid-19 on university campuses.",
       "roles": [
@@ -197,6 +199,7 @@
       "org": "Qen Labs Inc.",
       "orgLogo": "../images/org-logos/qen-labs-logo.jpeg",
       "status": "Completed",
+      "kind": "internship",
       "tags": [
         "Node.js",
         "React.js",
@@ -219,6 +222,7 @@
       "org": "GirlScript Summer of Code",
       "orgLogo": "../images/org-logos/girlscriptsoc-logo.jpeg",
       "status": "Completed",
+      "kind": "open-source",
       "type": "Opensource",
       "tags": [
         "Python",
@@ -242,6 +246,7 @@
       "org": "Quantifiers",
       "orgLogo": "../images/org-logos/quantifiers-logo.jpg",
       "status": "Completed",
+      "kind": "internship",
       "returnOffer": true,
       "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
       "description": "Built a dynamic website with a revamp of user interface and incorporation of value-added features yielding a 60% increase in user traffic. Designed and developed a quiz platform of multiple-choice questions with the features like navigation, instant result and solutions. Facilitated the blog posting of the company by the end-to-end development of a blog platform on its website to keep users engaged.",
@@ -257,6 +262,7 @@
       "org": "ChiSquareX",
       "orgLogo": "../images/org-logos/chisquarex-logo.png",
       "status": "Completed",
+      "kind": "internship",
       "returnOffer": true,
       "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
       "description": "Responsible to develop, manage and deliver software projects for the organisation and its clients alongside managing the human resources. Developed a website for this organisation using Django and Bootstrap. Built a website for Kushitranslations which is one of the Bangalore-based clients of the organisation. Developed a static flutter application to readably present the Constitution of India in Kannada.",
@@ -272,6 +278,7 @@
       "org": "Kharagpur Winter of Code",
       "orgLogo": "../images/org-logos/kwoc-iitkgp-logo.png",
       "status": "Completed",
+      "kind": "open-source",
       "type": "Opensource",
       "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
       "description": "Participated in a 5-week long online program aimed at introducing students to open source software development and preparing them for programs like Google Summer of Code. Developed multiple Django applications including a hotel booking site, book store and newspaper backend. Created a user dashboard and events tracking system for a helping hand NGO. The program helped gain hands-on experience with open source development practices and collaboration.",
@@ -287,6 +294,7 @@
       "org": "International Relations Cell",
       "orgLogo": "../images/org-logos/ircell-iitkgp-logo.png",
       "status": "Completed",
+      "kind": "position-of-responsibility",
       "type": "Position of Responsibility",
       "tags": ["Python", "JavaScript", "CSS", "Git", "Django", "HTML"],
       "description": "Responsible for the development and management of Foreign Training Portal 2020-2021 and the international website of IIT Kharagpur. Led a team of 7 Junior Associates who were a part of the web team and mentored them to learn web development which included Bootstrap Layouts, JavaScript, Python and Django. Contributed to the smooth conduction of the OnCampus Round of Hult Prize 2020 at IIT Kharagpur, being an organising team member. Worked hand-in-hand with the Office of International Relations to organize the events and programs of the International Relations Cell.",
@@ -306,34 +314,16 @@
   ],
   "skills": [
     {
-      "name": "FastAPI",
-      "darkModeLogo": "../images/skills/fastapi.png",
-      "lightModeLogo": "../images/skills/fastapi.png",
-      "website": "https://fastapi.tiangolo.com/"
+      "name": "JavaScript",
+      "darkModeLogo": "../images/skills/javascript.png",
+      "lightModeLogo": "../images/skills/javascript.png",
+      "website": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
-      "name": "AWS EC2",
-      "darkModeLogo": "../images/skills/aws-ec2-dark.png",
-      "lightModeLogo": "../images/skills/aws-ec2-light.png",
-      "website": "https://aws.amazon.com/ec2/"
-    },
-    {
-      "name": "Java",
-      "darkModeLogo": "../images/skills/java.png",
-      "lightModeLogo": "../images/skills/java.png",
-      "website": "https://www.java.com/"
-    },
-    {
-      "name": "Android",
-      "darkModeLogo": "../images/skills/android.png",
-      "lightModeLogo": "../images/skills/android.png",
-      "website": "https://developer.android.com/"
-    },
-    {
-      "name": "Node.js",
-      "darkModeLogo": "../images/skills/nodejs-dark-mode.png",
-      "lightModeLogo": "../images/skills/nodejs-light-mode.png",
-      "website": "https://nodejs.org/"
+      "name": "TypeScript",
+      "darkModeLogo": "../images/skills/typescript.png",
+      "lightModeLogo": "../images/skills/typescript.png",
+      "website": "https://www.typescriptlang.org/"
     },
     {
       "name": "Python",
@@ -342,17 +332,103 @@
       "website": "https://www.python.org/"
     },
     {
+      "name": "Java",
+      "darkModeLogo": "../images/skills/java.png",
+      "lightModeLogo": "../images/skills/java.png",
+      "website": "https://www.java.com/"
+    },
+    {
       "name": "React",
       "darkModeLogo": "../images/skills/react-js.png",
       "lightModeLogo": "../images/skills/react-js.png",
-      "website": "https://reactjs.org/"
+      "website": "https://react.dev/"
+    },
+    {
+      "name": "Next.js",
+      "darkModeLogo": "../images/skills/nextjs-dark.png",
+      "lightModeLogo": "../images/skills/nextjs-light.png",
+      "website": "https://nextjs.org/"
+    },
+    {
+      "name": "Gatsby",
+      "darkModeLogo": "../images/skills/gatsby-dark.png",
+      "lightModeLogo": "../images/skills/gatsby-light.png",
+      "website": "https://www.gatsbyjs.com/"
+    },
+    {
+      "name": "Node.js",
+      "darkModeLogo": "../images/skills/nodejs-dark-mode.png",
+      "lightModeLogo": "../images/skills/nodejs-light-mode.png",
+      "website": "https://nodejs.org/"
+    },
+    {
+      "name": "Django",
+      "darkModeLogo": "../images/skills/django-dark.png",
+      "lightModeLogo": "../images/skills/django-light.png",
+      "website": "https://www.djangoproject.com/"
+    },
+    {
+      "name": "FastAPI",
+      "darkModeLogo": "../images/skills/fastapi.png",
+      "lightModeLogo": "../images/skills/fastapi.png",
+      "website": "https://fastapi.tiangolo.com/"
+    },
+    {
+      "name": "PostgreSQL",
+      "darkModeLogo": "../images/skills/postgresql.png",
+      "lightModeLogo": "../images/skills/postgresql.png",
+      "website": "https://www.postgresql.org/"
+    },
+    {
+      "name": "Docker",
+      "darkModeLogo": "../images/skills/docker-dark.png",
+      "lightModeLogo": "../images/skills/docker-light.png",
+      "website": "https://www.docker.com/"
+    },
+    {
+      "name": "Kubernetes",
+      "darkModeLogo": "../images/skills/kubernetes-dark.png",
+      "lightModeLogo": "../images/skills/kubernetes-light.png",
+      "website": "https://kubernetes.io/"
+    },
+    {
+      "name": "Git",
+      "darkModeLogo": "../images/skills/git-dark.png",
+      "lightModeLogo": "../images/skills/git-light.png",
+      "website": "https://git-scm.com/"
+    },
+    {
+      "name": "Android",
+      "darkModeLogo": "../images/skills/android.png",
+      "lightModeLogo": "../images/skills/android.png",
+      "website": "https://developer.android.com/"
+    },
+    {
+      "name": "Flutter",
+      "darkModeLogo": "../images/skills/flutter-dark.png",
+      "lightModeLogo": "../images/skills/flutter-light.png",
+      "website": "https://flutter.dev/"
     }
   ],
   "projects": [
     {
+      "title": "Campus Modeler",
+      "description": "Part of Campus Rakshak, a study of COVID-19 spread on university campuses at IIT Kharagpur's Centre of Excellence in Artificial Intelligence, sponsored by the Department of Science and Technology, Government of India. I built the API layer between the React frontend and the Python simulator with MongoDB, integrated and tested it with the frontend and model teams, and deployed the full stack on an AWS EC2 instance behind Apache.",
+      "confidential": true,
+      "featured": true,
+      "associatedWith": {
+        "org": "IIT Kharagpur",
+        "logo": "../images/org-logos/iitkgp-logo.jpeg"
+      },
+      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
+      "attachments": {},
+      "thumbnail": "../images/projects/inpass-campus-modeller.png"
+    },
+    {
       "title": "CapAe",
       "description": "CapAe is a cutting-edge project that utilizes React-Native and Django to record and visualize the real-time movement of aerospace objects in 3D space, providing accurate and efficient tracking and analysis capabilities.",
       "confidential": true,
+      "featured": true,
       "associatedWith": {
         "org": "IIT Kharagpur",
         "logo": "../images/org-logos/iitkgp-logo.jpeg"
@@ -368,21 +444,20 @@
       "thumbnail": "../images/projects/capae-cover.png"
     },
     {
-      "title": "Campus Modeler",
-      "description": "The project involved building an API layer to integrate a Reactjs frontend with a Python simulator and MongoDB for Covid-19 spread analysis on university campuses, deploying it on AWS EC2 with Apache Web Server and coordinating tests with the frontend and model-development teams.",
-      "confidential": true,
-      "associatedWith": {
-        "org": "IIT Kharagpur",
-        "logo": "../images/org-logos/iitkgp-logo.jpeg"
+      "title": "CV Buddy",
+      "description": "An open-source web app that makes building a CV quick and simple for students through ready-made templates. It is one of my most-starred projects on GitHub and has been forked and extended by other students.",
+      "confidential": false,
+      "stacks": ["../images/stacks/javascript.png"],
+      "attachments": {
+        "repository": "https://github.com/praneeth-rdy/CV-Buddy"
       },
-      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
-      "attachments": {},
-      "thumbnail": "../images/projects/inpass-campus-modeller.png"
+      "thumbnail": "../images/projects/cv-buddy-cover.png"
     },
     {
       "title": "Voice Chess Application",
       "description": "This project is a mobile chess application that uses voice commands for gameplay, making it accessible for people with visual impairments. Built on react-native, the app utilizes react-native-voice for natural language processing and chessboard.js for the chess engine.",
       "confidential": false,
+      "featured": true,
       "associatedWith": {
         "org": "IIT Kharagpur",
         "logo": "../images/org-logos/iitkgp-logo.jpeg"
@@ -392,16 +467,8 @@
       "thumbnail": "../images/projects/voice-chess-cover.png"
     },
     {
-      "title": "CV Buddy",
-      "description": "This project is a cover letter generator that uses AI to generate a cover letter for a given job description and resume.",
-      "confidential": false,
-      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
-      "attachments": {},
-      "thumbnail": "../images/projects/cv-buddy-cover.png"
-    },
-    {
       "title": "Live Scoreboard",
-      "description": "The project involved building an API layer to integrate a Reactjs frontend with a Python simulator and MongoDB for Covid-19 spread analysis on university campuses, deploying it on AWS EC2 with Apache Web Server and coordinating tests with the frontend and model-development teams.",
+      "description": "A live scoreboard for eight sports at IIT Kharagpur's Inter Hall championship 2022, built during my time as Technology Coordinator of the Technology Students' Gymkhana. It drove a 196.3% rise in user traffic, with an average engagement time of 8 minutes 12 seconds.",
       "confidential": false,
       "associatedWith": {
         "org": "Gymkhana, IIT Kharagpur",

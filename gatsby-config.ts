@@ -15,6 +15,7 @@ const config: GatsbyConfig = {
     navHeading: siteConfig.shortName,
     author: siteConfig.author,
     authorFullName: siteConfig.fullName,
+    bio: siteConfig.bio,
     description: siteConfig.description,
     siteUrl: new URL(siteConfig.prefix, siteConfig.url).href,
     social: {
@@ -46,7 +47,20 @@ const config: GatsbyConfig = {
         name: `images`,
       },
     },
-    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-transformer-json`,
+      options: {
+        // Object files are typed by their directory by default, so every JSON
+        // object under src/content/data would become a DataJson node and
+        // `dataJson` would be ambiguous. miscellaneous.json keeps DataJson;
+        // any other file is typed by its own name (opensource.json ->
+        // OpensourceJson), as array files already are.
+        typeName: ({ node }: { node: { name: string } }) =>
+          node.name === "miscellaneous"
+            ? "DataJson"
+            : `${node.name.charAt(0).toUpperCase()}${node.name.slice(1)}Json`,
+      },
+    },
     {
       resolve: `gatsby-transformer-remark`,
       options: {
@@ -69,7 +83,12 @@ const config: GatsbyConfig = {
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-smartypants`,
+          {
+            // Smart quotes and ellipses only: the site avoids em dashes, so
+            // "--" and "---" stay as typed instead of becoming dashes.
+            resolve: `gatsby-remark-smartypants`,
+            options: { dashes: false },
+          },
         ],
       },
     },
@@ -113,13 +132,7 @@ const config: GatsbyConfig = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         // Placeholder pages that are not linked from the nav yet.
-        excludes: [
-          `/about/`,
-          `/elements/`,
-          `/experience/`,
-          `/opensource/`,
-          `/publications/`,
-        ],
+        excludes: [`/about/`, `/elements/`, `/publications/`],
       },
     },
     // The site previously shipped gatsby-plugin-offline; this unregisters the

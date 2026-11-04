@@ -1,13 +1,16 @@
 import React from "react"
 import "../../styles/css/screens/home/about-section.css"
 import { GatsbyImage } from "gatsby-plugin-image"
+import * as Styles from "../../styles/css/screens/home/home-sections.module.css"
 import type { ImageData } from "../../types/ui"
 
 interface AboutSectionProps {
   image: ImageData
+  /** "<role> at <org>" for the current position; omitted when there is none. */
+  currentRole?: string | null
 }
 
-function AboutSection({ image }: AboutSectionProps) {
+function AboutSection({ image, currentRole }: AboutSectionProps) {
   return (
     <section className="home-section post-content-body">
       <h2 className="section-heading">About</h2>
@@ -39,6 +42,11 @@ function AboutSection({ image }: AboutSectionProps) {
             am always up for a challenge and thrive in dynamic, fast-paced
             environments.
           </p>
+          {currentRole && (
+            <div className={`${Styles.scope} ${Styles.homeAddition}`}>
+              <p>{currentRole}</p>
+            </div>
+          )}
         </div>
       </div>
     </section>

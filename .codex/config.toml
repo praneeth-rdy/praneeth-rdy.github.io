@@ -1,0 +1,8 @@
+# AGENTS.md is the entry point; CLAUDE.md remains the fallback.
+approval_policy = "never"
+sandbox_mode = "workspace-write"
+project_doc_fallback_filenames = ["CLAUDE.md"]
+project_doc_max_bytes = 65536
+
+[sandbox_workspace_write]
+network_access = true

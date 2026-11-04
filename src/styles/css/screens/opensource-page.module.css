@@ -1,0 +1,124 @@
+/* Open Source page, "Collection" concept
+   (docs/handoffs/concepts/collection/opensource.html). The root also carries
+   the home module's .scope and collection-page's .page; selectors that
+   override a home rule (card padding) include an extra class so they win on
+   specificity, not on stylesheet order. */
+
+/* ! purgecss start ignore */
+
+/* Program rows: icon, heading block, work line, link. */
+.root .programs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+.root .programs .program {
+  display: grid;
+  grid-template-columns: 58px 1.1fr 1.6fr auto;
+  align-items: center;
+  gap: 26px;
+  padding: 24px 28px;
+}
+.root .program h3 {
+  font-size: 19px;
+}
+.root .program .programLink {
+  margin: 0;
+}
+/* Hacktoberfest has no logo file; its code glyph sits in the logo tile. */
+.root .program .iconTile {
+  display: grid;
+  place-items: center;
+  color: var(--color-light-base);
+}
+
+.root .quote {
+  margin: 70px auto;
+  padding: 45px 10%;
+  text-align: center;
+  border-block: 1px solid var(--color-rule);
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.root .quote cite {
+  display: block;
+  font-size: 13px;
+  color: var(--color-quiet);
+  font-style: normal;
+  margin-top: 20px;
+}
+
+.root .repoGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+.root .repo {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.root .repoIndex {
+  font-size: 13px;
+  color: var(--color-link);
+  padding-top: 3px;
+}
+.root .repo h3 {
+  font-size: 21px;
+  overflow-wrap: anywhere;
+  margin-bottom: 10px;
+}
+.root .repo p {
+  color: var(--color-quiet);
+  font-size: 14px;
+}
+.root .repo .repoTags {
+  margin-top: 16px;
+}
+.root .repoSide {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+  margin-top: auto;
+  width: 100%;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-rule);
+}
+
+/* Shown in the Contributions block until the list has entries. */
+.root .empty {
+  border: 1px dashed var(--color-rule);
+  border-radius: 8px;
+  padding: 30px;
+  color: var(--color-quiet);
+  margin-top: 24px;
+}
+
+@media (max-width: 850px) {
+  .root .programs .program {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 16px;
+  }
+  .root .program > p,
+  .root .program > a {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .root .programs .program {
+    padding: 23px;
+  }
+  .root .quote {
+    font-size: 21px;
+    margin: 42px 0;
+    padding: 20px;
+  }
+  .root .repoGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ! purgecss end ignore */

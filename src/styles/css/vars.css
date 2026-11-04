@@ -48,6 +48,21 @@
   --color-primary-d15: rgb(17, 141, 208);
   --color-primary-d20: rgb(15, 125, 184);
 
+  /* Accessible text tokens (docs/handoffs/concepts/README.md), light values;
+     .dark below overrides them. Used by the Collection-style home
+     sections and pages. */
+  --color-surface: var(--color-light-bg);
+  --color-ink: var(--color-light-base);
+  --color-quiet: var(--color-light-base-l30);
+  --color-rule: #d9dfe2;
+  --color-inset: #edf1f3;
+  --color-link: #086b9f;
+  --color-present-ink: #785000;
+  --color-completed-ink: #17673b;
+  --color-type-ink: #584cdb;
+  --color-type-bg: #584cdb1f;
+  --color-opensource-ink: #006773;
+
   /* Fonts */
   --font-sans-serif: "Muli", sans-serif;
   --font-serif: Georgia, Times, serif;
@@ -68,4 +83,19 @@
   --height: 4rem;
   --margin: 2rem;
   --radius: 0.5rem;
+}
+
+/* Dark-theme values of the accessible text tokens above. */
+.dark {
+  --color-surface: var(--color-dark-bg);
+  --color-ink: var(--color-dark-base);
+  --color-quiet: #b5b9bd;
+  --color-rule: #3c4246;
+  --color-inset: #202629;
+  --color-link: var(--color-primary);
+  --color-present-ink: #ffcc80;
+  --color-completed-ink: #64dc98;
+  --color-type-ink: #55d8d4;
+  --color-type-bg: #00bbb71f;
+  --color-opensource-ink: #63d4e1;
 }

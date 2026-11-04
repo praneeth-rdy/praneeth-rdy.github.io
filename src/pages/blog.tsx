@@ -88,7 +88,10 @@ export const query = graphql`
         description
       }
     }
-    allMarkdownRemark(sort: { frontmatter: { date: DESC } }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { is_archived: { ne: true } } }
+      sort: { frontmatter: { date: DESC } }
+    ) {
       edges {
         node {
           excerpt

@@ -1,0 +1,59 @@
+{
+  "intro": "Open source is where I learned to build software with other people. A CV tool that students forked, a GitHub Action that deployed this site for years, and a few programs that taught me to read code before writing it. Everything here is public so someone else can start from it.",
+  "quote": {
+    "text": "Talk is cheap. Show me the code.",
+    "author": "Linus Torvalds"
+  },
+  "programs": [
+    {
+      "name": "GirlScript Summer of Code",
+      "year": "2021",
+      "role": "Contributor",
+      "work": "Contributed to the development of a book-donation Flutter app steered by the GirlScript Foundation.",
+      "link": "https://gssoc.girlscript.org/",
+      "logo": "../images/org-logos/girlscriptsoc-logo.jpeg"
+    },
+    {
+      "name": "Kharagpur Winter of Code",
+      "year": "2021",
+      "role": "Student Developer",
+      "work": "Student developer in KWoC, IIT Kharagpur's winter open-source program.",
+      "link": "https://kwoc.kossiitkgp.org/",
+      "logo": "../images/org-logos/kwoc-iitkgp-logo.png"
+    },
+    {
+      "name": "Hacktoberfest",
+      "year": "2020 and 2021",
+      "role": "Participant",
+      "work": "Successfully completed DigitalOcean's Hacktoberfest in 2020 and 2021.",
+      "link": "https://hacktoberfest.com/"
+    }
+  ],
+  "repositories": [
+    {
+      "name": "CV-Buddy",
+      "repo": "praneeth-rdy/CV-Buddy",
+      "summary": "Build your CV in an easy and simple way using templates. Forked and extended by other students.",
+      "stacks": ["HTML", "CSS", "JavaScript"]
+    },
+    {
+      "name": "static-build-export-action",
+      "repo": "praneeth-rdy/static-build-export-action",
+      "summary": "A GitHub Action that builds a static site and exports the output to a dedicated branch on every push; it deployed this portfolio for years.",
+      "stacks": ["GitHub Actions", "Docker", "Shell"]
+    },
+    {
+      "name": "DevPort",
+      "repo": "praneeth-rdy/praneeth-rdy.github.io",
+      "summary": "Developer portfolio built with Gatsby and GraphQL, continuously deployed to GitHub Pages through Actions. Open source so others can fork it.",
+      "stacks": ["Gatsby", "TypeScript", "React"]
+    },
+    {
+      "name": "Smaller repositories",
+      "summary": "Registration-form (saves submissions to a Google Sheet via Apps Script), chatbot (a static JavaScript chatbot driven by a JSON flow), utility-leaves-calendar.",
+      "stacks": ["JavaScript", "TypeScript"],
+      "link": "https://github.com/praneeth-rdy?tab=repositories"
+    }
+  ],
+  "contributions": []
+}

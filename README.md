@@ -111,8 +111,11 @@ maxread: 2 min
 description: Shown in the blog list and used as the meta description.
 subtext: Shown under the title on the post page.
 category: productivity
+is_archived: false # optional
 ---
 ```
+
+`is_archived` is optional: set it to `true` to hide the post from the site entirely (no page, not in the blog list, category filters or sitemap); omit it for normal posts.
 
 Categories are collected automatically for the filter buttons.
 
@@ -122,7 +125,7 @@ Categories are collected automatically for the filter buttons.
 - Share image for social previews: `src/content/images/home/dp.jpg` (referenced in `src/components/Seo.tsx`).
 - Sitemap: generated at `/sitemap-index.xml`; placeholder pages are excluded in `gatsby-config.ts`.
 - Resume: replace the PDF in `static/` and update the filename in `src/components/home/IntroSection.tsx`.
-- Contact form endpoint: the URL in `src/components/contact/ContactForm.tsx`.
+- Contact form endpoint: `contactFormEndpoint` in `siteConfig.ts`.
 - Analytics: the GA4 measurement ID in `gatsby-config.ts`.
 
 ## Deployment
@@ -135,6 +138,10 @@ Pushing to the `v1` branch runs `.github/workflows/build-export.yml`. It builds 
 - A GraphQL error about a missing image: a path in `miscellaneous.json` or a blog post points to a file that does not exist.
 - Styles missing in the production build but present in `yarn develop`: PurgeCSS removed a class that only appears dynamically. See `src/styles/css/components/core/tooltip.css` for the ignore-comment pattern.
 - `yarn typecheck` fails with `Property ... does not exist on type Queries...` after you changed a query or the schema: the generated types are stale. Run `yarn build` or `yarn develop` once to regenerate `src/types/gatsby-types.d.ts`.
+
+## Credits
+
+The Git logo is by Jason Long, used under CC BY 3.0. Other logos are the trademarks of their respective projects and are used only to identify them.
 
 ## License
 

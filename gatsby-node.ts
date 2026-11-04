@@ -1,3 +1,4 @@
+import fs from "fs"
 import path from "path"
 import type { GatsbyNode } from "gatsby"
 import { createFilePath } from "gatsby-source-filesystem"
@@ -5,6 +6,8 @@ import { createFilePath } from "gatsby-source-filesystem"
 // Explicit schema for src/content/data/*.json so optional fields (project
 // links, org associations, experience type, ...) stay queryable even when no
 // entry currently sets them, and so relative image paths resolve to File nodes.
+// Blog frontmatter stays inferred; only the optional is_archived flag is
+// declared so queries can filter on it even when no post sets it.
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
   ({ actions }) => {
     actions.createTypes(`
@@ -18,6 +21,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       org: String!
       orgLogo: File @fileByRelativePath
       status: String!
+      kind: String!
       type: String
       returnOffer: Boolean
       tags: [String!]
@@ -42,6 +46,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       title: String!
       description: String
       confidential: Boolean
+      featured: Boolean
       associatedWith: DataJsonProjectsAssociatedWith
       stacks: [File] @fileByRelativePath
       attachments: DataJsonProjectsAttachments
@@ -58,8 +63,170 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       documentation: String
       site: String
     }
+
+    type OpensourceJson implements Node {
+      intro: String
+      quote: OpensourceJsonQuote
+      programs: [OpensourceJsonPrograms!]
+      repositories: [OpensourceJsonRepositories!]
+      contributions: [OpensourceJsonContributions!]
+    }
+
+    type OpensourceJsonQuote {
+      text: String
+      author: String
+    }
+
+    type OpensourceJsonPrograms {
+      name: String!
+      year: String
+      role: String
+      work: String
+      link: String
+      logo: File @fileByRelativePath
+    }
+
+    type OpensourceJsonRepositories {
+      name: String!
+      repo: String
+      summary: String
+      stacks: [String!]
+      link: String
+      github: GithubRepo @link(by: "repo", from: "repo")
+    }
+
+    type OpensourceJsonContributions {
+      project: String!
+      title: String
+      summary: String
+      link: String
+    }
+
+    type ExtracurricularsJson implements Node {
+      slug: String!
+      title: String!
+      now: Boolean
+      when: String
+      summary: String
+      moment: String
+      images: [File] @fileByRelativePath
+      links: [ExtracurricularsJsonLinks!]
+    }
+
+    type ExtracurricularsJsonLinks {
+      label: String
+      to: String
+    }
+
+    type GithubRepo implements Node {
+      repo: String!
+      stars: Int
+      forks: Int
+      fetchedAt: String
+    }
+
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+
+    type MarkdownRemarkFrontmatter {
+      is_archived: Boolean
+    }
   `)
   }
+
+interface GithubRepoStats {
+  stars: number
+  forks: number
+  fetchedAt: string
+}
+
+const GITHUB_CACHE_TTL_MS = 24 * 60 * 60 * 1000
+const GITHUB_TIMEOUT_MS = 8000
+
+async function fetchGithubRepoStats(repo: string): Promise<GithubRepoStats> {
+  const response = await fetch(`https://api.github.com/repos/${repo}`, {
+    headers: {
+      Accept: "application/vnd.github+json",
+      "User-Agent": "praneeth-rdy.github.io-build",
+    },
+    signal: AbortSignal.timeout(GITHUB_TIMEOUT_MS),
+  })
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status} ${response.statusText}`)
+  }
+  const body: unknown = await response.json()
+  const { stargazers_count, forks_count } = (body ?? {}) as Record<
+    string,
+    unknown
+  >
+  if (typeof stargazers_count !== "number" || typeof forks_count !== "number") {
+    throw new Error("response has no stargazers_count/forks_count")
+  }
+  return {
+    stars: stargazers_count,
+    forks: forks_count,
+    fetchedAt: new Date().toISOString(),
+  }
+}
+
+// One GithubRepo node per repository in src/content/data/opensource.json that
+// names a `repo` (entries without one, such as "Smaller repositories", only
+// link out), with star and fork counts from the GitHub API (unauthenticated),
+// cached for 24h in Gatsby's cache. Any failure yields null counts and a warning; the build
+// never fails on GitHub. OpensourceJsonRepositories.github links to these.
+export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
+  actions,
+  cache,
+  createNodeId,
+  createContentDigest,
+  reporter,
+}) => {
+  const file = path.resolve(`./src/content/data/opensource.json`)
+  const { repositories } = JSON.parse(fs.readFileSync(file, "utf8")) as {
+    repositories: { name: string; repo?: string }[]
+  }
+  const repos = repositories.flatMap(({ repo }) => (repo ? [repo] : []))
+
+  await Promise.all(
+    repos.map(async repo => {
+      const cacheKey = `github-repo-stats:${repo}`
+      let stats: GithubRepoStats | null = null
+      try {
+        const cached: GithubRepoStats | undefined = await cache.get(cacheKey)
+        if (
+          cached &&
+          Date.now() - Date.parse(cached.fetchedAt) < GITHUB_CACHE_TTL_MS
+        ) {
+          stats = cached
+        } else {
+          stats = await fetchGithubRepoStats(repo)
+          await cache.set(cacheKey, stats)
+        }
+      } catch (error) {
+        const message = error instanceof Error ? error.message : String(error)
+        reporter.warn(
+          `GitHub stats for ${repo} unavailable (${message}); rendering without stars/forks.`
+        )
+      }
+
+      const content = {
+        repo,
+        stars: stats ? stats.stars : null,
+        forks: stats ? stats.forks : null,
+        fetchedAt: stats ? stats.fetchedAt : null,
+      }
+      actions.createNode({
+        ...content,
+        id: createNodeId(`github-repo-${repo}`),
+        internal: {
+          type: `GithubRepo`,
+          contentDigest: createContentDigest(content),
+        },
+      })
+    })
+  )
+}
 
 export const onCreateNode: GatsbyNode["onCreateNode"] = ({
   node,
@@ -87,7 +254,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const result = await graphql<Queries.BlogPostsForPagesQuery>(`
     query BlogPostsForPages {
-      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+      allMarkdownRemark(
+        filter: { frontmatter: { is_archived: { ne: true } } }
+        sort: { frontmatter: { date: DESC } }
+        limit: 1000
+      ) {
         edges {
           node {
             fields {
