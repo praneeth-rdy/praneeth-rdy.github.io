@@ -62,6 +62,12 @@
   --color-type-ink: #584cdb;
   --color-type-bg: #584cdb1f;
   --color-opensource-ink: #006773;
+  --color-calendar-empty: #e9edef;
+  --color-calendar-1: #b6dff5;
+  --color-calendar-2: #70c4ef;
+  --color-calendar-3: var(--color-primary);
+  --color-calendar-4: #086b9f;
+  --color-calendar-border: #13131312;
 
   /* Fonts */
   --font-sans-serif: "Muli", sans-serif;
@@ -98,4 +104,10 @@
   --color-type-ink: #55d8d4;
   --color-type-bg: #00bbb71f;
   --color-opensource-ink: #63d4e1;
+  --color-calendar-empty: #252a2e;
+  --color-calendar-1: #153c53;
+  --color-calendar-2: #1c648d;
+  --color-calendar-3: var(--color-primary);
+  --color-calendar-4: #94daff;
+  --color-calendar-border: #ffffff12;
 }

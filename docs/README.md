@@ -28,6 +28,8 @@ The site has no server and no database. Everything a visitor sees is generated a
 
 ## Handoffs
 
+- `handoffs/github-contributions.md`: Open Source contribution-calendar design and build integration, using the owner-provided `PROFILE_READ_PAT` repository secret.
+
 - `handoffs/design-concept.md`: brief for fresh design concepts for the Experience, Home, Open Source and Beyond Work pages, with the agreed content, tokens and constraints. Reference mockups in `handoffs/mockups/` (standalone HTML) and `handoffs/screenshots/`.
 - `handoffs/concepts/index.html`: review gallery for the Editorial and Collection directions, with both themes, responsive pages and browser screenshots. Rationale, open decisions and verification are in `handoffs/concepts/README.md`.
 - `handoffs/intro-about/index.html`: follow-up options for merging the homepage introduction and About section. Three layouts, both themes, desktop/phone screenshots, and implementation guidance for Claude in the accompanying `README.md`.

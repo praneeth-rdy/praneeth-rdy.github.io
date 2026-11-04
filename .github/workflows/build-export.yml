@@ -26,6 +26,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
+        env:
+          PROFILE_READ_PAT: ${{ secrets.PROFILE_READ_PAT }}
         run: yarn build
 
       - name: Deploy to build branch

@@ -1,6 +1,10 @@
 // Content model types. Item types are derived from the generated `Queries`
 // types (src/types/gatsby-types.d.ts) so schema/query changes propagate.
 
+export type GithubCalendar = NonNullable<
+  NonNullable<Queries.OpensourcePageQuery["githubContributions"]>["calendar"]
+>
+
 /** Values of `experience[].status` in src/content/data/miscellaneous.json. */
 export enum ExperienceStatus {
   Completed = "Completed",
