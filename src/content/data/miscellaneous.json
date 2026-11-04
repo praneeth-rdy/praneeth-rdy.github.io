@@ -15,24 +15,19 @@
       "description": "Engineered a chat interface to enable collaboration on the platform with push notifications, profanity filter and data masking. Built a Python module to abstract out API calls from the backend, reviewed over 10 pull requests and reported 18 issues on GitHub. Formulated a comprehensive report outlining productivity-enhancing AI tools across stages of Software Development Lifecycle (SDLC). Collaborated with design team to enhance the chat UX and designed backend architecture to support the functionality of CometChat SDK.",
       "roles": [
         {
+          "title": "AI Systems Engineering Lead",
+          "start": "May '26",
+          "end": "Nov '26"
+        },
+        {
           "title": "Software Engineering Lead",
-          "start": "December '25",
-          "end": "Present"
-        },
-        {
-          "title": "Forward Deployment Lead",
-          "start": "October '25",
-          "end": "November '25"
-        },
-        {
-          "title": "Technical Lead - Frontend",
-          "start": "December '24",
-          "end": "September '25"
+          "start": "Nov '25",
+          "end": "May '26"
         },
         {
           "title": "Software Engineer",
           "start": "May '24",
-          "end": "November '24"
+          "end": "Nov '25"
         },
         {
           "title": "Software Engineer Intern",
@@ -306,34 +301,16 @@
   ],
   "skills": [
     {
-      "name": "FastAPI",
-      "darkModeLogo": "../images/skills/fastapi.png",
-      "lightModeLogo": "../images/skills/fastapi.png",
-      "website": "https://fastapi.tiangolo.com/"
+      "name": "JavaScript",
+      "darkModeLogo": "../images/skills/javascript.png",
+      "lightModeLogo": "../images/skills/javascript.png",
+      "website": "https://developer.mozilla.org/en-US/docs/Web/JavaScript"
     },
     {
-      "name": "AWS EC2",
-      "darkModeLogo": "../images/skills/aws-ec2-dark.png",
-      "lightModeLogo": "../images/skills/aws-ec2-light.png",
-      "website": "https://aws.amazon.com/ec2/"
-    },
-    {
-      "name": "Java",
-      "darkModeLogo": "../images/skills/java.png",
-      "lightModeLogo": "../images/skills/java.png",
-      "website": "https://www.java.com/"
-    },
-    {
-      "name": "Android",
-      "darkModeLogo": "../images/skills/android.png",
-      "lightModeLogo": "../images/skills/android.png",
-      "website": "https://developer.android.com/"
-    },
-    {
-      "name": "Node.js",
-      "darkModeLogo": "../images/skills/nodejs-dark-mode.png",
-      "lightModeLogo": "../images/skills/nodejs-light-mode.png",
-      "website": "https://nodejs.org/"
+      "name": "TypeScript",
+      "darkModeLogo": "../images/skills/typescript.png",
+      "lightModeLogo": "../images/skills/typescript.png",
+      "website": "https://www.typescriptlang.org/"
     },
     {
       "name": "Python",
@@ -342,10 +319,82 @@
       "website": "https://www.python.org/"
     },
     {
+      "name": "Java",
+      "darkModeLogo": "../images/skills/java.png",
+      "lightModeLogo": "../images/skills/java.png",
+      "website": "https://www.java.com/"
+    },
+    {
       "name": "React",
       "darkModeLogo": "../images/skills/react-js.png",
       "lightModeLogo": "../images/skills/react-js.png",
-      "website": "https://reactjs.org/"
+      "website": "https://react.dev/"
+    },
+    {
+      "name": "Next.js",
+      "darkModeLogo": "../images/skills/nextjs-dark.png",
+      "lightModeLogo": "../images/skills/nextjs-light.png",
+      "website": "https://nextjs.org/"
+    },
+    {
+      "name": "Gatsby",
+      "darkModeLogo": "../images/skills/gatsby-dark.png",
+      "lightModeLogo": "../images/skills/gatsby-light.png",
+      "website": "https://www.gatsbyjs.com/"
+    },
+    {
+      "name": "Node.js",
+      "darkModeLogo": "../images/skills/nodejs-dark-mode.png",
+      "lightModeLogo": "../images/skills/nodejs-light-mode.png",
+      "website": "https://nodejs.org/"
+    },
+    {
+      "name": "Django",
+      "darkModeLogo": "../images/skills/django-dark.png",
+      "lightModeLogo": "../images/skills/django-light.png",
+      "website": "https://www.djangoproject.com/"
+    },
+    {
+      "name": "FastAPI",
+      "darkModeLogo": "../images/skills/fastapi.png",
+      "lightModeLogo": "../images/skills/fastapi.png",
+      "website": "https://fastapi.tiangolo.com/"
+    },
+    {
+      "name": "PostgreSQL",
+      "darkModeLogo": "../images/skills/postgresql.png",
+      "lightModeLogo": "../images/skills/postgresql.png",
+      "website": "https://www.postgresql.org/"
+    },
+    {
+      "name": "Docker",
+      "darkModeLogo": "../images/skills/docker-dark.png",
+      "lightModeLogo": "../images/skills/docker-light.png",
+      "website": "https://www.docker.com/"
+    },
+    {
+      "name": "Kubernetes",
+      "darkModeLogo": "../images/skills/kubernetes-dark.png",
+      "lightModeLogo": "../images/skills/kubernetes-light.png",
+      "website": "https://kubernetes.io/"
+    },
+    {
+      "name": "Git",
+      "darkModeLogo": "../images/skills/git-dark.png",
+      "lightModeLogo": "../images/skills/git-light.png",
+      "website": "https://git-scm.com/"
+    },
+    {
+      "name": "Android",
+      "darkModeLogo": "../images/skills/android.png",
+      "lightModeLogo": "../images/skills/android.png",
+      "website": "https://developer.android.com/"
+    },
+    {
+      "name": "Flutter",
+      "darkModeLogo": "../images/skills/flutter-dark.png",
+      "lightModeLogo": "../images/skills/flutter-light.png",
+      "website": "https://flutter.dev/"
     }
   ],
   "projects": [
@@ -369,7 +418,7 @@
     },
     {
       "title": "Campus Modeler",
-      "description": "The project involved building an API layer to integrate a Reactjs frontend with a Python simulator and MongoDB for Covid-19 spread analysis on university campuses, deploying it on AWS EC2 with Apache Web Server and coordinating tests with the frontend and model-development teams.",
+      "description": "Part of Campus Rakshak, a study of COVID-19 spread on university campuses at IIT Kharagpur's Centre of Excellence in Artificial Intelligence, sponsored by the Department of Science and Technology, Government of India. I built the API layer between the React frontend and the Python simulator with MongoDB, integrated and tested it with the frontend and model teams, and deployed the full stack on an AWS EC2 instance behind Apache.",
       "confidential": true,
       "associatedWith": {
         "org": "IIT Kharagpur",
@@ -393,15 +442,17 @@
     },
     {
       "title": "CV Buddy",
-      "description": "This project is a cover letter generator that uses AI to generate a cover letter for a given job description and resume.",
+      "description": "An open-source web app that makes building a CV quick and simple for students through ready-made templates. It is one of my most-starred projects on GitHub and has been forked and extended by other students.",
       "confidential": false,
-      "stacks": ["../images/stacks/react.png", "../images/stacks/android.png"],
-      "attachments": {},
+      "stacks": ["../images/stacks/javascript.png"],
+      "attachments": {
+        "repository": "https://github.com/praneeth-rdy/CV-Buddy"
+      },
       "thumbnail": "../images/projects/cv-buddy-cover.png"
     },
     {
       "title": "Live Scoreboard",
-      "description": "The project involved building an API layer to integrate a Reactjs frontend with a Python simulator and MongoDB for Covid-19 spread analysis on university campuses, deploying it on AWS EC2 with Apache Web Server and coordinating tests with the frontend and model-development teams.",
+      "description": "A live scoreboard for eight sports at IIT Kharagpur's Inter Hall championship 2022, built during my time as Technology Coordinator of the Technology Students' Gymkhana. It drove a 196.3% rise in user traffic, with an average engagement time of 8 minutes 12 seconds.",
       "confidential": false,
       "associatedWith": {
         "org": "Gymkhana, IIT Kharagpur",

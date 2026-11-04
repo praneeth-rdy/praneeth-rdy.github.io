@@ -5,6 +5,8 @@ import { createFilePath } from "gatsby-source-filesystem"
 // Explicit schema for src/content/data/*.json so optional fields (project
 // links, org associations, experience type, ...) stay queryable even when no
 // entry currently sets them, and so relative image paths resolve to File nodes.
+// Blog frontmatter stays inferred; only the optional is_archived flag is
+// declared so queries can filter on it even when no post sets it.
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
   ({ actions }) => {
     actions.createTypes(`
@@ -58,6 +60,14 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       documentation: String
       site: String
     }
+
+    type MarkdownRemark implements Node {
+      frontmatter: MarkdownRemarkFrontmatter
+    }
+
+    type MarkdownRemarkFrontmatter {
+      is_archived: Boolean
+    }
   `)
   }
 
@@ -87,7 +97,11 @@ export const createPages: GatsbyNode["createPages"] = async ({
 
   const result = await graphql<Queries.BlogPostsForPagesQuery>(`
     query BlogPostsForPages {
-      allMarkdownRemark(sort: { frontmatter: { date: DESC } }, limit: 1000) {
+      allMarkdownRemark(
+        filter: { frontmatter: { is_archived: { ne: true } } }
+        sort: { frontmatter: { date: DESC } }
+        limit: 1000
+      ) {
         edges {
           node {
             fields {

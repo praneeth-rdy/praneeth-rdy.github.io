@@ -1781,6 +1781,7 @@ type MarkdownRemarkFrontmatter = {
   readonly category: Maybe<Scalars['String']>;
   readonly date: Maybe<Scalars['Date']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly is_archived: Maybe<Scalars['Boolean']>;
   readonly maxread: Maybe<Scalars['String']>;
   readonly subtext: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
@@ -1799,6 +1800,7 @@ type MarkdownRemarkFrontmatterFieldSelector = {
   readonly category: InputMaybe<FieldSelectorEnum>;
   readonly date: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly is_archived: InputMaybe<FieldSelectorEnum>;
   readonly maxread: InputMaybe<FieldSelectorEnum>;
   readonly subtext: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
@@ -1809,6 +1811,7 @@ type MarkdownRemarkFrontmatterFilterInput = {
   readonly category: InputMaybe<StringQueryOperatorInput>;
   readonly date: InputMaybe<DateQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly is_archived: InputMaybe<BooleanQueryOperatorInput>;
   readonly maxread: InputMaybe<StringQueryOperatorInput>;
   readonly subtext: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
@@ -1819,6 +1822,7 @@ type MarkdownRemarkFrontmatterSortInput = {
   readonly category: InputMaybe<SortOrderEnum>;
   readonly date: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly is_archived: InputMaybe<SortOrderEnum>;
   readonly maxread: InputMaybe<SortOrderEnum>;
   readonly subtext: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;

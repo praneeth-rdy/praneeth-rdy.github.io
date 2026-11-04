@@ -69,7 +69,7 @@ Conventions: React components are PascalCase `.tsx`, one component per file, fil
   - `skills[]`: `name`, `darkModeLogo`, `lightModeLogo`, `website`.
   - `projects[]`: `title`, `description`, `confidential`, optional `associatedWith{org,logo}`, `dates{start,end}` (ISO dates), `stacks[]` (image paths), `attachments{repository?,documentation?,site?}` (omit keys you don't have; icons render only for present links), optional `thumbnail` (falls back to `src/content/images/project-placeholder.png`, queried in `ProjectsSection.tsx`).
   - Image paths are relative to the JSON file (`../images/...`); every referenced file must exist or the build fails.
-- `src/content/blogs/<slug>/index.md` — frontmatter: `title`, `date`, `author`, `maxread`, `description`, `subtext`, `category`. Images live beside the markdown.
+- `src/content/blogs/<slug>/index.md` — frontmatter: `title`, `date`, `author`, `maxread`, `description`, `subtext`, `category`, optional `is_archived` (set to `true` to hide the post from the site entirely: no page, not in the blog list/category filters/sitemap; omit for normal posts). `is_archived` is declared explicitly in `gatsby-node.ts` (`MarkdownRemarkFrontmatter`) so queries can filter on it even when no post sets it; the other frontmatter fields stay inferred. Images live beside the markdown.
 - `src/content/images/` — `home/`, `org-logos/`, `projects/`, `skills/`, `stacks/`.
 - `static/` — resume PDF (linked from `IntroSection`), favicon, robots.txt.
 

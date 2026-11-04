@@ -6,6 +6,7 @@ maxread: 10 min
 description: A personal account of my journey from an intern to a Technical Lead at Trumio Inc., highlighting the challenges, growth opportunities, and evolving responsibilities in a startup environment.
 subtext: From breaking the monotony of placement preparation to leading the frontend team at a startup - my professional growth story at Trumio Inc.
 category: career
+is_archived: true
 ---
 
 ## The Beginning
