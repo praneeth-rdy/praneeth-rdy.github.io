@@ -125,7 +125,7 @@ Categories are collected automatically for the filter buttons.
 - Share image for social previews: `src/content/images/home/dp.jpg` (referenced in `src/components/Seo.tsx`).
 - Sitemap: generated at `/sitemap-index.xml`; placeholder pages are excluded in `gatsby-config.ts`.
 - Resume: replace the PDF in `static/` and update the filename in `src/components/home/IntroSection.tsx`.
-- Contact form endpoint: the URL in `src/components/contact/ContactForm.tsx`.
+- Contact form endpoint: `contactFormEndpoint` in `siteConfig.ts`.
 - Analytics: the GA4 measurement ID in `gatsby-config.ts`.
 
 ## Deployment

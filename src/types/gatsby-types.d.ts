@@ -107,6 +107,7 @@ type DataJsonEdge = {
 
 type DataJsonExperience = {
   readonly description: Maybe<Scalars['String']>;
+  readonly kind: Scalars['String'];
   readonly org: Scalars['String'];
   readonly orgLogo: Maybe<File>;
   readonly returnOffer: Maybe<Scalars['Boolean']>;
@@ -118,6 +119,7 @@ type DataJsonExperience = {
 
 type DataJsonExperienceFieldSelector = {
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly kind: InputMaybe<FieldSelectorEnum>;
   readonly org: InputMaybe<FieldSelectorEnum>;
   readonly orgLogo: InputMaybe<FileFieldSelector>;
   readonly returnOffer: InputMaybe<FieldSelectorEnum>;
@@ -129,6 +131,7 @@ type DataJsonExperienceFieldSelector = {
 
 type DataJsonExperienceFilterInput = {
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly kind: InputMaybe<StringQueryOperatorInput>;
   readonly org: InputMaybe<StringQueryOperatorInput>;
   readonly orgLogo: InputMaybe<FileFilterInput>;
   readonly returnOffer: InputMaybe<BooleanQueryOperatorInput>;
@@ -172,6 +175,7 @@ type DataJsonExperienceRolesSortInput = {
 
 type DataJsonExperienceSortInput = {
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly kind: InputMaybe<SortOrderEnum>;
   readonly org: InputMaybe<SortOrderEnum>;
   readonly orgLogo: InputMaybe<FileSortInput>;
   readonly returnOffer: InputMaybe<SortOrderEnum>;
@@ -251,6 +255,7 @@ type DataJsonProjects = {
   readonly attachments: Maybe<DataJsonProjectsAttachments>;
   readonly confidential: Maybe<Scalars['Boolean']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly featured: Maybe<Scalars['Boolean']>;
   readonly stacks: Maybe<ReadonlyArray<Maybe<File>>>;
   readonly thumbnail: Maybe<File>;
   readonly title: Scalars['String'];
@@ -305,6 +310,7 @@ type DataJsonProjectsFieldSelector = {
   readonly attachments: InputMaybe<DataJsonProjectsAttachmentsFieldSelector>;
   readonly confidential: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly featured: InputMaybe<FieldSelectorEnum>;
   readonly stacks: InputMaybe<FileFieldSelector>;
   readonly thumbnail: InputMaybe<FileFieldSelector>;
   readonly title: InputMaybe<FieldSelectorEnum>;
@@ -315,6 +321,7 @@ type DataJsonProjectsFilterInput = {
   readonly attachments: InputMaybe<DataJsonProjectsAttachmentsFilterInput>;
   readonly confidential: InputMaybe<BooleanQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly featured: InputMaybe<BooleanQueryOperatorInput>;
   readonly stacks: InputMaybe<FileFilterListInput>;
   readonly thumbnail: InputMaybe<FileFilterInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
@@ -329,6 +336,7 @@ type DataJsonProjectsSortInput = {
   readonly attachments: InputMaybe<DataJsonProjectsAttachmentsSortInput>;
   readonly confidential: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly featured: InputMaybe<SortOrderEnum>;
   readonly stacks: InputMaybe<FileSortInput>;
   readonly thumbnail: InputMaybe<FileSortInput>;
   readonly title: InputMaybe<SortOrderEnum>;
@@ -689,6 +697,180 @@ type DuotoneGradient = {
   readonly shadow: Scalars['String'];
 };
 
+type ExtracurricularsJson = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly images: Maybe<ReadonlyArray<Maybe<File>>>;
+  readonly internal: Internal;
+  readonly links: Maybe<ReadonlyArray<ExtracurricularsJsonLinks>>;
+  readonly moment: Maybe<Scalars['String']>;
+  readonly now: Maybe<Scalars['Boolean']>;
+  readonly parent: Maybe<Node>;
+  readonly slug: Scalars['String'];
+  readonly summary: Maybe<Scalars['String']>;
+  readonly title: Scalars['String'];
+  readonly when: Maybe<Scalars['String']>;
+};
+
+type ExtracurricularsJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ExtracurricularsJsonEdge>;
+  readonly group: ReadonlyArray<ExtracurricularsJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ExtracurricularsJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ExtracurricularsJsonConnection_distinctArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+
+type ExtracurricularsJsonConnection_groupArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ExtracurricularsJsonConnection_maxArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+
+type ExtracurricularsJsonConnection_minArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+
+type ExtracurricularsJsonConnection_sumArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+type ExtracurricularsJsonEdge = {
+  readonly next: Maybe<ExtracurricularsJson>;
+  readonly node: ExtracurricularsJson;
+  readonly previous: Maybe<ExtracurricularsJson>;
+};
+
+type ExtracurricularsJsonFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly images: InputMaybe<FileFieldSelector>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly links: InputMaybe<ExtracurricularsJsonLinksFieldSelector>;
+  readonly moment: InputMaybe<FieldSelectorEnum>;
+  readonly now: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly slug: InputMaybe<FieldSelectorEnum>;
+  readonly summary: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly when: InputMaybe<FieldSelectorEnum>;
+};
+
+type ExtracurricularsJsonFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly images: InputMaybe<FileFilterListInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly links: InputMaybe<ExtracurricularsJsonLinksFilterListInput>;
+  readonly moment: InputMaybe<StringQueryOperatorInput>;
+  readonly now: InputMaybe<BooleanQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly slug: InputMaybe<StringQueryOperatorInput>;
+  readonly summary: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly when: InputMaybe<StringQueryOperatorInput>;
+};
+
+type ExtracurricularsJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<ExtracurricularsJsonFilterInput>;
+};
+
+type ExtracurricularsJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<ExtracurricularsJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<ExtracurricularsJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<ExtracurricularsJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type ExtracurricularsJsonGroupConnection_distinctArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+
+type ExtracurricularsJsonGroupConnection_groupArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type ExtracurricularsJsonGroupConnection_maxArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+
+type ExtracurricularsJsonGroupConnection_minArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+
+type ExtracurricularsJsonGroupConnection_sumArgs = {
+  field: ExtracurricularsJsonFieldSelector;
+};
+
+type ExtracurricularsJsonLinks = {
+  readonly label: Maybe<Scalars['String']>;
+  readonly to: Maybe<Scalars['String']>;
+};
+
+type ExtracurricularsJsonLinksFieldSelector = {
+  readonly label: InputMaybe<FieldSelectorEnum>;
+  readonly to: InputMaybe<FieldSelectorEnum>;
+};
+
+type ExtracurricularsJsonLinksFilterInput = {
+  readonly label: InputMaybe<StringQueryOperatorInput>;
+  readonly to: InputMaybe<StringQueryOperatorInput>;
+};
+
+type ExtracurricularsJsonLinksFilterListInput = {
+  readonly elemMatch: InputMaybe<ExtracurricularsJsonLinksFilterInput>;
+};
+
+type ExtracurricularsJsonLinksSortInput = {
+  readonly label: InputMaybe<SortOrderEnum>;
+  readonly to: InputMaybe<SortOrderEnum>;
+};
+
+type ExtracurricularsJsonSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly images: InputMaybe<FileSortInput>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly links: InputMaybe<ExtracurricularsJsonLinksSortInput>;
+  readonly moment: InputMaybe<SortOrderEnum>;
+  readonly now: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly slug: InputMaybe<SortOrderEnum>;
+  readonly summary: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+  readonly when: InputMaybe<SortOrderEnum>;
+};
+
 type FieldSelectorEnum =
   | 'SELECT';
 
@@ -708,17 +890,25 @@ type File = Node & {
   readonly changeTime: Scalars['Date'];
   /** Returns the first child node of type DataJson or null if there are no children of given type on this node */
   readonly childDataJson: Maybe<DataJson>;
+  /** Returns the first child node of type ExtracurricularsJson or null if there are no children of given type on this node */
+  readonly childExtracurricularsJson: Maybe<ExtracurricularsJson>;
   /** Returns the first child node of type ImageSharp or null if there are no children of given type on this node */
   readonly childImageSharp: Maybe<ImageSharp>;
   /** Returns the first child node of type MarkdownRemark or null if there are no children of given type on this node */
   readonly childMarkdownRemark: Maybe<MarkdownRemark>;
+  /** Returns the first child node of type OpensourceJson or null if there are no children of given type on this node */
+  readonly childOpensourceJson: Maybe<OpensourceJson>;
   readonly children: ReadonlyArray<Node>;
   /** Returns all children nodes filtered by type DataJson */
   readonly childrenDataJson: Maybe<ReadonlyArray<Maybe<DataJson>>>;
+  /** Returns all children nodes filtered by type ExtracurricularsJson */
+  readonly childrenExtracurricularsJson: Maybe<ReadonlyArray<Maybe<ExtracurricularsJson>>>;
   /** Returns all children nodes filtered by type ImageSharp */
   readonly childrenImageSharp: Maybe<ReadonlyArray<Maybe<ImageSharp>>>;
   /** Returns all children nodes filtered by type MarkdownRemark */
   readonly childrenMarkdownRemark: Maybe<ReadonlyArray<Maybe<MarkdownRemark>>>;
+  /** Returns all children nodes filtered by type OpensourceJson */
+  readonly childrenOpensourceJson: Maybe<ReadonlyArray<Maybe<OpensourceJson>>>;
   readonly ctime: Scalars['Date'];
   readonly ctimeMs: Scalars['Float'];
   readonly dev: Scalars['Int'];
@@ -862,12 +1052,16 @@ type FileFieldSelector = {
   readonly blocks: InputMaybe<FieldSelectorEnum>;
   readonly changeTime: InputMaybe<FieldSelectorEnum>;
   readonly childDataJson: InputMaybe<DataJsonFieldSelector>;
+  readonly childExtracurricularsJson: InputMaybe<ExtracurricularsJsonFieldSelector>;
   readonly childImageSharp: InputMaybe<ImageSharpFieldSelector>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly childOpensourceJson: InputMaybe<OpensourceJsonFieldSelector>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly childrenDataJson: InputMaybe<DataJsonFieldSelector>;
+  readonly childrenExtracurricularsJson: InputMaybe<ExtracurricularsJsonFieldSelector>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFieldSelector>;
   readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFieldSelector>;
+  readonly childrenOpensourceJson: InputMaybe<OpensourceJsonFieldSelector>;
   readonly ctime: InputMaybe<FieldSelectorEnum>;
   readonly ctimeMs: InputMaybe<FieldSelectorEnum>;
   readonly dev: InputMaybe<FieldSelectorEnum>;
@@ -909,12 +1103,16 @@ type FileFilterInput = {
   readonly blocks: InputMaybe<IntQueryOperatorInput>;
   readonly changeTime: InputMaybe<DateQueryOperatorInput>;
   readonly childDataJson: InputMaybe<DataJsonFilterInput>;
+  readonly childExtracurricularsJson: InputMaybe<ExtracurricularsJsonFilterInput>;
   readonly childImageSharp: InputMaybe<ImageSharpFilterInput>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  readonly childOpensourceJson: InputMaybe<OpensourceJsonFilterInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly childrenDataJson: InputMaybe<DataJsonFilterListInput>;
+  readonly childrenExtracurricularsJson: InputMaybe<ExtracurricularsJsonFilterListInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
   readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  readonly childrenOpensourceJson: InputMaybe<OpensourceJsonFilterListInput>;
   readonly ctime: InputMaybe<DateQueryOperatorInput>;
   readonly ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   readonly dev: InputMaybe<IntQueryOperatorInput>;
@@ -1001,12 +1199,16 @@ type FileSortInput = {
   readonly blocks: InputMaybe<SortOrderEnum>;
   readonly changeTime: InputMaybe<SortOrderEnum>;
   readonly childDataJson: InputMaybe<DataJsonSortInput>;
+  readonly childExtracurricularsJson: InputMaybe<ExtracurricularsJsonSortInput>;
   readonly childImageSharp: InputMaybe<ImageSharpSortInput>;
   readonly childMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly childOpensourceJson: InputMaybe<OpensourceJsonSortInput>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly childrenDataJson: InputMaybe<DataJsonSortInput>;
+  readonly childrenExtracurricularsJson: InputMaybe<ExtracurricularsJsonSortInput>;
   readonly childrenImageSharp: InputMaybe<ImageSharpSortInput>;
   readonly childrenMarkdownRemark: InputMaybe<MarkdownRemarkSortInput>;
+  readonly childrenOpensourceJson: InputMaybe<OpensourceJsonSortInput>;
   readonly ctime: InputMaybe<SortOrderEnum>;
   readonly ctimeMs: InputMaybe<SortOrderEnum>;
   readonly dev: InputMaybe<SortOrderEnum>;
@@ -1071,6 +1273,136 @@ type GatsbyImagePlaceholder =
   | 'dominantColor'
   | 'none'
   | 'tracedSVG';
+
+type GithubRepo = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly fetchedAt: Maybe<Scalars['String']>;
+  readonly forks: Maybe<Scalars['Int']>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly parent: Maybe<Node>;
+  readonly repo: Scalars['String'];
+  readonly stars: Maybe<Scalars['Int']>;
+};
+
+type GithubRepoConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<GithubRepoEdge>;
+  readonly group: ReadonlyArray<GithubRepoGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<GithubRepo>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type GithubRepoConnection_distinctArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+
+type GithubRepoConnection_groupArgs = {
+  field: GithubRepoFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type GithubRepoConnection_maxArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+
+type GithubRepoConnection_minArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+
+type GithubRepoConnection_sumArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+type GithubRepoEdge = {
+  readonly next: Maybe<GithubRepo>;
+  readonly node: GithubRepo;
+  readonly previous: Maybe<GithubRepo>;
+};
+
+type GithubRepoFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly fetchedAt: InputMaybe<FieldSelectorEnum>;
+  readonly forks: InputMaybe<FieldSelectorEnum>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly repo: InputMaybe<FieldSelectorEnum>;
+  readonly stars: InputMaybe<FieldSelectorEnum>;
+};
+
+type GithubRepoFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly fetchedAt: InputMaybe<StringQueryOperatorInput>;
+  readonly forks: InputMaybe<IntQueryOperatorInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly repo: InputMaybe<StringQueryOperatorInput>;
+  readonly stars: InputMaybe<IntQueryOperatorInput>;
+};
+
+type GithubRepoGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<GithubRepoEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<GithubRepoGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<GithubRepo>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type GithubRepoGroupConnection_distinctArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+
+type GithubRepoGroupConnection_groupArgs = {
+  field: GithubRepoFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type GithubRepoGroupConnection_maxArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+
+type GithubRepoGroupConnection_minArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+
+type GithubRepoGroupConnection_sumArgs = {
+  field: GithubRepoFieldSelector;
+};
+
+type GithubRepoSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly fetchedAt: InputMaybe<SortOrderEnum>;
+  readonly forks: InputMaybe<SortOrderEnum>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly repo: InputMaybe<SortOrderEnum>;
+  readonly stars: InputMaybe<SortOrderEnum>;
+};
 
 type ImageCropFocus =
   | 17
@@ -1945,6 +2277,276 @@ type NodeSortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
 };
 
+type OpensourceJson = Node & {
+  readonly children: ReadonlyArray<Node>;
+  readonly contributions: Maybe<ReadonlyArray<OpensourceJsonContributions>>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly intro: Maybe<Scalars['String']>;
+  readonly parent: Maybe<Node>;
+  readonly programs: Maybe<ReadonlyArray<OpensourceJsonPrograms>>;
+  readonly quote: Maybe<OpensourceJsonQuote>;
+  readonly repositories: Maybe<ReadonlyArray<OpensourceJsonRepositories>>;
+};
+
+type OpensourceJsonConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<OpensourceJsonEdge>;
+  readonly group: ReadonlyArray<OpensourceJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<OpensourceJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type OpensourceJsonConnection_distinctArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+
+type OpensourceJsonConnection_groupArgs = {
+  field: OpensourceJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type OpensourceJsonConnection_maxArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+
+type OpensourceJsonConnection_minArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+
+type OpensourceJsonConnection_sumArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+type OpensourceJsonContributions = {
+  readonly link: Maybe<Scalars['String']>;
+  readonly project: Scalars['String'];
+  readonly summary: Maybe<Scalars['String']>;
+  readonly title: Maybe<Scalars['String']>;
+};
+
+type OpensourceJsonContributionsFieldSelector = {
+  readonly link: InputMaybe<FieldSelectorEnum>;
+  readonly project: InputMaybe<FieldSelectorEnum>;
+  readonly summary: InputMaybe<FieldSelectorEnum>;
+  readonly title: InputMaybe<FieldSelectorEnum>;
+};
+
+type OpensourceJsonContributionsFilterInput = {
+  readonly link: InputMaybe<StringQueryOperatorInput>;
+  readonly project: InputMaybe<StringQueryOperatorInput>;
+  readonly summary: InputMaybe<StringQueryOperatorInput>;
+  readonly title: InputMaybe<StringQueryOperatorInput>;
+};
+
+type OpensourceJsonContributionsFilterListInput = {
+  readonly elemMatch: InputMaybe<OpensourceJsonContributionsFilterInput>;
+};
+
+type OpensourceJsonContributionsSortInput = {
+  readonly link: InputMaybe<SortOrderEnum>;
+  readonly project: InputMaybe<SortOrderEnum>;
+  readonly summary: InputMaybe<SortOrderEnum>;
+  readonly title: InputMaybe<SortOrderEnum>;
+};
+
+type OpensourceJsonEdge = {
+  readonly next: Maybe<OpensourceJson>;
+  readonly node: OpensourceJson;
+  readonly previous: Maybe<OpensourceJson>;
+};
+
+type OpensourceJsonFieldSelector = {
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly contributions: InputMaybe<OpensourceJsonContributionsFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly intro: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly programs: InputMaybe<OpensourceJsonProgramsFieldSelector>;
+  readonly quote: InputMaybe<OpensourceJsonQuoteFieldSelector>;
+  readonly repositories: InputMaybe<OpensourceJsonRepositoriesFieldSelector>;
+};
+
+type OpensourceJsonFilterInput = {
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly contributions: InputMaybe<OpensourceJsonContributionsFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly intro: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+  readonly programs: InputMaybe<OpensourceJsonProgramsFilterListInput>;
+  readonly quote: InputMaybe<OpensourceJsonQuoteFilterInput>;
+  readonly repositories: InputMaybe<OpensourceJsonRepositoriesFilterListInput>;
+};
+
+type OpensourceJsonFilterListInput = {
+  readonly elemMatch: InputMaybe<OpensourceJsonFilterInput>;
+};
+
+type OpensourceJsonGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<OpensourceJsonEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<OpensourceJsonGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<OpensourceJson>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type OpensourceJsonGroupConnection_distinctArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+
+type OpensourceJsonGroupConnection_groupArgs = {
+  field: OpensourceJsonFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type OpensourceJsonGroupConnection_maxArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+
+type OpensourceJsonGroupConnection_minArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+
+type OpensourceJsonGroupConnection_sumArgs = {
+  field: OpensourceJsonFieldSelector;
+};
+
+type OpensourceJsonPrograms = {
+  readonly link: Maybe<Scalars['String']>;
+  readonly logo: Maybe<File>;
+  readonly name: Scalars['String'];
+  readonly role: Maybe<Scalars['String']>;
+  readonly work: Maybe<Scalars['String']>;
+  readonly year: Maybe<Scalars['String']>;
+};
+
+type OpensourceJsonProgramsFieldSelector = {
+  readonly link: InputMaybe<FieldSelectorEnum>;
+  readonly logo: InputMaybe<FileFieldSelector>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly role: InputMaybe<FieldSelectorEnum>;
+  readonly work: InputMaybe<FieldSelectorEnum>;
+  readonly year: InputMaybe<FieldSelectorEnum>;
+};
+
+type OpensourceJsonProgramsFilterInput = {
+  readonly link: InputMaybe<StringQueryOperatorInput>;
+  readonly logo: InputMaybe<FileFilterInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly role: InputMaybe<StringQueryOperatorInput>;
+  readonly work: InputMaybe<StringQueryOperatorInput>;
+  readonly year: InputMaybe<StringQueryOperatorInput>;
+};
+
+type OpensourceJsonProgramsFilterListInput = {
+  readonly elemMatch: InputMaybe<OpensourceJsonProgramsFilterInput>;
+};
+
+type OpensourceJsonProgramsSortInput = {
+  readonly link: InputMaybe<SortOrderEnum>;
+  readonly logo: InputMaybe<FileSortInput>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly role: InputMaybe<SortOrderEnum>;
+  readonly work: InputMaybe<SortOrderEnum>;
+  readonly year: InputMaybe<SortOrderEnum>;
+};
+
+type OpensourceJsonQuote = {
+  readonly author: Maybe<Scalars['String']>;
+  readonly text: Maybe<Scalars['String']>;
+};
+
+type OpensourceJsonQuoteFieldSelector = {
+  readonly author: InputMaybe<FieldSelectorEnum>;
+  readonly text: InputMaybe<FieldSelectorEnum>;
+};
+
+type OpensourceJsonQuoteFilterInput = {
+  readonly author: InputMaybe<StringQueryOperatorInput>;
+  readonly text: InputMaybe<StringQueryOperatorInput>;
+};
+
+type OpensourceJsonQuoteSortInput = {
+  readonly author: InputMaybe<SortOrderEnum>;
+  readonly text: InputMaybe<SortOrderEnum>;
+};
+
+type OpensourceJsonRepositories = {
+  readonly github: Maybe<GithubRepo>;
+  readonly link: Maybe<Scalars['String']>;
+  readonly name: Scalars['String'];
+  readonly repo: Maybe<Scalars['String']>;
+  readonly stacks: Maybe<ReadonlyArray<Scalars['String']>>;
+  readonly summary: Maybe<Scalars['String']>;
+};
+
+type OpensourceJsonRepositoriesFieldSelector = {
+  readonly github: InputMaybe<GithubRepoFieldSelector>;
+  readonly link: InputMaybe<FieldSelectorEnum>;
+  readonly name: InputMaybe<FieldSelectorEnum>;
+  readonly repo: InputMaybe<FieldSelectorEnum>;
+  readonly stacks: InputMaybe<FieldSelectorEnum>;
+  readonly summary: InputMaybe<FieldSelectorEnum>;
+};
+
+type OpensourceJsonRepositoriesFilterInput = {
+  readonly github: InputMaybe<GithubRepoFilterInput>;
+  readonly link: InputMaybe<StringQueryOperatorInput>;
+  readonly name: InputMaybe<StringQueryOperatorInput>;
+  readonly repo: InputMaybe<StringQueryOperatorInput>;
+  readonly stacks: InputMaybe<StringQueryOperatorInput>;
+  readonly summary: InputMaybe<StringQueryOperatorInput>;
+};
+
+type OpensourceJsonRepositoriesFilterListInput = {
+  readonly elemMatch: InputMaybe<OpensourceJsonRepositoriesFilterInput>;
+};
+
+type OpensourceJsonRepositoriesSortInput = {
+  readonly github: InputMaybe<GithubRepoSortInput>;
+  readonly link: InputMaybe<SortOrderEnum>;
+  readonly name: InputMaybe<SortOrderEnum>;
+  readonly repo: InputMaybe<SortOrderEnum>;
+  readonly stacks: InputMaybe<SortOrderEnum>;
+  readonly summary: InputMaybe<SortOrderEnum>;
+};
+
+type OpensourceJsonSortInput = {
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly contributions: InputMaybe<OpensourceJsonContributionsSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly intro: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+  readonly programs: InputMaybe<OpensourceJsonProgramsSortInput>;
+  readonly quote: InputMaybe<OpensourceJsonQuoteSortInput>;
+  readonly repositories: InputMaybe<OpensourceJsonRepositoriesSortInput>;
+};
+
 type PNGOptions = {
   readonly compressionSpeed: InputMaybe<Scalars['Int']>;
   readonly quality: InputMaybe<Scalars['Int']>;
@@ -1983,9 +2585,12 @@ type PotraceTurnPolicy =
 type Query = {
   readonly allDataJson: DataJsonConnection;
   readonly allDirectory: DirectoryConnection;
+  readonly allExtracurricularsJson: ExtracurricularsJsonConnection;
   readonly allFile: FileConnection;
+  readonly allGithubRepo: GithubRepoConnection;
   readonly allImageSharp: ImageSharpConnection;
   readonly allMarkdownRemark: MarkdownRemarkConnection;
+  readonly allOpensourceJson: OpensourceJsonConnection;
   readonly allSite: SiteConnection;
   readonly allSiteBuildMetadata: SiteBuildMetadataConnection;
   readonly allSiteFunction: SiteFunctionConnection;
@@ -1993,9 +2598,12 @@ type Query = {
   readonly allSitePlugin: SitePluginConnection;
   readonly dataJson: Maybe<DataJson>;
   readonly directory: Maybe<Directory>;
+  readonly extracurricularsJson: Maybe<ExtracurricularsJson>;
   readonly file: Maybe<File>;
+  readonly githubRepo: Maybe<GithubRepo>;
   readonly imageSharp: Maybe<ImageSharp>;
   readonly markdownRemark: Maybe<MarkdownRemark>;
+  readonly opensourceJson: Maybe<OpensourceJson>;
   readonly site: Maybe<Site>;
   readonly siteBuildMetadata: Maybe<SiteBuildMetadata>;
   readonly siteFunction: Maybe<SiteFunction>;
@@ -2020,11 +2628,27 @@ type Query_allDirectoryArgs = {
 };
 
 
+type Query_allExtracurricularsJsonArgs = {
+  filter: InputMaybe<ExtracurricularsJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<ExtracurricularsJsonSortInput>>>;
+};
+
+
 type Query_allFileArgs = {
   filter: InputMaybe<FileFilterInput>;
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<FileSortInput>>>;
+};
+
+
+type Query_allGithubRepoArgs = {
+  filter: InputMaybe<GithubRepoFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<GithubRepoSortInput>>>;
 };
 
 
@@ -2041,6 +2665,14 @@ type Query_allMarkdownRemarkArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<MarkdownRemarkSortInput>>>;
+};
+
+
+type Query_allOpensourceJsonArgs = {
+  filter: InputMaybe<OpensourceJsonFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<OpensourceJsonSortInput>>>;
 };
 
 
@@ -2134,6 +2766,22 @@ type Query_directoryArgs = {
 };
 
 
+type Query_extracurricularsJsonArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  images: InputMaybe<FileFilterListInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  links: InputMaybe<ExtracurricularsJsonLinksFilterListInput>;
+  moment: InputMaybe<StringQueryOperatorInput>;
+  now: InputMaybe<BooleanQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  slug: InputMaybe<StringQueryOperatorInput>;
+  summary: InputMaybe<StringQueryOperatorInput>;
+  title: InputMaybe<StringQueryOperatorInput>;
+  when: InputMaybe<StringQueryOperatorInput>;
+};
+
+
 type Query_fileArgs = {
   absolutePath: InputMaybe<StringQueryOperatorInput>;
   accessTime: InputMaybe<DateQueryOperatorInput>;
@@ -2147,12 +2795,16 @@ type Query_fileArgs = {
   blocks: InputMaybe<IntQueryOperatorInput>;
   changeTime: InputMaybe<DateQueryOperatorInput>;
   childDataJson: InputMaybe<DataJsonFilterInput>;
+  childExtracurricularsJson: InputMaybe<ExtracurricularsJsonFilterInput>;
   childImageSharp: InputMaybe<ImageSharpFilterInput>;
   childMarkdownRemark: InputMaybe<MarkdownRemarkFilterInput>;
+  childOpensourceJson: InputMaybe<OpensourceJsonFilterInput>;
   children: InputMaybe<NodeFilterListInput>;
   childrenDataJson: InputMaybe<DataJsonFilterListInput>;
+  childrenExtracurricularsJson: InputMaybe<ExtracurricularsJsonFilterListInput>;
   childrenImageSharp: InputMaybe<ImageSharpFilterListInput>;
   childrenMarkdownRemark: InputMaybe<MarkdownRemarkFilterListInput>;
+  childrenOpensourceJson: InputMaybe<OpensourceJsonFilterListInput>;
   ctime: InputMaybe<DateQueryOperatorInput>;
   ctimeMs: InputMaybe<FloatQueryOperatorInput>;
   dev: InputMaybe<IntQueryOperatorInput>;
@@ -2179,6 +2831,18 @@ type Query_fileArgs = {
   size: InputMaybe<IntQueryOperatorInput>;
   sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
   uid: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_githubRepoArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  fetchedAt: InputMaybe<StringQueryOperatorInput>;
+  forks: InputMaybe<IntQueryOperatorInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  repo: InputMaybe<StringQueryOperatorInput>;
+  stars: InputMaybe<IntQueryOperatorInput>;
 };
 
 
@@ -2212,6 +2876,19 @@ type Query_markdownRemarkArgs = {
   tableOfContents: InputMaybe<StringQueryOperatorInput>;
   timeToRead: InputMaybe<IntQueryOperatorInput>;
   wordCount: InputMaybe<MarkdownWordCountFilterInput>;
+};
+
+
+type Query_opensourceJsonArgs = {
+  children: InputMaybe<NodeFilterListInput>;
+  contributions: InputMaybe<OpensourceJsonContributionsFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  intro: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
+  programs: InputMaybe<OpensourceJsonProgramsFilterListInput>;
+  quote: InputMaybe<OpensourceJsonQuoteFilterInput>;
+  repositories: InputMaybe<OpensourceJsonRepositoriesFilterListInput>;
 };
 
 
@@ -3016,6 +3693,7 @@ type SitePluginSortInput = {
 type SiteSiteMetadata = {
   readonly author: Maybe<Scalars['String']>;
   readonly authorFullName: Maybe<Scalars['String']>;
+  readonly bio: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
   readonly navHeading: Maybe<Scalars['String']>;
   readonly siteUrl: Maybe<Scalars['String']>;
@@ -3026,6 +3704,7 @@ type SiteSiteMetadata = {
 type SiteSiteMetadataFieldSelector = {
   readonly author: InputMaybe<FieldSelectorEnum>;
   readonly authorFullName: InputMaybe<FieldSelectorEnum>;
+  readonly bio: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
   readonly navHeading: InputMaybe<FieldSelectorEnum>;
   readonly siteUrl: InputMaybe<FieldSelectorEnum>;
@@ -3036,6 +3715,7 @@ type SiteSiteMetadataFieldSelector = {
 type SiteSiteMetadataFilterInput = {
   readonly author: InputMaybe<StringQueryOperatorInput>;
   readonly authorFullName: InputMaybe<StringQueryOperatorInput>;
+  readonly bio: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
   readonly navHeading: InputMaybe<StringQueryOperatorInput>;
   readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
@@ -3074,6 +3754,7 @@ type SiteSiteMetadataSocialSortInput = {
 type SiteSiteMetadataSortInput = {
   readonly author: InputMaybe<SortOrderEnum>;
   readonly authorFullName: InputMaybe<SortOrderEnum>;
+  readonly bio: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
   readonly navHeading: InputMaybe<SortOrderEnum>;
   readonly siteUrl: InputMaybe<SortOrderEnum>;
@@ -3123,6 +3804,11 @@ type WebPOptions = {
   readonly quality: InputMaybe<Scalars['Int']>;
 };
 
+type BeyondWorkPageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type BeyondWorkPageQuery = { readonly allExtracurricularsJson: { readonly nodes: ReadonlyArray<{ readonly slug: string, readonly title: string, readonly now: boolean | null, readonly when: string | null, readonly summary: string | null, readonly moment: string | null, readonly images: ReadonlyArray<{ readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null> | null, readonly links: ReadonlyArray<{ readonly label: string | null, readonly to: string | null }> | null }> } };
+
 type BlogPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -3140,10 +3826,25 @@ type ElementsPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 type ElementsPageQuery = { readonly smallPic: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly medPic: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly largePic: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
 
+type ExperienceHighlightQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ExperienceHighlightQuery = { readonly siteBuildMetadata: { readonly buildTime: string | null } | null, readonly dataJson: { readonly experience: ReadonlyArray<{ readonly org: string, readonly status: string, readonly type: string | null, readonly returnOffer: boolean | null, readonly tags: ReadonlyArray<string> | null, readonly orgLogo: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly roles: ReadonlyArray<{ readonly title: string, readonly start: string | null, readonly end: string | null }> | null }> | null } | null };
+
+type ExperiencePageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type ExperiencePageQuery = { readonly dataJson: { readonly experience: ReadonlyArray<{ readonly org: string, readonly status: string, readonly kind: string, readonly type: string | null, readonly returnOffer: boolean | null, readonly tags: ReadonlyArray<string> | null, readonly description: string | null, readonly orgLogo: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly roles: ReadonlyArray<{ readonly title: string, readonly start: string | null, readonly end: string | null }> | null }> | null } | null };
+
 type ExperienceSectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type ExperienceSectionQuery = { readonly dataJson: { readonly experience: ReadonlyArray<{ readonly org: string, readonly returnOffer: boolean | null, readonly status: string, readonly type: string | null, readonly tags: ReadonlyArray<string> | null, readonly description: string | null, readonly orgLogo: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly roles: ReadonlyArray<{ readonly title: string, readonly start: string | null, readonly end: string | null }> | null }> | null } | null };
+
+type FeaturedProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type FeaturedProjectsQuery = { readonly placeholder: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly dataJson: { readonly projects: ReadonlyArray<{ readonly title: string, readonly description: string | null, readonly confidential: boolean | null, readonly featured: boolean | null, readonly attachments: { readonly repository: string | null, readonly documentation: string | null, readonly site: string | null } | null, readonly thumbnail: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null }> | null } | null };
 
 type GatsbyImageSharpFixedFragment = { readonly base64: string | null, readonly width: number, readonly height: number, readonly src: string, readonly srcSet: string };
 
@@ -3174,17 +3875,37 @@ type GatsbyImageSharpFluidLimitPresentationSizeFragment = { readonly maxHeight: 
 type IndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type IndexPageQuery = { readonly lightModeImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly darkModeImage: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null, readonly aboutPic: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
+type IndexPageQuery = { readonly portrait: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null };
+
+type IntroAboutSectionQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type IntroAboutSectionQuery = { readonly site: { readonly siteMetadata: { readonly authorFullName: string | null, readonly bio: string | null, readonly social: { readonly github: string | null, readonly linkedin: string | null, readonly facebook: string | null, readonly email: string | null } | null } | null } | null, readonly dataJson: { readonly experience: ReadonlyArray<{ readonly org: string, readonly status: string, readonly roles: ReadonlyArray<{ readonly title: string }> | null }> | null } | null };
 
 type IntroSectionQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type IntroSectionQuery = { readonly site: { readonly siteMetadata: { readonly authorFullName: string | null, readonly social: { readonly github: string | null, readonly linkedin: string | null, readonly facebook: string | null, readonly email: string | null } | null } | null } | null };
 
+type LatestWritingQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type LatestWritingQuery = { readonly allMarkdownRemark: { readonly edges: ReadonlyArray<{ readonly node: { readonly fields: { readonly slug: string | null } | null, readonly frontmatter: { readonly date: string | null, readonly title: string | null, readonly description: string | null, readonly maxread: string | null, readonly category: string | null } | null } }> } };
+
 type LayoutQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 type LayoutQuery = { readonly site: { readonly siteMetadata: { readonly navHeading: string | null } | null } | null };
+
+type OpensourcePageQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type OpensourcePageQuery = { readonly site: { readonly siteMetadata: { readonly social: { readonly github: string | null } | null } | null } | null, readonly allGithubRepo: { readonly nodes: ReadonlyArray<{ readonly stars: number | null, readonly forks: number | null }> }, readonly opensourceJson: { readonly intro: string | null, readonly quote: { readonly text: string | null, readonly author: string | null } | null, readonly programs: ReadonlyArray<{ readonly name: string, readonly year: string | null, readonly role: string | null, readonly work: string | null, readonly link: string | null, readonly logo: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null }> | null, readonly repositories: ReadonlyArray<{ readonly name: string, readonly repo: string | null, readonly summary: string | null, readonly stacks: ReadonlyArray<string> | null, readonly link: string | null, readonly github: { readonly stars: number | null, readonly forks: number | null } | null }> | null, readonly contributions: ReadonlyArray<{ readonly project: string, readonly title: string | null, readonly summary: string | null, readonly link: string | null }> | null } | null };
+
+type OpenSourceStripQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+type OpenSourceStripQuery = { readonly opensourceJson: { readonly repositories: ReadonlyArray<{ readonly name: string, readonly repo: string | null, readonly github: { readonly stars: number | null, readonly forks: number | null } | null }> | null } | null };
 
 type ProjectsSectionQueryVariables = Exact<{ [key: string]: never; }>;
 

@@ -4,7 +4,9 @@ import { FaEnvelope, FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa"
 
 import "../../styles/css/screens/home/intro-section.css"
 import { graphql, useStaticQuery } from "gatsby"
-import type { ImageData } from "../../types/ui"
+import * as Styles from "../../styles/css/screens/home/home-sections.module.css"
+import LineIcon from "../core/LineIcon"
+import { LineIconName, type ImageData } from "../../types/ui"
 
 interface IntroSectionProps {
   darkModeImage: ImageData
@@ -22,14 +24,21 @@ function IntroSection({ darkModeImage, lightModeImage }: IntroSectionProps) {
         <div>
           <h3>Hello, I'm</h3>
           <h1>{fullName}</h1>
-          <h3 className="designation">Passionate Full Stack Developer</h3>
+          <h3 className="designation">Passionate Full Stack Engineer</h3>
           <a
             className="link button grow"
             href="19AE30030_Praneeth-Reddy-Kolanu_Resume.pdf"
-            download="19AE30030_Praneeth-Reddy-Kolanu_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
           >
-            Download Resume
+            View Resume
           </a>
+          <div className={`${Styles.scope} ${Styles.homeAddition}`}>
+            <a className={Styles.textLink} href="#projects">
+              View projects
+              <LineIcon name={LineIconName.Arrow} />
+            </a>
+          </div>
           <div className="icons-container">
             <a
               href={social.github ?? undefined}

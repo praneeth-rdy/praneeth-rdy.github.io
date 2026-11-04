@@ -1,0 +1,150 @@
+/* Shared pieces of the "Collection" concept pages (Experience, Open Source,
+   Beyond Work): docs/handoffs/concepts/collection/*.html with
+   assets/concepts.css. The page root carries both the home module's .scope
+   (typography, cards, pills, roles, stats, links) and this module's .page;
+   only rules the home module does not already have live here. Page-specific
+   layout lives in each page's own module. */
+
+/* ! purgecss start ignore */
+
+.page h1,
+.page blockquote {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+}
+.page h1 {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+
+/* Chip-row anchors scroll smoothly unless the visitor prefers less motion. */
+:global(html):has(.page) {
+  scroll-behavior: smooth;
+}
+.page [id] {
+  scroll-margin-top: 30px;
+}
+
+.page .pageIntro {
+  text-align: center;
+  padding: 72px 0 42px;
+  max-width: 680px;
+  margin: auto;
+}
+.page .pageIntro h1 {
+  margin: 12px 0 18px;
+}
+.page .pageIntro p {
+  color: var(--color-quiet);
+  max-width: 570px;
+  margin: auto;
+}
+
+.page .jumpNav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 64px;
+}
+.page .jumpNav a {
+  border: 1px solid var(--color-rule);
+  border-radius: 6px;
+  padding: 10px 17px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-ink);
+  min-height: 44px;
+}
+.page .jumpNav a:hover {
+  border-color: var(--color-primary);
+  background: var(--color-inset);
+  text-decoration: none;
+}
+.page .jumpNav span {
+  color: var(--color-quiet);
+  margin-left: 10px;
+}
+
+/* Status / type pills: the home module's .pill plus one of these. */
+.page .completed {
+  color: var(--color-completed-ink);
+  background: var(--color-green-light);
+}
+.page .por {
+  color: var(--color-type-ink);
+  background: var(--color-type-bg);
+}
+.page .opensource {
+  color: var(--color-opensource-ink);
+  background: var(--color-cyan-light);
+}
+
+/* Tag chips keep the site's white-on-blue .experience-tag look. */
+.page .tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 22px;
+}
+.page .tag {
+  color: var(--color-dark-base);
+  background: var(--color-primary);
+  padding: 1px 9px;
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.page .linkRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 25px 0;
+  border-top: 1px solid var(--color-rule);
+}
+
+.page .footLink {
+  text-align: center;
+  margin-top: 30px;
+}
+
+@media (max-width: 850px) {
+  .page .pageIntro {
+    padding: 45px 0 32px;
+  }
+  .page .jumpNav {
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .page h1 {
+    font-size: 30px;
+  }
+  .page .jumpNav {
+    gap: 7px;
+    justify-content: flex-start;
+  }
+  .page .jumpNav a {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  .page .jumpNav span {
+    margin-left: 6px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :global(html):has(.page) {
+    scroll-behavior: auto;
+  }
+}
+
+/* ! purgecss end ignore */

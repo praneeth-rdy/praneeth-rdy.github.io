@@ -1,0 +1,125 @@
+/* Beyond Work page, "Collection" concept
+   (docs/handoffs/concepts/collection/beyond-work.html): a staggered
+   two-column journal. The root also carries the home module's .scope and
+   collection-page's .page; selectors that override a home rule (card padding)
+   include an extra class so they win on specificity, not stylesheet order. */
+
+/* ! purgecss start ignore */
+
+.root .stories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 30px;
+}
+.root .stories .story {
+  overflow: hidden;
+  padding: 0;
+}
+.root .stories .story:nth-child(even) {
+  margin-top: 72px;
+}
+.root .storyHead {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 25px;
+}
+.root .storyHead h2 {
+  font-size: 25px;
+}
+.root .storyIndex {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--color-quiet);
+}
+
+/* Owner photos. Until an activity has images, two placeholder tiles
+   (camera glyph and a "Photo N" label) hold the grid. */
+.root .photoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--color-rule);
+}
+.root .photoGrid.single {
+  grid-template-columns: 1fr;
+}
+.root .photo {
+  position: relative;
+  min-height: 210px;
+  background: var(--color-inset);
+}
+.root .photoPlaceholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 18px;
+  text-align: center;
+  color: var(--color-quiet);
+  font-size: 12px;
+}
+/* Beats the home module's .scope svg (18px) on specificity. */
+.root .photoPlaceholder svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 1;
+}
+.root .photo .photoImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.root .storyCopy {
+  padding: 25px;
+}
+.root .when {
+  color: var(--color-quiet);
+  font-size: 12px;
+  margin-bottom: 14px;
+}
+.root .moment {
+  margin-top: 25px;
+  padding-top: 16px;
+  border-top: 2px solid var(--color-primary);
+}
+.root .moment p {
+  font-size: 19px;
+  line-height: 1.65;
+  margin-top: 12px;
+}
+
+@media (max-width: 600px) {
+  .root .stories {
+    grid-template-columns: 1fr;
+  }
+  .root .stories .story,
+  .root .stories .story:nth-child(even) {
+    margin: 0;
+  }
+  .root .storyHead {
+    padding: 24px;
+  }
+  .root .photoGrid {
+    grid-template-columns: 1.2fr 1fr;
+  }
+  .root .photo {
+    min-height: 180px;
+  }
+  .root .storyCopy {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    padding: 24px;
+  }
+  .root .moment {
+    margin: 0;
+  }
+}
+
+/* ! purgecss end ignore */

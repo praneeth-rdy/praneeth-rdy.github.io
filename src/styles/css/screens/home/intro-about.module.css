@@ -1,0 +1,177 @@
+/* Merged home introduction, concept "A · Portrait split"
+   (docs/handoffs/intro-about/a-portrait-split.html + intro-about.css).
+   The component also carries home-sections.module.css's .scope, which
+   supplies the font, box sizing, margin resets, link colour, hover underline,
+   focus ring and icon sizing; the rules below are the concept's geometry,
+   rooted at .intro so they outrank those .scope defaults. Colours come from
+   the tokens in vars.css. The ignore block keeps PurgeCSS from dropping the
+   pseudo-element and state selectors it cannot see in markup. */
+
+/* ! purgecss start ignore */
+
+.intro {
+  width: min(1040px, 100%);
+  margin: 0 auto;
+  padding: 80px 0 68px;
+  border-bottom: 1px solid var(--color-rule);
+}
+.intro h1 {
+  margin: 8px 0 18px;
+  padding: 0;
+  color: inherit;
+  font-size: 48px;
+  line-height: 1.14;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+}
+.intro .greeting {
+  font-size: 16px;
+  color: var(--color-quiet);
+}
+.intro .role {
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 22px;
+}
+.intro .role span {
+  font-weight: 400;
+  color: var(--color-quiet);
+}
+.intro .bio {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--color-quiet);
+  max-width: 580px;
+}
+
+/* The portrait balances a single uninterrupted reading column. */
+.intro .composition {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 290px;
+  gap: 78px;
+  align-items: center;
+}
+.intro .portrait {
+  margin: 0;
+  grid-column: 2;
+  grid-row: 1;
+}
+.intro .portraitImage {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.intro .copy {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.intro .actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+.intro .connections {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 20px;
+}
+.intro .socials {
+  display: flex;
+  gap: 2px;
+  align-items: center;
+}
+.intro .socials a {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  color: var(--color-link);
+}
+.intro .socials svg {
+  width: 21px;
+  height: 21px;
+}
+.intro .beyondLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.intro .beyondLink::before {
+  content: "";
+  width: 1px;
+  height: 18px;
+  background: var(--color-rule);
+  margin-right: 10px;
+}
+
+@media (max-width: 1000px) {
+  .intro .composition {
+    grid-template-columns: minmax(0, 1fr) 240px;
+    gap: 35px;
+  }
+  .intro h1 {
+    font-size: 40px;
+  }
+}
+
+/* Phone: the portrait gets its own 140px row above the text. */
+@media (max-width: 700px) {
+  .intro {
+    padding: 38px 0 38px;
+  }
+  .intro h1 {
+    font-size: 34px;
+    letter-spacing: -0.9px;
+    margin: 8px 0 16px;
+  }
+  .intro .bio {
+    font-size: 16px;
+    line-height: 1.75;
+  }
+  .intro .role {
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  .intro .role span {
+    display: block;
+  }
+  .intro .actions {
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .intro .connections {
+    gap: 4px 10px;
+    margin-top: 16px;
+  }
+  .intro .beyondLink::before {
+    margin-right: 4px;
+  }
+  .intro .composition {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .intro .portrait {
+    width: 140px;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .intro .copy {
+    grid-column: 1;
+    grid-row: 2;
+  }
+}
+
+/* ! purgecss end ignore */

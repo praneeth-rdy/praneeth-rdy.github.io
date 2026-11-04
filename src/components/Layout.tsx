@@ -5,9 +5,13 @@ import ToggleButton from "./ToggleButton"
 import { useTheme } from "../context/ThemeContextProvider"
 import type { WithChildren } from "../types/ui"
 
-// About, Publications and Elements pages also exist under src/pages and can be re-added here.
+// About, Publications and Elements pages also exist under src/pages and can be
+// re-added here. Beyond Work is reached from the home intro and the page foot
+// links, not the nav.
 const NAV_LINKS = [
   { to: "/", label: "Home", className: "nav-home" },
+  { to: "/experience", label: "Experience", className: "nav-experience" },
+  { to: "/opensource", label: "Open Source", className: "nav-opensource" },
   { to: "/blog", label: "Blog", className: "nav-blog" },
   { to: "/contact", label: "Contact", className: "nav-contact" },
 ]

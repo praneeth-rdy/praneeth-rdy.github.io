@@ -1,0 +1,100 @@
+/* Experience page, "Collection" concept
+   (docs/handoffs/concepts/collection/experience.html). The root also carries
+   the home module's .scope and collection-page's .page; selectors that
+   override a home rule include an extra class so they win on specificity,
+   not on stylesheet order. */
+
+/* ! purgecss start ignore */
+
+.root .group {
+  margin-bottom: 72px;
+}
+.root .groupHeading {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.root .groupHeading h2 {
+  font-size: 23px;
+  letter-spacing: -0.3px;
+}
+.root .groupHeading .count {
+  color: var(--color-quiet);
+  font-size: 13px;
+}
+
+.root .experienceGrid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+}
+.root .experienceGrid .orgHeadTop {
+  align-items: flex-start;
+}
+
+/* Full-time panel: spans the grid, roles run as a horizontal strip. */
+.root .experienceGrid .panel {
+  grid-column: 1/-1;
+}
+.root .experienceGrid .panel .orgHeadTop {
+  max-width: 640px;
+}
+.root .experienceGrid .strip {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+}
+.root .experienceGrid .strip li {
+  display: block;
+  padding: 18px 15px;
+  border-bottom: none;
+  border-right: 1px solid var(--color-rule);
+}
+.root .experienceGrid .strip li:first-child {
+  padding-left: 0;
+}
+.root .experienceGrid .strip li:last-child {
+  border-right: 0;
+}
+.root .experienceGrid .strip time {
+  display: block;
+  margin-top: 12px;
+}
+
+/* Card roles stack the date under the title. */
+.root .experienceGrid .stack li,
+.root .experienceGrid .stack time {
+  display: block;
+}
+
+.root details[open] .excerpt {
+  display: none;
+}
+
+@media (max-width: 850px) {
+  .root .experienceGrid .strip {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+  }
+  .root .experienceGrid .strip li {
+    padding: 13px 0;
+    border-right: none;
+    border-bottom: 1px solid var(--color-rule);
+  }
+  .root .experienceGrid .strip time {
+    margin: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .root .group {
+    margin-bottom: 46px;
+  }
+  .root .experienceGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ! purgecss end ignore */

@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "boxing",
+    "title": "Boxing",
+    "now": true,
+    "when": "Bag classes since November 2025; competitive training at the Boxing Hall, Saroornagar Indoor Stadium, since May 2026",
+    "summary": "Training mornings at six under Coach Gouni Kumar, sparring regularly, and aiming for the senior state competitions in Telangana in November 2027.",
+    "moment": "My first spar: three rounds, two of them against a senior, and a bag had never taught me that the other person hits back. I walked out breathing hard, still buzzing, and sure I would be back the next morning.",
+    "images": [],
+    "links": [
+      {
+        "label": "Read Three Rounds",
+        "to": "/blog/my-boxing-journey/"
+      }
+    ]
+  },
+  {
+    "slug": "volleyball",
+    "title": "Volleyball",
+    "now": false,
+    "when": "Lala Lajpat Rai Hall of Residence, IIT Kharagpur",
+    "summary": "Member of the gold-winning hall team in the Inter Hall Gymkhana Championship 2021-22.",
+    "moment": "The last point of the Inter Hall final, 2021-22. Weeks of evening practice behind the hall came down to one rally, and the whole hall was on the sideline when it dropped.",
+    "images": [],
+    "links": []
+  },
+  {
+    "slug": "nss",
+    "title": "NSS and volunteering",
+    "now": false,
+    "when": "2019 to 2022",
+    "summary": "Best volunteer of the gold-winning team at the NSS Annual Camp 2019 and part of the cloth-collection drive. Led the COVID fundraising campaign at GYWS in 2021 and conducted a tree plantation drive in Gopali village in 2022, planting 15 saplings.",
+    "moment": "A villager in Gopali asking which sapling was hers so she could water it. Fifteen trees sounded small until each one had someone's name on it.",
+    "images": [],
+    "links": []
+  },
+  {
+    "slug": "guitar",
+    "title": "Guitar",
+    "now": false,
+    "when": "Since college, on and off",
+    "summary": "Self-taught on an acoustic: chords, a few fingerstyle pieces, and whatever friends ask for when one is around.",
+    "moment": "Playing a half-learned song at a hostel gathering and having the whole room finish the chorus for me.",
+    "images": [],
+    "links": []
+  }
+]
