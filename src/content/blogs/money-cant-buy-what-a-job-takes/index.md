@@ -1,0 +1,65 @@
+---
+title: Money Can't Buy What a Job Takes
+date: "2026-11-08"
+author: Praneeth Reddy Kolanu
+maxread: 4 min
+description: Three years of weekends, holidays and headspace went into one company. In my notice period I watched all of it go back to zero. A note for anyone early in their career about what a job keeps, what it takes, and what to keep for yourself.
+subtext: Everything you build inside a company stays there when you leave. The years don't come back.
+category: life
+---
+
+In a few weeks, everything I built here goes to zero.
+
+Not the code. The code stays. I mean the other thing, the one nobody writes down. Three years of being the person who knows. The trust that took a year to earn and another year to turn into "just ask him". The title I chased. The feeling, on a bad day, that this place needed me.
+
+I am in my notice period, and I can watch it drain. My days are KT sessions now. Juniors and colleagues shadow my work, I answer questions, I advise, and I step back a little more each week so that by the last day they can keep up without me. Every session moves a bit more of it out of me and into them.
+
+Then I will walk into a new office, in the same field, and nobody there will know any of it. I will be new. I will have to earn "just ask him" all over again, from scratch.
+
+If you are a year or two into your first job, I want to tell you about that reset before it happens to you.
+
+## What It Took
+
+This was my first full-time job. I joined as an intern, came back, and stayed. I worked from home the whole time. That sounds like freedom, and mostly it is, until home and work become the same room and you stop leaving either.
+
+I have worked on national holidays. I have worked weekends, one at a time, each with a good reason attached. There is always a good reason, and nobody has to ask. You give a Saturday because you care about the thing, and then another one. Nobody takes a year from you. You hand it over one weekend at a time.
+
+I have replied to work messages at the dinner table. I have taken calls on trips that were meant to be the one week away. I was on call. Over time, more things came to depend on me than one person should carry. Nobody planned it, least of all me. It is what happens when you are around long enough and the work keeps landing with the person who knows it. I never minded. It felt like being needed.
+
+None of this is a complaint about the place I'm leaving. It gave me my first real job, people I'll keep, and three years of growth I could not have bought anywhere. Every one of those Saturdays was my choice. That is the point. The cost was mine, and I paid it without checking the price.
+
+You probably have your own version of this list. Most of us do by year two. The question is what you got for it.
+
+## Zero
+
+What I got for it only exists inside one company.
+
+The trust, the standing, the shortcuts, the credit from the release that went well, the goodwill from the weekend that saved a deadline. All of it is real. None of it comes through the door with you.
+
+The notice period is where you find that out. You hand over everything you were chasing, session by session, and at the end there is nothing in your hands. The company keeps it, as it should. The next place starts you at zero, as it should. Nobody is being unfair. That is just how it works.
+
+Here is the part that stings. The holidays, the dinners I was half at, the calls on trips, those were paid with what was mine. Days. Attention. Years. I spent mine to earn theirs, and now I am leaving theirs behind and cannot get mine back.
+
+The salary came with me. It was fair for the hours. It just cannot buy back a single one of those days. Money can't buy what a job takes.
+
+## What Doesn't Reset
+
+So what crosses over? Be honest, because the list is shorter than you'd like.
+
+Not the title. Not the trust. Not the "we can't do this without you". What crosses over is what you kept for yourself while you were there. The people who still expect you at dinner. The body you kept moving. The friends who stopped having to wait for you to look up.
+
+That is the only thing you take with you. Everything else resets.
+
+I learned this in a KT session, watching a junior take notes on work that took me years to learn. You can learn it with an offer letter in your hand, which is a much better time.
+
+## Next Time
+
+I am starting a new job in the same field, and I want to do the best work of my life there. What changes is which currency I pay with.
+
+Since May my mornings have belonged to a sport that keeps teaching me about life, two hours of boxing where no message can reach me. I will keep one thing that is only mine, every day, so that the rest of the day has all of me.
+
+Fully there when I am working, and fully there when I am not, instead of half in both. Building things so the team is stronger than any one person in it. That is the whole plan. It is the first one I have made with the price in view.
+
+You will have a next place too, maybe sooner than you think. Give it your best. Just know, going in, that whatever you build inside it stays inside it. The people waiting for you to look up at dinner are the only thing that comes with you.
+
+Pay for the job with hours. Never with years.
