@@ -4,7 +4,7 @@ date: "2026-11-08"
 author: Praneeth Reddy Kolanu
 maxread: 4 min
 description: Three years of weekends, holidays and headspace went into one company. In my notice period I watched all of it go back to zero. A note for anyone early in their career about what a job keeps, what it takes, and what to keep for yourself.
-subtext: Everything you build inside a company stays there when you leave. The years don't come back.
+subtext: The job keeps everything you built. You keep the bill.
 category: life
 ---
 
