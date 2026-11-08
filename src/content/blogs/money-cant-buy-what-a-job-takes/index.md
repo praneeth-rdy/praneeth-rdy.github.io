@@ -4,7 +4,7 @@ date: "2026-11-08"
 author: Praneeth Reddy Kolanu
 maxread: 4 min
 description: Three years of weekends, holidays and headspace went into one company. In my notice period I watched all of it go back to zero. A note for anyone early in their career about what a job keeps, what it takes, and what to keep for yourself.
-subtext: Three years at one company. What's left when you leave?
+subtext: Three years, one company, then a notice period. What's left?
 category: life
 ---
 
