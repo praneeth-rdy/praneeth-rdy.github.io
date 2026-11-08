@@ -34,14 +34,14 @@ During the upgrade 3 of 5 builds failed this way while a dev server was running;
 
 ## Deploy
 
-`.github/workflows/build-export.yml` runs on push to `v1`: `actions/checkout@v4`, `actions/setup-node@v4` with Node 22 and the yarn cache, `yarn install --frozen-lockfile`, `yarn build`, then `peaceiris/actions-gh-pages@v4` publishes `public/` to the `build` branch with `force_orphan`. GitHub Pages serves the `build` branch. The default `GITHUB_TOKEN` is enough; the old `secrets.TOKEN` used by the previous Node 14 Docker action is no longer needed.
+`.github/workflows/build-export.yml` runs on push to `main`: `actions/checkout@v4`, `actions/setup-node@v4` with Node 22 and the yarn cache, `yarn install --frozen-lockfile`, `yarn build`, then `peaceiris/actions-gh-pages@v4` publishes `public/` to the `build` branch with `force_orphan`. GitHub Pages serves the `build` branch. The default `GITHUB_TOKEN` is enough; the old `secrets.TOKEN` used by the previous Node 14 Docker action is no longer needed.
 
 A production build regenerates `src/types/gatsby-types.d.ts`; commit it when it changes.
 
 ## Branches
 
-- `main` is the GitHub default branch; `v1` is the working branch and the deploy trigger.
-- They had diverged (24 commits only on `main` from late 2024, 33 newer on `v1`). On 2026-10-30 a merge commit `a8ffb5e` ("chore: sync main with v1") was created with `v1`'s exact tree and both branches as parents, then fast-forward pushed to both, so `main` equals `v1` without rewriting history. Moving the deploy trigger to `main` and retiring `v1` is an open option (see `known-issues.md`).
+- `main` is the GitHub default branch and, since 2026-11-08, the deploy trigger. Work happens on a working branch (currently `v1`) and reaches `main` through pull requests; pushing `v1` no longer deploys.
+- They had diverged (24 commits only on `main` from late 2024, 33 newer on `v1`). On 2026-10-30 a merge commit `a8ffb5e` ("chore: sync main with v1") was created with `v1`'s exact tree and both branches as parents, then fast-forward pushed to both, so `main` equals `v1` without rewriting history. On 2026-11-08 the deploy trigger moved to `main`; `v1` stays the working branch and reaches `main` through pull requests.
 
 ## SEO and analytics plumbing
 

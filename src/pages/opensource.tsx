@@ -4,6 +4,7 @@ import type { HeadFC, PageProps } from "gatsby"
 import Layout from "../components/Layout"
 import Seo from "../components/Seo"
 import LineIcon from "../components/core/LineIcon"
+import ContributionCalendar from "../components/opensource/ContributionCalendar"
 import * as Home from "../styles/css/screens/home/home-sections.module.css"
 import * as Page from "../styles/css/screens/collection-page.module.css"
 import * as Styles from "../styles/css/screens/opensource-page.module.css"
@@ -205,6 +206,12 @@ function Opensource({
               <LineIcon name={LineIconName.Arrow} />
             </a>
           </div>
+          {data.githubContributions?.calendar && (
+            <ContributionCalendar
+              calendar={data.githubContributions.calendar}
+              github={github}
+            />
+          )}
           {programs.length > 0 && (
             <section className={Home.homeBlock}>
               <div className={Home.sectionTitle}>
@@ -282,6 +289,18 @@ export const Head: HeadFC<Queries.OpensourcePageQuery> = ({ location }) => (
 
 export const query = graphql`
   query OpensourcePage {
+    githubContributions {
+      calendar {
+        totalContributions
+        fetchedAt
+        days {
+          date
+          weekday
+          contributionCount
+          contributionLevel
+        }
+      }
+    }
     site {
       siteMetadata {
         social {

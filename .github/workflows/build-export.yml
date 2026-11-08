@@ -4,7 +4,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - v1
+      - main
 
 permissions:
   contents: write
@@ -26,6 +26,8 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
+        env:
+          PROFILE_READ_PAT: ${{ secrets.PROFILE_READ_PAT }}
         run: yarn build
 
       - name: Deploy to build branch

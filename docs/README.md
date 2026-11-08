@@ -10,7 +10,7 @@ The site has no server and no database. Everything a visitor sees is generated a
 
 **Who approves what.** Praneeth owns the site and approves every change before it is published. The site's appearance is deliberate: a change must not alter how pages look unless that is the explicit purpose of the change. Anything written under Praneeth's name (bios, blog posts) uses only facts he has supplied and is reviewed by him before it goes live. Decisions that shaped the current site are recorded in `decision-log.md`; open items are in `known-issues.md`; the way work is planned, built and checked is in `working-agreement.md`.
 
-**Publishing.** Changes are prepared on the `v1` branch and published to the live site automatically when that branch is updated on GitHub. The `main` branch mirrors it.
+**Publishing.** Changes are prepared on a working branch (currently `v1`) and merged into `main` through a pull request. The live site is published automatically whenever `main` is updated on GitHub.
 
 ## Plain-language docs
 
@@ -27,6 +27,8 @@ The site has no server and no database. Everything a visitor sees is generated a
 - `build-and-deploy.md`: commands, runtime requirements, the build-cache hazard, the deploy workflow, branches, sitemap and analytics.
 
 ## Handoffs
+
+- `handoffs/github-contributions.md`: Open Source contribution-calendar design and build integration, using the owner-provided `PROFILE_READ_PAT` repository secret.
 
 - `handoffs/design-concept.md`: brief for fresh design concepts for the Experience, Home, Open Source and Beyond Work pages, with the agreed content, tokens and constraints. Reference mockups in `handoffs/mockups/` (standalone HTML) and `handoffs/screenshots/`.
 - `handoffs/concepts/index.html`: review gallery for the Editorial and Collection directions, with both themes, responsive pages and browser screenshots. Rationale, open decisions and verification are in `handoffs/concepts/README.md`.

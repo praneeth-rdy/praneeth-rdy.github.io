@@ -2,6 +2,8 @@ import fs from "fs"
 import path from "path"
 import type { GatsbyNode } from "gatsby"
 import { createFilePath } from "gatsby-source-filesystem"
+import siteConfig from "./siteConfig"
+import { loadContributions } from "./scripts/github-contributions"
 
 // Explicit schema for src/content/data/*.json so optional fields (project
 // links, org associations, experience type, ...) stay queryable even when no
@@ -125,6 +127,24 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
       fetchedAt: String
     }
 
+    type GithubContributions implements Node @dontInfer {
+      login: String!
+      calendar: GithubContributionCalendar
+    }
+
+    type GithubContributionCalendar @dontInfer {
+      totalContributions: Int!
+      fetchedAt: String!
+      days: [GithubContributionDay!]!
+    }
+
+    type GithubContributionDay @dontInfer {
+      date: String!
+      weekday: Int!
+      contributionCount: Int!
+      contributionLevel: String!
+    }
+
     type MarkdownRemark implements Node {
       frontmatter: MarkdownRemarkFrontmatter
     }
@@ -182,6 +202,24 @@ export const sourceNodes: GatsbyNode["sourceNodes"] = async ({
   createContentDigest,
   reporter,
 }) => {
+  const login = new URL(siteConfig.github).pathname
+    .split("/")
+    .filter(Boolean)[0]
+  const calendar = await loadContributions({
+    login,
+    token: process.env.PROFILE_READ_PAT,
+    cache,
+    warn: message => reporter.warn(message),
+  })
+  const activity = { login, calendar }
+  actions.createNode({
+    ...activity,
+    id: createNodeId(`github-contributions-${login}`),
+    internal: {
+      type: "GithubContributions",
+      contentDigest: createContentDigest(activity),
+    },
+  })
   const file = path.resolve(`./src/content/data/opensource.json`)
   const { repositories } = JSON.parse(fs.readFileSync(file, "utf8")) as {
     repositories: { name: string; repo?: string }[]

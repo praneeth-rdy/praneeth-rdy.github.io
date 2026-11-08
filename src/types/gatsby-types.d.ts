@@ -1274,6 +1274,184 @@ type GatsbyImagePlaceholder =
   | 'none'
   | 'tracedSVG';
 
+type GithubContributionCalendar = {
+  readonly days: ReadonlyArray<GithubContributionDay>;
+  readonly fetchedAt: Scalars['String'];
+  readonly totalContributions: Scalars['Int'];
+};
+
+type GithubContributionCalendarFieldSelector = {
+  readonly days: InputMaybe<GithubContributionDayFieldSelector>;
+  readonly fetchedAt: InputMaybe<FieldSelectorEnum>;
+  readonly totalContributions: InputMaybe<FieldSelectorEnum>;
+};
+
+type GithubContributionCalendarFilterInput = {
+  readonly days: InputMaybe<GithubContributionDayFilterListInput>;
+  readonly fetchedAt: InputMaybe<StringQueryOperatorInput>;
+  readonly totalContributions: InputMaybe<IntQueryOperatorInput>;
+};
+
+type GithubContributionCalendarSortInput = {
+  readonly days: InputMaybe<GithubContributionDaySortInput>;
+  readonly fetchedAt: InputMaybe<SortOrderEnum>;
+  readonly totalContributions: InputMaybe<SortOrderEnum>;
+};
+
+type GithubContributionDay = {
+  readonly contributionCount: Scalars['Int'];
+  readonly contributionLevel: Scalars['String'];
+  readonly date: Scalars['String'];
+  readonly weekday: Scalars['Int'];
+};
+
+type GithubContributionDayFieldSelector = {
+  readonly contributionCount: InputMaybe<FieldSelectorEnum>;
+  readonly contributionLevel: InputMaybe<FieldSelectorEnum>;
+  readonly date: InputMaybe<FieldSelectorEnum>;
+  readonly weekday: InputMaybe<FieldSelectorEnum>;
+};
+
+type GithubContributionDayFilterInput = {
+  readonly contributionCount: InputMaybe<IntQueryOperatorInput>;
+  readonly contributionLevel: InputMaybe<StringQueryOperatorInput>;
+  readonly date: InputMaybe<StringQueryOperatorInput>;
+  readonly weekday: InputMaybe<IntQueryOperatorInput>;
+};
+
+type GithubContributionDayFilterListInput = {
+  readonly elemMatch: InputMaybe<GithubContributionDayFilterInput>;
+};
+
+type GithubContributionDaySortInput = {
+  readonly contributionCount: InputMaybe<SortOrderEnum>;
+  readonly contributionLevel: InputMaybe<SortOrderEnum>;
+  readonly date: InputMaybe<SortOrderEnum>;
+  readonly weekday: InputMaybe<SortOrderEnum>;
+};
+
+type GithubContributions = Node & {
+  readonly calendar: Maybe<GithubContributionCalendar>;
+  readonly children: ReadonlyArray<Node>;
+  readonly id: Scalars['ID'];
+  readonly internal: Internal;
+  readonly login: Scalars['String'];
+  readonly parent: Maybe<Node>;
+};
+
+type GithubContributionsConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<GithubContributionsEdge>;
+  readonly group: ReadonlyArray<GithubContributionsGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<GithubContributions>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type GithubContributionsConnection_distinctArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+
+type GithubContributionsConnection_groupArgs = {
+  field: GithubContributionsFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type GithubContributionsConnection_maxArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+
+type GithubContributionsConnection_minArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+
+type GithubContributionsConnection_sumArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+type GithubContributionsEdge = {
+  readonly next: Maybe<GithubContributions>;
+  readonly node: GithubContributions;
+  readonly previous: Maybe<GithubContributions>;
+};
+
+type GithubContributionsFieldSelector = {
+  readonly calendar: InputMaybe<GithubContributionCalendarFieldSelector>;
+  readonly children: InputMaybe<NodeFieldSelector>;
+  readonly id: InputMaybe<FieldSelectorEnum>;
+  readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly login: InputMaybe<FieldSelectorEnum>;
+  readonly parent: InputMaybe<NodeFieldSelector>;
+};
+
+type GithubContributionsFilterInput = {
+  readonly calendar: InputMaybe<GithubContributionCalendarFilterInput>;
+  readonly children: InputMaybe<NodeFilterListInput>;
+  readonly id: InputMaybe<StringQueryOperatorInput>;
+  readonly internal: InputMaybe<InternalFilterInput>;
+  readonly login: InputMaybe<StringQueryOperatorInput>;
+  readonly parent: InputMaybe<NodeFilterInput>;
+};
+
+type GithubContributionsGroupConnection = {
+  readonly distinct: ReadonlyArray<Scalars['String']>;
+  readonly edges: ReadonlyArray<GithubContributionsEdge>;
+  readonly field: Scalars['String'];
+  readonly fieldValue: Maybe<Scalars['String']>;
+  readonly group: ReadonlyArray<GithubContributionsGroupConnection>;
+  readonly max: Maybe<Scalars['Float']>;
+  readonly min: Maybe<Scalars['Float']>;
+  readonly nodes: ReadonlyArray<GithubContributions>;
+  readonly pageInfo: PageInfo;
+  readonly sum: Maybe<Scalars['Float']>;
+  readonly totalCount: Scalars['Int'];
+};
+
+
+type GithubContributionsGroupConnection_distinctArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+
+type GithubContributionsGroupConnection_groupArgs = {
+  field: GithubContributionsFieldSelector;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+};
+
+
+type GithubContributionsGroupConnection_maxArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+
+type GithubContributionsGroupConnection_minArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+
+type GithubContributionsGroupConnection_sumArgs = {
+  field: GithubContributionsFieldSelector;
+};
+
+type GithubContributionsSortInput = {
+  readonly calendar: InputMaybe<GithubContributionCalendarSortInput>;
+  readonly children: InputMaybe<NodeSortInput>;
+  readonly id: InputMaybe<SortOrderEnum>;
+  readonly internal: InputMaybe<InternalSortInput>;
+  readonly login: InputMaybe<SortOrderEnum>;
+  readonly parent: InputMaybe<NodeSortInput>;
+};
+
 type GithubRepo = Node & {
   readonly children: ReadonlyArray<Node>;
   readonly fetchedAt: Maybe<Scalars['String']>;
@@ -2587,6 +2765,7 @@ type Query = {
   readonly allDirectory: DirectoryConnection;
   readonly allExtracurricularsJson: ExtracurricularsJsonConnection;
   readonly allFile: FileConnection;
+  readonly allGithubContributions: GithubContributionsConnection;
   readonly allGithubRepo: GithubRepoConnection;
   readonly allImageSharp: ImageSharpConnection;
   readonly allMarkdownRemark: MarkdownRemarkConnection;
@@ -2600,6 +2779,7 @@ type Query = {
   readonly directory: Maybe<Directory>;
   readonly extracurricularsJson: Maybe<ExtracurricularsJson>;
   readonly file: Maybe<File>;
+  readonly githubContributions: Maybe<GithubContributions>;
   readonly githubRepo: Maybe<GithubRepo>;
   readonly imageSharp: Maybe<ImageSharp>;
   readonly markdownRemark: Maybe<MarkdownRemark>;
@@ -2641,6 +2821,14 @@ type Query_allFileArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<FileSortInput>>>;
+};
+
+
+type Query_allGithubContributionsArgs = {
+  filter: InputMaybe<GithubContributionsFilterInput>;
+  limit: InputMaybe<Scalars['Int']>;
+  skip: InputMaybe<Scalars['Int']>;
+  sort: InputMaybe<ReadonlyArray<InputMaybe<GithubContributionsSortInput>>>;
 };
 
 
@@ -2831,6 +3019,16 @@ type Query_fileArgs = {
   size: InputMaybe<IntQueryOperatorInput>;
   sourceInstanceName: InputMaybe<StringQueryOperatorInput>;
   uid: InputMaybe<IntQueryOperatorInput>;
+};
+
+
+type Query_githubContributionsArgs = {
+  calendar: InputMaybe<GithubContributionCalendarFilterInput>;
+  children: InputMaybe<NodeFilterListInput>;
+  id: InputMaybe<StringQueryOperatorInput>;
+  internal: InputMaybe<InternalFilterInput>;
+  login: InputMaybe<StringQueryOperatorInput>;
+  parent: InputMaybe<NodeFilterInput>;
 };
 
 
@@ -3900,7 +4098,7 @@ type LayoutQuery = { readonly site: { readonly siteMetadata: { readonly navHeadi
 type OpensourcePageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type OpensourcePageQuery = { readonly site: { readonly siteMetadata: { readonly social: { readonly github: string | null } | null } | null } | null, readonly allGithubRepo: { readonly nodes: ReadonlyArray<{ readonly stars: number | null, readonly forks: number | null }> }, readonly opensourceJson: { readonly intro: string | null, readonly quote: { readonly text: string | null, readonly author: string | null } | null, readonly programs: ReadonlyArray<{ readonly name: string, readonly year: string | null, readonly role: string | null, readonly work: string | null, readonly link: string | null, readonly logo: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null }> | null, readonly repositories: ReadonlyArray<{ readonly name: string, readonly repo: string | null, readonly summary: string | null, readonly stacks: ReadonlyArray<string> | null, readonly link: string | null, readonly github: { readonly stars: number | null, readonly forks: number | null } | null }> | null, readonly contributions: ReadonlyArray<{ readonly project: string, readonly title: string | null, readonly summary: string | null, readonly link: string | null }> | null } | null };
+type OpensourcePageQuery = { readonly githubContributions: { readonly calendar: { readonly totalContributions: number, readonly fetchedAt: string, readonly days: ReadonlyArray<{ readonly date: string, readonly weekday: number, readonly contributionCount: number, readonly contributionLevel: string }> } | null } | null, readonly site: { readonly siteMetadata: { readonly social: { readonly github: string | null } | null } | null } | null, readonly allGithubRepo: { readonly nodes: ReadonlyArray<{ readonly stars: number | null, readonly forks: number | null }> }, readonly opensourceJson: { readonly intro: string | null, readonly quote: { readonly text: string | null, readonly author: string | null } | null, readonly programs: ReadonlyArray<{ readonly name: string, readonly year: string | null, readonly role: string | null, readonly work: string | null, readonly link: string | null, readonly logo: { readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null }> | null, readonly repositories: ReadonlyArray<{ readonly name: string, readonly repo: string | null, readonly summary: string | null, readonly stacks: ReadonlyArray<string> | null, readonly link: string | null, readonly github: { readonly stars: number | null, readonly forks: number | null } | null }> | null, readonly contributions: ReadonlyArray<{ readonly project: string, readonly title: string | null, readonly summary: string | null, readonly link: string | null }> | null } | null };
 
 type OpenSourceStripQueryVariables = Exact<{ [key: string]: never; }>;
 

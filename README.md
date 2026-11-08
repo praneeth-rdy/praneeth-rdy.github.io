@@ -130,7 +130,7 @@ Categories are collected automatically for the filter buttons.
 
 ## Deployment
 
-Pushing to the `v1` branch runs `.github/workflows/build-export.yml`. It builds the site on Node 22 and publishes `public/` to the `build` branch, which GitHub Pages serves. No secrets are needed beyond the default `GITHUB_TOKEN`.
+Pushing to the `main` branch (normally by merging a pull request) runs `.github/workflows/build-export.yml`. It builds the site on Node 22 and publishes `public/` to the `build` branch, which GitHub Pages serves. No secrets are needed beyond the default `GITHUB_TOKEN`.
 
 ## Troubleshooting
 
