@@ -10,7 +10,7 @@ The site has no server and no database. Everything a visitor sees is generated a
 
 **Who approves what.** Praneeth owns the site and approves every change before it is published. The site's appearance is deliberate: a change must not alter how pages look unless that is the explicit purpose of the change. Anything written under Praneeth's name (bios, blog posts) uses only facts he has supplied and is reviewed by him before it goes live. Decisions that shaped the current site are recorded in `decision-log.md`; open items are in `known-issues.md`; the way work is planned, built and checked is in `working-agreement.md`.
 
-**Publishing.** Changes are prepared on the `v1` branch and published to the live site automatically when that branch is updated on GitHub. The `main` branch mirrors it.
+**Publishing.** Changes are prepared on a working branch (currently `v1`) and merged into `main` through a pull request. The live site is published automatically whenever `main` is updated on GitHub.
 
 ## Plain-language docs
 
