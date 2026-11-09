@@ -664,6 +664,19 @@ button.nav-burger:hover {
   }
 }
 
+/* Captions under post images (gatsby-remark-images, showCaptions). The figure
+   keeps the paragraph rhythm; the caption sits close to its image. The class
+   only exists in generated markdown HTML, so purgecss must not strip it. */
+/* ! purgecss start ignore */
+.post-content-body .gatsby-resp-image-figcaption {
+  margin-top: 0.6em;
+  font-size: 0.75em;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--color-quiet);
+}
+/* ! purgecss end ignore */
+
 .light .post-content-body h1,
 .light .post-content-body h2,
 .light .post-content-body h3,

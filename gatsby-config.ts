@@ -72,7 +72,9 @@ const config: GatsbyConfig = {
               withWebp: true,
               showCaptions: true,
               quality: 75,
-              wrapperStyle: `margin: 7vw 0;`,
+              // Figures follow the paragraph rhythm (1.5em from the
+              // surrounding <p> margins) instead of adding their own gap.
+              wrapperStyle: `margin: 0;`,
             },
           },
           {
