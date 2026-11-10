@@ -107,7 +107,8 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     type ExtracurricularsJson implements Node {
       slug: String!
       title: String!
-      now: Boolean
+      archived: Boolean
+      photoFit: String
       when: String
       summary: String
       moment: String

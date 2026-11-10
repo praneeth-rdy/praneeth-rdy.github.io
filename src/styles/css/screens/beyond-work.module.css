@@ -6,18 +6,26 @@
 
 /* ! purgecss start ignore */
 
+/* Two independent columns. Cards alternate left, right (01 left, 02 right,
+   03 left...) and each column flows on its own, so a short card never leaves
+   a gap under itself. */
 .root .stories {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   align-items: start;
   gap: 30px;
 }
+.root .column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.root .column:nth-child(2) {
+  margin-top: 72px;
+}
 .root .stories .story {
   overflow: hidden;
   padding: 0;
-}
-.root .stories .story:nth-child(even) {
-  margin-top: 72px;
 }
 .root .storyHead {
   display: flex;
@@ -45,6 +53,19 @@
 }
 .root .photoGrid.single {
   grid-template-columns: 1fr;
+}
+/* Portrait-only cards: tiles take the photos' 3:4 shape so nothing is cropped. */
+.root .photoGrid.portrait .photo {
+  aspect-ratio: 3 / 4;
+  min-height: 0;
+}
+/* photoFit: contain. A taller tile, photo shown whole on the inset. */
+.root .photoGrid.contain .photo {
+  aspect-ratio: 16 / 10;
+  min-height: 0;
+}
+.root .photoGrid.contain.tall .photo {
+  aspect-ratio: 4 / 3;
 }
 .root .photo {
   position: relative;
@@ -95,11 +116,16 @@
 }
 
 @media (max-width: 600px) {
+  /* One column on phones: the column wrappers dissolve and the cards'
+     inline `order` restores 01, 02, 03... */
   .root .stories {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
   }
-  .root .stories .story,
-  .root .stories .story:nth-child(even) {
+  .root .column {
+    display: contents;
+  }
+  .root .column:nth-child(2) {
     margin: 0;
   }
   .root .storyHead {

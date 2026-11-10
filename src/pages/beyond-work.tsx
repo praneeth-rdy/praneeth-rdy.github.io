@@ -43,6 +43,15 @@ function Story({
     const image = getImage(file?.childImageSharp?.gatsbyImageData ?? null)
     return image ? [image] : []
   })
+  // A pair of tall photos (paintings) gets 3:4 tiles instead of the fixed
+  // landscape crop. A card can also ask for its photo to be shown whole
+  // (`photoFit: "contain"` in the data) instead of cropped to the tile.
+  const portrait =
+    images.length === 2 && images.every(image => image.height > image.width)
+  const contain = activity.photoFit === "contain"
+  // A single tall photo shown whole gets a square tile rather than 16:10.
+  const tall =
+    contain && images.length === 1 && images[0].height > images[0].width
   const links = (activity.links ?? []).flatMap(link =>
     link.label && link.to ? [{ label: link.label, to: link.to }] : []
   )
@@ -54,25 +63,27 @@ function Story({
     <article
       className={`${Home.card} b-shadow-card ${Styles.story}`}
       id={activity.slug}
+      style={{ order: index }}
     >
       <header className={Styles.storyHead}>
         <div>
           <span className={Styles.storyIndex}>{twoDigits(index + 1)} /</span>
           <h2>{activity.title}</h2>
         </div>
-        {activity.now && (
-          <span className={`${Home.pill} ${Home.present}`}>Now</span>
+        {activity.archived && (
+          <span className={`${Home.pill} ${Page.completed}`}>Archive</span>
         )}
       </header>
       {images.length > 0 ? (
         <div
-          className={`${Styles.photoGrid} ${images.length === 1 ? Styles.single : ""}`}
+          className={`${Styles.photoGrid} ${images.length === 1 ? Styles.single : ""} ${portrait ? Styles.portrait : ""} ${contain ? Styles.contain : ""} ${tall ? Styles.tall : ""}`}
         >
           {images.slice(0, 2).map((image, photoIndex) => (
             <div key={photoIndex} className={Styles.photo}>
               <GatsbyImage
                 className={Styles.photoImage}
                 image={image}
+                objectFit={contain ? "contain" : "cover"}
                 alt={`${activity.title}, photo ${photoIndex + 1}`}
               />
             </div>
@@ -130,9 +141,9 @@ function BeyondWork({
             <div className={Home.eyebrow}>Away from the screen</div>
             <h1>Beyond Work</h1>
             <p>
-              Mornings in a boxing hall, a volleyball court I still miss, a few
-              years of volunteering, and a guitar that gets picked up more often
-              than it gets practised.
+              Mornings at a boxing stadium, a volleyball court I still miss, a
+              few years of volunteering, a guitar that gets picked up more often
+              than it gets practised, and whatever ends up on paper or a wall.
             </p>
           </header>
           <nav className={Page.jumpNav} aria-label="Activities">
@@ -143,8 +154,18 @@ function BeyondWork({
             ))}
           </nav>
           <div className={Styles.stories}>
-            {activities.map((activity, index) => (
-              <Story key={activity.slug} activity={activity} index={index} />
+            {[0, 1].map(column => (
+              <div key={column} className={Styles.column}>
+                {activities.map((activity, index) =>
+                  index % 2 === column ? (
+                    <Story
+                      key={activity.slug}
+                      activity={activity}
+                      index={index}
+                    />
+                  ) : null
+                )}
+              </div>
             ))}
           </div>
         </div>
@@ -169,7 +190,8 @@ export const query = graphql`
       nodes {
         slug
         title
-        now
+        archived
+        photoFit
         when
         summary
         moment

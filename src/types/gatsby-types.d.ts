@@ -698,14 +698,15 @@ type DuotoneGradient = {
 };
 
 type ExtracurricularsJson = Node & {
+  readonly archived: Maybe<Scalars['Boolean']>;
   readonly children: ReadonlyArray<Node>;
   readonly id: Scalars['ID'];
   readonly images: Maybe<ReadonlyArray<Maybe<File>>>;
   readonly internal: Internal;
   readonly links: Maybe<ReadonlyArray<ExtracurricularsJsonLinks>>;
   readonly moment: Maybe<Scalars['String']>;
-  readonly now: Maybe<Scalars['Boolean']>;
   readonly parent: Maybe<Node>;
+  readonly photoFit: Maybe<Scalars['String']>;
   readonly slug: Scalars['String'];
   readonly summary: Maybe<Scalars['String']>;
   readonly title: Scalars['String'];
@@ -758,14 +759,15 @@ type ExtracurricularsJsonEdge = {
 };
 
 type ExtracurricularsJsonFieldSelector = {
+  readonly archived: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly images: InputMaybe<FileFieldSelector>;
   readonly internal: InputMaybe<InternalFieldSelector>;
   readonly links: InputMaybe<ExtracurricularsJsonLinksFieldSelector>;
   readonly moment: InputMaybe<FieldSelectorEnum>;
-  readonly now: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly photoFit: InputMaybe<FieldSelectorEnum>;
   readonly slug: InputMaybe<FieldSelectorEnum>;
   readonly summary: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
@@ -773,14 +775,15 @@ type ExtracurricularsJsonFieldSelector = {
 };
 
 type ExtracurricularsJsonFilterInput = {
+  readonly archived: InputMaybe<BooleanQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly images: InputMaybe<FileFilterListInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
   readonly links: InputMaybe<ExtracurricularsJsonLinksFilterListInput>;
   readonly moment: InputMaybe<StringQueryOperatorInput>;
-  readonly now: InputMaybe<BooleanQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly photoFit: InputMaybe<StringQueryOperatorInput>;
   readonly slug: InputMaybe<StringQueryOperatorInput>;
   readonly summary: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
@@ -857,14 +860,15 @@ type ExtracurricularsJsonLinksSortInput = {
 };
 
 type ExtracurricularsJsonSortInput = {
+  readonly archived: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly images: InputMaybe<FileSortInput>;
   readonly internal: InputMaybe<InternalSortInput>;
   readonly links: InputMaybe<ExtracurricularsJsonLinksSortInput>;
   readonly moment: InputMaybe<SortOrderEnum>;
-  readonly now: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly photoFit: InputMaybe<SortOrderEnum>;
   readonly slug: InputMaybe<SortOrderEnum>;
   readonly summary: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
@@ -2955,14 +2959,15 @@ type Query_directoryArgs = {
 
 
 type Query_extracurricularsJsonArgs = {
+  archived: InputMaybe<BooleanQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   images: InputMaybe<FileFilterListInput>;
   internal: InputMaybe<InternalFilterInput>;
   links: InputMaybe<ExtracurricularsJsonLinksFilterListInput>;
   moment: InputMaybe<StringQueryOperatorInput>;
-  now: InputMaybe<BooleanQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  photoFit: InputMaybe<StringQueryOperatorInput>;
   slug: InputMaybe<StringQueryOperatorInput>;
   summary: InputMaybe<StringQueryOperatorInput>;
   title: InputMaybe<StringQueryOperatorInput>;
@@ -4005,7 +4010,7 @@ type WebPOptions = {
 type BeyondWorkPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-type BeyondWorkPageQuery = { readonly allExtracurricularsJson: { readonly nodes: ReadonlyArray<{ readonly slug: string, readonly title: string, readonly now: boolean | null, readonly when: string | null, readonly summary: string | null, readonly moment: string | null, readonly images: ReadonlyArray<{ readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null> | null, readonly links: ReadonlyArray<{ readonly label: string | null, readonly to: string | null }> | null }> } };
+type BeyondWorkPageQuery = { readonly allExtracurricularsJson: { readonly nodes: ReadonlyArray<{ readonly slug: string, readonly title: string, readonly archived: boolean | null, readonly photoFit: string | null, readonly when: string | null, readonly summary: string | null, readonly moment: string | null, readonly images: ReadonlyArray<{ readonly childImageSharp: { readonly gatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData } | null } | null> | null, readonly links: ReadonlyArray<{ readonly label: string | null, readonly to: string | null }> | null }> } };
 
 type BlogPageQueryVariables = Exact<{ [key: string]: never; }>;
 
