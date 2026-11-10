@@ -7,7 +7,7 @@ Personal portfolio + blog for Praneeth Reddy Kolanu. Gatsby 5 / React 18 static 
 - Edit files directly on the currently checked-out branch. Do not create branches or worktrees unless asked.
 - Do **not** add `Co-Authored-By` or any other attribution trailer to commit messages.
 - Commit style: conventional prefixes already used in history (`feat:`, `fix:`, `refactor:`, `content:`, `chore:`).
-- Only commit or push when asked. Pushing to `main` triggers the deploy workflow.
+- Only commit or push when asked. Work happens directly on `main`, and every push to `main` deploys the live site, so a push is a release.
 - Visual fidelity matters: the site's look is intentional. Do not change rendered output unless the task asks for it.
 
 ## Commands
@@ -30,7 +30,7 @@ yarn format           # prettier over src/**/*.{js,jsx,ts,tsx}, gatsby-*.{ts,tsx
 
 ## Deploy
 
-`.github/workflows/build-export.yml`: on push to `main`, builds with Node 22 and publishes `public/` to the `build` branch via `peaceiris/actions-gh-pages` (GitHub Pages serves `build`). `main` is the default and deploy branch; work happens on a working branch (currently `v1`) merged into `main` through pull requests.
+`.github/workflows/build-export.yml`: on push to `main`, builds with Node 22 and publishes `public/` to the `build` branch via `peaceiris/actions-gh-pages` (GitHub Pages serves `build`). `main` is the default, working and deploy branch; commits go straight to it. `v1` and `v2` are older working branches that were merged in and are no longer used.
 
 ## Architecture
 

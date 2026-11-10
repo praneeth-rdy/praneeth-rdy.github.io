@@ -11,7 +11,7 @@ Personal portfolio and blog; Gatsby 5, React 18, TypeScript strict, plain CSS.
 
 ## Working boundaries
 
-- Work on the checked-out branch. No branches, worktrees, commits or pushes unless requested. Pushing `main` deploys the site; work lands there through pull requests.
+- Work on the checked-out branch. No branches, worktrees, commits or pushes unless requested. Work happens directly on `main`, and pushing it deploys the site.
 - Preserve pre-existing work. Docs and handoffs may already be untracked; that does not mean they are disposable.
 - Current scope is design concepts in `docs/handoffs/concepts/`, not implementation in `src/`. Produce two or three distinct directions for each of the four pages before the owner chooses. Follow the brief's fixed sections and theme constraints.
 - Keep owner-supplied facts and bracketed placeholders. Do not invent quotes, personal experiences, metrics, project links or photos.

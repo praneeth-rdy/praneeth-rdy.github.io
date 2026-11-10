@@ -40,8 +40,8 @@ A production build regenerates `src/types/gatsby-types.d.ts`; commit it when it 
 
 ## Branches
 
-- `main` is the GitHub default branch and, since 2026-11-08, the deploy trigger. Work happens on a working branch (currently `v1`) and reaches `main` through pull requests; pushing `v1` no longer deploys.
-- They had diverged (24 commits only on `main` from late 2024, 33 newer on `v1`). On 2026-10-30 a merge commit `a8ffb5e` ("chore: sync main with v1") was created with `v1`'s exact tree and both branches as parents, then fast-forward pushed to both, so `main` equals `v1` without rewriting history. On 2026-11-08 the deploy trigger moved to `main`; `v1` stays the working branch and reaches `main` through pull requests.
+- `main` is the GitHub default branch, the working branch and, since 2026-11-08, the deploy trigger. Since 2026-11-10 commits go straight to `main`; `v1` and `v2` were earlier working branches merged in through pull requests and are no longer used.
+- They had diverged (24 commits only on `main` from late 2024, 33 newer on `v1`). On 2026-10-30 a merge commit `a8ffb5e` ("chore: sync main with v1") was created with `v1`'s exact tree and both branches as parents, then fast-forward pushed to both, so `main` equals `v1` without rewriting history. On 2026-11-08 the deploy trigger moved to `main`, and from 2026-11-10 work happens directly on `main`.
 
 ## SEO and analytics plumbing
 
