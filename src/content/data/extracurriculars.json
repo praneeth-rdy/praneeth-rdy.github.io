@@ -2,11 +2,13 @@
   {
     "slug": "boxing",
     "title": "Boxing",
-    "now": true,
-    "when": "Bag classes since November 2025; competitive training at the Boxing Hall, Saroornagar Indoor Stadium, since May 2026",
-    "summary": "Training mornings at six under Coach Gouni Kumar, sparring regularly, and aiming for the senior state competitions in Telangana in November 2027.",
-    "moment": "My first spar: three rounds, two of them against a senior, and a bag had never taught me that the other person hits back. I walked out breathing hard, still buzzing, and sure I would be back the next morning.",
-    "images": [],
+    "when": "Bag classes since late 2025; competitive training at Saroornagar Indoor Stadium, Hyderabad, since May 2026",
+    "summary": "Training from six to nine every morning, sparring regularly, and aiming for the senior state championships in November 2027. Even if I do not win, the year of training it takes to get there is worth it on its own.",
+    "moment": "My first spar. Nervous before the bell, out of breath after it, and told in the same breath that I did well and that there is a long way to go. I keep both. The second one is what I train with every morning.",
+    "images": [
+      "../images/beyond-work/boxing-first-spar.jpg",
+      "../images/beyond-work/boxing-shadow.jpg"
+    ],
     "links": [
       {
         "label": "Read Three Rounds",
@@ -15,33 +17,49 @@
     ]
   },
   {
-    "slug": "volleyball",
-    "title": "Volleyball",
-    "now": false,
-    "when": "Lala Lajpat Rai Hall of Residence, IIT Kharagpur",
-    "summary": "Member of the gold-winning hall team in the Inter Hall Gymkhana Championship 2021-22.",
-    "moment": "The last point of the Inter Hall final, 2021-22. Weeks of evening practice behind the hall came down to one rally, and the whole hall was on the sideline when it dropped.",
-    "images": [],
-    "links": []
-  },
-  {
-    "slug": "nss",
-    "title": "NSS and volunteering",
-    "now": false,
-    "when": "2019 to 2022",
-    "summary": "Best volunteer of the gold-winning team at the NSS Annual Camp 2019 and part of the cloth-collection drive. Led the COVID fundraising campaign at GYWS in 2021 and conducted a tree plantation drive in Gopali village in 2022, planting 15 saplings.",
-    "moment": "A villager in Gopali asking which sapling was hers so she could water it. Fifteen trees sounded small until each one had someone's name on it.",
-    "images": [],
+    "slug": "artwork",
+    "title": "Artwork",
+    "when": "On and off, since school",
+    "summary": "Paintings, drawings and sketches, and paper art. Mostly for the walls at home and for people I know.",
+    "moment": "The appreciation I got for a wall painting of a meditating Hanuman. People still ask about it.",
+    "images": [
+      "../images/beyond-work/artwork-hanuman.jpg",
+      "../images/beyond-work/artwork-ganpati.jpg"
+    ],
     "links": []
   },
   {
     "slug": "guitar",
     "title": "Guitar",
-    "now": false,
+    "photoFit": "contain",
     "when": "Since college, on and off",
     "summary": "Self-taught on an acoustic: chords, a few fingerstyle pieces, and whatever friends ask for when one is around.",
-    "moment": "Playing a half-learned song at a hostel gathering and having the whole room finish the chorus for me.",
-    "images": [],
+    "moment": "Borrowing a friend's guitar to learn my favourite song, one chord at a time, to playing it on a guitar of my own.",
+    "images": ["../images/beyond-work/guitar.jpg"],
+    "links": []
+  },
+  {
+    "slug": "volleyball",
+    "title": "Volleyball",
+    "archived": true,
+    "photoFit": "contain",
+    "when": "Lala Lajpat Rai Hall of Residence, IIT Kharagpur",
+    "summary": "Represented Lala Lajpat Rai Hall of Residence at the Inter Hall Gymkhana Championship 2021-22.",
+    "moment": "Late dinners with the team after practice, with the mess keeping our plates aside because they knew we would come.",
+    "images": ["../images/beyond-work/volleyball-jersey.jpg"],
+    "links": []
+  },
+  {
+    "slug": "nss",
+    "title": "NSS and volunteering",
+    "archived": true,
+    "when": "2019 to 2022",
+    "summary": "Best volunteer of the gold-winning team at the NSS Annual Camp 2019 and part of the cloth-collection drive. Led the COVID fundraising campaign at GYWS in 2021 and conducted a tree plantation drive in Gopali village in 2022, planting 15 saplings.",
+    "moment": "Walking up to our NSS unit professor right after we won the gold at the annual camp. His face said more than the medal did.",
+    "images": [
+      "../images/beyond-work/nss-camp-gold.jpg",
+      "../images/beyond-work/nss-camp-work.jpg"
+    ],
     "links": []
   }
 ]
