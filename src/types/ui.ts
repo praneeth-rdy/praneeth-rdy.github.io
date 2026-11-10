@@ -26,6 +26,8 @@ export enum LineIconName {
   Code = "code",
   Fork = "fork",
   Camera = "camera",
+  Sun = "sun",
+  Moon = "moon",
 }
 
 /** Contact form fields; values equal the inputs' `name`/`id` attributes. */
