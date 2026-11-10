@@ -34,7 +34,7 @@ Sparring is a different game from everything else in training. Throwing punches 
 
 I expected boxing to make me fitter, and it has. What I did not expect was what it would do to everything else. After two hours at the stadium, nothing at a desk feels hard. A year in, I am fitter, calmer and happier than I was. It has felt good at every step.
 
-For the first time I have a goal, and I would rather write it down so I can be held to it. I want to compete in the senior state championships next November, and represent the state at the nationals if I get the chance. That is a year of early mornings away. I know what each of them costs, and I cannot wait. I have never been this excited about something I am nowhere close to yet.
+For the first time I have a goal, and I would rather write it down so I can be held to it. I want to compete in the senior state championships next November, and represent the state at the nationals if I get the chance. That is a year of early mornings away. I know what each of them costs, and I cannot wait. I have never been this excited about something I am nowhere close to yet. And even if I do not win, I know the year of training it takes to get there will make me a far better boxer than I am today. That alone is worth it.
 
 I do wish I had started years earlier. Then I remind myself that the best time to start was then, and the next best time was the day I did. The same is true for you, today. If there is a sport, or anything else, you think it is too late to start, it is not. I am nobody special. I did not have a plan. I had the next class. Start small, and take the next step when it comes.
 
