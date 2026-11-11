@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpraneeth_rdy_github_io=self.webpackChunkpraneeth_rdy_github_io||[]).push([[574],{7358:function(e,t,a){a.r(t),a.d(t,{Head:function(){return r}});var n=a(6540),c=a(5057),i=a(8818);t.default=function({location:e}){return n.createElement(c.A,{location:e},n.createElement("h3",null,"Publications Page"))};const r=({location:e})=>n.createElement(i.A,{title:"Publications",keywords:["blog","gatsby","javascript","react"],pathname:e.pathname})}}]);
+//# sourceMappingURL=component---src-pages-publications-tsx-5d7ce92e84a3e908c640.js.map

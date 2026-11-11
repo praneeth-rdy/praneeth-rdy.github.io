@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://praneeth-rdy.github.io/sitemap-index.xml

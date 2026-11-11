@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkpraneeth_rdy_github_io=self.webpackChunkpraneeth_rdy_github_io||[]).push([[970],{4748:function(e,t,a){a.r(t),a.d(t,{Head:function(){return o}});var n=a(6540),r=a(5057),c=a(8818);t.default=({location:e})=>n.createElement(r.A,{location:e},n.createElement("div",null));const o=({location:e})=>n.createElement(c.A,{title:"About",keywords:["blog","gatsby","javascript","react"],pathname:e.pathname})}}]);
+//# sourceMappingURL=component---src-pages-about-tsx-f60a4d04bef621f4e33b.js.map
